@@ -32,6 +32,10 @@ If you need some automation:
 
     $ sparrow task run utils/$task-name
 
+# Asciicast example
+
+![asciicast](https://asciinema.org/a/128839.png)](https://asciinema.org/a/128839)
+
 # Author
 
 * The author of speedtest-cli tool is [@sivel](https://github.com/sivel)
