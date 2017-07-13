@@ -34,7 +34,7 @@ If you need some automation:
 
 # Asciicast example
 
-![asciicast](https://asciinema.org/a/128839.png)](https://asciinema.org/a/128839)
+![asciicast](https://asciinema.org/a/128839)
 
 # Author
 
