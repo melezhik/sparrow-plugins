@@ -1,0 +1,9 @@
+{
+  "name" : "speedtest-cli",
+  "description" : "Simple wrapper for speedtest-cli from https://github.com/sivel/speedtest-cli",
+  "version" : "0.0.1",
+  "url" : "https://github.com/sivel/speedtest-cli",
+  "category": "utilities",
+  "python_version" : 2,
+  "sparrow_version": "0.2.45"
+}
