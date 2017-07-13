@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-My [Sparrow](https://github.com/melezhik/sparrow) Plugins
+My [Sparrow](https://github.com/melezhik/sparrow) plugins.
 
 # See also
 
