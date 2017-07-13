@@ -1,0 +1,2 @@
+request
+web_trawler==0.1.2
