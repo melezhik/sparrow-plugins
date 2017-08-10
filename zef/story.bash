@@ -3,11 +3,11 @@
 set -e
 
 export PATH=/opt/rakudo/bin:~/.perl6/bin:$PATH
-
+declare -a list=$(config list)
 options=$(config options)
-list=$(config list)
 
-for m in $list; do
+for m in "${list[@]}"
+do
   echo zef install $m $options
   if test $m == '(.)'; then
     zef install . $options
@@ -15,5 +15,6 @@ for m in $list; do
     zef install $m $options
   fi
 done
+
 
 
