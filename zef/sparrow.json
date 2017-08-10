@@ -1,7 +1,7 @@
 {
   "name" : "zef",
   "description" : "Wrapper for zef installer",
-  "version" : "0.0.2",
+  "version" : "0.0.7",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/zef",
   "category": "utilities",
   "sparrow_version": "0.2.45"
