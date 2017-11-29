@@ -1,0 +1,4 @@
+task-run 'js minifier', 'js-minify', %(
+    in  => 'in.js',      
+    out => '/tmp/out.js',      
+);
