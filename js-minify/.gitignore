@@ -3,3 +3,4 @@ cpanfile.snapshot
 in.js
 out.js
 .sparrowdo-cache
+tmp/
