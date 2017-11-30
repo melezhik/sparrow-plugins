@@ -1,0 +1,6 @@
+local/
+cpanfile.snapshot
+in.png
+out.png
+.sparrowdo-cache
+tmp/
