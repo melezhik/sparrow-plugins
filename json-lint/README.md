@@ -10,10 +10,10 @@ Simple json linter.
 
 CLI:
 
-    # check for files named *.json inside $PWD
+    # check for files named *.json, *.js inside $PWD
     $ sparrow plg run json-lint --param path=$PWD
 
-    # check for files named *.json inside $PWD/location
+    # check for files named *.json, *.js inside $PWD/location
     $ sparrow plg run json-lint --param path=$PWD/location
 
 # Author
