@@ -2,7 +2,7 @@
 
   "name" : "azure-web-app-appsettings",
   "description" : "Dump azure app service application settings",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "sparrow_version": "0.2.50",
   "category" : "azure",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-web-app-appsettings"
