@@ -1,9 +1,9 @@
 {
 
-  "name" : "uwp-self-signed-cert",
-  "description" : "Generates self signed certificate to sign Microsoft app packages",
-  "version" : "0.0.3",
+  "name" : "azure-web-app-appsettings",
+  "description" : "Dump azure app service application settings",
+  "version" : "0.0.1",
   "sparrow_version": "0.2.50",
-  "category" : "utilities",
-  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/uwp-selfsigned-cert"
+  "category" : "azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-web-app-appsettings"
 }
