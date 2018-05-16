@@ -1,5 +1,5 @@
 local/
 cpanfile.snapshot
-*.json
+#*.json
 .sparrowdo-cache
 tmp/
