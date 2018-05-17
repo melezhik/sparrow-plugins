@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Dump azure app service application settings
+Dump/Validate azure app service application settings.
 
 # INSTALL
 
