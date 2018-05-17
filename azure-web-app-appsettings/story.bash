@@ -19,7 +19,7 @@ az webapp config appsettings list  -n "${app_service}"  -g  "${group}" -o json |
 
 format STDOUT = 
 ^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  @*
-$i->{name} , $i->{value}
+"[$i->{name}]" , $i->{value}
 .
 '
 

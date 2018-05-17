@@ -16,6 +16,15 @@ CLI:
 
     $ sparrow plg run azure-web-app-appsettings --param app_service=webApp --param group=myGroup
 
+Sparrow task
+
+    $ sparrow project create azure
+    $ sparrow project task add azure webapp-settings azure-web-app-appsettings
+    $ sparrow task ini azure webapp-settings
+
+    group: myGroup
+    app_service: webApp
+
 # Parameters
   
 ## app_service
@@ -25,6 +34,21 @@ Azure app service name.
 ## group
 
 Azure resource group name.
+
+# Check required settings
+
+You may check if certain settings exists in application settings, by setting `required_settings` array:
+
+    $ sparrow task ini azure webapp-settings
+
+    group: myGroup
+    app_service: webApp
+
+    required_settings:
+      - database_host
+      - database_name
+      - database_login
+      - database_password
 
 # Author
 
