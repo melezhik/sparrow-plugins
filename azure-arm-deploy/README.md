@@ -1,6 +1,8 @@
 # SYNOPSIS
 
-Simple wrapper for az group deployment command. It makes my life simpler.
+Simple wrapper for az group deployment command. 
+
+Because it makes my life simpler.
 
 # INSTALL
 
@@ -24,6 +26,25 @@ Simple wrapper for az group deployment command. It makes my life simpler.
 
     $ sparrow task run azure/app-deploy
 
+# Parameters
+
+## group
+
+Azure resource group
+
+## template
+
+Path to ARM template file
+
+## parameters
+
+Path to ARM parameters file
+
+## verbose
+
+`(on|off)`
+
+Set `--verbose` flag when invoke `az cli`. Default value is `off` ( do not set ).
 
 # Author
 
