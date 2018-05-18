@@ -14,10 +14,10 @@ fi
 
 if test "${mode}" = "create"; then
   set -x
-  az group deployment create "${verbose_opt}" -g  "${group}"  --template-file "${template}" --parameters @"${parameters}"
+  az group deployment create $verbose_opt -g  "${group}"  --template-file "${template}" --parameters @"${parameters}"
 elif test "${mode}" = "validate"; then
   set -x
-  az group deployment validate "${verbose_opt}" -g  "${group}"  --template-file "${template}" --parameters @"${parameters}"
+  az group deployment validate $verbose_opt -g  "${group}"  --template-file "${template}" --parameters @"${parameters}"
 else
   echo "bad mode: ${mode}";
   exit 1;
