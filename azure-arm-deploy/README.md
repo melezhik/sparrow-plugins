@@ -14,17 +14,20 @@ Because it makes my life simpler.
 
 # USAGE
 
-    $ sparrow project create azure
-    $ sparrow task add azure/app-deploy azure-arm-deploy
-    $ sparrow task ini azure/app-deploy
+It is mostly designed to run through sparrowdo, so:
 
-    group: my-azure-resource-group
-    template: /path/to/file/with/arm/template.json 
-    parameters: /path/to/file/with/arm/parameters.json  
-    # mode should be one of: validate|create
-    mode: create 
-
-    $ sparrow task run azure/app-deploy
+    #!perl6
+    
+    my $templ-file = "{config<templ-dir>}/azuredeploy.json";
+    my $templ-params-file = "{config<params-dir>}/azuredeploy.parameters.{config<env>}.json";
+    
+    task-run "deploy azure resources", "azure-arm-deploy", %(
+      group => config<resource-group>, # azure resource group
+      template => $templ-file, # ARM template
+      parameters => $templ-params-file, # ARM parameters
+      mode => "create" # default value
+    );
+    
 
 # Parameters
 
@@ -45,6 +48,19 @@ Path to ARM parameters file
 `(on|off)`
 
 Set `--verbose` flag when invoke `az cli`. Default value is `off` ( do not set ).
+
+# Restarting app service
+
+To restart Azure app service upon successful deployment:
+
+    task-run "deploy azure resources", "azure-arm-deploy", %(
+      group => config<resource-group>, # azure resource group
+      template => $templ-file, # ARM template
+      parameters => $templ-params-file, # ARM parameters
+      mode => "create", # default value
+      app_service => "web-app", # Azure app service name
+      app_service_restart => "on", # ask to restart app service
+    );
 
 # Author
 
