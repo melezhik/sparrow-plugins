@@ -5,8 +5,8 @@ group=$(config group)
 template=$(config template)
 parameters=$(config parameters)
 verbose=$(config verbose)
-app_service_restart=$(app_service_restart)
-app_service=$(app_service)
+app_service_restart=$(config app_service_restart)
+app_service=$(config app_service)
 
 if test "${verbose}" = "on"; then
   verbose_opt="--verbose"
