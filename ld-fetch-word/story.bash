@@ -15,7 +15,7 @@ echo >> $out
 echo "{{{ $word }}}" >> $out 
 
 curl https://www.ldoceonline.com/dictionary/$word -s -L | perl -n -e '
-print $_, "\n" for /title="Play Example"> <\/span>(.*?)<\/span>/mg' | \
+print $_, "\n" for /title="Play Example"> <\/span>(.*?)<\/span>/mg; print "[$1]\n" if /<meta name="description" content="(.*?)"/' | \
 perl -n -e  's/<span.*>//; print' | tee -a  $out
 
 echo ============================================================
