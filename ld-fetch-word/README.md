@@ -14,6 +14,16 @@ Fetch phrases from longman
   
     $ sparrow plg run ld-fetch-word --param word=set-in --param out=/tmp/out.txt --param sleep=2
 
+# Parameters
+
+## out
+
+Where to write fetched phrases, default vaule is `/dev/null`
+
+## sleep
+
+Sleep `sleep` second before making http request.
+
 
 # Author
 

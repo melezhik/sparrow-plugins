@@ -1,2 +1,2 @@
 sleep: 1
-out: /tmp/words.txt
+out: /dev/null
