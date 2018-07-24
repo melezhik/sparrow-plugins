@@ -16,6 +16,10 @@ Fetch phrases from longman
 
 # Parameters
 
+## word
+
+Word to fetch.
+
 ## out
 
 Where to write fetched phrases, default vaule is `/dev/null`
@@ -24,6 +28,11 @@ Where to write fetched phrases, default vaule is `/dev/null`
 
 Sleep `sleep` second before making http request.
 
+## cache
+
+Path to cache directory. If cache exists the plugin quits quirky doing nothing.
+
+    --param cache=/tmp/cache-dir/
 
 # Author
 
