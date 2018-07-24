@@ -20,10 +20,13 @@ echo ============================================================
 echo >> $out
 echo >> $out
 
-echo "{{{ $word }}}" >> $out 
+echo "{{{ $word }}}" | tee -a $out 
 
-curl https://www.ldoceonline.com/dictionary/$word -s -L | perl -n -e '
-print $_, "\n" for /title="Play Example"> <\/span>(.*?)<\/span>/mg; print "[$1]\n" if /<meta name="description" content="(.*?)"/' | \
+curl https://www.ldoceonline.com/dictionary/$word -s -L | perl -MHTML::Strip -n -e '
+print $_, "\n" for /title="Play Example"> <\/span>(.*?)<\/span>/mg; 
+#print "[$1]\n" if /<meta name="description" content="(.*?)"/;
+print "[", HTML::Strip->new()->parse($1), "]\n" if /<span class="DEF">(.*?)<\/span>/
+'| \
 perl -n -e  's/<span.*>//; print' | tee -a  $out
 
 
