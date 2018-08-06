@@ -1,2 +1,2 @@
-requires "Crypt::RandPassw";
+requires "Text::Password::SHA";
 

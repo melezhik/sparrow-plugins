@@ -19,5 +19,5 @@ Alexey Melezhik
 
 # See also
 
-* [Crypt::RandPasswd](https://metacpan.org/pod/Crypt::RandPasswd)
+* [Text::Password::SHA](https://metacpan.org/pod/Text::Password::SHA)
 
