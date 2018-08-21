@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Walk through the list of sub directories ( located at $CWD ) and tries to install Perl6 modules found.
+Walks through the list of sub directories ( located at $CWD ) and tries to install Perl6 modules found.
 
 # INSTALL
 
