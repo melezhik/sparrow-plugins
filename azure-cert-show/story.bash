@@ -11,7 +11,7 @@ perl -MJSON -Mstrict -e '
   my $data = decode_json($json);
   print "Vault Name:\t", $ENV{vault_name}, "\n";
   print "Cert Name:\t", $ENV{cert_name}, "\n";
-  print "x509Thumbprint:\t", $data->{x509Thumbprint}, "\n";
+  print "x509ThumbprintHex:\t", $data->{x509ThumbprintHex}, "\n";
   print "Expires:\t", $data->{attributes}->{expires}, "\n";
   print "dnsNames:\t", join " ", @{$data->{policy}->{'x509CertificateProperties'}->{subjectAlternativeNames}->{dnsNames}}, "\n";
   
