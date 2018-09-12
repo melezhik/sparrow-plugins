@@ -18,8 +18,13 @@ perl -MJSON -Mstrict -e '
   print "dnsNames:\t\t", join " ", @{$data->{policy}->{'x509CertificateProperties'}->{subjectAlternativeNames}->{dnsNames}}, "\n";
   print "===================================================\n\n";
   if ($ENV{check_thumbprint}){
-    print "x509ThumbprintHex does not equal to the passed one ($ENV{check_thumbprint})\nconsider updating your certifcates\n" and exit 1 
-      if $ENV{check_thumbprint} ne $data->{x509ThumbprintHex};
+    if (if $ENV{check_thumbprint} ne $data->{x509ThumbprintHex}){
+        print "Certificate is valid\n";
+    } else {
+        print "x509ThumbprintHex does not equal to the passed one ($ENV{check_thumbprint})\nconsider updating your certifcates\n";
+        exit 1; 
+    }
+      
   }
   
 '
