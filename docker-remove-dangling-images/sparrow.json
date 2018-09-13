@@ -2,7 +2,7 @@
 
   "name" : "docker-remove-dangling-images",
   "description" : "Remove dangling docker images and stopped containers",
-  "version" : "0.0.6",
+  "version" : "0.0.7",
   "sparrow_version": "0.2.50",
   "category" : "docker",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/docker-remove-dangling-images"
