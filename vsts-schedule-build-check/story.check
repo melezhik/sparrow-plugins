@@ -1,0 +1,36 @@
+#2018-10-23 03:00:00.099897  schedule
+
+
+generator: <<CODE
+!bash
+
+  date=$(config date)
+
+  if ! test "${date}"; then
+    date=$(date +%Y-%m-%d)
+  fi
+
+  echo 'regexp: completed\s+succeeded.*\s+'$date\\s+\\S+\\s+schedule$
+CODE
+
+generator: <<CODE
+!bash
+
+  date=$(config date)
+
+  if ! test "${date}"; then
+    date=$(date +%Y-%m-%d)
+  fi
+
+  echo 'regexp: completed\s+(succeeded|failed).*\s+'$date\\s+\\S+\\s+schedule$
+CODE
+
+generator: <<CODE
+  my @out;
+  for my $c (@{captures()}){
+    if ($c->[0] eq 'failed'){
+      push @out, "assert: 0 zero failed build found"
+    }
+  }
+  [@out]
+CODE
