@@ -8,10 +8,15 @@ Checks scheduleled vsts builds
 
 # USAGE
 
-    # Find the build named WebApp and check that it succeed for today
-    # place certificate into current working directory
+    # 1) Find the build named WebApp and check that it succeeds for today
+    # 2) Find the build named WebApp and check that there is no failures for today
 
     $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp
+
+
+    # The same as above but for the date `2018-10-23`
+
+    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param date=2018-10-23
 
 # Author
 
