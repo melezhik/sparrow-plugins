@@ -1,6 +1,13 @@
-set -x
+set -e
+
 pattern=$(config pattern)
+
 dir=$(config dir)
-cd $dir
+
+if test "${dir}"; then
+  cd $dir
+fi
+
 set -x
+
 vsts build list | grep "${pattern}"|grep schedule
