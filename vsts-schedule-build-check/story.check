@@ -4,12 +4,18 @@ generator: <<CODE
 !bash
 
   date=$(config date)
+  scheduled_only=$(config scheduled_only)
 
   if ! test "${date}"; then
     date=$(date +%Y-%m-%d)
   fi
 
-  echo 'regexp: completed\s+(succeeded|\S).*\s+'$date\\s+\\S+\\s+schedule$
+  if test "${scheduled_only}" = "on"; then
+    echo 'regexp: completed\s+(succeeded|\S).*\s+'$date\\s+\\S+\\s+schedule
+  else
+    echo 'regexp: completed\s+(succeeded|\S).*\s+'$date\\s+\\S+\\s+[^schedule]
+  fi
+  
 CODE
 
 generator: <<CODE
