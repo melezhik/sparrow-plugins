@@ -2,7 +2,7 @@
 
   "name" : "vsts-schedule-build-check",
   "description" : "Checks scheduleled vsts builds",
-  "version" : "0.0.4",
+  "version" : "0.0.5",
   "sparrow_version": "0.2.50",
   "category" : "vsts",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/vsts-schedule-build-check"
