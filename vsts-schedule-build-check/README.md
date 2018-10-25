@@ -8,15 +8,32 @@ Checks scheduleled vsts builds
 
 # USAGE
 
-    # 1) Find the build named WebApp and check that it succeeds for today
-    # 2) Find the build named WebApp and check that there is no failures for today
+Check if the last `WebApp` *scheduled* build succeeds for today:
 
-    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param dir=$PWD
+    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp
 
+Check if the last `WebApp` *scheduled* build succeeds for date:
 
-    # The same as above but for the date `2018-10-23`
+    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param date=2018-10-23
 
-    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param date=2018-10-23 --param dir=$PWD
+Check if the `last` WebApp build succeeds for today:
+
+    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param scheduled_only=off
+
+# Parameters
+
+## dir
+
+Directory containing VSTS local git repository, optional
+
+## date
+
+Check builds for given date, if not set date=today
+
+## scheduled_only
+
+Check only scheduled builds. By default is set.
+
 
 # Author
 
