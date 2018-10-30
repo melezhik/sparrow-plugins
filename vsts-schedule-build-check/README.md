@@ -20,6 +20,10 @@ Check if the `last` WebApp build succeeds for today:
 
     $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param scheduled_only=off
 
+Check if the `last` WebApp build succeeds:
+
+    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param scheduled_only=off --param date=any
+
 # Parameters
 
 ## dir
@@ -28,7 +32,7 @@ Directory containing VSTS local git repository, optional
 
 ## date
 
-Check builds for given date, if not set date=today
+Check builds for given date. If date not set then date is `today`, if `date=any` then ignore date.
 
 ## scheduled_only
 

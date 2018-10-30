@@ -8,6 +8,8 @@ generator: <<CODE
 
   if ! test "${date}"; then
     date=$(date +%Y-%m-%d)
+  elif test "${date}" = "any"; then
+    date='\d\d\d\d-\d\d-\d\d'
   fi
 
   if test "${scheduled_only}" = "on"; then
