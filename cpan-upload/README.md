@@ -40,7 +40,7 @@ As task:
 
 ## distro
 
-Path to CPAN distribution. `on|off`
+Path to CPAN distribution.
 
 ## clean
 
