@@ -11,12 +11,12 @@ Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploa
 
 # USAGE
 
-One liners:
+As one liners:
 
     # upload archive to CPAN without SSL verification
     $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz
 
-    # the same but with enabled SSL certificates validation
+    # the same with SSL verification
     $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz --param ssl_verify=on
 
     # delete local distro after upload
