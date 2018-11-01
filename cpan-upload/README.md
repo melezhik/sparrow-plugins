@@ -11,6 +11,8 @@ Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploa
 
 # USAGE
 
+One liners:
+
     # upload archive to CPAN without SSL verification
     $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz
 
@@ -19,6 +21,20 @@ Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploa
 
     # delete local distro after upload
     $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz --param clean=on
+
+As task:
+
+
+    $ sparrow] project cpan successfully created
+
+    $ sparrow task add cpan upload cpan-upload
+
+    $ sparrow task ini cpan/upload
+
+      clean=on
+      ssl_verify=off
+
+    $ sparrow plg task cpan/upload --param distro=$PWD/app-0.0001.tar.gz
 
 # Parameters
 
