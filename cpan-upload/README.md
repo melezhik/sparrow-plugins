@@ -2,7 +2,7 @@
 
 Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploader/bin/cpan-upload) with few features:
 
-- Disables SSL verification by default
+- Disabling SSL verification by default
 - Deleting archive file upon upload
 
 # INSTALL
@@ -25,7 +25,7 @@ As one liners:
 As task:
 
 
-    $ sparrow] project cpan successfully created
+    $ sparrow project create cpan
 
     $ sparrow task add cpan upload cpan-upload
 
