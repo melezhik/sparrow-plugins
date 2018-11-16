@@ -34,7 +34,7 @@ As task:
       clean=on
       ssl_verify=off
 
-    $ sparrow plg task cpan/upload --param distro=$PWD/app-0.0001.tar.gz
+    $ sparrow task run cpan/upload --param distro=$PWD/app-0.0001.tar.gz
 
 # Parameters
 
