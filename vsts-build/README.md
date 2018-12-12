@@ -4,19 +4,25 @@ Small wrapper for vsts build through [vsts cli](https://docs.microsoft.com/en-us
 
 # INSTALL
 
-    $ sparrow plg install vsts-run-build
+    $ sparrow plg install vsts-build
 
 # USAGE
 
 
 Run build for current branch:
 
-    $ sparrow plg run vsts-run-build --param definition=BackEndBuild
+    $ sparrow plg run vsts-build --param definition=BackEndBuild
 
-List latest builds
+List latest builds:
 
-    $ sparrow plg run vsts-run-build --param action=list
+    $ sparrow plg run vsts-build --param action=list
     
+Use as sparrowdo tasks:
+
+    task_run "run my build", "vsts-build", %(
+      definition => "BackEndBuild"
+    );
+
 # Parameters
 
 ## definition
