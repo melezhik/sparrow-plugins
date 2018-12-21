@@ -10,13 +10,11 @@ Make git push for current local branch
 
 Tomtit sceanrio:
 
-```
     $ cat .tom/push.pl6
 
     task-run "git push", "git-push";
 
     $ tom push 
-```
 
 # Author
 
