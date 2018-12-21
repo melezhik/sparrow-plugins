@@ -1,8 +1,8 @@
 {
 
   "name" : "git-push",
-  "description" : "Make remote push for current branch",
-  "version" : "0.0.1",
+  "description" : "Make git push for current branch",
+  "version" : "0.0.2",
   "sparrow_version": "0.2.50",
   "category" : "vsts",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-push"
