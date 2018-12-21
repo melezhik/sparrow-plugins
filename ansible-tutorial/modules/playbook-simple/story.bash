@@ -11,10 +11,11 @@ echo the most simple cookbook looks like that:
 
 tree
 
-echo playbook.yaml:
+echo cat playbook.yaml
 echo ======================================
 cat playbook.yaml
 echo ======================================
+echo run [ansible-playbook playbook.yaml]
+echo ======================================
 
-set -x
 ansible-playbook playbook.yaml
