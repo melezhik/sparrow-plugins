@@ -1,2 +1,3 @@
-bash "git push origin master";
-bash "git push bb master"
+#!perl6
+
+task-run "git push", "git-push";
