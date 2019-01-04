@@ -1,0 +1,5 @@
+# 0.0.2
+
+* Breaking changes: `sec` => `secret` renaming
+
+* Support multiple secrets show

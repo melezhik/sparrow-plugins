@@ -1,6 +1,9 @@
 # SYNOPSIS
 
-Simple wrapper around Azure key vault secret show command. Basically for easy/fast access to your popular key vault secrets.
+Simple wrapper around Azure key vault secret show command. 
+
+Basically for easy/fast access to your popular key vault secrets.
+
 Just because I am to "lazy" to remember various `az cli` commands syntax.
 
 # INSTALL
@@ -9,28 +12,36 @@ Just because I am to "lazy" to remember various `az cli` commands syntax.
 
 # USAGE
 
-CLI:
+Tomtit/Sparrowdo
 
-    # Dump secret `password` of key vault ID `Storage`
-    # place certificate into current working directory
+    # Show single secret
 
-    $ sparrow plg run azure-kv-show --param kv=Storage --param sec=password
+    task-run "show me your secret", "azure-kv-show", %(
+      kv      => "Stash" # key vault name
+      secret  => "password"  # secret name
+    )
 
-Key vault syntax:
+    # Show multiple secrets
+
+    task-run "show me your secrets", "azure-kv-show", %(
+      kv      => "Stash" # key vault name
+      secret  => [ login, password, name ]  # arrays of secrets
+    )
+
+Sparrow cli:
+
+    # Dump secret `password` of key vault ID `Stash`
+
+    $ sparrow plg run azure-kv-show --param kv=Stash --param secret=password
+
+
+    # Dump secret's value by key vault URL 
 
     $ sparrow plg run azure-kv-show --param url={key vault url}
 
-Sparrow task:
+# Requirements
 
-    $ sparrow project create az-kv
-    $ sparrow task add az-kv db-pass azure-kv-show
-    $ sparrow task ini az-kv/db-pass
-
-    kv: Storage
-    sec: password
-
-    $ sparrow task run az-kv/db-pass
-
+az cli 
 
 # Author
 
