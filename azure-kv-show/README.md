@@ -21,13 +21,6 @@ Tomtit/Sparrowdo
       secret  => "password"  # secret name
     )
 
-    # Show multiple secrets
-
-    task-run "show me your secrets", "azure-kv-show", %(
-      kv      => "Stash" # key vault name
-      secret  => [ login, password, name ]  # arrays of secrets
-    )
-
 Sparrow cli:
 
     # Dump secret `password` of key vault ID `Stash`
