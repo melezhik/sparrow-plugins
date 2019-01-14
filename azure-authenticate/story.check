@@ -1,0 +1,6 @@
+generator:<<CODE
+  my $context = config()->{context};  
+  [ 
+    "regexp: Name\\s+:\\s+$context"
+  ]
+CODE
