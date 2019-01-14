@@ -1,10 +1,6 @@
 # SYNOPSIS
 
-Simple wrapper around Azure key vault secret show command. 
-
-Basically for easy/fast access to your popular key vault secrets.
-
-Just because I am to "lazy" to remember various `az cli` commands syntax.
+Simple wrapper around Azure key vault secret show command, with multiple secrets / url notation support.
 
 # INSTALL
 
@@ -19,6 +15,13 @@ Tomtit/Sparrowdo
     task-run "show me your secret", "azure-kv-show", %(
       kv      => "Stash" # key vault name
       secret  => "password"  # secret name
+    )
+
+    # Show many secret
+
+    task-run "show me your secrets", "azure-kv-show", %(
+      kv      => "Stash" # key vault name
+      secret  => ( "password", "login" ) # secret names
     )
 
 Sparrow cli:
