@@ -1,3 +1,3 @@
 #!perl6
 
-task-run "git push", "git-push";
+task-run "push my changes", "git-push", %( confirm => "no" );
