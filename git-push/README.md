@@ -12,9 +12,19 @@ Tomtit sceanrio:
 
     $ cat .tom/push.pl6
 
-    task-run "git push", "git-push";
+    task-run "push my changes", "git-push";
 
     $ tom push 
+
+# Parameters
+
+## confirm
+
+`yes|no`
+
+Set `confirm` to `no` to disable confirmation dialogue:
+
+    task-run "push my changes", "git-push", %( confirm => "no" );
 
 # Author
 
