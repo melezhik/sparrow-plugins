@@ -2,6 +2,7 @@
 
 use strict;
 use JSON;
+use Text::Table::Tiny qw/ generate_table /;
 
 my $url = config()->{url};
 my @items;
@@ -41,9 +42,13 @@ for my $i (@items){
   );
 }
 
-set_stdout("=========================");
+set_stdout("");
 set_stdout("key vault: $kv");
-set_stdout("=========================");
+
+my @rows;
+
+push @rows, ['Name', 'Value'];
+
 
 for my $i (@items){
 
@@ -55,14 +60,15 @@ for my $i (@items){
 
     my $data = decode_json($s);
 
-    set_stdout("$i: $data->{value}"); 
+    push @rows, [ $i, $data->{value} ];
 
   } else {
 
-    set_stdout("$i: ?");
+    push @rows, [ $i, '?' ];
 
   }
 
 }
 
 
+set_stdout(generate_table(rows => \@rows, header_row => 1, separate_rows => 1));

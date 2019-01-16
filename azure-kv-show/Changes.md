@@ -1,3 +1,7 @@
+# 0.0.5
+
+Use Text::Table::Tiny for formated output
+
 # 0.0.4
 
 * Support multiple secrets
