@@ -1,0 +1,6 @@
+{
+  "name" : "bash",
+  "description" : "Execute bash commands",
+  "version" : "0.2.0",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/bash"
+}
