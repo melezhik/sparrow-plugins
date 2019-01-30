@@ -2,6 +2,6 @@
     "name" : "bar-script",
     "version" : "0.0.3",
      "description" : "print bar or rab",
-     "url" : "https://github.com/melezhik/bar-script"
+     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/bar-script"
 }
 
