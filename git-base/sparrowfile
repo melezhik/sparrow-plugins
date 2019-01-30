@@ -1,0 +1,13 @@
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'setup git',
+  plugin => 'git-base',
+  parameters => %(
+    name => 'Alexey Melezhik',
+    email => 'melezhik@gmail.com'
+  )
+);
+

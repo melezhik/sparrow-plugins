@@ -1,0 +1,2 @@
+install_git: off
+config_scope: global
