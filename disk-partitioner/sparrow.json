@@ -1,7 +1,0 @@
-{
-  "name" : "disk-partitioner",
-  "version" : "0.1.0",
-  "description" : "simple script for disk's partitioning",
-  "category" : "utilities",
-  "url" : "https://github.com/Spigell/disk-partitioner"
-}

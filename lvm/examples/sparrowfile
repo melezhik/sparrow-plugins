@@ -1,5 +1,0 @@
-
-EVALFILE 'create.pl6';
-EVALFILE 'resize.pl6';
-EVALFILE 'remove.pl6';
-

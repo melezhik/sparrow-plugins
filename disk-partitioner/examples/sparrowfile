@@ -1,3 +1,0 @@
-EVALFILE 'table.pl6';
-EVALFILE 'partition.pl6';
-EVALFILE 'partition_mbr.pl6';

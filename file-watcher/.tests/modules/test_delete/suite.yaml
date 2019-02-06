@@ -1,5 +1,0 @@
-directory: ./.tests/tmp/main
-action: 'delete'
-conditions:
-  older: '1 days'
-  newer: '3 day'

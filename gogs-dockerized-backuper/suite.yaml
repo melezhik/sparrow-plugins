@@ -1,4 +1,0 @@
-docker:
-  backuper: /app/gogs/gogs
-
-destination: /tmp
