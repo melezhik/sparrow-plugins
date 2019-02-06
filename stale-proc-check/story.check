@@ -1,0 +1,8 @@
+regexp: count: (\d+)
+
+code: our $CNT = capture()->[0];
+
+validator: [  our $CNT == 0, 'zero stale processes found' ];
+
+
+

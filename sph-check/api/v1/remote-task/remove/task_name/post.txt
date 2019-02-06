@@ -1,0 +1,2 @@
+within: task
+regexp: (removed OK|task does not exist)

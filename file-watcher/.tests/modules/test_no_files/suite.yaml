@@ -1,0 +1,4 @@
+directory: ./.tests/tmp/main
+action: 'delete'
+conditions:
+  newer: '100 days'

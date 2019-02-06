@@ -1,0 +1,7 @@
+{
+    "version": "1.0.2",
+    "name": "zabbix-hosts",
+    "description" : "get ip of all your zabbix hosts in /etc/hosts format",
+	"category" : "utilities",
+    "url" : "https://github.com/Spigell/zabbix-hosts"
+}

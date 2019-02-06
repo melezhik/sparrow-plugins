@@ -1,0 +1,571 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"groups",
+				"needed_groups"
+			],
+			[
+				"pa",
+				"packages_by_environment"
+			],
+			[
+				"pac",
+				"packages_by_user"
+			],
+			[
+				"rt-",
+				"rt-testing-env"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "project.sublime-project",
+			"settings":
+			{
+				"buffer_size": 45,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 396.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				":bas",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add all",
+				"Git: Add All"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"Git add all",
+				"Git: Add All"
+			],
+			[
+				"set syntax perl",
+				"Set Syntax: Perl"
+			],
+			[
+				"git blame",
+				"Git: Blame"
+			],
+			[
+				":json",
+				"Set Syntax: JSON"
+			],
+			[
+				":jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"Git comm",
+				"Git: Commit"
+			],
+			[
+				":",
+				"Git: Commit"
+			],
+			[
+				"Git com",
+				"Git: Commit"
+			],
+			[
+				"Git add",
+				"Git: Add All"
+			],
+			[
+				"Git",
+				"Git: Status"
+			],
+			[
+				"Git commit ",
+				"Git: Commit"
+			],
+			[
+				":ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				":Git ",
+				"Set Syntax: Git Commit View"
+			],
+			[
+				":pacakge",
+				"Package Control: List Packages"
+			],
+			[
+				":git",
+				"Set Syntax: Git Blame"
+			],
+			[
+				":packa",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Install Package Control"
+			]
+		],
+		"width": 470.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/spigell/projects/Vagrant/sparrow_lab/dev-zabbix-get-hosts-by-alerts"
+	],
+	"file_history":
+	[
+		"/home/spigell/coffeenet/ansible/roles/users/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/users/tasks/ssh.yml",
+		"/home/spigell/coffeenet/ansible/videoservers.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/mediaservers/vlc.yml",
+		"/home/spigell/coffeenet/ansible/roles/vlc/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/files/common.pm6",
+		"/home/spigell/coffeenet/ansible/files/vars.pm6",
+		"/home/spigell/coffeenet/ansible/group_vars/mediaservers/packages.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/mediaservers/transmission.yml",
+		"/home/spigell/coffeenet/ansible/roles/transmission/templates/transmission.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/transmission/templates/settings.json.j2",
+		"/home/spigell/coffeenet/ansible/roles/tigervnc/handlers/main.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/mediaservers/vnc.yml",
+		"/home/spigell/coffeenet/ansible/roles/tigervnc/tasks/service.yml",
+		"/home/spigell/coffeenet/ansible/roles/tigervnc/files/passwd",
+		"/home/spigell/coffeenet/ansible/roles/tigervnc/templates/x0vncserver.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/transmission/tasks/settings.yml",
+		"/home/spigell/coffeenet/ansible/roles/transmission/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/Vagrantfile",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/scenarios_settings.yml",
+		"/home/spigell/coffeenet/ansible/roles/vlc/templates/vlc.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/vlc/tasks/service.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/all/groups.yaml",
+		"/home/spigell/coffeenet/ansible/roles/vlc/handlers/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/lightdm/templates/lightdm.pam.j2",
+		"/home/spigell/coffeenet/ansible/group_vars/all/users.yml",
+		"/home/spigell/coffeenet/ansible/roles/lightdm/templates/lightdm.conf.j2",
+		"/home/spigell/coffeenet/ansible/roles/lightdm/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/pacman/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/videoservers/lightdm.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/all/default_packages.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/videoservers/packages.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/videoservers/users.yml",
+		"/home/spigell/coffeenet/ansible/roles/users/tasks/users.yml",
+		"/home/spigell/coffeenet/ansible/roles/users/tasks/groups.yml",
+		"/home/spigell/coffeenet/ansible/roles/packages/tasks/install_default.yml",
+		"/home/spigell/coffeenet/ansible/roles/packages/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/common/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/sudo/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/sudo/templates/wheel.config.j2",
+		"/home/spigell/coffeenet/ansible/roles/users/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/pacman/templates/pacman.conf.j2",
+		"/home/spigell/coffeenet/ansible/files/exclude",
+		"/home/spigell/coffeenet/ansible/roles/packages/vars/main.yml",
+		"/home/spigell/coffeenet/ansible/run_ansible.pl6",
+		"/home/spigell/coffeenet/ansible/roles/sudo/templates/custom.config",
+		"/home/spigell/coffeenet/ansible/files/users/ssh/schukh.pub",
+		"/home/spigell/coffeenet/ansible/masterhosts.yml",
+		"/home/spigell/coffeenet/ansible/examples/sparrowfile/install_de.pl6",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/templates/scenarios/check_high_la_vmx_only/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/templates/scenarios/deploy_scripts_on_rt/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/files/common.pm6",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/templates/duty-helper.yml.j2",
+		"/home/spigell/coffeenet/ansible/roles/xorg/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/homestations.pl6",
+		"/home/spigell/coffeenet/ansible/hosts",
+		"/home/spigell/coffeenet/ansible/install_vnc.pl6",
+		"/home/spigell/coffeenet/ansible/ansible.cfg",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/users.yml",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/files/vars.pm6",
+		"/home/spigell/coffeenet/ansible/sparrowfile",
+		"/home/spigell/coffeenet/ansible/ansible.pl6",
+		"/home/spigell/coffeenet/ansible/roles/configs/templates/schukh/work_functions.sh.j2",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/configs_by_users.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/docker_settings.yml",
+		"/home/spigell/coffeenet/ansible/files/excludes/add_var_log",
+		"/home/spigell/coffeenet/ansible/roles/restream_tg_markdown_finder/files/tg-markdown-finder.json",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/repos_by_users.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_zabbix_tg_notifier/templates/scenarios/check_5XX/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/templates/scenarios/check_ntpd/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/sparrow_plugins.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/packages_by_user.yml",
+		"/home/spigell/coffeenet/ansible/workstations_work.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_tg_markdown_finder/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_tg_markdown_finder/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/templates/scenarios/add_var_log/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/roles/restream_helper_bot/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/configs/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_helper_bot/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_helper_bot/files/tg-markdown-finder.json",
+		"/home/spigell/coffeenet/ansible/roles/restream_VMs/templates/rt-centos6-box-default.vagrantfile.j2",
+		"/home/spigell/coffeenet/ansible/files/excludes/add_slash_root",
+		"/home/spigell/coffeenet/ansible/files/excludes/check_high_la",
+		"/home/spigell/coffeenet/ansible/roles/restream_zabbix_tg_notifier/templates/scenarios/check_high_la/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/roles/restream_zabbix_tg_notifier/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_VMs/templates/rt-centos6-box-default.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/restream_VMs/defaults/main.yaml",
+		"/home/spigell/coffeenet/ansible/files/exclude.bash",
+		"/home/spigell/coffeenet/ansible/roles/duty_helper/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/dante/tasks/required_files.yml",
+		"/home/spigell/coffeenet/ansible/roles/zabbix_hosts_importer/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/.gitignore",
+		"/home/spigell/coffeenet/ansible/roles/vagrant/tasks/vagrant_services.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_zabbix_tg_notifier/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_zabbix_tg_notifier/templates/restream-zabbix-tg-notifier.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/restream_zabbix_tg_notifier/templates/restream-zabbix-tg-notifier.yml.j2",
+		"/home/spigell/coffeenet/ansible/files/token_maintenance.txt",
+		"/home/spigell/coffeenet/ansible/roles/duty_zabbix_tg_notifier/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/dante/templates/sockd.conf.j2",
+		"/home/spigell/coffeenet/ansible/roles/gogs/templates/gogs-backup-default.service.j2",
+		"/home/spigell/coffeenet/ansible/servers-infra.yml",
+		"/home/spigell/coffeenet/ansible/roles/dante/templates/dante-default.yml.j2",
+		"/home/spigell/coffeenet/ansible/roles/gogs/templates/gogs-default.yml.j2",
+		"/home/spigell/coffeenet/ansible/roles/gogs/tasks/backup.yml",
+		"/home/spigell/coffeenet/ansible/roles/dante/templates/dante-default.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/dante/templates/dante-user.json.j2",
+		"/home/spigell/coffeenet/ansible/roles/gogs/templates/gogs-backup-default.timer.j2",
+		"/home/spigell/coffeenet/ansible/roles/gogs/templates/gogs-default.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/shadowsocks/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/shadowsocks/templates/shadowsocks-default.yml.j2",
+		"/home/spigell/coffeenet/ansible/roles/shadowsocks/templates/shadowsocks-default.service.j2",
+		"/home/spigell/coffeenet/ansible/roles/duty_zabbix_tg_notifier/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/workstations-work/scenarios_settings.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/workstations-work/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/sparky_new/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/duty_zabbix_tg_notifier/templates/scenarios/sparky.yaml.j2",
+		"/home/spigell/coffeenet/ansible/roles/sparky_new/tasks/scenarios.yml",
+		"/home/spigell/coffeenet/ansible/workstations_home.yml",
+		"/home/spigell/coffeenet/ansible/roles/duty_zabbix_tg_notifier/templates/scenarios/sparky-setup/sparrowfile.j2",
+		"/home/spigell/coffeenet/ansible/roles/restream_VMs/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/masterhosts/main.yml",
+		"/home/spigell/coffeenet/ansible/group_vars/workstations-work/vagrant_services.yaml",
+		"/home/spigell/coffeenet/ansible/roles/restream_VMs/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream-VMs/tasks/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/restream_VMs/default/vagrant_services:.yml",
+		"/home/spigell/coffeenet/ansible/roles/gogs/defaults/main.yml",
+		"/home/spigell/coffeenet/ansible/roles/hosts_maker/templates/hosts_maker.service.j2",
+		"/home/spigell/coffeenet/ansible/group_vars/servers-infra/gogs.yml"
+	],
+	"find":
+	{
+		"height": 26.9461077844
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"wra",
+			"qq",
+			"vars",
+			"';",
+			"scenarios_settings.duty_zabbix_tg_notifier"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sparky.scenarios_settings"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "project.sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.9461077844
+	},
+	"input":
+	{
+		"height": 38.965034965
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 183.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 49.9001996008
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"rep",
+				"group_vars/masterhosts/repos_by_users.yml"
+			],
+			[
+				"host",
+				"hosts"
+			],
+			[
+				"wor",
+				"workstations_work.yml"
+			],
+			[
+				"gogs",
+				"roles/gogs/templates/gogs-default.yml.j2"
+			],
+			[
+				"gogs-ba",
+				"roles/gogs/templates/gogs-backup-default.service.j2"
+			],
+			[
+				"dant",
+				"roles/dante/templates/dante-default.yml.j2"
+			],
+			[
+				"shado",
+				"roles/shadowsocks/templates/shadowsocks-default.service.j2"
+			],
+			[
+				"sha",
+				"roles/shadowsocks/templates/shadowsocks-default.yml.j2"
+			],
+			[
+				"in",
+				"servers-infra.yml"
+			],
+			[
+				"repo",
+				"group_vars/masterhosts/repos_by_users.yml"
+			],
+			[
+				"restream-v",
+				"roles/restream-VMs/tasks/main.yml"
+			],
+			[
+				"master",
+				"masterhosts.yml"
+			],
+			[
+				"config",
+				"group_vars/masterhosts/configs_by_users.yml"
+			],
+			[
+				"add_var_log",
+				"roles/duty_helper/templates/scenarios/add_var_log/sparrowfile.j2"
+			],
+			[
+				"nginx_c",
+				"roles/duty_zabbix_tg_notifier/templates/scenarios/check_nginx_caches/sparrowfile.j2"
+			],
+			[
+				"nginx_",
+				"roles/duty_zabbix_tg_notifier/templates/scenarios/check_nginx_caches/sparrowfile.j2"
+			],
+			[
+				"app_",
+				"roles/gogs/templates/app_tomato.ini.j2"
+			],
+			[
+				"hosts",
+				"hosts"
+			],
+			[
+				"backu",
+				"roles/gogs/tasks/backup.yml"
+			],
+			[
+				"zabbix_ho",
+				"roles/zabbix_hosts_importer/tasks/main.yml"
+			],
+			[
+				"hosts_mak",
+				"roles/hosts_maker/tasks/main.yml"
+			],
+			[
+				"add_var",
+				"roles/duty_helper/templates/scenarios/add_var_log/sparrowfile.j2"
+			],
+			[
+				"hos",
+				"roles/hosts_maker/templates/hosts_maker.json.j2"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 505.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/.config/sublime-text-3/Packages/User/coffeenet.sublime-project"
+			]
+		],
+		"width": 384.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 318.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

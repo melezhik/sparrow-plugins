@@ -1,0 +1,7 @@
+    {
+       "name" : "nginx-example",
+       "version" : "0.1.0",
+       "description" : "simple nginx server installer for Ubuntu",
+       "url" : "https://github.com/melezhik/nginx-example.git"
+    }
+

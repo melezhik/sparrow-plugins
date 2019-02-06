@@ -1,0 +1,7 @@
+{
+  "name" : "net-ping",
+  "version" : "0.0.4",
+  "description" : "A simple wrapper around Net::Ping to identify if host is alive",
+  "url" : "https://github.com/melezhik/net-ping"
+}
+

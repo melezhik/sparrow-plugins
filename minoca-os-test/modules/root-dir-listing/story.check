@@ -1,0 +1,12 @@
+between: start end
+bin
+dev
+etc
+home
+lib
+mnt
+root
+tmp
+usr
+var
+

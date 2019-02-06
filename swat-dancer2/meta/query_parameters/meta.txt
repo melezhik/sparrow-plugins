@@ -1,0 +1,5 @@
+Dancer2 should be able
+to access named parameters
+via query_parameters->get() method
+
+

@@ -1,0 +1,9 @@
+generator: <<CODE
+!bash
+  footprint=$(config footprint)
+  if test "${footprint}"; then
+    echo 'within: ' "${footprint}"
+    echo 'regexp: .*'
+  fi
+CODE
+

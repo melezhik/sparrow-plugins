@@ -1,0 +1,6 @@
+{
+  "name" : "minoca-build",
+  "description" : "Minoca OS builder",
+  "version" : "0.1.9",
+  "url" : "https://github.com/melezhik/minoca-build"
+}

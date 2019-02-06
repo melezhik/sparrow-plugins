@@ -1,0 +1,7 @@
+{
+  "name" : "tg-message-sender",
+  "version" : "0.1.0",
+  "description" : "send messages to your telegram chat",
+  "category" : "misc",
+  "url" : "https://github.com/Spigell/tg-message-sender"
+}

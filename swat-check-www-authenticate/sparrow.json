@@ -1,0 +1,10 @@
+{
+
+  "name" : "swat-check-www-authenticate",
+  "description" : "Simple swat checker for http server return WWW-Authenticate: header",
+  "version" : "0.0.8",
+  "sparrow_version": "0.2.50",
+  "category" : "monitoring",
+  "plugin_type" : "swat",
+  "url" : "https://github.com/melezhik/swat-check-www-authenticate"
+}

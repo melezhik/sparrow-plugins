@@ -1,0 +1,7 @@
+{
+    "version": "2.0.1",
+    "name": "zabbix-hosts-by-alerts",
+    "description" : "get hosts with specified alert description",
+    "category" : "monitoring",
+    "url" : "https://github.com/Spigell/zabbix-hosts-by-alerts"
+}

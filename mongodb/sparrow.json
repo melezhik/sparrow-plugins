@@ -1,0 +1,6 @@
+{
+  "name" : "mongodb",
+  "version" : "0.0.2",
+  "description" : "Installs mongo db",
+  "url" : "https://github.com/melezhik/mongodb"
+}

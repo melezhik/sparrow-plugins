@@ -1,0 +1,6 @@
+{
+  "name" : "perl-harness-check",
+  "description" : "Run tests against Perl test harness report.",
+  "version" : "0.0.4",
+  "url" : "https://github.com/melezhik/perl-harness-check"
+}

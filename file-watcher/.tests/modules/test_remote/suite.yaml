@@ -1,0 +1,10 @@
+directory: ./.tests/tmp/main
+action: 'move'
+destination:
+  server: test.ru
+  user: test
+  directory: /tmp/moved
+  ssh_private_key: /home/test/.ssh/id_rsa
+conditions:
+  newer: '1 day'
+dry: true

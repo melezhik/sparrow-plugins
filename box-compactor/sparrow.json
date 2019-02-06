@@ -1,0 +1,7 @@
+{
+  "name" : "box-compactor",
+  "version" : "0.1.1",
+  "description" : "script for make smaller boxes before packaging",
+  "category" : "utilities",
+  "url" : "https://github.com/Spigell/box-compactor.git"
+}

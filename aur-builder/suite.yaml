@@ -1,0 +1,3 @@
+user: nobody
+build_root: /tmp/aur-build
+output: /tmp

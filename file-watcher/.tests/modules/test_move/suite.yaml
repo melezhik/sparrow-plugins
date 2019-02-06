@@ -1,0 +1,6 @@
+directory: ./.tests/tmp/main
+action: 'move'
+destination:
+  directory: ./.tests/tmp/moved
+conditions:
+  newer: '1 day'

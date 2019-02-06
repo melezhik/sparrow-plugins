@@ -1,0 +1,1 @@
+Checks packages statuses at MetaCPAN. A list of packages is taken from 02packages file.

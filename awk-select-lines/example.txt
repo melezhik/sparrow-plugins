@@ -1,0 +1,12 @@
+PAT1
+A
+B
+C
+PAT2
+PAT1
+a
+b
+c
+PAT2
+PAT1
+1

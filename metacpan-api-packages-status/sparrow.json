@@ -1,0 +1,6 @@
+{
+  "name" : "metacpan-api-packages-status",
+  "description" : "Checks packages statuses at MetaCPAN. A list of packages is taken from 02packages file",
+  "version" : "0.0.6",
+  "url" : "https://github.com/melezhik/metacpan-api-packages-status"
+}

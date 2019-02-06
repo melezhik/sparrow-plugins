@@ -1,0 +1,2 @@
+To access application config
+Use `config` method

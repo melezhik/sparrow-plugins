@@ -1,0 +1,9 @@
+{
+    "version": "v0.1.0",
+    "name" : "swat-mongodb-http",
+    "description": "swat smoke tests for mongodb http api",
+    "url" : "https://github.com/melezhik/swat-mongodb-http",
+    "plugin_type" : "swat",
+    "category" : "applications tests"
+}
+

@@ -1,0 +1,4 @@
+generator: <<CODE
+my $host = config()->{host};
+[ "<$host> is alive" ]
+CODE

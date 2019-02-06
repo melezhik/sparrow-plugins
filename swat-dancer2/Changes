@@ -1,0 +1,16 @@
+0.0.6 2016-02-24
+
+    this version works under 3ppm environment
+
+0.0.5 2016-02-24
+
+    pid_file could be overriden
+    port could be overriden
+
+
+0.0.4 2016-02-23
+
+    refactoring - run dancer app only once
+
+    made use of Net::EmptyPort to run on first available tcp port
+

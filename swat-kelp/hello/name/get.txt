@@ -1,0 +1,2 @@
+generator: [ "Hello ".(module_variable('name') || 'world') ]
+

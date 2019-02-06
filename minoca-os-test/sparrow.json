@@ -1,0 +1,7 @@
+{
+  "name" : "minoca-os-test",
+  "description" : "Run system tests against running Minoca OS",
+  "version" : "0.0.3",
+  "url" : "https://github.com/melezhik/minoca-os-test"
+}
+

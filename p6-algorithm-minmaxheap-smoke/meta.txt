@@ -1,0 +1,2 @@
+smoke tests for Algorithm::MinMaxHeap
+

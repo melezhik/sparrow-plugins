@@ -1,0 +1,5 @@
+Hi! This is minoca third party packages smoke tests.
+=============================================================
+* Verify that third party packages are installed successfully
+* Optionally run smoke tests for some packages
+

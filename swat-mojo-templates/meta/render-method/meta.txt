@@ -1,0 +1,5 @@
+"The renderer can be manually started by calling the method "render" 
+in Mojolicious::Controller"
+
+(quoted from http://mojolicious.org/perldoc/Mojolicious/Guides/Rendering)
+

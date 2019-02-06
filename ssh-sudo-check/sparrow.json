@@ -1,0 +1,6 @@
+{
+    "name" : "ssh-sudo-check",
+    "version" : "0.3.1",
+    "description": "Connects to remote server by ssh and checks if user gets listed in `sudoers' group. This effectively means user has a sudo access on this server.",
+    "url" : "https://github.com/melezhik/ssh-sudo-check"
+}

@@ -1,0 +1,25 @@
+define host {
+    host_name   testhost1
+    use             hosttemplate1
+    address                 10.0.0.1
+    host_groups                     +linux,all
+    contact_groups          +servicedesk
+    alias           testhost1
+    icon_image      redhat_icon.png
+}
+define service {
+    use     servtemplate1
+    host_name   testhost1
+    service_groups  +All
+    service_description  A Test Service
+}
+define host {
+    host_name   testhost2
+    use             hosttemplate2
+    address                 10.0.0.2
+    host_groups                     +linux,all
+    contact_groups          +servicedesk
+    alias           testhost2
+    icon_image      redhat_icon.png
+}
+

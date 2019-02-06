@@ -1,0 +1,11 @@
+200 OK
+
+within: {.*}
+
+regexp: "server_version":"(\S+?)"
+validator: [ capture()->[0],"server_version not null: ".(capture()->[0]) ] 
+
+
+#"app_name":"Yars","server_hostname":"Debian-jessie-amd64-netboot","server_url":"http://localhost:9001"}
+#
+# server_version":"1.15","app_name":"Yars","server_hostname":"Debian-jessie-amd64-netboot","server_url":"http://localhost:9001"}

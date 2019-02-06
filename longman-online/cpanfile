@@ -1,0 +1,2 @@
+requires 'HTML::Parser';
+

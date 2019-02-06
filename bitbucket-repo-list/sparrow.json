@@ -1,0 +1,6 @@
+{
+  "name" : "bitbucket-repo-list",
+  "version" : "0.0.4",
+  "description" : "List Bitbucket repositories. Pagination included! (:",
+  "url" : "https://github.com/melezhik/bitbucket-repo-list.git"
+}

@@ -1,0 +1,8 @@
+{
+  "name" : "swat-test",
+  "version" : "0.1.0",
+  "description" : "test swat plugin",
+  "plugin_type" : "swat",
+  "url" : "https://github.com/melezhik/swat-test"
+}
+

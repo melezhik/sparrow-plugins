@@ -1,0 +1,41 @@
+use v6;
+
+use Sparrowdo;
+
+set_spl %(
+
+    check-tomcat-deploy-dev => 'https://github.com/melezhik/check-tomcat-deploy.git'
+
+);
+
+#`[
+task_run  %(
+  task => 'install my packages',
+  plugin => 'package-generic',
+  parameters => %( list => 'nano' )
+);
+
+task_run  %(
+  task => 'setup git',
+  plugin => 'git-base',
+  parameters => %( email => 'melezhik@gmail.com',  name => "'Alexey Melezhik'" )
+);
+
+task_run  %(
+  task => 'setup nano',
+  plugin => 'nano-setup',
+  parameters => %( )
+);
+
+]
+
+task_run %(
+  task => 'verify tomcat deploy',
+  plugin => 'check-tomcat-deploy',
+  parameters => %(
+    tomcat-version => '7',
+    war => 'guess-a-number.war',
+    lines => 500,
+   )
+);
+

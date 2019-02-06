@@ -1,0 +1,6 @@
+{
+  "name" : "web-service-fake-smoke",
+  "description" : "Smoke tests for Web Service Faker",
+  "version" : "0.0.3",
+  "url" : "https://github.com/melezhik/web-service-fake-smoke"
+}

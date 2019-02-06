@@ -1,0 +1,7 @@
+
+"The renderer can be manually started by calling the method "render" in Mojolicious::Controller, 
+but that's usually not necessary, because it will get automatically called if nothing has been rendered 
+after the router finished its work. 
+This also means you can have routes pointing only to templates without actual actions."
+
+(quoted from http://mojolicious.org/perldoc/Mojolicious/Guides/Rendering )

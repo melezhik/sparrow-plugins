@@ -1,0 +1,2 @@
+Simple swat checker for http server return WWW-Authenticate: header.
+

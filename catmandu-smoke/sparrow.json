@@ -1,0 +1,6 @@
+{
+  "name" : "catmandu-smoke",
+  "description" : "Smoke tests for Catmandu",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/catmandu-smoke"
+}

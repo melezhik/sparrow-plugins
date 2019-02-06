@@ -1,0 +1,118 @@
+acpica - 20140424 - Utilities for managing system platform ACPI data.
+apache - 2.4.20 - Apache web server.
+autoconf - 2.64 - GNU auto-configuration scripts.
+autogen - 5.18.10 - GNU Autogen program generator.
+automake - 1.11.1 - GNU auto-Makefile scripts.
+awk - 20121220 - awk is a small text manipulation utility and programming language
+ written by Brian Kernighan.
+bash - 4.3.30 - GNU Bourne Again shell.
+binutils - 2.23 - A GNU collection of binary utilities
+bison - 3.0.2 - Bison is a general-purpose parser generator that converts an  annotated
+ context-free grammar into a deterministic LR or generalized LR (GLR)
+ parser employing LALR(1) parser tables.
+boost - 1_59_0 - Boost provides portable C++ libraries.
+byacc - 20141128 - Berkeley YACC
+bzip2 - 1.0.6 - bzip2 compression/decompression utility and library.
+ca-certificates - 20160516 - Root Certificates from Mozilla.
+cmake - 3.5.2 - CMake is a compiler-independent build process management tool.
+curl - 7.41.0 - cURL utility and library for accessing URLs.
+dash - 0.5.8 - Dash is a Bourne-compatible shell.
+dejagnu - 1.6 - DejaGNU test framework.
+dmake - 4.12.2.2 - make alternative
+dropbear - 2016.74 - Dropbear SSH client and server.
+emacs - 24.5 - GNU emacs text editor.
+expat - 2.1.0 - The expat library assists in parsing XML.  functions.
+expect - 5.45 - Expect test framework.
+flex - 2.5.39 - Flex is a free implementation of the well-known Lex program for  lexical
+ analysis.
+gcc - 4.9.2 - Native GNU C compiler.
+gettext - 0.19.8.1 - GNU gettext utility.
+git - 2.3.5 - Git version control suite.
+gnupg - 2.1.15 - GNU privacy guard.
+gnutls - 3.5.3 - GNU TLS suite.
+guile - 2.0.12 - GNU Guile programming language.
+gzip - 1.6 - GNU gzip utilities for working with with compressed files.
+less - 481 - Less screen paging utility.
+libapr - 1.5.1 - Apache Portable Runtime Library
+libaprutil - 1.5.4 - Apache Portable Runtime library utilities library
+libassuan - 2.4.3 - GNUPG assuan IPC library
+libatomic - 7.4.4 - Atomic operations library.
+libcroco - 0.6.11 - libcroco CSS2 parsing library.
+libevent - 2.0.22 - Event library.
+libffi - 3.2.1 - Foreign Function Interface library.
+libgc - 7.4.4 - Boehm garbage collection library.
+libgcc - 4.9.2 - GCC Runtime library.
+libgcrypt - 1.7.3 - GNUPG error library
+libgdbm - 1.12 - GNU database library functions.
+libglib - 2.49.6 - GNOME glib library.
+libgmp - 4.3.2 - GMP is a free library for arbitrary precision arithmetic,  operating on
+ signed integers, rational numbers, and floating point numbers.
+libgpg-error - 1.24 - GNUPG error library
+libgpgme - 1.6.0 - GPG application integration library.
+libiconv - 1.14 - GNU iconv library for converting between character sets.
+libidn - 1.33 - Internationalized string handling based on IETF IDNA specs.
+libksba - 1.3.5 - GNUPG certificate handling library
+libmbedtls - 1.3.10 - mbedtls (formerly PolarSSL) library.
+libmpc - 0.8.1 - Gnu MPC is a C library for the arithmetic of complex numbers with
+ arbitrarily high precision and correct rounding of the result.
+libmpfr - 2.4.2 - The MPFR library is a C library for multiple-precision  floating-point
+ computations with correct rounding.  MPFR is based on the GMP multiple-
+ precision library.
+libncurses - 5.9 - ncurses library for working with terminals.
+libnettle - 3.2 - Nettle cryptographic library.
+libnpth - 1.2 - GNUPG new threading library.
+libopenssl - 1.0.2h - The OpenSSL library implements support for Secure Sockets Layer  (SSL
+ v2/v3) and Transport Layer Security (TLS) protocols as well as a set of
+ full-strength general purpose cryptographic functions.
+libpcre - 8.39 - Perl Compatible Regular Expressions library.
+libpcre2 - 10.21 - Perl Compatible Regular Expressions library, version 2.
+libreadline - 6.3 - The GNU readline library assists programs in line-editing  functions.
+libssh2 - 1.5.0 - SSH2 support library.
+libtasn1 - 4.9 - ASN.1 processing library.
+libtool - 2.2.8 - GNU libtool scripts.
+libunistring - 0.9.6 - GNU Unicode string library.
+libuv - 1.9.1 - Event abstraction library.
+libxml2 - 2.9.4 - XML parsing library.
+libz - 1.2.8 - ZLib compression library.
+lua - 5.3.3 - Lua scripting language.
+m4 - 1.4.17 - GNU M4 macro processor.
+make - 3.82 - GNU Make examines the timestamps on a set of interdependent files,  and
+ if necessary issues commands to bring them up-to-date.
+nano - 2.2.6 - Nano is a small and very friendly text editor.
+nginx - 1.10.1 - Nginx web server.
+ninja - 1.7.1 - Ninja build assembler.
+nodejs - 4.5.0 - Node.js programming environment.
+openldap - 2.4.44 - Open LDAP server and client.
+openssh - 6.7p1 - Secure rlogin/rsh/rcp/telnet replacement (OpenSSH) Ssh  (Secure Shell) is
+ a program for logging into a remote machine and for  executing commands
+ on a remote machine. It provides secure encrypted  communications between
+ two untrusted hosts over an insecure network.  X11 connections and
+ arbitrary TCP/IP ports can also be forwarded over the  secure channel. It
+ is intended as a replacement for rlogin, rsh and rcp, and  can be used to
+ provide applications with a secure communication channel.
+opkg - 0.2.4 - opkg is a lightweight package management system.
+p11kit - 0.23.2 - PKCS#11 module kit.
+patch - 2.7 - The GNU patch utility applies diffs to a file/directory structure.
+perl - 5.20.1 - Perl is an interpreted scripting language.
+php - 7.0.9 - PHP scripting language.
+pinentry - 0.9.7 - GNUPG pinentry tool.
+pkgconfig - 0.29.1 - Package configuration helper utility.
+postgresql - 9.5.4 - Postgresql database.
+python-pip - 8.1.2 - Pip Installs Packages is a tool to easily install Python packages.
+python-setuptools - 23.0.0 - Python package management utility.
+python2 - 2.7.11 - Python is an interpreted scripting language.
+rsync - 3.1.2 - rsync remote file sync utility.
+ruby - 2.3.1 - Ruby is an interpreted scripting language.
+screen - 4.4.0 - GNU screen utility.
+sqlite - 3080500 - The SQLite library contains a lightweight SQL database.
+subversion - 1.8.11 - Subversion source control system
+tar - 1.27.1 - GNU tar (tape archive) utility.
+tcl - 8.6.5 - Tcl scripting language.
+tmux - 2.2 - Terminal multiplexing utility.
+unbound - 1.5.9 - DNS resolver library.
+vim - 7.4 - Vi-style editor.
+vttest - 20140305 - vttest is a utility that tests compliance of VT terminal emulators.
+wget - 1.15 - wget is a utility that can fetch remote files from a web server.
+xz - 5.2.1 - xz compression utility and library.
+zsh - 5.2 - Z shell.
+

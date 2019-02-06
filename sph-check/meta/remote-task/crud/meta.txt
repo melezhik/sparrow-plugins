@@ -1,0 +1,13 @@
+user should be able 
+to do following actions 
+with remote tasks:
+
+* upload
+* load ini data
+* list
+* share / hide
+* show meta
+* remove
+* list
+ 
+

@@ -1,0 +1,1 @@
+rsync -z --remove-source-files -e ssh -F /tmp/config ./.tests/tmp/main/file_to_move.txt test@test.ru:/tmp/moved/

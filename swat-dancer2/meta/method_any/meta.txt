@@ -1,0 +1,4 @@
+Dancer2 should be able to
+Have routes to accept ANY http verb
+For example get and post
+

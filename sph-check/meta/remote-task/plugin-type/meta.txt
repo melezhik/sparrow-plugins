@@ -1,0 +1,4 @@
+user should be able change plugin type for remote task
+
+ 
+

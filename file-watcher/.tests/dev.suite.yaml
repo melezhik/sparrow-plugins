@@ -1,0 +1,6 @@
+tests: 
+  - test_remote
+  - test_move
+  - test_copy
+  - test_delete
+  - test_no_files

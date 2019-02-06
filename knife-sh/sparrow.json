@@ -1,0 +1,7 @@
+{
+  "name" : "knife-sh",
+  "version" : "0.2.1",
+  "description" : "wrapper for knife-sh",
+  "category" : "utilities",
+  "url" : "https://github.com/Spigell/knife-sh"
+}

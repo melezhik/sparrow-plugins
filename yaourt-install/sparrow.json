@@ -1,0 +1,7 @@
+{
+  "name" : "yaourt-install",
+  "version" : "0.1.0",
+  "description" : "install yaourt for archlinux",
+  "category" : "utilities",
+  "url" : "https://github.com/Spigell/yaourt-install.git"
+}

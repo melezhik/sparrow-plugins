@@ -1,0 +1,7 @@
+{
+    "version": "0.1.5",
+    "name": "vagrant-vbox-importer",
+    "description" : "Add vagrant user and repackage your vbox into vagrant box",
+	"category" : "utilities",
+    "url" : "https://github.com/Spigell/vagrant-vbox-importer"
+}

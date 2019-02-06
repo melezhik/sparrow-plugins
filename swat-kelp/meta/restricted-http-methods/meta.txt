@@ -1,0 +1,4 @@
+Restrict HTTP methods
+
+Make a route only catch a specific HTTP method
+

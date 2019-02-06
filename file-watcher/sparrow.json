@@ -1,0 +1,7 @@
+{
+  "name" : "file-watcher",
+  "version" : "0.1.1",
+  "description" : "script for automatically manage files in directory",
+  "category" : "utilities",
+  "url" : "https://github.com/Spigell/files-watcher"
+}

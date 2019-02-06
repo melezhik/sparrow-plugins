@@ -1,0 +1,9 @@
+{
+    "version": "0.0.9",
+    "name" : "swat-httpd-cookbook",
+    "description": "swat smoke tests for httpd-cookbook",
+    "url" : "https://github.com/melezhik/swat-httpd-cookbook",
+    "plugin_type" : "swat",
+    "category" : "chef cookbooks tests"
+}
+

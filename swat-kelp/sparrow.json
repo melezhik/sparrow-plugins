@@ -1,0 +1,9 @@
+{
+    "version": "0.1.1",
+    "name" : "swat-kelp",
+    "description": "swat regression tests for kelp framework",
+    "url" : "https://github.com/melezhik/swat-kelp",
+    "category" : "cpan modules tests",
+    "plugin_type" : "swat"
+}
+

@@ -1,0 +1,5 @@
+generator: [ module_variable('auth') ? '200 OK' : '401' ]
+generator: module_variable('auth') ? \
+    [ 'Only authenticated users should be able to see this page' ] : \ 
+    [ 'You need to log in to continue' ] \
+

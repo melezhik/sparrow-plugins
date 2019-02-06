@@ -1,0 +1,4 @@
+begin:
+generator: module_variable('list')
+end:
+

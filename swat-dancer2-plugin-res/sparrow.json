@@ -1,0 +1,10 @@
+{
+    "version": "0.0.2",
+    "name" : "swat-dancer2-plugin-res",
+    "description": "swat intergarion tests for Dancer2::Plugin::Res - Dancer2 add-on for setting status/response",
+    "url" : "https://github.com/melezhik/swat-dancer2-plugin-res",
+    "plugin_type" : "swat",
+    "category" : "cpan modules tests"
+
+}
+

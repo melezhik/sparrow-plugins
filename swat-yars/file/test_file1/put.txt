@@ -1,0 +1,8 @@
+201 Created
+
+begin:
+    :blank_line
+    regexp: ^ok
+end:
+
+

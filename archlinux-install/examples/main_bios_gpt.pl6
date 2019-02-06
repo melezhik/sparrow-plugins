@@ -1,0 +1,10 @@
+EVALFILE 'examples/prepare_raw_bios_gpt.pl6';
+EVALFILE 'examples/mirrorlist.pl6';
+EVALFILE 'examples/install.pl6';
+EVALFILE 'examples/install_grub_bios.pl6';
+EVALFILE 'examples/set_hostname.pl6';
+EVALFILE 'examples/set_rootpw.pl6';
+EVALFILE 'examples/set_timezone.pl6';
+EVALFILE 'examples/set_locale.pl6';
+EVALFILE 'examples/install_packages.pl6';
+EVALFILE 'examples/enable_services.pl6';

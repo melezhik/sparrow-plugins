@@ -1,0 +1,16 @@
+200 OK
+
+generator: <<CODE
+
+    my $m = module_variable('name');
+    my $v = module_variable('wanted_version');
+    my $c = module_variable('wanted_category');
+    my @g;
+
+    push @g, "plugin: $m";
+    push @g, "version: $v" if $v;
+    push @g, "category: $c" if $c;
+
+    [@g]
+
+CODE

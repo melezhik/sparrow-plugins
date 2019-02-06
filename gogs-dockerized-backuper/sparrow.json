@@ -1,0 +1,7 @@
+{
+  "name" : "gogs-dockerized-backuper",
+  "version" : "0.1.2",
+  "description" : "simple script for easy backup for dockerized gogs",
+  "category" : "utilities",
+  "url" : "https://github.com/Spigell/gogs-backuper.git"
+}

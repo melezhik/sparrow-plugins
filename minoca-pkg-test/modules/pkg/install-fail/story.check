@@ -1,0 +1,5 @@
+generator: <<G
+!bash
+pkg=$(story_var 'pkg')
+echo Cannot install package $pkg.
+G

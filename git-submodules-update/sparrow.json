@@ -1,0 +1,8 @@
+{
+  "name" : "git-submodules-update",
+  "description" : "recursively update git submodules",
+  "version" : "0.1.8",
+  "url" : "https://github.com/melezhik/git-submodules-update.git",
+  "category": "utilities"
+}
+

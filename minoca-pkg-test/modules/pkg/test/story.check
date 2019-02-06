@@ -1,0 +1,10 @@
+generator: <<G
+
+my $pkg = story_var('pkg');
+my $smoke_test = config()->{'smoke_test'};
+
+my $output = $smoke_test->{$pkg}->{'output'};
+$output ? [ $output ] : []
+
+G
+

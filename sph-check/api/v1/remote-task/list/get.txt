@@ -1,0 +1,6 @@
+#code: note explain module_variable('list')
+
+begin:
+generator: module_variable('list')
+end:
+

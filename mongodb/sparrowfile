@@ -1,0 +1,25 @@
+use v6;
+
+use Sparrowdo;
+
+set_spl %(
+
+  mongodb => 'https://github.com/melezhik/mongodb.git'
+);
+
+task_run %(
+  task => 'install mongo db',
+  plugin => 'mongodb',
+  parameters => %()
+);
+
+task_run %(
+  task => 'mongodb health check',
+  plugin => 'proc-validate',
+  parameters => %( 
+    pid_file => '/var/run/mongodb/mongod.pid',
+    footprint => 'mongod\s+-f'
+  )
+);
+
+

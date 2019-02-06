@@ -1,0 +1,4 @@
+200 OK
+regexp: Server: Apache\/(\S+) (\S+)
+validator: [ capture()->[0], "server version: ".(capture()->[0]) ]
+validator: [ capture()->[1], "server OS footprint: ".(capture()->[1]) ]

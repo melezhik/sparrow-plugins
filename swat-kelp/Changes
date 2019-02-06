@@ -1,0 +1,17 @@
+0.0.12 2016-02-24
+
+    "double nohub" bugfix 
+
+0.0.11 2016-02-24
+
+    pid_file could be overriden
+    port could be overriden
+
+0.0.10 2016-02-23
+
+    added Kelp dependency to cpanfile
+
+0.0.9 2016-02-23
+
+    made use of Net::EmptyPort to run on first available tcp port
+

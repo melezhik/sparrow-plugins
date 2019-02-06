@@ -1,0 +1,6 @@
+directory: ./.tests/tmp/main
+action: 'copy'
+destination:
+  directory: ./.tests/tmp/copied
+conditions:
+  newer: '2 day'

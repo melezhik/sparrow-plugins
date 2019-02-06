@@ -1,0 +1,20 @@
+regexp: target (created|deleted)
+
+generator: <<CODE
+
+!bash
+if ! test -z $(config content); then
+  echo set target content    
+fi
+
+if ! test -z $(config owner); then
+  echo set target owner    
+fi
+
+if ! test -z $(config group); then
+  echo set target group    
+fi
+
+CODE
+
+
