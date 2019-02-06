@@ -1,7 +1,0 @@
-# Package perl (5.20.1) installed in root is up to date.
-# install sqlite - 3080500
-# Installing sqlite (3080500) on root.
-# Downloading http://www.minocacorp.com/packages/0.3/i686/main/sqlite_3080500_minoca-i686.ipk.
-# Configuring sqlite.
-
-regexp: (installed in root is up to date|Installing\s)

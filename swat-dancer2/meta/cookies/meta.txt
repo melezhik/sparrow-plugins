@@ -1,4 +1,0 @@
-Dancer2 should be able 
-to acceprt users
-cookie
-

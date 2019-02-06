@@ -1,5 +1,0 @@
-generator: [ module_variable('auth') ? '200 OK' : '403 Forbidden' ]
-generator: module_variable('auth') ? \
-    [ 'Only management can see this' ] : \ 
-    [ qq{Sorry, you're not allowed to access that page} ] \
-

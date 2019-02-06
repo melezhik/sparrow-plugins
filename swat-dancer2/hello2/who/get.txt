@@ -1,3 +1,0 @@
-200 OK
-generator: [ "Hi2 there ".( module_variable('name') )]
-

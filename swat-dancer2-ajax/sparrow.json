@@ -1,9 +1,0 @@
-{
-    "version": "0.0.1",
-    "name" : "swat-dancer2-ajax",
-    "description": "swat intergration tests for Dancer2 AJAX capabilities",
-    "url" : "https://github.com/melezhik/swat-dancer2-ajax",
-    "plugin_type" : "swat",
-    "category" : "cpan modules tests"
-}
-

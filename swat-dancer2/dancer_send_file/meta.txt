@@ -1,3 +1,0 @@
-Dancer2 should be able
-to send static file
-

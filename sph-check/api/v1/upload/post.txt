@@ -1,4 +1,0 @@
-200 OK
-generator: \ 
-    my $v = module_variable('wanted_version'); \
-    [   "plugin ".(module_variable('name'))." version $v upload OK"  ] \

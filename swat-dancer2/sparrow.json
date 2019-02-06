@@ -1,9 +1,0 @@
-{
-    "version": "0.0.6.7",
-    "name" : "swat-dancer2",
-    "description": "swat regression tests for dancer2 framework",
-    "url" : "https://github.com/melezhik/swat-dancer2",
-    "category" : "cpan modules tests",
-    "plugin_type" : "swat"
-}
-

@@ -1,5 +1,0 @@
-Dancer2 should be able
-to access named parameters
-via route_parameters->get() method
-
-

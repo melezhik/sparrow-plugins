@@ -1,5 +1,0 @@
-200 OK
-Content-Type: application/x-gzip
-Accept-Ranges: bytes
-Content-Length: 508
-

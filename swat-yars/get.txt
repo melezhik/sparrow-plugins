@@ -1,3 +1,0 @@
-200 OK
-welcome to Yars
-

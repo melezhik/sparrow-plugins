@@ -1,4 +1,0 @@
-200 OK
-This is appname: helicopter
-This is foo: bar
-

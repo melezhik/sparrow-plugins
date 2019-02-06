@@ -1,2 +1,0 @@
-regexp: HTTP/1.1 302 Found|401 Unauthorized
-regexp: Location: https://login.microsoftonline.com|WWW-Authenticate: Bearer realm="

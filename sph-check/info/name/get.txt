@@ -1,3 +1,0 @@
-200 OK
-generator: module_variable('wanted_lines') || []
-generator: [ module_variable('name') ]

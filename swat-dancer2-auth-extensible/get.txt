@@ -1,3 +1,0 @@
-200 OK
-This is a public page. Everyone can see it.
-

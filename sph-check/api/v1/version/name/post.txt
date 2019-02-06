@@ -1,3 +1,0 @@
-200 OK
-
-generator: [ module_variable('name')." version set to ".module_variable('version')." OK" ]

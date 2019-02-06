@@ -1,9 +1,0 @@
-{
-    "version": "0.0.2.3",
-    "name" : "swat-yars",
-    "description": "swat smoke tests for YARS archive server",
-    "url" : "https://github.com/melezhik/swat-yars",
-    "category" : "applications tests",
-    "plugin_type" : "swat"
-}
-

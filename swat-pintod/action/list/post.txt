@@ -1,2 +1,0 @@
-200 OK
-generator: use pinto::swat; pinto::swat->pinto_status_ok();

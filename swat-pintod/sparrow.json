@@ -1,8 +1,0 @@
-{
-    "version": "0.1.0",
-    "name" : "swat-pintod",
-    "description": "swat smoke tests for pinto remote API",
-    "url" : "https://github.com/melezhik/swat-pintod",
-    "plugin_type" : "swat"
-}
-

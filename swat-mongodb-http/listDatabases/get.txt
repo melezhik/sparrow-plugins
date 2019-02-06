@@ -1,3 +1,0 @@
-200 OK
-generator: status_ok()
-regexp: databases"\s+:\s+\[ 

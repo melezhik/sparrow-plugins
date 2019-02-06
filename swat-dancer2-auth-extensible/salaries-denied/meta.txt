@@ -1,4 +1,0 @@
-Marketing dept 
-should have no access 
-to salaries page
-
