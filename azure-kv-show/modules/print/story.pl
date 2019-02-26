@@ -5,6 +5,7 @@ use Text::Table::Tiny qw/ generate_table /;
 
 my @items = @{story_var("items")};
 my $dir = story_var("dir");
+my $view = story_var("view") || "lines";
 
 my @rows;
 
@@ -32,6 +33,13 @@ for my $i (@items) {
 
 }
 
+if ($view eq "table") {
+  print generate_table(rows => \@rows, header_row => 1, separate_rows => 1);
+} else {
 
-print generate_table(rows => \@rows, header_row => 1, separate_rows => 1);
+  shift @rows;
 
+  for my $i (@rows) {
+    print "$i->[0]:\t$i->[1]\n";
+  }  
+}  

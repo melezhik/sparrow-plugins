@@ -24,6 +24,12 @@ Tomtit/Sparrowdo
       secret  => ( "password", "login" ) # secret names
     )
 
+Controlling output format:
+
+    view => "table" # dump in table format
+
+By default output format is line by line.
+
 Sparrow cli:
 
     # Dump secret `password` of key vault ID `Stash`

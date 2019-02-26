@@ -47,6 +47,7 @@ run_story(
   { 
     items => \@items,
     dir => cache_dir(),
+    view => config()->{view}
   } 
 );
 
