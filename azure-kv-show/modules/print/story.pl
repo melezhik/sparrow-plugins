@@ -5,6 +5,7 @@ use Text::Table::Tiny qw/ generate_table /;
 
 my @items = @{story_var("items")};
 my $dir = story_var("dir");
+my $kv = story_var("kv");
 my $view = story_var("view") || "lines";
 
 my @rows;
@@ -33,8 +34,13 @@ for my $i (@items) {
 
 }
 
+print "key vault [$kv] secrets\n";
+print "========================\n";
+
 if ($view eq "table") {
+
   print generate_table(rows => \@rows, header_row => 1, separate_rows => 1);
+
 } else {
 
   shift @rows;

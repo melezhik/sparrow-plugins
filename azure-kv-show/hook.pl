@@ -45,9 +45,10 @@ for my $i (@items){
 run_story(
   "print", 
   { 
+    kv => $kv,
     items => \@items,
     dir => cache_dir(),
-    view => config()->{view}
+    view => config()->{view} || "lines"
   } 
 );
 
