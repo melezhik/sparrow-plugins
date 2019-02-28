@@ -11,6 +11,7 @@ my $view = story_var("view") || "lines";
 my @rows;
 
 push @rows, ['Name', 'Value'];
+my %state;
 
 for my $i (@items) {
 
@@ -24,7 +25,9 @@ for my $i (@items) {
 
    my $data = decode_json($s);
 
-   push @rows, [ $i, $data->{value} ]
+   push @rows, [ $i, $data->{value} ];
+
+   $state{$i} = $data->{value}; 
 
   } else {
 
@@ -50,3 +53,5 @@ if ($view eq "table") {
     print "$i->[0]:\t$i->[1]\n";
   }  
 }  
+
+update_state(\%state);
