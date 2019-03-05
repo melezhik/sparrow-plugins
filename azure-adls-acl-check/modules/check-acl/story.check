@@ -2,9 +2,9 @@ generator: <<CODE
 
   for my $c (@{config()->{list}}){
 
-    print "between: {'[$c->{path}]'} {'[$c->{path}]'}\n";
+    print "between: {'[", $c->{path}, "]'} {'[", $c->{path}, "]'}\n";
       for my $r (@{$c->{check}}){
-        print 'regexp: ^^ "', $r, '" $$', "\n"
+        print 'regexp: ^^ "', $r, '" $$', "\n";
       }
     print "end:\n"
 
@@ -12,3 +12,4 @@ generator: <<CODE
 
   
 CODE
+end:

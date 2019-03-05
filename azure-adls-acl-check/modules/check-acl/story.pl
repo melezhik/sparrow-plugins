@@ -18,8 +18,10 @@ for my $c (@{config()->{list}}){
    my $data = decode_json($s);
 
    print "[$c->{path}]\n";
+   #print "[start]\n"; 
    print join "\n", @{$data->{entries}};
    print "\n[$c->{path}]\n";
+   #print "\nend\n"; 
 
   }
 
