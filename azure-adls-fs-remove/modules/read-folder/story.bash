@@ -2,8 +2,11 @@
 
 adls=$(config adls)
 
-set -x
+#set -x
+
 set -e
 
-az dls fs list --account $adls --path $path -o json > $output
+echo "[$c] load folder $path ..."
+
+az dls fs list --account $adls --path $path -o json > $basedir/$c.json
 
