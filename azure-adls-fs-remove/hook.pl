@@ -1,5 +1,3 @@
-use JSON;
-
 my $path = config()->{path};
 
 my $c = 1;
