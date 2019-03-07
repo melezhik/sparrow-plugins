@@ -4,7 +4,7 @@ adls=$(config adls)
 
 set -x
 
-az dls fs access show --path "${path}"  -n "${adls}" -o json > $output
+az dls fs access show --path "${path}"  -n "${adls}" -o json > $file
 
 echo
 

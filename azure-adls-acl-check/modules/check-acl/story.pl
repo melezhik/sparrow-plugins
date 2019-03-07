@@ -1,29 +1,18 @@
 use JSON;
 
 my $i=0;
-my $dir = story_var("basedir");
 
-for my $c (@{config()->{list}}){
+my $file = story_var("file");
 
-  $i++;
+open(my $fh, $file) or die "can't open file file to read: $!";
 
-  my $file = "$dir/$i.json";
+my $s = join "", <$fh>;
 
-  if ( open(my $fh, $file) ){
+close $fh;
 
-   my $s = join "", <$fh>;
+my $data = decode_json($s);
 
-   close $fh;
+print join "\n", @{$data->{entries}};
 
-   my $data = decode_json($s);
 
-   print "[$c->{path}]\n";
-   #print "[start]\n"; 
-   print join "\n", @{$data->{entries}};
-   print "\n[$c->{path}]\n";
-   #print "\nend\n"; 
-
-  }
-
-}
 
