@@ -12,7 +12,7 @@ Tomtit/Sparrowdo
 
     # Lint files that modified in terms of git
 
-    task-run "lint modified files", "yaml-lint";
+    task-run "lint git modified files", "yaml-lint";
 
     # Lint files by path
 
