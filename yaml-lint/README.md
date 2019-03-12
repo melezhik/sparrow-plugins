@@ -2,6 +2,12 @@
 
 Lint yaml files.
 
+Whenever you change your yaml files in git, lint them through yaml python module.
+
+It's convenient tool when you edit yaml files as yaml format is kinda fragile and easy to break.
+
+Yaml lint picks up all the git `A` or `M` files and run yaml linter for them.
+
 # INSTALL
 
     $ sparrow plg install yaml-lint
