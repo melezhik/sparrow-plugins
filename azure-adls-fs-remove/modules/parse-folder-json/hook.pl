@@ -2,6 +2,7 @@ use JSON;
 
 my $basedir = story_var("basedir");
 my $c = story_var("c");
+my $dir = story_var("dir");
 my $dry_run = config()->{dry_run};
 
 my $file = "$basedir/$c.json";
@@ -23,6 +24,8 @@ my $state = get_state();
 
 #set_stdout(Dumper($data));
 
+my $sub_folders_cnt = 0;
+
 for my $i (@$data) {
 
 
@@ -30,15 +33,15 @@ for my $i (@$data) {
 
     $c++;
 
-    #set_stdout("[$c] ".($i->{"name"}). "...");
+    $sub_folders_cnt++;
 
-    set_stdout("add dir $i->{name} ...");
+    set_stdout("add dir $i->{name}");
 
     push @{$state->{dirs}}, $i->{"name"};
 
     run_story("read-folder", { basedir =>  $basedir, path => $i->{name}, c => $c });    
 
-    run_story("parse-folder-json", { basedir =>  $basedir, c => $c });
+    run_story("parse-folder-json", { basedir =>  $basedir, c => $c, dir => $i->{"name"} });
   
   }
 
@@ -57,6 +60,8 @@ for my $i (@$data) {
   }
 
 }
+
+run_story("remove-fs", { path => $dir }) unless $sub_folders_cnt;
 
 update_state($state);
 
