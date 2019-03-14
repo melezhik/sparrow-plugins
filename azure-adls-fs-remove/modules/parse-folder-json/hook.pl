@@ -9,8 +9,6 @@ my $file = "$basedir/$c.json";
 
 open(my $fh, $file) or die "$!";
 
-#set_stdout "processing $file ...";
-
 my $s = join "", <$fh>;
 
 close $fh;
@@ -18,13 +16,6 @@ close $fh;
 unlink $file;
 
 my $data = decode_json($s);
-my $state = get_state();
-
-#use Data::Dumper;
-
-#set_stdout(Dumper($data));
-
-my $sub_folders_cnt = 0;
 
 for my $i (@$data) {
 
@@ -33,11 +24,7 @@ for my $i (@$data) {
 
     $c++;
 
-    $sub_folders_cnt++;
-
     set_stdout("add dir $i->{name}");
-
-    push @{$state->{dirs}}, $i->{"name"};
 
     run_story("read-folder", { basedir =>  $basedir, path => $i->{name}, c => $c });    
 
@@ -61,8 +48,7 @@ for my $i (@$data) {
 
 }
 
-run_story("remove-fs", { path => $dir }) unless $sub_folders_cnt;
+run_story("remove-fs", { path => $dir });
 
-update_state($state);
 
 
