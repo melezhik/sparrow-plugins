@@ -15,6 +15,11 @@ Tomtit/Sparrowdo
       path => "/foo/bar" # path to adls folder
     )
 
+Dry run mode.
+
+Only shows would it do:
+
+    dry_run => True
 
 # Requirements
 
