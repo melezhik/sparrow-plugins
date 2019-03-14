@@ -2,6 +2,7 @@ use JSON;
 
 my $basedir = story_var("basedir");
 my $c = story_var("c");
+my $dry_run = config()->{dry_run};
 
 my $file = "$basedir/$c.json";
 
@@ -43,9 +44,15 @@ for my $i (@$data) {
 
   if ($i->{"type"} eq "FILE"){
 
-    set_stdout("add file $i->{name} ...");
+    if ($dry_run) {
 
-    push @{$state->{files}}, $i->{"name"};
+      set_stdout("would remove $i->{name}");
+
+    } else {
+
+      run_story("remove-fs", { path => $i->{name} });
+    }
+
 
   }
 
