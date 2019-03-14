@@ -13,6 +13,8 @@ my $s = join "", <$fh>;
 
 close $fh;
 
+unlink $file;
+
 my $data = decode_json($s);
 my $state = get_state();
 
