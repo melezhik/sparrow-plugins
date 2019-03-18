@@ -1,4 +1,5 @@
 my $path = config()->{path};
+my $dry_run = config()->{dry_run};
 
 my $c = 1;
 

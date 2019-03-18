@@ -16,7 +16,7 @@ else
   echo "$path removal [FAIL] - see delete.log for details"
   echo "$path removal [FAIL]" >> delete.log
 
-  if test -z "${ignore_errors}"; then
+  if test "${ignore_errors}" = "0"; then
     exit 2;
   fi
 
