@@ -4,6 +4,7 @@ my $basedir = story_var("basedir");
 my $c = story_var("c");
 my $dir = story_var("dir");
 my $dry_run = config()->{dry_run};
+my $skip = config()->{skip};
 
 my $remove_dir = config()->{remove_dir};
 
@@ -23,6 +24,13 @@ for my $i (@$data) {
 
 
   if ($i->{"type"} eq "DIRECTORY"){
+
+    if ($skip){
+
+      set_stdout("skip dir $i->{name}");
+      next if $i->{name} =~ /$skip/;
+
+    }
 
     $c++;
 

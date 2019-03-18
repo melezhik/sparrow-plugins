@@ -15,15 +15,21 @@ Tomtit/Sparrowdo
       path => "/foo/bar" # path to adls folder
     )
 
-Dry run mode.
+## Dry run mode.
 
 Only shows would it do:
 
     dry_run => True
 
+Skip some pathes
+
+To skip pathes from removal use `skip` option, this should be Perl5 regexp:
+
+    skip => "foo.*" # to skip anything containing foo
+
 # Requirements
 
-az cli 
+az cli
 
 # Author
 
