@@ -5,6 +5,8 @@ my $c = story_var("c");
 my $dir = story_var("dir");
 my $dry_run = config()->{dry_run};
 
+my $remove_dir = config()->{remove_dir};
+
 my $file = "$basedir/$c.json";
 
 open(my $fh, $file) or die "$!";
@@ -28,7 +30,7 @@ for my $i (@$data) {
 
     run_story("read-folder", { basedir =>  $basedir, path => $i->{name}, c => $c });    
 
-    run_story("parse-folder-json", { basedir =>  $basedir, c => $c, dir => $i->{"name"} });
+    run_story("parse-folder-json", { basedir =>  $basedir, c => $c, dir => $i->{"name"}, remove_dir => 1  });
   
   }
 
@@ -36,11 +38,12 @@ for my $i (@$data) {
 
     if ($dry_run) {
 
-      set_stdout("would remove $i->{name}");
+      set_stdout("would remove file $i->{name}");
 
     } else {
 
-      run_story("remove-fs", { path => $i->{name} });
+      run_story("remove-fs", { path => $i->{name}, ignore_errors => 1 });
+
     }
 
 
@@ -48,7 +51,14 @@ for my $i (@$data) {
 
 }
 
-run_story("remove-fs", { path => $dir });
+if ($dry_run) {
 
+  set_stdout("would remove folder $i->{name}");
+
+} else {
+
+  run_story("remove-fs", { path => $dir , ignore_errors => 1 }) unless $remove_dir;
+
+}
 
 
