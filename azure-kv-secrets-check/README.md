@@ -11,7 +11,7 @@ Check azure keyvault secrets.
 Tomtit/Sparrowdo
 
     task-run "check secrets", "azure-kv-secrets-check", %(
-      name => "dbtest" # the name of keyvault
+      name => "kv100", # the name of keyvault
       exists => [ # these keys should exists
         'password1',
         'password2',

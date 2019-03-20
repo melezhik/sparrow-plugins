@@ -4,7 +4,7 @@ generator: <<CODE
 
   if ($list){
     for my $s (@{$list}){
-      print "regexp: \\s+ '", $s, "'", '$$', " \n";
+      print "regexp: \\S+ '/secrets/", $s, "'", ' $$', " \n";
     }
   }
 
