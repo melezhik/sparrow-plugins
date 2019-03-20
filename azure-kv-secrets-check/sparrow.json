@@ -1,0 +1,8 @@
+{
+
+  "name" : "azure-kv-secrets-check",
+  "description" : "Check azure keyvault secrets",
+  "version" : "0.0.1",
+  "category" : "azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-kv-secrets-check"
+}

@@ -1,0 +1,11 @@
+generator: <<CODE
+
+  my $list = config()->{exists};
+
+  if ($list){
+    for my $s (@{$list}){
+      print "regexp: \\s+ '", $s, "'", '$$', " \n";
+    }
+  }
+
+CODE
