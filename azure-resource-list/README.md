@@ -11,7 +11,7 @@ List Azure resources
 
 Check resources by pattern
 
-    task-run "set resources list", "azure-resource-list", %(
+    task-run "get resources list", "azure-resource-list", %(
       group     => "G0"
       pattern  => "foo-bar-baz"
     );
@@ -19,14 +19,13 @@ Check resources by pattern
 
 Check resources by list
 
-    task-run "set resources list", "azure-resource-list", %(
+    task-run "get resources list", "azure-resource-list", %(
       group     => "G0"
       list => [ # these resources should exists in resource group
-        'dbserver_dev',
-        'dbserver_dev/database_products',
-        'strorage_account_01',
-        'linux_vm_machine_01',
-        'hdi_cluster_dev'
+        'adf001@Microsoft.DataFactory/factories',
+        'hdi002@Microsoft.HDInsight/clusters',
+        'db003/master@Microsoft.Sql/servers/databases'
+        'storarge004@Microsoft.Storage/storageAccounts',
       ]
     )
 
@@ -38,11 +37,15 @@ Azure resource group
 
 ## pattern
 
-Filter for resources names
+Perl5 regexp. Filter for resources names
 
 ## list
 
-Set the list of resources names to check
+Set the list of resources names to check.
+
+Every element is the list is in format:
+
+    resource-name@resource-type
 
 # Requirements
 
