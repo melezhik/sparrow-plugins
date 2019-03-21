@@ -6,3 +6,9 @@ run_story("get-token",
     output => cache_root_dir()."/token.json"
   }
 );
+
+run_story("parse-token", 
+  {
+    file => cache_root_dir()."/token.json"
+  }
+);

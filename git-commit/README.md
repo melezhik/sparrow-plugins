@@ -22,7 +22,7 @@ Tomtit sceanrio:
 
     check_spell => True
 
-If `check_spell` is set, `hunspell` checks run on commit message.
+If `check_spell` is set, run spell checks commit message by using `hunspell`
 
 # Author
 

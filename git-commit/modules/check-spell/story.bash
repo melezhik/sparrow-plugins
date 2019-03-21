@@ -5,11 +5,11 @@ set -e
 
 if test "`hunspell -d en_US -l ${cache_root_dir}/commit.msg`" == ""; then
 
-  echo "no syntax errors in commit message"
+  echo "spellcheck ok"
 
 else
 
-  echo "syntax errors in commit message"
+  echo "spellcheck fails - syntax errors in commit message"
 
   exit 1
 
