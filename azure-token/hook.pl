@@ -1,4 +1,4 @@
-run_story("get-tocken", 
+run_story("get-token", 
   {
     tenant_id => config()->{tenant_id},
     client_id => config()->{client_id},

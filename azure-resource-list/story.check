@@ -1,6 +1,6 @@
 generator: <<CODE
 
-  my $list = config()->{exists};
+  my $list = config()->{list};
 
   if ($list){
     for my $s (@{$list}){
