@@ -9,5 +9,5 @@ curl -s -f -L -X POST https://login.microsoftonline.com/$tenant_id/oauth2/token 
 -d response_type=token \
 -d client_secret=$client_secret > $output
 
-cat $output
+#cat $output
 
