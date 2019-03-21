@@ -18,6 +18,12 @@ Tomtit sceanrio:
 
     $ tom commit
 
+# Run spell checks
+
+    check_spell => True
+
+If `check_spell` is set, `hunspell` checks run on commit message.
+
 # Author
 
 Alexey Melezhik
