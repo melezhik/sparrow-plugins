@@ -20,7 +20,7 @@ Tomtit/Sparrowdo
 
 # Requirements
 
-az cli
+curl
 
 # Author
 

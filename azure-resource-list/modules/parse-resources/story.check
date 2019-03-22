@@ -2,6 +2,8 @@ generator: <<CODE
 
   my $list = config()->{list};
 
+  print "note: ========================= [ check ] ========================== \n";
+
   if ($list){
     for my $s (@{$list}){
       print "regexp: ^^ '[", $s, "]'\n";
