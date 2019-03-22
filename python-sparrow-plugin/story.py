@@ -1,5 +1,5 @@
 import hackhttp
-from outthentic import *
+from sparrow6lib import *
 
 url = config()['url']
 hh = hackhttp.hackhttp()

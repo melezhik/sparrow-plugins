@@ -1,6 +1,6 @@
 #!python
 
-from outthentic import *
+from sparrow6lib import *
 
 foo = config()["main"]["foo"]
 bar = config()["main"]["bar"]
