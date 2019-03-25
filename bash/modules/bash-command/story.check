@@ -1,3 +1,12 @@
-generator: <<CODE 
-  config()->{'expect_stdout'} ? [ 'regexp: '. ( config()->{'expect_stdout'} )  ] : [] 
+#code: <<CODE
+#!perl
+#use Data::Dumper;
+#print Dumper(config());
+#CODE
+
+generator: <<CODE
+!perl
+if ( config()->{'expect_stdout'} ) {
+  print 'regexp: '. ( config()->{'expect_stdout'} )
+}
 CODE

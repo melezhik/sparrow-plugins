@@ -1,3 +1,4 @@
+echo OKKKKK
 user=$(config user)
 command=$(config command)
 debug=$(config debug)
