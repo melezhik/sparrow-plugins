@@ -1,2 +1,2 @@
-regexp: target \S+ updated
+regexp: target \s+ \S+ \s+ updated
 
