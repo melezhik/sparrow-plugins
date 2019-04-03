@@ -1,6 +1,5 @@
 require 'test'
 
-require 'barlib'
 
 puts 'OK'
 
