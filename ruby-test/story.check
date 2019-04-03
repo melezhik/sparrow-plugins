@@ -2,13 +2,14 @@ OK
 
 generator: <<CODE
 !ruby
-foo
+  foo
 CODE
 
 
 generator: <<CODE
 !ruby
 
-puts config['foo']['bar']['baz']
+  puts config['foo']['bar']['baz']
 
 CODE
+
