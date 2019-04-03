@@ -37,7 +37,9 @@ Azure resource group
 
 ## pattern
 
-Perl5 regexp. Filter for resources names
+Perl5 regexp. Filter for resources names, for example:
+
+    `foo|bar` # foo or bar
 
 ## list
 
