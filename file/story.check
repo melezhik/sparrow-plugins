@@ -1,4 +1,4 @@
-regexp: target (created|deleted)
+regexp: target \s+ ( created || deleted )
 
 generator: <<CODE
 
