@@ -10,24 +10,23 @@
 
 
 
-between: STARTCHECK ENDCHECK
+between: {STARTCHECK} {ENDCHECK}
 
-regexp: (\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)
+regexp: (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+)
 
 generator: <<CODE
 
 my @list;       
 my $th = config()->{threshold}; 
 
-note "threshhold: $th";                 
+print "note: threshhold: $th\n"; 
 
 for my $c (@{captures()}){  
     my $fs = $c->[0];       
     my $used_v = $c->[4];   
     s{%}[] for $used_v;     
-    push @list, "assert: ".($used_v < $th ? 1 : 0)." enough disk space ($used_v%) on $fs"
+    print "assert: ".($used_v < $th ? 1 : 0)." enough disk space ($used_v%) on $fs\n";
 }   
-[@list]
 
 CODE
 
