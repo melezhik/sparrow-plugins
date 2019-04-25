@@ -29,6 +29,19 @@ Check resources by list
       ]
     )
 
+# state
+
+The returned state has a list of Azure Resources Names
+
+    {
+      list => [
+        'foo',
+        'bar',
+        'baz'
+      ]
+    }
+
+
 # parameters
 
 ## group

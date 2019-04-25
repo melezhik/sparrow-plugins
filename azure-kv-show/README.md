@@ -41,6 +41,15 @@ Sparrow cli:
 
     $ sparrow plg run azure-kv-show --param url={key vault url}
 
+# state
+
+The returned state has a Hash of key vault secrets
+
+    {
+      "password" => "Qwerty123",
+      "login" => "admin"
+    }
+
 # Requirements
 
 az cli 
