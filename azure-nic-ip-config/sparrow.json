@@ -1,0 +1,9 @@
+{
+
+  "name" : "azure-nic-ip-config",
+  "description" : "Show ip configuration for network interface",
+  "version" : "0.0.1",
+  "sparrow_version": "0.3.6",
+  "category" : "azure",
+  "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-nic-ip-config"
+}

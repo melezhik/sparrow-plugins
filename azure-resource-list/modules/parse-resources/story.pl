@@ -11,14 +11,14 @@ close F;
 
 my @list = @{decode_json($json)};
 
-my %state = { list => [] } ;
+my $state = { list => [] } ;
 
 for my $i (@list) {
 
   if ($pattern){
 
     next unless $i->{name} =~ /$pattern/;
-    push @{$state{list}}, $i->{name};
+    push @{$state->{list}}, $i->{name};
   }
 
   print '[', $i->{name}, '@', $i->{type}, '] ', $i->{location}, "\n"; 
@@ -26,4 +26,4 @@ for my $i (@list) {
 }
 
 
-update_state(\%state);
+update_state($state);
