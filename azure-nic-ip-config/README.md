@@ -43,19 +43,9 @@ The returned state has a ip configuration properties
 
 Azure resource group
 
-## pattern
+## nic_name
 
-Perl5 regexp. Filter for resources names, for example:
-
-    `foo|bar` # foo or bar
-
-## list
-
-Set the list of resources names to check.
-
-Every element is the list is in format:
-
-    resource-name@resource-type
+Network interface name
 
 # Requirements
 
