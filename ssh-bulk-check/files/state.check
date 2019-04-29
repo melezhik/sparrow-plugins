@@ -4,16 +4,38 @@ note: ====================================================
 
 /var/data is a directory
 
+note: ===
+
 between: { '/tmp/ dir size' } { end \s+ check }
 
 regexp: ^^ \d+(\w+) \s+ '/tmp/'
 
 generator: <<HERE
+
 !perl
 
   if (@{matched()}){
     my $order = capture()->[0];
     print "assert: ", ( $order eq 'G' ? 0 : 1 ), " the size of /tmp dir is less then 1 GB\n";
+  }
+
+HERE
+
+end:
+
+note: ===
+
+between: { 'check if nginx is alive' } { end \s+ check }
+
+/usr/sbin/nginx -g daemon on; master_process on;
+
+regexp: ^^ 'www-data' \s+ .* \s+ worker \s+ process $$
+
+generator: <<HERE
+!perl
+
+  if (my $cnt = @{matched()}){
+    print "assert: ", ( $cnt <= 2 ? 1 : 0  ), " no more 2 nginx worker launched\n";
   }
 
 HERE
