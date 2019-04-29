@@ -68,7 +68,93 @@ Ssh user
 
 Ssh password
 
+# Examples
 
+## Check size of a directory
+
+cmd.sh
+
+    echo "/tmp/ dir size"
+      sudo du -sh /tmp/
+    echo "end check"
+
+state.check
+
+
+    between: { '/tmp/ dir size' } { end \s+ check }
+    
+    regexp: ^^ \d+(\w+) \s+ '/tmp/'
+    
+    generator: <<HERE
+    !perl
+    
+      if (@{matched()}){
+        my $order = capture()->[0];
+        print "assert: ", ( $order eq 'G' ? 0 : 1 ), " the size of /tmp dir is less then 1 GB\n";
+      }
+    
+    HERE
+    
+    end:    
+
+## Check that processes run 
+
+
+cmd.sh
+
+    echo "check if nginx is alive"
+      ps uax| grep nginx| grep -v grep
+    echo "end check"
+    
+state.check
+
+    between: { 'check if nginx is alive' } { end \s+ check }
+    
+    /usr/sbin/nginx -g daemon on; master_process on;
+    
+    regexp: ^^ 'www-data' \s+ .* \s+ worker \s+ process $$
+    
+    generator: <<HERE
+    !perl
+    
+      if (my $cnt = @{matched()}){
+        print "assert: ", ( $cnt <= 2 ? 1 : 0  ), " no more 2 nginx worker launched\n";
+      }
+    
+    HERE
+    
+    end:
+    
+## Example report
+
+
+    20:01:46 04/29/2019 [check my hosts] ===
+    20:01:46 04/29/2019 [check my hosts] /var/data
+    20:01:46 04/29/2019 [check my hosts] /var/data is a directory
+    20:01:46 04/29/2019 [check my hosts] ===
+    20:01:46 04/29/2019 [check my hosts] check /tmp/ dir size
+    20:01:46 04/29/2019 [check my hosts] 40K        /tmp/
+    20:01:46 04/29/2019 [check my hosts] end check
+    20:01:46 04/29/2019 [check my hosts] ===
+    20:01:46 04/29/2019 [check my hosts] check if nginx is alive
+    20:01:46 04/29/2019 [check my hosts] root      1243  0.0  0.0 140628  1500 ?        Ss   18:32   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+    20:01:46 04/29/2019 [check my hosts] www-data  1244  0.0  0.0 143300  6264 ?        S    18:32   0:00 nginx: worker process
+    20:01:46 04/29/2019 [check my hosts] www-data  1245  0.0  0.0 143300  6264 ?        S    18:32   0:00 nginx: worker process
+    20:01:46 04/29/2019 [check my hosts] end check
+    20:01:46 04/29/2019 [check my hosts] ===
+    20:01:46 04/29/2019 [check my hosts] end check host [104.215.88.155]
+    [task check] ====================================================
+    [task check] check results
+    [task check] ====================================================
+    [task check] stdout match </var/data is a directory> True
+    [task check] ===
+    [task check] stdout match (r) <^^ \d+(\w+) \s+ '/tmp/'> True
+    [task check] <the size of /tmp dir is less then 1 GB> True
+    [task check] ===
+    [task check] stdout match (r) </usr/sbin/nginx -g daemon on; master_process on;> True
+    [task check] stdout match (r) <^^ 'www-data' \s+ .* \s+ worker \s+ process $$> True
+    [task check] <no more 2 nginx worker launched> True
+    
 # Requirements
 
 * ssh

@@ -3,7 +3,7 @@
 task-run "check my hosts", "ssh-bulk-check", %(
   cmd => "files/cmd.sh",
   state => "files/state.check",
-  hosts => [ "104.215.88.155", "104.215.88.155"],
+  hosts => [ "104.215.88.155" ],
 
 );
 
