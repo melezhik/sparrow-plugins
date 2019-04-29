@@ -128,6 +128,7 @@ state.check
 ## Example report
 
 
+    20:01:46 04/29/2019 [check my hosts] check host [192.168.0.1]
     20:01:46 04/29/2019 [check my hosts] ===
     20:01:46 04/29/2019 [check my hosts] /var/data
     20:01:46 04/29/2019 [check my hosts] /var/data is a directory
@@ -142,7 +143,7 @@ state.check
     20:01:46 04/29/2019 [check my hosts] www-data  1245  0.0  0.0 143300  6264 ?        S    18:32   0:00 nginx: worker process
     20:01:46 04/29/2019 [check my hosts] end check
     20:01:46 04/29/2019 [check my hosts] ===
-    20:01:46 04/29/2019 [check my hosts] end check host [104.215.88.155]
+    20:01:46 04/29/2019 [check my hosts] end check host [192.168.0.1]
     [task check] ====================================================
     [task check] check results
     [task check] ====================================================
