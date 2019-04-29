@@ -1,0 +1,9 @@
+#!perl6
+
+task-run "check my hosts", "ssh-bulk-check", %(
+  cmd => "files/cmd.sh",
+  state => "files/state.check",
+  hosts => [ "127.0.0.1", "127.0.0.1"],
+
+);
+

@@ -1,0 +1,1 @@
+sudo ls -l /var

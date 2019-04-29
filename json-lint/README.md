@@ -20,7 +20,3 @@ CLI:
 
 Alexey Melezhik
 
-# See also
-
-* [JSON CPAN module](https://metacpan.org/pod/JSON)
-
