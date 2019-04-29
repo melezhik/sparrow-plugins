@@ -1,2 +1,5 @@
 ls -d /var/data && echo "/var/data is a directory"
-ls -l /rrr/
+
+echo "/tmp/ dir size"
+sudo du -sh /tmp/
+echo "end check"

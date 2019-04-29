@@ -1,2 +1,21 @@
+note: ====================================================
+note: check results
+note: ====================================================
+
 /var/data is a directory
 
+between: { '/tmp/ dir size' } { end \s+ check }
+
+regexp: ^^ \d+(\w+) \s+ '/tmp/'
+
+generator: <<HERE
+!perl
+
+  if (@{matched()}){
+    my $order = capture()->[0];
+    print "assert: ", ( $order eq 'G' ? 0 : 1 ), " the size of /tmp dir is less then 1 GB\n";
+  }
+
+HERE
+
+end:
