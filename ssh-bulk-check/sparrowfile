@@ -1,9 +1,8 @@
 #!perl6
 
 task-run "check my hosts", "ssh-bulk-check", %(
-  cmd => "files/cmd2.sh",
-  state => "files/state2.check",
   hosts => [ %*ENV<host> ],
-
+  cmd   => "files/cmd.sh",
+  state => "files/state.check",
 );
 
