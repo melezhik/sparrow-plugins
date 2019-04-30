@@ -2,5 +2,5 @@
 
 my $msg = prompt("message: ");
 
-task-run "commit my changes", "git-commit", %( message => $msg, check_spell => True );
+task-run "commit my changes", "git-commit", %( message => $msg, check_spell => False );
 
