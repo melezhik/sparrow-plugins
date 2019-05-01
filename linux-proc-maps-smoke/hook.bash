@@ -1,3 +1,3 @@
-run_story format_maps_single_line
-run_story parse_maps_single_line
-run_story child-pid
+run_task format_maps_single_line
+run_task parse_maps_single_line
+run_task child-pid

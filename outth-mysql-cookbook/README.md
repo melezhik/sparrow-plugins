@@ -16,7 +16,7 @@ outthentic smoke tests for opscode mysql cookbook
 
 # Sample Output
 
-    /tmp/.outthentic/14686/root/sparrow/plugins/public/outth-mysql-cookbook/mysql_user_select/story.t .. 
+    /tmp/.outthentic/14686/root/sparrow/plugins/public/outth-mysql-cookbook/mysql_user_select/task.t .. 
     
     ok 1 - stdout is already set
     
@@ -34,7 +34,7 @@ outthentic smoke tests for opscode mysql cookbook
     
     ok
     
-    /tmp/.outthentic/14686/root/sparrow/plugins/public/outth-mysql-cookbook/simple-crud/story.t ........ 
+    /tmp/.outthentic/14686/root/sparrow/plugins/public/outth-mysql-cookbook/simple-crud/task.t ........ 
     
     ok 1 - stdout is already set
     

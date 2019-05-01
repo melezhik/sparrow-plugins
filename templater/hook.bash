@@ -1,2 +1,2 @@
-run_story generate-content
+run_task generate-content
 

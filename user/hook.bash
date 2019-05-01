@@ -9,13 +9,13 @@ if [[ ! $action == delete ]] && [[ ! $action == create ]] ;then
 fi
 
 if [[ ! $user_exists == yes ]] && [[ $action == create ]]; then
-  run_story create
+  run_task create
 fi
 
 if [[ $user_exists == yes ]] && [[ $action == create ]]; then
-  run_story change
+  run_task change
 fi
 
 if [[ $user_exists == yes ]] && [[ $action == delete ]]; then
-  run_story delete
+  run_task delete
 fi

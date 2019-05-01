@@ -1,5 +1,0 @@
-generator: <<CODE
-for my $r (@{story_var("check")}){
-  print 'regexp: ^^ "', $r, '" $$', "\n";
-}
-CODE

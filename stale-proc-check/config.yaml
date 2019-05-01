@@ -1,5 +1,5 @@
 # check proceses running since last 5 minutes, 10 hours, 2 days , etc ...
-history: "1 minutes"
+hitask: "1 minutes"
 
 # sets pattern to filter desired processes 
 filter: nginx

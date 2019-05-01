@@ -6,13 +6,13 @@ if [ -t 0 ]; then
 
     # check if metacpan api alive ...
     if ! curl -I -s -f -k https://fastapi.metacpan.org/v1; then
-       run_story url-alert url https://fastapi.metacpan.org/v1
+       run_task url-alert url https://fastapi.metacpan.org/v1
        exit 
     fi
 
     # check if cpan mirror available ...
     if ! curl -I -s -f $cpan_mirror/02packages.details.txt; then
-       run_story url-alert url $cpan_mirror/02packages.details.txt
+       run_task url-alert url $cpan_mirror/02packages.details.txt
        exit 
     fi
     
@@ -22,7 +22,7 @@ if [ -t 0 ]; then
           set_stdout "counter > $lines, so I am done" 
           break
         else
-          run_story package-status n $COUNTER line "'$line'"
+          run_task package-status n $COUNTER line "'$line'"
         fi
 
         (( ++COUNTER ))
@@ -37,7 +37,7 @@ else
           set_stdout "counter > $lines, so I am done" 
           exit
         else
-          run_story package-status n $COUNTER line "'$line'"
+          run_task package-status n $COUNTER line "'$line'"
         fi
 
         (( ++COUNTER ))

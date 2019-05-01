@@ -1,3 +1,3 @@
 #!bash
 
-run_story $os
+run_task $os

@@ -1,1 +1,1 @@
-run_story nginx-install
+run_task nginx-install

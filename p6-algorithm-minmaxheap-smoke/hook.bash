@@ -1,2 +1,2 @@
-run_story sort-array
+run_task sort-array
 

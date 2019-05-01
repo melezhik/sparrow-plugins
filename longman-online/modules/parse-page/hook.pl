@@ -3,10 +3,10 @@ use strict;
 use HTML::Parser ();
 require HTML::TokeParser;
 
-my $p = HTML::TokeParser->new(story_var('file')) || die "Can't open: $!";
+my $p = HTML::TokeParser->new(task_var('file')) || die "Can't open: $!";
 $p->empty_element_tags(1);  # configure its behaviour
 
-print story_var('file'), "\n";
+print task_var('file'), "\n";
 
 use Data::Dumper;
 
@@ -40,8 +40,8 @@ while (my $token = $p->get_token) {
       $span-- if $token->[0] eq 'E' && $token->[1] eq 'span';
 
       if ( $span == 0 ) {
-        my $st = run_story("download", { url => $url , example => "'$line'" } );
-        run_story("process-file", { url => $url , example => $line } ) if $st->{status};
+        my $st = run_task("download", { url => $url , example => "'$line'" } );
+        run_task("process-file", { url => $url , example => $line } ) if $st->{status};
         $line="";
         $url="";
       } 

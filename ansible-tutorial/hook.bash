@@ -1,3 +1,3 @@
 #!bash
 
-run_story "playbook-simple"
+run_task "playbook-simple"

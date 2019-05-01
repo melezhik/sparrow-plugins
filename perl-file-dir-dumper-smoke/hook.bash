@@ -1,1 +1,1 @@
-run_story simple-dir-dump
+run_task simple-dir-dump

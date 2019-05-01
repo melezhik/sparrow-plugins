@@ -1,4 +1,4 @@
-run_story("get-token", 
+run_task("get-token", 
   {
     tenant_id => config()->{tenant_id},
     client_id => config()->{client_id},
@@ -7,7 +7,7 @@ run_story("get-token",
   }
 );
 
-run_story("parse-token", 
+run_task("parse-token", 
   {
     file => cache_root_dir()."/token.json"
   }

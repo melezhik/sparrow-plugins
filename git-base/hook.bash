@@ -5,13 +5,13 @@ if test $install_git = "on"; then
   shopt -s nocasematch;
   
   if [[ $os =~ "debian" ]]; then
-    run_story install-debian
+    run_task install-debian
   elif [[ "$os" =~ "ubuntu" ]]; then
-    run_story install-debian
+    run_task install-debian
   elif [[ "$os" =~ "centos" ]]; then
-    run_story install-centos
+    run_task install-centos
   elif [[ "$os" =~ "minoca" ]]; then
-    run_story install-minoca
+    run_task install-minoca
   else
     echo unsupported platform $os
   exit 1

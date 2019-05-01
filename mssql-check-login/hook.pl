@@ -25,4 +25,4 @@ set_stdout "db name: $db_name\n";
 set_stdout "db user: $user\n";
 set_stdout "password: $password\n";
 
-run_story("check", { db_host => $db_host, db_name => $db_name, user => $user, password => $password });
+run_task("check", { db_host => $db_host, db_name => $db_name, user => $user, password => $password });

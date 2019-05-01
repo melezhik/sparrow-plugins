@@ -1,3 +1,3 @@
 #!/bin/bash
 
-run_story $(config action)
+run_task $(config action)

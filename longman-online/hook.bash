@@ -10,5 +10,5 @@ if ! test -f ~/longman-online/$word/data.txt; then
   curl -s http://www.ldoceonline.com/dictionary/$word -o ~/longman-online/$word/data.txt
 fi
 
-run_story parse-page file ~/longman-online/$word/data.txt
+run_task parse-page file ~/longman-online/$word/data.txt
 

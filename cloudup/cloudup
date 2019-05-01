@@ -108,7 +108,7 @@ backupRepo()
   timestamp=$(echo $timestamp | tr '[:upper:]' '[:lower:]')
   git remote set-url origin https://$bbUsername:$password@bitbucket.org/$bbUsername/$repoName$timestamp.git > /dev/null || return 1 ## switch the remote over to bitbucket rather than github
   echo "Uploading $originalRepoName to bitbucket"
-  git push -q --progress origin --all > /dev/null || return 1 ## pushes al files to github and most of the repo history
+  git push -q --progress origin --all > /dev/null || return 1 ## pushes al files to github and most of the repo hitask
   echo "Uploading the tags for $originalRepoName"
   git push -q --progress origin --tags > /dev/null || return 1 ## have to push tags here since --tags and --all are mutually exclusive
   echo "Successfully backedup $originalRepoName"

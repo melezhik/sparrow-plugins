@@ -11,5 +11,5 @@ die "file $state does not exist" unless -f $state;
 
 
 for my $i (@hosts) {
-  run_story("check-host", { host => $i, cmd => $cmd , user => $user, password => $password });
+  run_task("check-host", { host => $i, cmd => $cmd , user => $user, password => $password });
 }
