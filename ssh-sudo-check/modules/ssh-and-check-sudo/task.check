@@ -1,0 +1,14 @@
+code: <<CODE
+   note "checking if ".
+        (task_var('user')).
+        " is listed at group ".
+        (config()->{sudo_group}).
+        " on ".(task_var('server'))."... "
+CODE
+
+generator: \
+if ( task_var('user') eq 'root' ){ \
+  [ 'validator: [ 1, qq{root has sudo access}  ]' ]  \
+}else{  \
+  [ "regexp: \\b".(config()->{sudo_group}).'\\b' ] \
+}

@@ -38,7 +38,7 @@ Smart beagle to find suspicious entries in your logs for period of time.
     time_format   = %d/%b/%Y %T
     
     # check logs for last 5 minutes
-    history = 5 minutes
+    hitask = 5 minutes
     
     # to proper time calculation 
     # need to know a timezone

@@ -1,2 +1,2 @@
-run_story stop os $os service $service
-run_story start os $os service $service
+run_task stop os $os service $service
+run_task start os $os service $service

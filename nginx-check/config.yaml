@@ -5,6 +5,6 @@ nginx:
 
   # if check_master_age set to 1, verify that process is younger than given time period
   # example values: 10 minutes 1 days 3 hours
-  history: "10 minutes"
+  hitask: "10 minutes"
 
 

@@ -1,2 +1,2 @@
-run_story csv-to-json
+run_task csv-to-json
 

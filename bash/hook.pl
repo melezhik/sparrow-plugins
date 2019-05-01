@@ -10,6 +10,6 @@ if ($envvars){
  
 }
 
-run_story("bash-command", { envvars => join " ", @envvars });
+run_task("bash-command", { envvars => join " ", @envvars });
 
 

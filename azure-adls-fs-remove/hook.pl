@@ -5,9 +5,9 @@ my $c = 1;
 
 update_state({ files => [] , dirs => [ ] });
 
-run_story("read-folder", { basedir =>  cache_dir(), path => $path, c => $c });
+run_task("read-folder", { basedir =>  cache_dir(), path => $path, c => $c });
 
-run_story("parse-folder-json", { basedir =>  cache_dir(), c => $c, dir => $path, remove_dir => 0  });
+run_task("parse-folder-json", { basedir =>  cache_dir(), c => $c, dir => $path, remove_dir => 0  });
 
 if ($dry_run) {
 
@@ -15,6 +15,6 @@ if ($dry_run) {
 
 } else {
 
-  run_story("remove-fs", { path => $path , ignore_errors => 0 })
+  run_task("remove-fs", { path => $path , ignore_errors => 0 })
 
 }

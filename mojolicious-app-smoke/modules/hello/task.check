@@ -1,0 +1,1 @@
+generator: [ "hello ".(task_var('name')) ]

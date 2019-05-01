@@ -1,6 +1,6 @@
 for p in $(config list)
 do
-    run_story cpm package $p
+    run_task cpm package $p
 done
 
 

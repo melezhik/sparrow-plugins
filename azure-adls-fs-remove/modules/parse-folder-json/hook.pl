@@ -1,8 +1,8 @@
 use JSON;
 
-my $basedir = story_var("basedir");
-my $c = story_var("c");
-my $dir = story_var("dir");
+my $basedir = task_var("basedir");
+my $c = task_var("c");
+my $dir = task_var("dir");
 my $dry_run = config()->{dry_run};
 my $skip = config()->{skip};
 
@@ -36,9 +36,9 @@ for my $i (@$data) {
 
     set_stdout("add dir $i->{name}");
 
-    run_story("read-folder", { basedir =>  $basedir, path => $i->{name}, c => $c });    
+    run_task("read-folder", { basedir =>  $basedir, path => $i->{name}, c => $c });    
 
-    run_story("parse-folder-json", { basedir =>  $basedir, c => $c, dir => $i->{"name"}, remove_dir => 1  });
+    run_task("parse-folder-json", { basedir =>  $basedir, c => $c, dir => $i->{"name"}, remove_dir => 1  });
   
   }
 
@@ -50,7 +50,7 @@ for my $i (@$data) {
 
     } else {
 
-      run_story("remove-fs", { path => $i->{name}, ignore_errors => 1 });
+      run_task("remove-fs", { path => $i->{name}, ignore_errors => 1 });
 
     }
 
@@ -65,7 +65,7 @@ if ($dry_run) {
 
 } else {
 
-  run_story("remove-fs", { path => $dir , ignore_errors => 1 }) unless $remove_dir;
+  run_task("remove-fs", { path => $dir , ignore_errors => 1 }) unless $remove_dir;
 
 }
 

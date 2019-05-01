@@ -1,3 +1,3 @@
 action=$(config action)
-run_story $action
+run_task $action
 

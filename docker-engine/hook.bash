@@ -5,11 +5,11 @@ echo $os
 case "$os" in
 
   "ID=debian" )
-  run_story install-debian
+  run_task install-debian
   ;;
 
   "ID=ubuntu" )
-  run_story install-ubuntu
+  run_task install-ubuntu
   ;;
 
 

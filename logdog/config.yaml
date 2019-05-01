@@ -18,7 +18,7 @@ logdog:
   time_format:   '%d/%b/%Y %T'
 
   # check logs for last 5 minutes, 10 hours, 2 days , etc ...
-  history: '5 minutes'
+  hitask: '5 minutes'
 
   # to proper time calculation 
   # need to know a timezone

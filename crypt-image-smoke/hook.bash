@@ -1,2 +1,2 @@
-run_story 'decrypt'
-run_story 'file-compares'
+run_task 'decrypt'
+run_task 'file-compares'

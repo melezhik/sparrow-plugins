@@ -1,3 +1,3 @@
-run_story nowrap
-run_story ciao
+run_task nowrap
+run_task ciao
 

@@ -1,3 +1,3 @@
-run_story etime
-run_story ps-aux
+run_task etime
+run_task ps-aux
 

@@ -1,0 +1,5 @@
+generator: <<CODE
+for my $r (@{task_var("check")}){
+  print 'regexp: ^^ "', $r, '" $$', "\n";
+}
+CODE

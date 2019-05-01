@@ -32,7 +32,7 @@ if ($url=~/https:\/\/(\S+)\.vault\.azure\.net/ ){
 }
 
 for my $i (@items){
-  run_story(
+  run_task(
     "fetch-kv", 
     { 
       secret  => $i, 
@@ -42,7 +42,7 @@ for my $i (@items){
   );
 }
 
-run_story(
+run_task(
   "print", 
   { 
     kv => $kv,

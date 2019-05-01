@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-run_story 'currency/example1'
-run_story 'currency/example2'
+run_task 'currency/example1'
+run_task 'currency/example2'
