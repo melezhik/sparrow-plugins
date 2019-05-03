@@ -8,15 +8,12 @@ Get and print variable group in convenient way.
 
 # USAGE
 
-  my %state = task-run "read my vars", "ado-read-variable-groups", %(
-    project => "CoolKids"
-    group_id => 1234,
-    user  => "buddy",
-    token => "paSworRdd"
-  );
-
-
-  say %state<list>.perl;
+    task-run "read my vars", "ado-read-variable-groups", %(
+      project => "CoolKids"
+      group_id => 1234,
+      user  => "buddy",
+      token => "paSworRdd"
+    );
 
 # Sample Output
 
@@ -41,6 +38,13 @@ Get and print variable group in convenient way.
 
 Returns a list of variables, if you need to handle the one programmatically
 
+    my %state = task-run "read my vars", "ado-read-variable-groups", %(
+      project => "CoolKids"
+      group_id => 1234,
+      user  => "buddy",
+      token => "paSworRdd"
+    );
+  
     for %state<list><> -> $i {
     
       say "{$i<name>} = {$i<value>}";
