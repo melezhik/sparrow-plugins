@@ -1,0 +1,7 @@
+{
+  "name" : "ado-read-variable-groups",
+  "description" : "Get and print variable group in convenient way",
+  "version" : "0.0.1",
+  "category" : "ado",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-read-variable-groups"
+}
