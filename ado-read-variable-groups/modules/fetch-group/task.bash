@@ -16,7 +16,7 @@ if test "${debug}" = "True"; then
 fi
 
 curl -s -f -u $user:$token \
-https://dev.azure.com/chevron/$project/_apis/distributedtask/variablegroups/$group_id?api-version=5.0-preview.1  \
+https://dev.azure.com/$org/$project/_apis/distributedtask/variablegroups/$group_id?api-version=5.0-preview.1  \
 -H "Content-Type: application/json" > $output
 
 
