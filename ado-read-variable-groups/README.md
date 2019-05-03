@@ -9,6 +9,7 @@ Get and print variable group in convenient way.
 # USAGE
 
     task-run "read my vars", "ado-read-variable-groups", %(
+      organization => "CompanyX",
       project => "CoolKids"
       group_id => 1234,
       user  => "buddy",
@@ -39,6 +40,7 @@ Get and print variable group in convenient way.
 Returns a list of variables, if you need to handle the one programmatically
 
     my %state = task-run "read my vars", "ado-read-variable-groups", %(
+      organization => "CompanyX",
       project => "CoolKids"
       group_id => 1234,
       user  => "buddy",
@@ -63,6 +65,10 @@ Output:
         
 
 # Parameters
+
+## organization
+
+Ado organization
 
 ## project
 
