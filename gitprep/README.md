@@ -6,7 +6,7 @@ Installs [gitprep](https://github.com/yuki-kimoto/gitprep) server.
 
     $ cpanm Sparrow
     $ sparrow index update 
-    $ sparrow plg install gitprep
+    $ s6 --install gitprep
 
 # USAGE
 

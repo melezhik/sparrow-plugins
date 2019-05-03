@@ -4,7 +4,7 @@ Simple templater based on [Template-Toolkit](http://template-toolkit.org) engine
 
 # INSTALL
 
-    $ sparrow plg install templater
+    $ s6 --install templater
 
 # USAGE
 

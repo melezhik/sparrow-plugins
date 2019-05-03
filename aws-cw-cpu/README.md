@@ -4,7 +4,7 @@ Sparrow plugin to show `CPUUtilization` for ec2 instance.
 
 # INSTALL
 
-    $ sparrow plg install aws-cw-cpu
+    $ s6 --install aws-cw-cpu
 
 # USAGE
 

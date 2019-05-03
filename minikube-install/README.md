@@ -8,7 +8,7 @@ Ubuntu/CentOS/Debian.
 
 # INSTALL
 
-    $ sparrow plg install minikube-install
+    $ s6 --install minikube-install
 
 # USAGE
 

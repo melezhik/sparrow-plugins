@@ -5,7 +5,7 @@ Simple goss wrapper
 
 # INSTALL
 
-    $ sparrow plg install goss
+    $ s6 --install goss
 
 
 # USAGE

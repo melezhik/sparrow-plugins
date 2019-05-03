@@ -4,7 +4,7 @@ Check azure keyvault secrets.
 
 # INSTALL
 
-    $ sparrow plg install azure-kv-secrets-check
+    $ s6 --install azure-kv-secrets-check
 
 # USAGE
 

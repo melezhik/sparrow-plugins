@@ -4,7 +4,7 @@ Install rvm and Ruby
 
 # INSTALL
 
-    $ sparrow plg install rvm
+    $ s6 --install rvm
 
 # Build status
 

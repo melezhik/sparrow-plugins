@@ -6,7 +6,7 @@ An Example of Ruby API for Google Gloud DataStore.
 # INSTALL
 
 
-    $ sparrow plg install gcp-data-store-bookshelf
+    $ s6 --install gcp-data-store-bookshelf
 
 
 # USAGE

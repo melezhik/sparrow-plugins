@@ -4,7 +4,7 @@ Smoke tests for Crypt::Image module
 
 # INSTALL
 
-    $ sparrow plg install crypt-image-smoke
+    $ s6 --install crypt-image-smoke
 
 # USAGE
 

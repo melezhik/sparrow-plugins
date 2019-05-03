@@ -8,7 +8,7 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/38972737/5147
 
 # INSTALL
 
-    $ sparrow plg install awk-select-lines
+    $ s6 --install awk-select-lines
 
 # USAGE
 

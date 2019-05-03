@@ -5,7 +5,7 @@ Wrapper for [csvtotable](https://github.com/vividvilla/csvtotable) utility.
 
 # INSTALL
 
-    $ sparrow plg install csvtotable
+    $ s6 --install csvtotable
 
 # USAGE
 

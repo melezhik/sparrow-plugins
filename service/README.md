@@ -18,7 +18,7 @@ The list of supported actions:
 
 # INSTALL
 
-    $ sparrow plg install service
+    $ s6 --install service
 
 
 # USAGE

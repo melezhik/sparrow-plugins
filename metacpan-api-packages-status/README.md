@@ -8,7 +8,7 @@ Checks packages statuses at MetaCPAN. A list of packages is taken from 02package
 
 # INSTALL
 
-    $ sparrow plg install metacpan-api-packages-status
+    $ s6 --install metacpan-api-packages-status
 
 # USAGE
 

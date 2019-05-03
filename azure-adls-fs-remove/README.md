@@ -4,7 +4,7 @@ Recursively remove adls folders.
 
 # INSTALL
 
-    $ sparrow plg install azure-adls-fs-remove
+    $ s6 --install azure-adls-fs-remove
 
 # USAGE
 

@@ -4,7 +4,7 @@ List azure datalake storage accounts
 
 # install
 
-    $ sparrow plg install azure-dls-account-list
+    $ s6 --install azure-dls-account-list
 
 # usage
 

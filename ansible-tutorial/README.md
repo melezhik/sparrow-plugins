@@ -4,7 +4,7 @@ Multiplatform ansible installer for engineers.
 
 # INSTALL
 
-    $ sparrow plg install ansible-tutorial
+    $ s6 --install ansible-tutorial
 
 # USAGE
 

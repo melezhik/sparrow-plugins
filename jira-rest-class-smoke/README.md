@@ -4,7 +4,7 @@ Smoke tests for JIRA::REST::Class
 
 # INSTALL
 
-    $ sparrow plg install jira-rest-class-smoke
+    $ s6 --install jira-rest-class-smoke
 
 # USAGE
 

@@ -4,7 +4,7 @@ Simple python echo script.
 
 # INSTALL
 
-    $ sparrow plg install python-echo-script
+    $ s6 --install python-echo-script
 
 # USAGE
 

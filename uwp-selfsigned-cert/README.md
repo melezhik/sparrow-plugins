@@ -5,7 +5,7 @@ Generates self signed certificate to sign Microsoft app packages.
 
 # INSTALL
 
-    $ sparrow plg install uwp-self-signed-cert
+    $ s6 --install uwp-self-signed-cert
 
 # USAGE
 

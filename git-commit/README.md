@@ -4,7 +4,7 @@ Make git commit
 
 # INSTALL
 
-    $ sparrow plg install git-commit
+    $ s6 --install git-commit
 
 # USAGE
 

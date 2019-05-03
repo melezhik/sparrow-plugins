@@ -4,7 +4,7 @@ Simple Perl Based password generator. Because `pwgen` is missing in Centos.
 
 # INSTALL
 
-    $ sparrow plg install pwgen
+    $ s6 --install pwgen
 
 # USAGE
 

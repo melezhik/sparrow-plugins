@@ -4,7 +4,7 @@ Walks through the list of sub directories ( located at $CWD ) and tries to insta
 
 # INSTALL
 
-    $ sparrow plg install perl6-dir-install
+    $ s6 --install perl6-dir-install
 
 # USAGE
 

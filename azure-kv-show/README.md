@@ -4,7 +4,7 @@ Simple wrapper around Azure key vault secret show command, with multiple secrets
 
 # INSTALL
 
-    $ sparrow plg install azure-kv-show
+    $ s6 --install azure-kv-show
 
 # USAGE
 

@@ -8,7 +8,7 @@ A real [sendmail](https://en.wikipedia.org/wiki/Sendmail) should installed and c
 
 # INSTALL
 
-    $ sparrow plg install sendmail
+    $ s6 --install sendmail
 
 # USAGE
 

@@ -4,7 +4,7 @@ Smoke tests for Algorithm::MinMaxHeap
 
 # INSTALL
 
-    $ sparrow plg install p6-algorithm-minmaxheap-smoke
+    $ s6 --install p6-algorithm-minmaxheap-smoke
 
 # USAGE
 

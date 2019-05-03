@@ -5,7 +5,7 @@ Simple wrapper for `web_trawler`
 
 # INSTALL
 
-    $ sparrow plg install web_trawler
+    $ s6 --install web_trawler
 
 # USAGE
 

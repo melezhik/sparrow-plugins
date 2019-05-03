@@ -8,7 +8,7 @@ Plugin goes through the list of directories and creates remote git repository fo
 
 # INSTALL
 
-    sparrow plg install bitbucket-repo
+    s6 --install bitbucket-repo
 
 
 # USAGE

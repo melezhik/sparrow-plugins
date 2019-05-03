@@ -5,7 +5,7 @@ Sparrow plugin to print launch configuration in human readable format.
 
 # INSTALL
 
-    $ sparrow plg install aws-launch-cfg-show
+    $ s6 --install aws-launch-cfg-show
 
 # USAGE
 

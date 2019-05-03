@@ -4,7 +4,7 @@ Make git push for current local branch
 
 # INSTALL
 
-    $ sparrow plg install git-push
+    $ s6 --install git-push
 
 # USAGE
 

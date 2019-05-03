@@ -4,7 +4,7 @@ verify your minion workers, jobs
 
 # INSTALL
     
-    $ sparrow plg install minion-check
+    $ s6 --install minion-check
     
 # USAGE
   

@@ -5,7 +5,7 @@ Sparrow plugin to list tagged ec2 instances in human readable format.
 
 # INSTALL
 
-    $ sparrow plg install aws-list-tag-instances
+    $ s6 --install aws-list-tag-instances
 
 
 # USAGE

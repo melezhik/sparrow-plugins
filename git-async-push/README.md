@@ -5,7 +5,7 @@ Make an asynchronous push to remote git repositories.
 
 # INSTALL
 
-    sparrow plg install git-async-push
+    s6 --install git-async-push
 
 
 # USAGE

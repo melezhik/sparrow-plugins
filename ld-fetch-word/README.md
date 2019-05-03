@@ -5,7 +5,7 @@ Fetch phrases from longman
 
 # INSTALL
 
-  sparrow plg install ld-fetch-word
+  s6 --install ld-fetch-word
 
 # USAGE
 

@@ -8,7 +8,7 @@ nginx-check - checks if nginx server is healthy by executing low level system ch
 
 # INSTALL
 
-    $ sparrow plg install nginx-check
+    $ s6 --install nginx-check
 
 # USAGE
 

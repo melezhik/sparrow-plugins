@@ -19,7 +19,7 @@ Platforms supported:
 
 # Install
 
-    $ sparrow plg install rakudo-install
+    $ s6 --install rakudo-install
 
 # Usage
 

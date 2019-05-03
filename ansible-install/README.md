@@ -4,7 +4,7 @@ Multiplatform ansible installer
 
 # INSTALL
 
-    $ sparrow plg install ansible-install
+    $ s6 --install ansible-install
 
 # USAGE
 

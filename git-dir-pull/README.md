@@ -4,7 +4,7 @@ Walks through the list of sub directories ( located at $CWD ) and invoke git pul
 
 # INSTALL
 
-    $ sparrow plg install git-dir-pull
+    $ s6 --install git-dir-pull
 
 # USAGE
 

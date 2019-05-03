@@ -4,7 +4,7 @@ Compress PNG images by using [GD](https://metacpan.org/pod/GD) library.
 
 # INSTALL
 
-    $ sparrow plg install png-compress
+    $ s6 --install png-compress
 
 # USAGE
 

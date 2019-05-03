@@ -5,7 +5,7 @@ Manages Linux/UNIX groups
 
 # INSTALL
 
-    $ sparrow plg install group 
+    $ s6 --install group 
 
 
 # USAGE

@@ -4,7 +4,7 @@ Simple file manager.
 
 # INSTALL
 
-    $ sparrow plg install file
+    $ s6 --install file
 
 # USAGE
 

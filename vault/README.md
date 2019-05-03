@@ -5,7 +5,7 @@ Simple wrapper for `vault`
 
 # INSTALL
 
-    $ sparrow plg install vault
+    $ s6 --install vault
 
 # USAGE
 

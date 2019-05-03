@@ -4,7 +4,7 @@ Show ip configuration for network interface
 
 # install
 
-    $ sparrow plg install azure-nic-ip-config
+    $ s6 --install azure-nic-ip-config
 
 # usage
 

@@ -7,7 +7,7 @@ Check if process set by PID taken from pid file exists.
 
 # INSTALL
 
-    $ sparrow plg install proc-validate
+    $ s6 --install proc-validate
 
 
 # USAGE

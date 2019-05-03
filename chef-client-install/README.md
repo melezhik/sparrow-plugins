@@ -4,7 +4,7 @@ Install chef client.
 
 # INSTALL
 
-    $ sparrow plg install chef-client-install
+    $ s6 --install chef-client-install
 
 # USAGE
 

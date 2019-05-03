@@ -4,7 +4,7 @@ Traverse [Sparky](https://github.com/melezhik/sparky) tasks and enable/disable s
 
 # INSTALL
 
-    $ sparrow plg install sparky-index-update
+    $ s6 --install sparky-index-update
 
 # USAGE
 

@@ -4,7 +4,7 @@ Pre-commit hook - runs prove tests for Perl6 project
 
 # INSTALL
 
-    $ sparrow plg install perl6-prove
+    $ s6 --install perl6-prove
 
 # USAGE
 

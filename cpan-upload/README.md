@@ -7,7 +7,7 @@ Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploa
 
 # INSTALL
 
-    $ sparrow plg install cpan-upload
+    $ s6 --install cpan-upload
 
 # USAGE
 

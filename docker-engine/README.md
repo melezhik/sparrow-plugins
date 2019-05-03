@@ -11,7 +11,7 @@ Please create an [issue](https://github.com/melezhik/docker-engine/issues)  if y
 
 # INSTALL
 
-    $ sparrow plg install docker-engine
+    $ s6 --install docker-engine
 
 # RUN
 

@@ -5,7 +5,7 @@ Sparrow plugin to list private aws images
 
 # INSTALL
 
-    $ sparrow plg install aws-list-private-images
+    $ s6 --install aws-list-private-images
 
 
 # USAGE

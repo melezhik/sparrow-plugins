@@ -4,7 +4,7 @@ Small wrapper for vsts build through [vsts cli](https://docs.microsoft.com/en-us
 
 # INSTALL
 
-    $ sparrow plg install vsts-build
+    $ s6 --install vsts-build
 
 # USAGE
 

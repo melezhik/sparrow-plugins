@@ -4,7 +4,7 @@ Remove dangling docker images and stopped containers.
 
 # INSTALL
 
-    $ sparrow plg install docker-remove-dangling-images
+    $ s6 --install docker-remove-dangling-images
 
 # USAGE
 

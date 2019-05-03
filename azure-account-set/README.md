@@ -4,7 +4,7 @@ Set Azure account
 
 # install
 
-    $ sparrow plg install azure-account-set
+    $ s6 --install azure-account-set
 
 # usage
 

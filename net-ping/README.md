@@ -4,7 +4,7 @@ A simple wrapper around Net::Ping to identify if host is alive.
 
 # INSTALL
 
-    $ sparrow plg install net-ping
+    $ s6 --install net-ping
 
 # USAGE
 

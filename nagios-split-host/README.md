@@ -8,7 +8,7 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/46197347/5147
 
 # INSTALL
 
-    $ sparrow plg install nagios-split-host
+    $ s6 --install nagios-split-host
 
 # USAGE
 

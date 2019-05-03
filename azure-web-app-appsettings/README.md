@@ -4,7 +4,7 @@ Dump/Validate azure app service application settings.
 
 # INSTALL
 
-    $ sparrow plg install azure-web-app-appsettings
+    $ s6 --install azure-web-app-appsettings
 
 # USAGE
 

@@ -4,7 +4,7 @@ Create Azure storage account
 
 # install
 
-    $ sparrow plg install azure-storage-account
+    $ s6 --install azure-storage-account
 
 # usage
 

@@ -4,7 +4,7 @@ Simple login checker based on sqlcmd utility
 
 # Install
 
-    $ sparrow plg install mssql-check-login
+    $ s6 --install mssql-check-login
 
 # USAGE
 

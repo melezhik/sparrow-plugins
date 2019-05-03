@@ -8,7 +8,7 @@ App::cpm client (cpm)
 
 # INSTALL
 
-    $ sparrow plg install app-cpm
+    $ s6 --install app-cpm
 
 # USAGE
 

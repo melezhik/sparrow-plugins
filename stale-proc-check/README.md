@@ -11,7 +11,7 @@ ps utility should be installed
 
 # INSTALL
 
-    $ sparrow plg install stale-proc-check
+    $ s6 --install stale-proc-check
 
 
 # USAGE

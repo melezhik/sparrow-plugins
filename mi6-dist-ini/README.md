@@ -8,7 +8,7 @@ Regenerate mi6 `dist.ini` and `.gitignore` files for Perl6 project.
 
 # INSTALL
 
-    $ sparrow plg install mi6-dist-ini
+    $ s6 --install mi6-dist-ini
 
 
 # USAGE 

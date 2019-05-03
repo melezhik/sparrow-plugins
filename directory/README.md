@@ -6,7 +6,7 @@ Sparrow plugin to manages directories.
 # INSTALL
 
 
-    $ sparrow plg install directory
+    $ s6 --install directory
 
 
 # USAGE

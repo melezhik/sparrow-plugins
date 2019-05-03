@@ -10,7 +10,7 @@ Yaml lint picks up all the git `A` or `M` files and run yaml linter for them.
 
 # INSTALL
 
-    $ sparrow plg install yaml-lint
+    $ s6 --install yaml-lint
 
 # USAGE
 

@@ -4,7 +4,7 @@ Execute bash commands
 
 # INSTALL
 
-    $ sparrow plg install bash
+    $ s6 --install bash
 
 # USAGE
 

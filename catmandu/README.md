@@ -5,7 +5,7 @@ Simple wrapper for [Catmandu cli](https://metacpan.org/pod/distribution/Catmandu
 
 # INSTALL
 
-    $ sparrow plg install catmandu
+    $ s6 --install catmandu
 
 # USAGE
 

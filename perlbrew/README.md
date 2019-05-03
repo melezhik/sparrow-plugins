@@ -4,7 +4,7 @@ A simple wrapper to automate [perlbrew](http://perlbrew.pl) installation.
 
 # INSTALL
 
-    $ sparrow plg install perlbrew
+    $ s6 --install perlbrew
 
 # USAGE
 

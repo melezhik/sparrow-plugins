@@ -4,7 +4,7 @@ Run tests against BashSnippets tools with interactive prompt.
 
 # INSTALL
 
-    $ sparrow plg install bash-snippets-interactive-test
+    $ s6 --install bash-snippets-interactive-test
 
 # USAGE
 

@@ -4,7 +4,7 @@ Simple check if your sshd daemon seen at process list.
 
 # INSTALL
 
-    $ sparrow plg install sshd-check
+    $ s6 --install sshd-check
 
 # Build status
 

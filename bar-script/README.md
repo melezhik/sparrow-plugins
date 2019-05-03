@@ -4,7 +4,7 @@ print `bar` or `rab`
 
 # INSTALL
 
-    $ sparrow plg install bar-script
+    $ s6 --install bar-script
 
 # USAGE
 

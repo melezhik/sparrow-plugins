@@ -8,7 +8,7 @@ elementary file system checks using df utility report
 
 # INSTALL
 
-    sparrow plg install df-check
+    s6 --install df-check
 
 # USAGE
 
