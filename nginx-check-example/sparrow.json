@@ -1,0 +1,5 @@
+{
+  "name" : "nginx-check-example",
+  "version" : "0.0.1",
+  "description" : "nginx check script"
+}

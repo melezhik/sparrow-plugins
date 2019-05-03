@@ -1,0 +1,31 @@
+#2018-10-23 03:00:00.099897  schedule
+
+generator: <<CODE
+!bash
+
+  date=$(config date)
+  scheduled_only=$(config scheduled_only)
+
+  if ! test "${date}"; then
+    date=$(date +%Y-%m-%d)
+  elif test "${date}" = "any"; then
+    date='\d\d\d\d-\d\d-\d\d'
+  fi
+
+  if test "${scheduled_only}" = "on"; then
+    echo 'regexp: completed\s+(succeeded|\S).*\s+'$date\\s+\\S+\\s+schedule
+  else
+    echo 'regexp: completed\s+(succeeded|\S).*\s+'$date\\s+\\S+\\s+[^schedule]
+  fi
+  
+CODE
+
+generator: <<CODE
+  my @out;
+    if (capture()->[0] ne 'succeeded'){
+      push @out, "assert: 0 last build succeeded"
+    } else {
+      push @out, "assert: 1 last build succeeded"
+    }
+  [@out]
+CODE

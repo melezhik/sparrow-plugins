@@ -1,0 +1,9 @@
+{
+  "name" : "puck",
+  "description" : "Simple wrapper for puck script",
+  "version" : "0.0.1",
+  "url" : "https://github.com/NativeInstruments/puck",
+  "category": "utilities",
+  "python_version" : "2",
+  "sparrow_version" : "0.2.45"
+}

@@ -1,0 +1,15 @@
+OK
+
+generator: <<CODE
+!ruby
+  foo
+CODE
+
+
+generator: <<CODE
+!ruby
+
+  puts config['foo']['bar']['baz']
+
+CODE
+

@@ -1,0 +1,6 @@
+{
+    "version": "0.1.0",
+    "name": "logdog",
+    "description" : "smart beagle to find suspicious entries in your logs for the period of time",
+    "url": "https://github.com/melezhik/logdog.git"
+}

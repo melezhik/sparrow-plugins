@@ -1,0 +1,13 @@
+use IO::Glob;
+
+directory "tmp/";
+
+for glob("examples/*.js") -> $file { 
+
+  task-run 'js minifier', 'js-minify', %(
+      in  => $file.absolute,      
+      out => "tmp/" ~ ( $file.basename ),      
+  );
+
+}
+

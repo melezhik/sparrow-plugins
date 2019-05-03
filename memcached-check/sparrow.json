@@ -1,0 +1,7 @@
+{
+  "name" : "memcached-check",
+  "description" : "checks if memcached server is healthy",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/memcached-check.git",
+  "category" : "monitoring"
+}

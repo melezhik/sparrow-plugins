@@ -1,0 +1,7 @@
+{
+  "name" : "perl6-prove",
+  "description" : "pre-commit hook - runs prove for Perl6 project",
+  "version" : "0.0.10",
+  "category" : "utilities",
+  "url" : "https://github.com/melezhik/perl6-prove"
+}

@@ -1,0 +1,8 @@
+{
+
+  "name" : "mssql-check-login",
+  "description" : "Simple login checker based on sqlcmd utility",
+  "version" : "0.0.2",
+  "category" : "utilities",
+  "url" : "https://github.com/melezhik/mssql-check-login"
+}

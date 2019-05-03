@@ -1,0 +1,5 @@
+# list should be space separted list of packages to install
+# for example:
+# list = nginx curl telnet
+# list curl
+action: install

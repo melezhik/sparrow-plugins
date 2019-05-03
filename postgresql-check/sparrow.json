@@ -1,0 +1,7 @@
+{
+  "name" : "postgresql-check",
+  "description" : "checks if postgresql server is healthy",
+  "version" : "0.0.2",
+  "url" : "https://github.com/melezhik/postgresql-check.git",
+  "category" : "monitoring"
+}

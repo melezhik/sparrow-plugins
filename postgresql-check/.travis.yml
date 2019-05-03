@@ -1,0 +1,17 @@
+services:
+  - postgresql
+
+language: "perl"
+
+perl:
+  - "5.20"
+
+before_install:
+  - cpanm -q --notest install Sparrow
+
+install:
+  - sparrow index update
+  - sparrow plg install postgresql-check
+
+script:
+  - sparrow plg run postgresql-check

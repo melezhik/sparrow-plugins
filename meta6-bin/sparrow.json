@@ -1,0 +1,8 @@
+{
+  "name"     : "meta6-bin",
+  "version"  : "0.0.3",
+  "category" : "utilities",
+  "description" : "Simple meta6-bin runner",
+  "url" : "https://github.com/melezhik/sparrow-meta6-bin"  
+  
+}

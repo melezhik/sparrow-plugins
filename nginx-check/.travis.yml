@@ -1,0 +1,15 @@
+language: "perl"
+perl:
+  - "5.20"
+
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install -y nginx
+  - cpanm -q --notest install Sparrow
+
+install:
+  - sparrow index update
+  - sparrow plg install nginx-check
+
+script:
+  - sparrow plg run nginx-check --param validate_etime=1 --param history="5 seconds"

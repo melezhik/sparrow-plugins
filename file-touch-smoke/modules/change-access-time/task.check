@@ -1,0 +1,29 @@
+regexp: access time\s+before\s+(\d+)
+code: our $at = capture()->[0]
+
+regexp: access time\s+after\s+(\d+)
+code: our $bt = capture()->[0]
+
+
+generator: <<P
+  our $at; our $bt;
+  my $st = (($bt - $at) == 30);
+ [ "assert: $st access time changed +30 seconds"]
+
+P
+
+
+regexp: modification time\s+before\s+(\d+)
+code: our $at1 = capture()->[0]
+
+regexp: modification time\s+after\s+(\d+)
+code: our $bt1 = capture()->[0]
+
+
+generator: <<P
+  our $at1; our $bt1;
+  my $st = (($bt1 - $at1) == 0);
+ [ "assert: $st modification time changed 0 seconds"]
+
+P
+

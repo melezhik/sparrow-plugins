@@ -1,0 +1,32 @@
+#notAfter=Jun 14 12:00:00 2018 GMT
+regexp: notAfter=(.*)
+
+generator: <<CODE
+!perl
+my $ds = capture()->[0]; # date string;
+
+if ($ds=~/(\w+)\s+(\d+)\s+(\d\d):(\d\d):(\d\d)\s+(\d\d\d\d)/){
+
+  #print "assert: 1 notAfter date is valid\n";
+
+  use DateTime::Format::Strptime;
+  use DateTime;
+   
+  my $strp = DateTime::Format::Strptime->new(
+      pattern   => '%b %d %H:%M:%S %Y',
+      #pattern => '%b %d %H:%M:%S %Y',
+      locale    => 'en_US',
+  );
+
+  my $dt = $strp->parse_datetime( $ds || "May 29 12:00:00 2018 GMT");
+  #my $dt = $strp->parse_datetime( "May 23 10:00:00 2018 GMT");
+  my $ed = config()->{expiration_date};
+  my $cert_lasts = (DateTime->compare($dt, DateTime->now->add( days =>  $ed )) == 1) ? 1 : 0;
+
+  [ "assert: $cert_lasts certificate lasts for at least $ed days" ];
+
+} else {
+  #[ "assert: 0 expiration date is valid" ]
+}
+  
+CODE

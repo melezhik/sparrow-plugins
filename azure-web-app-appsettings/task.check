@@ -1,0 +1,8 @@
+generator: <<CODE
+
+  my $required_settings = config()->{required_settings} || ();
+  #use Data::Dumper;
+  #warn Dumper($required_settings);
+  [ map {"[$_]"} @{$required_settings} ]
+
+CODE

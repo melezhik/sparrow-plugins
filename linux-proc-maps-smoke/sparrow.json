@@ -1,0 +1,6 @@
+{
+  "name" : "linux-proc-maps-smoke",
+  "description" : "Smoke tests for Linux::Proc::Maps",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/linux-proc-maps-smoke"
+}

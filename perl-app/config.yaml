@@ -1,0 +1,6 @@
+git_branch: master
+app_user: perl-app
+app_dir: /opt/perl-app/
+app_script: app.psgi
+http_port: 5000
+

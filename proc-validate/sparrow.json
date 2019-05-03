@@ -1,0 +1,6 @@
+{
+  "name" : "proc-validate",
+  "version" : "0.1.3",
+  "description" : "Simple Linux/UNIX process validator",
+  "url" : "https://github.com/melezhik/proc-validate"
+}

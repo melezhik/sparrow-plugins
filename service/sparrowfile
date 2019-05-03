@@ -1,0 +1,25 @@
+my $service = 'nginx';
+
+set_spl %( service-dev => 'https://github.com/melezhik/service.git' );
+
+package-install ('openssl','nginx');
+
+task-run 'disable $service service', 'service-dev', %(
+  service => $service,
+  action  => 'disable',
+);
+
+task-run 'stopping $service service', 'service-dev', %(
+  service => $service,
+  action  => 'stop'
+);
+
+task-run 'starting $service service', 'service-dev', %(
+  service => $service,
+  action  => 'start'
+);
+
+task-run 'enable $service service', 'service-dev', %(
+  service => $service,
+  action  => 'enable'
+);

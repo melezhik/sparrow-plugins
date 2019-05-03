@@ -1,0 +1,8 @@
+{
+
+  "name" : "azure-adls-acl-check",
+  "description" : "Fetch and check ACL entries for adls folders",
+  "version" : "0.0.1",
+  "category" : "azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-adls-acl-check"
+}

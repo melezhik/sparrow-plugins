@@ -1,0 +1,5 @@
+generator: <<CODE
+!bash
+  state=$(config state)
+  cat $state
+CODE

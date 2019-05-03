@@ -1,0 +1,5 @@
+---
+caption : table
+delimiter : ','
+quotechar : '|'
+in: table.csv

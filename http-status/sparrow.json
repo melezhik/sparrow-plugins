@@ -1,0 +1,7 @@
+{
+  "name" : "http-status",
+  "version" : "0.0.2",
+  "description" : "A simple wrapper around HTTP::SimpleLinkChecker to identify if URL requested return successful http code",
+  "url" : "https://github.com/melezhik/http-status"
+}
+

@@ -1,0 +1,7 @@
+{
+
+  "name": "bitbucket-repo",
+  "version" : "0.4.23",
+  "url" : "https://github.com/melezhik/bitbucket-repo",
+  "description" : "Create ( multiple ) bitbucket git repositories."
+}

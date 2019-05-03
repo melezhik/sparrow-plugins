@@ -1,0 +1,6 @@
+{
+  "name" : "file-touch-smoke",
+  "description" : "Smoke tests for File::Touch module",
+  "version" : "0.0.6",
+  "url" : "https://github.com/melezhik/file-touch-smoke"
+}

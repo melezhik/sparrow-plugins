@@ -1,0 +1,6 @@
+{
+  "name" : "crypt-image-smoke",
+  "description" : "Smoke tests for Crypt::Image module",
+  "version" : "0.0.2",
+  "url" : "https://github.com/melezhik/crypt-image-smoke"
+}

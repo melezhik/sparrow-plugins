@@ -1,0 +1,19 @@
+Done.
+
+generator: <<CODE
+!bash
+
+if test -f ~/perl5/perlbrew/etc/bashrc; then
+  echo assert: 1 "file ~/perl5/perlbrew/etc/bashrc exists"
+else
+  echo assert: 0 "file ~/perl5/perlbrew/etc/bashrc exists"
+fi
+
+if grep  'source' ~/.bashrc | grep -q '~/perl5/perlbrew/etc/bashrc'; then
+  echo assert: 1 ~/.bashrc has '"source ~/perl5/perlbrew/etc/bashrc" line'
+else
+  echo assert: 0 ~/.bashrc has '"source ~/perl5/perlbrew/etc/bashrc" line'
+fi
+
+CODE
+

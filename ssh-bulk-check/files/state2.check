@@ -1,0 +1,20 @@
+note: ====================================================
+note: check results
+note: ====================================================
+
+note: === ssh config check ===
+
+between: { 'ssh config check' } { '===' }
+
+OK
+
+end:
+
+note: === ssh version check ===
+
+between: { 'sshd version check' } { '===' }
+
+
+regexp: 'openssh-server' \s+ '1:7' || 'protocol:' \s+ 2
+
+end:

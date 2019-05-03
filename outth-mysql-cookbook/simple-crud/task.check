@@ -1,0 +1,21 @@
+begin:
+create database foo
+Affected row: 1
+end:
+
+begin:
+create table foo.bar (name text)
+Affected row: 0
+end:
+
+begin:
+insert into foo.bar (name) values ('alexey')
+Affected row: 1
+end:
+
+
+begin:
+SELECT name from foo.bar
+Name : alexey
+end:
+

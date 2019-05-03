@@ -1,0 +1,17 @@
+package-install 'git';
+
+set_spl %(templater-dev => 'https://github.com/melezhik/templater.git');
+
+file-delete "/tmp/out.txt";
+
+task-run 'install my config', 'templater-dev', %(
+  variables => %(
+    name => 'sparrowdo ...',
+    language => 'perl6'
+  ),
+  on_change => "ls -l && echo OK && ps",
+  target  => '/tmp/out.txt',
+  source  => slurp 'examples/foo.tmpl'
+);
+
+bash "cat /tmp/out.txt";

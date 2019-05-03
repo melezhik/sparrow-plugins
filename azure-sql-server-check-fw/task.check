@@ -1,0 +1,11 @@
+generator: <<CODE
+
+  my $allow = config()->{allow};
+
+  if ($allow){
+    for my $r (@{$allow}){
+      print "regexp: \\s+ '", $r->[0], "'", " \\s+ '", $r->[1], "'", '$$', " \n";
+    }
+  }
+
+CODE

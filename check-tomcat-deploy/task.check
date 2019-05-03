@@ -1,0 +1,26 @@
+
+generator: <<CODE
+!bash
+version=$(config tomcat-version)
+war=$(config war)
+
+for p in $(perl -e "print join ' ', (split ',', qq{$war})")
+do
+
+  echo -n between: Deploying\\sweb\\sapplication\\sarchive\\s\\S+/$p
+  echo -n ' '
+  echo Deployment\\sof\\sweb\\sapplication\\sarchive\\s\\S+\/$p\\shas\\sfinished
+  echo regexp: '.*'
+
+  echo "code: note qq{$p}";
+
+  echo -ne 'generator: note @{stream()->[-1]}[-1]; ' 
+  echo -ne 'my $s = join " ", @{stream()->[-1]}; [ "assert: ". (! ($s=~/SEVERE: Context/)). '
+  echo "qq{ $p deployed OK } ]"
+      
+done
+
+
+CODE
+
+

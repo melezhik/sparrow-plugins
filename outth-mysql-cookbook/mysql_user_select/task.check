@@ -1,0 +1,12 @@
+begin:
+SELECT Host,User FROM user WHERE User='root' AND Host='127.0.0.1'
+Host : 127.0.0.1 User: root
+end:
+
+begin:
+SELECT Host,User FROM user WHERE User='root' AND Host='localhost'
+Host : localhost User: root
+end:
+
+
+

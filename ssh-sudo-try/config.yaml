@@ -1,0 +1,5 @@
+main:
+  servers: "127.0.0.1"
+  ssh_command: "ssh  -o ConnectionAttempts=1  -o ConnectTimeout=5 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+  sudo_command: "sudo /bin/bash -c 'echo'"
+

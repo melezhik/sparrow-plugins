@@ -1,0 +1,3 @@
+mode: create
+verbose: off
+app_service_restart: off

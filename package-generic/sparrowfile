@@ -1,0 +1,19 @@
+#set_spl %( package-generic-dev => 'https://github.com/melezhik/package-generic.git' );
+
+package-install('guile');
+
+task-run 'install some packages', 'package-generic', %(
+    list => %(
+      archlinux => (
+        'ranger',
+        'git',
+        'atop',
+    ),
+    centos7 => (
+        'tmux',
+        'git'
+    )
+  )
+)
+
+

@@ -1,0 +1,6 @@
+{
+  "name" : "p6-algorithm-minmaxheap-smoke",
+  "description" : "Smoke tests for Algorithm::MinMaxHeap",
+  "version" : "0.0.2",
+  "url" : "https://github.com/melezhik/p6-algorithm-minmaxheap-smoke"
+}

@@ -1,0 +1,32 @@
+#Filesystem      Size  Used Avail Use% Mounted on
+#/dev/sda1       9.2G  6.6G  2.2G  76% /
+#udev             10M     0   10M   0% /dev
+#tmpfs           971M  8.4M  963M   1% /run
+#tmpfs           2.4G  4.0K  2.4G   1% /dev/shm
+#tmpfs           5.0M     0  5.0M   0% /run/lock
+#tmpfs           2.4G     0  2.4G   0% /sys/fs/cgroup
+#none            119G  107G   12G  90% /vagrant
+#none            119G  107G   12G  90% /home/vagrant/projects
+
+
+between: {STARTCHECK} {ENDCHECK}
+
+regexp: (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+)
+
+generator: <<CODE
+
+my @list;       
+
+my $th = config()->{threshold}; 
+
+print "note: threshhold: $th\n"; 
+
+for my $c (@{captures()}){  
+    my $fs = $c->[0];       
+    my $used_v = $c->[4];   
+    s{%}[] for $used_v;     
+    print "assert: ".($used_v < $th ? 1 : 0)." enough disk space ($used_v%) on $fs\n";
+}   
+
+CODE
+

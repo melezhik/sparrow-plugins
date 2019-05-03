@@ -1,0 +1,14 @@
+regexp: .*
+
+regexp: (\d+)\s+(.*)\s+(\S+)
+
+generator: <<CODE
+
+if ( config()->{validate_etime} ) { 
+
+  [ 'validator: validate_nginx_etime(@{capture()})' ] 
+
+} else { [] }
+
+CODE
+
