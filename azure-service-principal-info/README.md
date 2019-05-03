@@ -4,7 +4,7 @@ Get info about service principal
 
 # install
 
-    $ sparrow plg install azure-service-principal-info
+    $ s6 --install azure-service-principal-info
 
 # usage
 

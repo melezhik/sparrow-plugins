@@ -4,7 +4,7 @@ List ssl certificates
 
 # install
 
-    $ sparrow plg install azure-ssl-cert-list
+    $ s6 --install azure-ssl-cert-list
 
 # usage
 

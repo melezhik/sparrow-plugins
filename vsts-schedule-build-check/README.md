@@ -4,7 +4,7 @@ Checks scheduleled vsts builds
 
 # INSTALL
 
-    $ sparrow plg install vsts-schedule-build-check
+    $ s6 --install vsts-schedule-build-check
 
 # USAGE
 

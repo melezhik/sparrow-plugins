@@ -4,7 +4,7 @@ Installs Perl psgi application and dependencies, runs application as ubic servic
 
 # INSTALL
 
-    $ sudo sparrow plg install perl-app
+    $ sudo s6 --install perl-app
 
 # Prerequisites
 

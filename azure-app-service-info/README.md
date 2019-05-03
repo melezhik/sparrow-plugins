@@ -4,7 +4,7 @@ Shows info for Azure app service
 
 # install
 
-    $ sparrow plg install azure-app-service-info
+    $ s6 --install azure-app-service-info
 
 # usage
 

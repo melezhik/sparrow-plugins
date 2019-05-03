@@ -6,7 +6,7 @@ List Bitbucket repositories. Pagination included! (:
 # INSTALL
 
 
-    $ sparrow plg install bitbucket-repo-list
+    $ s6 --install bitbucket-repo-list
 
 # USAGE
 

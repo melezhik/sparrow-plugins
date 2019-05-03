@@ -6,7 +6,7 @@ Because it makes my life simpler.
 
 # INSTALL
 
-    $ sparrow plg install azure-arm-deploy
+    $ s6 --install azure-arm-deploy
 
 # Prerequisites
 

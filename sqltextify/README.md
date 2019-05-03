@@ -4,7 +4,7 @@ Wrapper for [sqltextify.pl](https://metacpan.org/pod/distribution/Sql-Textify/sc
 
 # INSTALL
 
-    $ sparrow plg install sqltextify
+    $ s6 --install sqltextify
 
 # USAGE
 

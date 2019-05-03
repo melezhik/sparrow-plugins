@@ -4,7 +4,7 @@ Minify a JavaScript file by using [JavaScript::Minifier](https://metacpan.org/po
 
 # INSTALL
 
-    $ sparrow plg install js-minify
+    $ s6 --install js-minify
 
 # USAGE
 

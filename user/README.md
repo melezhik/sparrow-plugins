@@ -4,7 +4,7 @@ Manages Linux users.
 
 # INSTALL
 
-    $ sparrow plg install user
+    $ s6 --install user
 
 # USAGE
 

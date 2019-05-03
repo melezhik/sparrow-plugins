@@ -5,7 +5,7 @@ Export (multiple) svn repositories into (multiple) git repositories.
 
 # INSTALL
 
-    sparrow plg install git-svn-export
+    s6 --install git-svn-export
 
 # USAGE
 

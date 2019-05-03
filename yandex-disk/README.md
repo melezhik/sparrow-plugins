@@ -4,7 +4,7 @@ Simple wrapper for [Yandex::Disk](https://metacpan.org/pod/Yandex::Disk)
 
 # INSTALL
 
-    $ sparrow plg install yandex-disk
+    $ s6 --install yandex-disk
 
 # USAGE
 

@@ -4,7 +4,7 @@ Get azure token for service principal.
 
 # INSTALL
 
-    $ sparrow plg install azure-token
+    $ s6 --install azure-token
 
 # USAGE
 

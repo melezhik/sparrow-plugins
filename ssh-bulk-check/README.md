@@ -4,7 +4,7 @@ Check multiple hosts states over ssh.
 
 # INSTALL
 
-    $ sparrow plg install ssh-bulk-check
+    $ s6 --install ssh-bulk-check
 
 # USAGE
 

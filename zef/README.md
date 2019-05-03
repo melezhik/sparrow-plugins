@@ -5,7 +5,7 @@ Wrapper for [zef](https://github.com/ugexe/zef) installer.
 
 # INSTALL
 
-    $ sparrow plg install zef
+    $ s6 --install zef
 
 
 # USAGE

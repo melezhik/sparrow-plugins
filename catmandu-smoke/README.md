@@ -4,7 +4,7 @@ Smoke tests for Catmandu
 
 # INSTALL
 
-    $ sparrow plg install catmandu-smoke
+    $ s6 --install catmandu-smoke
 
 # USAGE
 

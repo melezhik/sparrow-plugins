@@ -4,11 +4,11 @@ Shows sub folders statistic for given directory.
 
 # Install
 
-    $ sparrow plg install dir-folder-start
+    $ s6 --install dir-folder-start
 
 # USAGE
 
-    $ sparrow plg install dir-folder-start --param path=/path/to/dir
+    $ s6 --install dir-folder-start --param path=/path/to/dir
   
 For directory given by `path` shows:
 

@@ -5,7 +5,7 @@ Sparrow plugin to run aws instance.
 
 # INSTALL
 
-    $ sparrow plg install aws-run-instance
+    $ s6 --install aws-run-instance
 
 
 # USAGE

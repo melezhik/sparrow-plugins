@@ -4,7 +4,7 @@ Strip longman online dictionary examples and sound tracks
 
 # INSTALL
 
-    $ sparrow plg install longman-online
+    $ s6 --install longman-online
 
 # USAGE
 

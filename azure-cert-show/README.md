@@ -4,7 +4,7 @@ Shows essential information of Azure ssl certificate stored in Key Vault.
 
 # INSTALL
 
-    $ sparrow plg install azure-cert-show
+    $ s6 --install azure-cert-show
 
 # USAGE
 

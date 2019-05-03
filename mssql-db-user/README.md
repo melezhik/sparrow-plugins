@@ -4,7 +4,7 @@ Creates mssql user and grants permissions for database.
 
 # Install
 
-    $ sparrow plg install mssql-db-user
+    $ s6 --install mssql-db-user
 
 # USAGE
 

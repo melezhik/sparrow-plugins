@@ -4,7 +4,7 @@ Make some smoke tests against our mojolicious application
 
 # INSTALL
 
-$ sparrow plg install mojolicious-app-smoke
+$ s6 --install mojolicious-app-smoke
 
 # USAGE
 

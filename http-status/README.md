@@ -4,7 +4,7 @@ A simple wrapper around HTTP::SimpleLinkChecker to identify if URL requested ret
 
 # INSTALL
 
-    $ sparrow plg install http-status
+    $ s6 --install http-status
 
 # USAGE
 

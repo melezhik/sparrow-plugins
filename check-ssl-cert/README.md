@@ -5,7 +5,7 @@ Check if ssl certificates are expired.
 
 # INSTALL
 
-    $ sparrow plg install check-ssl-cert
+    $ s6 --install check-ssl-cert
 
 # USAGE
 

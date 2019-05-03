@@ -4,7 +4,7 @@ List Azure resources
 
 # install
 
-    $ sparrow plg install azure-resource-list
+    $ s6 --install azure-resource-list
 
 # usage
 

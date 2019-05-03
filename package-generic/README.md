@@ -11,7 +11,7 @@ OS supported:
   
 # INSTALL
 
-    $ sparrow plg install package-generic
+    $ s6 --install package-generic
 
 # USAGE
 

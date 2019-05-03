@@ -6,7 +6,7 @@ This effectively means user has a sudo access on this server.
 
 # INSTALL
 
-    $ sparrow plg install ssh-sudo-check
+    $ s6 --install ssh-sudo-check
 
 
 # USAGE

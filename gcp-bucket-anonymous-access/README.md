@@ -5,7 +5,7 @@ Sets anonymous read access to a GCP storage bucket.
 # INSTALL
 
 
-    $ sparrow plg install gcp-bucket-anonymous-access
+    $ s6 --install gcp-bucket-anonymous-access
 
 
 # USAGE

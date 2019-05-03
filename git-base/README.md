@@ -4,7 +4,7 @@ Installs git and makes simple git configuration.
 
 # INSTALL
 
-    $ sparrow plg install git-base
+    $ s6 --install git-base
 
 # USAGE
 

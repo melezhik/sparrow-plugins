@@ -4,7 +4,7 @@ List ssl bindings for web application
 
 # install
 
-    $ sparrow plg install azure-ssl-bind-list
+    $ s6 --install azure-ssl-bind-list
 
 # usage
 

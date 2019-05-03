@@ -5,7 +5,7 @@ Simple [meta6-bin](https://github.com/gfldex/perl6-meta6-bin) runner.
 
 # INSTALL
 
-    sparrow plg install meta6-bin
+    s6 --install meta6-bin
 
 # USAGE
 

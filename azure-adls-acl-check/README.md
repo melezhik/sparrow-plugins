@@ -4,7 +4,7 @@ Fetch and check ACL entries for adls folders.
 
 # INSTALL
 
-    $ sparrow plg install azure-adls-acl-check
+    $ s6 --install azure-adls-acl-check
 
 # USAGE
 

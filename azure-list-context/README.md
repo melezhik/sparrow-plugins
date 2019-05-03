@@ -4,7 +4,7 @@ List locally saved azure contexts
 
 # Install
 
-    $ sparrow plg install azure-list-context
+    $ s6 --install azure-list-context
 
 # Usage
 

@@ -4,7 +4,7 @@ Authenticate to Azure using service principal and save authentication data as a 
 
 # Install
 
-    $ sparrow plg install azure-authenticate
+    $ s6 --install azure-authenticate
 
 # Usage
 

@@ -4,7 +4,7 @@ Smoke tests for Web Service Faker
 
 # INSTALL
 
-    $ sparrow plg install web-service-fake-smoke
+    $ s6 --install web-service-fake-smoke
 
 # USAGE
 

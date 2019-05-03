@@ -4,7 +4,7 @@ Smoke tests for Linux::Proc::Maps
 
 # INSTALL
 
-    $ sparrow plg install linux-proc-maps-smoke
+    $ s6 --install linux-proc-maps-smoke
 
 # USAGE
 

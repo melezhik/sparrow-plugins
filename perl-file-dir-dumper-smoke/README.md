@@ -4,7 +4,7 @@ Smoke tests for File::Dir::Dumper module
 
 # INSTALL
 
-    $ sparrow plg install perl-file-dir-dumper-smoke
+    $ s6 --install perl-file-dir-dumper-smoke
 
 # USAGE
 

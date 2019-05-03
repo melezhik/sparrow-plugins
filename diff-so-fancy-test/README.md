@@ -4,7 +4,7 @@ Tests for [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) tool.
 
 # INSTALL
 
-    $ sparrow plg install diff-so-fancy-test
+    $ s6 --install diff-so-fancy-test
 
 # USAGE
 

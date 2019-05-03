@@ -4,7 +4,7 @@ Simple json linter.
 
 # INSTALL
 
-    $ sparrow plg install json-lint
+    $ s6 --install json-lint
 
 # USAGE
 

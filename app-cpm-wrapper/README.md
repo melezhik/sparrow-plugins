@@ -5,7 +5,7 @@ Simple wrapper for [App::cpm](https://metacpan.org/pod/App::cpm)
 
 # INSTALL
 
-    $ sparrow plg install app-cpm-wrapper
+    $ s6 --install app-cpm-wrapper
 
 # USAGE
 

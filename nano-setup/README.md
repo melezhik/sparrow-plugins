@@ -4,7 +4,7 @@ A simple setup for nano rc file
 
 # INSTALL
 
-    $ sparrow plg install nano-setup 
+    $ s6 --install nano-setup 
 
 # USAGE
 

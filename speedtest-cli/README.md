@@ -5,7 +5,7 @@ Simple wrapper for `speedtest-cli` from [https://github.com/sivel/speedtest-cli]
 
 # INSTALL
 
-    $ sparrow plg install speedtest-cli
+    $ s6 --install speedtest-cli
 
 # USAGE
 

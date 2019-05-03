@@ -9,7 +9,7 @@ if the column with number `$match_col_num` in both files matches but column with
 
 # INSTALL
 
-    $ sparrow plg install file-compare-columns
+    $ s6 --install file-compare-columns
 
 # USAGE
 

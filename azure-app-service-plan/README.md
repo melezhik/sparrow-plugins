@@ -4,7 +4,7 @@ Update Azure app service plan
 
 # install
 
-    $ sparrow plg install azure-app-service-plan
+    $ s6 --install azure-app-service-plan
 
 # usage
 

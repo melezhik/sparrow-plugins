@@ -5,7 +5,7 @@ Reads tomcat logs and checks if war files get deployed successfully
 # INSTALL
 
 
-    $ sparrow plg install check-tomcat-deploy
+    $ s6 --install check-tomcat-deploy
 
 # Prerequisites
 

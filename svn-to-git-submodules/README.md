@@ -9,7 +9,7 @@ This plugins generates a git submodules entries based on `svn list` command outp
 
 # INSTALL
 
-    $ sparrow plg install svn-to-git-submodules
+    $ s6 --install svn-to-git-submodules
 
 # USAGE
 

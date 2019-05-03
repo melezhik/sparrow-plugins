@@ -7,7 +7,7 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/9506868/51477
 
 # INSTALL
 
-    $ sparrow plg install csv-add-column
+    $ s6 --install csv-add-column
 
 # USAGE
 

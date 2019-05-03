@@ -4,7 +4,7 @@ Make git pull for current local branch
 
 # INSTALL
 
-    $ sparrow plg install git-pull
+    $ s6 --install git-pull
 
 # USAGE
 

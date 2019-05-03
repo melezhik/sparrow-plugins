@@ -5,7 +5,7 @@ Simple wrapper for `puck` script from https://github.com/NativeInstruments/puck.
 
 # INSTALL
 
-    $ sparrow plg install puck
+    $ s6 --install puck
 
 # USAGE
 

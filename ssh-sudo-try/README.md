@@ -4,7 +4,7 @@ Connects to remote server by ssh and determines if user has sudo access for the 
 
 # INSTALL
 
-sparrow plg install ssh-sudo-try
+s6 --install ssh-sudo-try
 
 
 # USAGE

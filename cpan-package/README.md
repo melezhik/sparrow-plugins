@@ -10,7 +10,7 @@ cpanm client ( as it used to install cpan modules )
 
 # INSTALL
 
-    $ sparrow plg install cpan-package
+    $ s6 --install cpan-package
 
 
 # USAGE

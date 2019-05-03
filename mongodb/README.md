@@ -5,7 +5,7 @@ Installs mongo db
 
 # INSTALL
 
-    $ sparrow plg install mongodb
+    $ s6 --install mongodb
 
 
 # USAGE

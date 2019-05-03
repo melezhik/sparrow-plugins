@@ -5,7 +5,7 @@ Sparrow plugin to print ec2 instance info in human readable format.
 
 # INSTALL
 
-    $ sparrow plg install aws-show-instance
+    $ s6 --install aws-show-instance
 
 
 # USAGE

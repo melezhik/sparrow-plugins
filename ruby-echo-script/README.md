@@ -4,7 +4,7 @@ Simple ruby echo script.
 
 # INSTALL
 
-    $ sparrow plg install ruby-echo-script
+    $ s6 --install ruby-echo-script
 
 # USAGE
 

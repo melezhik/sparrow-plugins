@@ -8,7 +8,7 @@ Checks if memcached server is healthy.
 
 # INSTALL
 
-    $ sparrow plg install memcached-check
+    $ s6 --install memcached-check
 
 # RUN
 

@@ -5,7 +5,7 @@ Check firewall rules for azure sql database server.
 
 # INSTALL
 
-    $ sparrow plg install azure-sql-server-check-fw
+    $ s6 --install azure-sql-server-check-fw
 
 # USAGE
 

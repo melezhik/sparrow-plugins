@@ -6,7 +6,7 @@ See [https://metacpan.org/pod/distribution/Module-Release/script/release](https:
 
 # INSTALL
 
-    $ sparrow plg install module-release
+    $ s6 --install module-release
 
 # USAGE
 

@@ -4,7 +4,7 @@ Deploy ARM template
 
 # install
 
-    $ sparrow plg install azure-deploy-arm
+    $ s6 --install azure-deploy-arm
 
 # usage
 

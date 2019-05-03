@@ -8,7 +8,7 @@ Checks if postgresql server is healthy.
 
 # INSTALL
 
-    $ sparrow plg install postgresql-check
+    $ s6 --install postgresql-check
 
 # RUN
 

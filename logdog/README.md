@@ -4,7 +4,7 @@ Smart beagle to find suspicious entries in your logs for period of time.
 
 # INSTALL
 
-    $ sparrow plg install logdog
+    $ s6 --install logdog
 
 # CONFIGURATION
 
