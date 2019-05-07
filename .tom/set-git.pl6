@@ -1,6 +1,6 @@
 task-run "set git", "git-base", %(
-  email => 'melezhik@gmail.com',
+  email => 'melezhik@localhost',
   name  => 'Alexey Melezhik',
-  config_scope => 'local',
+  config_scope => 'global',
   set_credential_cache => 'on'
 );

@@ -82,6 +82,12 @@ Ado project
 
 Ado user, used for authentication
 
+## only
+
+Only load given list of variables, for example:
+
+  only => ( 'login', 'password' )
+
 ## token
 
 Ado token, used for authentication

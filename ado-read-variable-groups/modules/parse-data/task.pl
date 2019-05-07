@@ -4,6 +4,7 @@ use JSON;
 use Text::Table::Tiny qw/ generate_table /;
 
 my $output = task_var("output");
+my %only = map { $_ => 1 } @{ config()->{only} || [] };
 
 open (my $fh, "<", $output) or die $!;
 
@@ -28,7 +29,11 @@ my @list;
 #print Dumper(\%vars);
 
 for my $i (sort keys %vars){
+
+  next unless (config()->{only} && $only{$i});
+
   push @list, { name => $i, value => $vars{$i}->{value} };
+
   push @rows, [ $i, $vars{$i}->{value} ];
 }
 
