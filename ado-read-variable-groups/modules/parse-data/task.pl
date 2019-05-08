@@ -30,7 +30,9 @@ my @list;
 
 for my $i (sort keys %vars){
 
-  next unless (config()->{only} && $only{$i});
+  if ( config()->{only} ) {
+    next unless $only{$i};
+  }
 
   push @list, { name => $i, value => $vars{$i}->{value} };
 
