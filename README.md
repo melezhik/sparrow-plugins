@@ -1,10 +1,16 @@
 # SYNOPSIS
 
-My [Sparrow](https://github.com/melezhik/sparrow) plugins.
+My [Sparrow6](https://github.com/melezhik/sparrow6) plugins.
+
+# INSTALL
+
+    git clone https://github.com/melezhik/sparrow-plugins.git
+
+    find -maxdepth 2 -mindepth 2 -name sparrow.json -execdir s6 --upload \;
 
 # See also
 
-[Sparrow](https://github.com/melezhik/sparrow)
+[Sparrow6](https://github.com/melezhik/sparrow6)
 
 # Author
 
