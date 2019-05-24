@@ -4,7 +4,7 @@ Simple wrapper for `stocks` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install stocks
+    $ s6 --install stocks
 
 # USAGE
 

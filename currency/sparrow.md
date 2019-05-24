@@ -5,7 +5,7 @@ Simple wrapper for `currency` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install currency
+    $ s6 --install currency
 
 # USAGE
 

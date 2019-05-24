@@ -5,7 +5,7 @@ Simple wrapper for `ytview` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install ytview
+    $ s6 --install ytview
 
 # USAGE
 

@@ -5,7 +5,7 @@ Simple wrapper for `movies` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install movies
+    $ s6 --install movies
 
 # USAGE
 

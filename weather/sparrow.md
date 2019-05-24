@@ -5,7 +5,7 @@ Simple wrapper for `weather` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install weather
+    $ s6 --install weather
 
 # USAGE
 

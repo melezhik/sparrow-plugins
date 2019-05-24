@@ -5,7 +5,7 @@ Simple wrapper for `geo` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install geo
+    $ s6 --install geo
 
 # USAGE
 

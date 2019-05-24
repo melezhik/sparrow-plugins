@@ -5,7 +5,7 @@ Simple wrapper for `taste` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install taste
+    $ s6 --install taste
 
 # USAGE
 

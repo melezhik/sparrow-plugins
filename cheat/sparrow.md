@@ -5,7 +5,7 @@ Simple wrapper for `cheat` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install cheat
+    $ s6 --install cheat
 
 # USAGE
 

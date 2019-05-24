@@ -5,7 +5,7 @@ Simple wrapper for `crypt` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install crypt
+    $ s6 --install crypt
 
 # USAGE
 

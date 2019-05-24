@@ -5,7 +5,7 @@ Simple wrapper for `qrify` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install qrify
+    $ s6 --install qrify
 
 # USAGE
 

@@ -5,7 +5,7 @@ Simple wrapper for `cloudup` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install cloudup
+    $ s6 --install cloudup
 
 # USAGE
 

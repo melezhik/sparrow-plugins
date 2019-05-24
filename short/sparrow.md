@@ -5,7 +5,7 @@ Simple wrapper for `short` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install short
+    $ s6 --install short
 
 # USAGE
 
