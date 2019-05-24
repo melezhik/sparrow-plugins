@@ -11,7 +11,7 @@ Sparrow plugin to print launch configuration in human readable format.
 
 To dump your l in human readable format just run:
 
-    $ sparrow plg run  aws-launch-cfg-show --param name=$launch-configuration-name
+    $ s6 --plg-run aws-launch-cfg-show@name=$launch-configuration-name
 
 # Author
 

@@ -8,7 +8,7 @@ List locally saved azure contexts
 
 # Usage
 
-    $ sparrow plg run azure-list-context
+    $ s6 --plg-run azure-list-context
 
 # Parameters
 
@@ -16,7 +16,7 @@ List locally saved azure contexts
 
 Filter out by account name
 
-    $ sparrow plg run azure-list-context --param search=Dev
+    $ s6 --plg-run azure-list-context@search=Dev
 
 # Requirements
 

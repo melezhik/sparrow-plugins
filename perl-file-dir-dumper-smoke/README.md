@@ -8,7 +8,7 @@ Smoke tests for File::Dir::Dumper module
 
 # USAGE
 
-    $ sparrow plg run perl-file-dir-dumper-smoke
+    $ s6 --plg-run perl-file-dir-dumper-smoke
 
 # See also
 

@@ -18,17 +18,17 @@ module skeleton  with the help of meta6-bin ) all the meta6-bin parameters but k
 
 ## Runs with default options
 
-    $ sparrow project create perl6-projects
-    $ sparrow task add perl6-projects new-module meta6-bin
-    $ sparrow task run perl6-projects/new-module --param name=Foo::Bar --param path=~/projects
+/meta6-bin/README
+/meta6-bin/README
+    $ s6 --task-run perl6-projects/new-module,name=Foo::Bar,path=~/projects
 
 ## Override default options:
 
-    $ sparrow task ini perl6-projects/new-module
+    $ s6 --task-set perl6-projects/new-module
     options --force --skip-git --skip-github 
     path /opt/projects/
 
-    $ sparrow task run perl6-projects/new-module --param name=Foo::Bar 
+    $ s6 --task-run perl6-projects/new-module,name=Foo::Bar 
     
     
 

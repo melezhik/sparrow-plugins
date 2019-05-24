@@ -14,7 +14,7 @@ CLI:
     # generate certificate cert.pfx for /CN=Superco
     # place certificate into current working directory
 
-    $ sparrow plg run uwp-self-signed-cert --param subj=/CN=Superco --cwd $PWD
+    $ s6 --plg-run uwp-self-signed-cert@subj=/CN=Superco --cwd $PWD
 
 # Parameters
   

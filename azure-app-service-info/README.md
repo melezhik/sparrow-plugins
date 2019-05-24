@@ -8,7 +8,7 @@ Shows info for Azure app service
 
 # usage
 
-    $ sparrow plg run azure-app-service-info --param resource_group=$RG --param app_service=$AppServiceName --param context=Dev
+    $ s6 --plg-run azure-app-service-info@resource_group=$RG,app_service=$AppServiceName,context=Dev
 
 # parameters
 

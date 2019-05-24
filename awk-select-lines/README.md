@@ -14,11 +14,11 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/38972737/5147
 
 To print lines between two patterns (`$pat1` and `$pat1`) in `$file`:
 
-    $ sparrow plg run awk-select-lines \
+    $ s6 --plg-run awk-select-lines@\
     --format concise  # to strip reports lines 
-    --param file=/path/to/file/example.txt \
-    --param pat1=PAT1 --param pat2=PAT2 \
-    --param mode=2
+    ,file=/path/to/file/example.txt\
+    ,pat1=PAT1,pat2=PAT2\
+    ,mode=2
 
 Setting mode:
 

@@ -8,7 +8,7 @@ Shows sub folders statistic for given directory.
 
 # USAGE
 
-    $ s6 --install dir-folder-start --param path=/path/to/dir
+    $ s6 --install dir-folder-start,path=/path/to/dir
   
 For directory given by `path` shows:
 

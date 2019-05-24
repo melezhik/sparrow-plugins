@@ -11,27 +11,27 @@ Simple wrapper for `vault`
 
 Basic usage:
 
-    $ sparrow plg run vault -- <args>
+    $ s6 --plg-run vault -- <args>
 
 For example:
 
-    $ sparrow plg run vault -- --erase_vault
+    $ s6 --plg-run vault -- --erase_vault
 
 See parameters description at [https://github.com/gabfl/vault](https://github.com/gabfl/vault)
 
 If you need some automation:
 
-    $ sparrow project create utils
+/vault/README
 
-    $ sparrow task add utils vault-eraser vault
+/vault/README
 
-    $ sparrow task ini utils/vault-eraser
+    $ s6 --task-set utils/vault-eraser
 
       args:
         - 
           - e
 
-    $ sparrow task run utils/vault-eraser
+    $ s6 --task-run utils/vault-eraser
 
 # Author
 

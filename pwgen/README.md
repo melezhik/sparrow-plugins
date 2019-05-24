@@ -11,7 +11,7 @@ Simple Perl Based password generator. Because `pwgen` is missing in Centos.
 CLI:
 
     # generate password 16 symbols length
-    $ sparrow plg run pwgen --param len=16
+    $ s6 --plg-run pwgen@len=16
 
 # Author
 

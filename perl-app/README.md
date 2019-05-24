@@ -16,7 +16,7 @@ A following packages should be installed so this plugin works properly:
 
 # USAGE
 
-    $ sudo sparrow plg run perl-app --param app_source_url={git-remote-repository-url}
+    $ sudo s6 --plg-run perl-app@app_source_url={git-remote-repository-url}
 
 # Plugin parameters:
 

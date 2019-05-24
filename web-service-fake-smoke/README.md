@@ -8,7 +8,7 @@ Smoke tests for Web Service Faker
 
 # USAGE
 
-    $ sparrow plg run web-service-fake-smoke
+    $ s6 --plg-run web-service-fake-smoke
 
 # Author
 

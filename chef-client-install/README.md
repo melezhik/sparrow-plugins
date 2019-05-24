@@ -10,7 +10,7 @@ Install chef client.
 
 CLI:
 
-    $ sparrow plg run chef-client-install
+    $ s6 --plg-run chef-client-install
 
 Via sparrowdo:
 

@@ -12,10 +12,10 @@ A simple wrapper to automate [perlbrew](http://perlbrew.pl) installation.
 ## Install perlbrew
   
     # install perlbrew - this is default action  
-    $ sparrow plg run perlbrew
+    $ s6 --plg-run perlbrew
 
     # or say it explecitely
-    $ sparrow plg run perlbrew --param action=install
+    $ s6 --plg-run perlbrew@action=install
 
 
 # Supported platfroms

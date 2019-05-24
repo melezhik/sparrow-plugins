@@ -8,7 +8,7 @@ Simple ruby echo script.
 
 # USAGE
 
-    $ sparrow plg run ruby-echo-script
+    $ s6 --plg-run ruby-echo-script
 
 # Author
 

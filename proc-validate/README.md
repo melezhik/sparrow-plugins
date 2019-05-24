@@ -15,10 +15,10 @@ Check if process set by PID taken from pid file exists.
 ## Manually
 
     # check process by PID taken from pid file
-    $ sparrow plg run proc-validate --param pid_file=/var/run/nginx.pid
+    $ s6 --plg-run proc-validate@pid_file=/var/run/nginx.pid
 
     # check process by footprint 
-    $ sparrow plg run proc-validate --param footprint='sshd\s+-D'
+    $ s6 --plg-run proc-validate@footprint='sshd\s+-D'
 
 ## Via Sparrowdo
 
@@ -40,7 +40,7 @@ Check if process set by PID taken from pid file exists.
 Sometimes you need to verify that process data taken from `ps`  
 matches some regular expression, use footprint parameter for this:
 
-    $ sparrow plg run proc-validate --param pid_file=/var/run/nginx.pid --param footprint='nginx.*master'
+    $ s6 --plg-run proc-validate@pid_file=/var/run/nginx.pid,footprint='nginx.*master'
 
 Or via sparrowdo:
 

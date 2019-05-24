@@ -10,7 +10,7 @@ Execute bash commands
 
 ## Manually
 
-    $ sparrow plg run bash --param user=foo --param command="'echo hello world'"
+    $ s6 --plg-run bash@user=foo,command="'echo hello world'"
 
 
 ## With sparrowdo
@@ -40,7 +40,7 @@ This is optional parameter. Verify if command print something into stdout. This 
 
 Example:
 
-    $ sparrow plg run --param command="echo I AM OK" --param expect_stdout='I AM \S+'
+    $ s6 --plg-run,command="echo I AM OK",expect_stdout='I AM \S+'
 
 Or via sparrowdo:
 

@@ -27,9 +27,9 @@ The list of supported actions:
 ## Manually
 
 
-    $ sparrow plg run service --param service=nginx --param action=enable
-    $ sparrow plg run service --param service=nginx --param action=start
-    $ sparrow plg run service --param service=nginx --param action=stop
+    $ s6 --plg-run service@service=nginx,action=enable
+    $ s6 --plg-run service@service=nginx,action=start
+    $ s6 --plg-run service@service=nginx,action=stop
     $ # so on ...
 
 

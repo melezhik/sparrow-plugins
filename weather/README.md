@@ -11,26 +11,26 @@ Simple wrapper for `weather` script from Bash-Snippets.
 
 Basic usage:
 
-    $ sparrow plg run weather -- <args>
+    $ s6 --plg-run weather -- <args>
 
 For example:
 
-    $ sparrow plg run weather -- Saint-Petersburg
+    $ s6 --plg-run weather -- Saint-Petersburg
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/weather/sparrow
 
-    $ sparrow task add utils weather-spb weather
+/weather/sparrow
 
-    $ sparrow task ini utils/weather-spb
+    $ s6 --task-set utils/weather-spb
 
       ---
 
       args:
         - Saint-Petersburg
 
-    $ sparrow task run utils/weather-spb
+    $ s6 --task-run utils/weather-spb
 
 For weather's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#weather](https://github.com/alexanderepstein/Bash-Snippets#weather)
 

@@ -8,7 +8,7 @@ Run tests against BashSnippets tools with interactive prompt.
 
 # USAGE
 
-    $ sparrow plg run bash-snippets-interactive-test --param dir=/path/to/bash-snippets/tools/directory
+    $ s6 --plg-run bash-snippets-interactive-test@dir=/path/to/bash-snippets/tools/directory
 
 
 ![report](https://raw.githubusercontent.com/melezhik/images/master/report.png)

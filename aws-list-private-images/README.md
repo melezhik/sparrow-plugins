@@ -13,7 +13,7 @@ Sparrow plugin to list private aws images
 To dump your private aws instances in JSON format just run:
 
 
-    $ sparrow plg run  aws-list-private-images
+    $ s6 --plg-run  aws-list-private-images
 
 
 # Author

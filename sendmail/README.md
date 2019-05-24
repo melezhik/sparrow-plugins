@@ -14,10 +14,10 @@ A real [sendmail](https://en.wikipedia.org/wiki/Sendmail) should installed and c
 
 ## Manually
 
-    $ echo OK | sparrow plg run sendmail  \
-    --param from=melezhik@sparrowhub.org \
-    --param to=melezhik@gmail.com \
-    --param subject=hello-world
+    $ echo OK | s6 --plg-run sendmail@\
+    ,from=melezhik@sparrowhub.org\
+    ,to=melezhik@gmail.com\
+    ,subject=hello-world
 
 
 # Parameters

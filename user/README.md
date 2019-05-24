@@ -10,11 +10,11 @@ Manages Linux users.
 
 ## manually
 
-    $ sparrow plg run user --param name=sparrow
-    $ sparrow plg run user --param name=sparrow --param uid=2500 --param gid=1300
-    $ sparrow plg run user --param name=sparrow --param managehome=no
-    $ sparrow plg run user --param name=sparrow --param action=delete
-    $ sparrow plg run user --param name=sparrow --param action=create --param password=12345
+    $ s6 --plg-run user@name=sparrow
+    $ s6 --plg-run user@name=sparrow,uid=2500,gid=1300
+    $ s6 --plg-run user@name=sparrow,managehome=no
+    $ s6 --plg-run user@name=sparrow,action=delete
+    $ s6 --plg-run user@name=sparrow,action=create,password=12345
 
 ## via sparrowdo
 
@@ -65,7 +65,7 @@ User home directory
 
 List of user's groups. Should be comma separated list of items. For example:
    
-   ` --param groups="developers,admins"`
+   `,groups="developers,admins"`
 
 ## action
 

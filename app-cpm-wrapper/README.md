@@ -11,13 +11,13 @@ Simple wrapper for [App::cpm](https://metacpan.org/pod/App::cpm)
 
 Basic usage:
 
-    $ sparrow plg run app-cpm-wrapper --param module=$module -- <app-cpm-wrapper-params>
+    $ s6 --plg-run app-cpm-wrapper@module=$module -- <app-cpm-wrapper-params>
 
 For example:
 
-    $ sparrow plg run app-cpm-wrapper \
-    --param module="HTTP::Tiny Config::Tiny" -- \
-    -w 2 \
+    $ s6 --plg-run app-cpm-wrapper@\
+    ,module="HTTP::Tiny Config::Tiny" --\
+    -w 2\
     -L /home/melezhik/cpan # so on
 
 See parameters description at [cpm doc](https://metacpan.org/pod/distribution/App-cpm/script/cpm)
@@ -26,18 +26,18 @@ See parameters description at [cpm doc](https://metacpan.org/pod/distribution/Ap
 
 By sparrow tasks:
 
-    $ sparrow project create cpan
+/app-cpm-wrapper/README
 
-    $ sparrow task add cpan installer app-cpm-wrapper
+/app-cpm-wrapper/README
 
-    $ sparrow task ini cpan/installer
+    $ s6 --task-set cpan/installer
 
       ---
       args: 
         - '~w': 2 
         - '~L': /home/melezhik/cpan
 
-    $ sparrow task run cpan/installer --param module="HTTP::Tiny Config::Tiny"
+    $ s6 --task-run cpan/installer,module="HTTP::Tiny Config::Tiny"
 
 
 Or if you prefer remote run, use Sparrowdo:

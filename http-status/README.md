@@ -8,7 +8,7 @@ A simple wrapper around HTTP::SimpleLinkChecker to identify if URL requested ret
 
 # USAGE
 
-    $ sparrow plg run http-status --param url=sparrowhub.org
+    $ s6 --plg-run http-status@url=sparrowhub.org
 
 # See also 
 

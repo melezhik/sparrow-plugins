@@ -11,17 +11,17 @@ Simple wrapper for `puck` script from https://github.com/NativeInstruments/puck.
 
 Basic usage:
 
-    $ sparrow plg run puck -- <args>
+    $ s6 --plg-run puck -- <args>
 
 See parameters description at [https://github.com/NativeInstruments/puck](https://github.com/NativeInstruments/puck)
 
 If you need some automation:
 
-    $ sparrow project create utils
+/puck/README
 
-    $ sparrow task add utils $task-name puck
+/puck/README
 
-    $ sparrow task ini utils/$task-name
+    $ s6 --task-set utils/$task-name
 
       ---
 
@@ -30,7 +30,7 @@ If you need some automation:
         - bar
         - # so on
 
-    $ sparrow task run utils/$task-name
+    $ s6 --task-run utils/$task-name
 
 # Author
 

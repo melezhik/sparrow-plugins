@@ -12,7 +12,7 @@ Ubuntu/CentOS/Debian.
 
 # USAGE
 
-    $ sparrow plg run minikube-install
+    $ s6 --plg-run minikube-install
 
 # Author
 

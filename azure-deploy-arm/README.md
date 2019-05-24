@@ -8,9 +8,9 @@ Deploy ARM template
 
 # usage
 
-    $ sparrow plg run azure-deploy-arm \
-    --param resource_group=$RG \
-    --param path=C:\tmp\resources.json
+    $ s6 --plg-run azure-deploy-arm@\
+    ,resource_group=$RG\
+    ,path=C:\tmp\resources.json
 
 # parameters
 

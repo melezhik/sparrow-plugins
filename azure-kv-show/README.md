@@ -34,12 +34,12 @@ Sparrow cli:
 
     # Dump secret `password` of key vault ID `Stash`
 
-    $ sparrow plg run azure-kv-show --param kv=Stash --param secret=password
+    $ s6 --plg-run azure-kv-show@kv=Stash,secret=password
 
 
     # Dump secret's value by key vault URL 
 
-    $ sparrow plg run azure-kv-show --param url={key vault url}
+    $ s6 --plg-run azure-kv-show@url={key vault url}
 
 # state
 

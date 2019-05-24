@@ -13,12 +13,12 @@ if the column with number `$match_col_num` in both files matches but column with
 
 # USAGE
 
-    $ sparrow plg run file-compare-columns \
+    $ s6 --plg-run file-compare-columns@\
     --format concise \ # to hide overly info 
-    --param file1=/path/to/file1 \
-    --param file2=/path/to/file2 \
-    --param match_col_num=1 \
-    --param mismatch_col_num=3
+    ,file1=/path/to/file1\
+    ,file2=/path/to/file2\
+    ,match_col_num=1\
+    ,mismatch_col_num=3
 
 # Plugin maintainer
 

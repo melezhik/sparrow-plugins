@@ -17,14 +17,14 @@ Please create an [issue](https://github.com/melezhik/docker-engine/issues)  if y
 
 This command will install docker engine on your server:
 
-    $ sparrow plg run docker-engine
+    $ s6 --plg-run docker-engine
 
 # Runtime parameters
 
 If you run a second time it could be handy to save your time asking a plugin to skip some time consuming steps.
 For example skip `apt-get update` command and do not import gpg key:
 
-    $ sparrow plg run docker-engine --param repo_update=0 --param add_gpg_key=0
+    $ s6 --plg-run docker-engine@repo_update=0,add_gpg_key=0
 
 # Author
 

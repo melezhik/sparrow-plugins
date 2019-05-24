@@ -11,17 +11,17 @@ Simple wrapper for [Catmandu cli](https://metacpan.org/pod/distribution/Catmandu
 
 Basic usage:
 
-    $ sparrow plg run catmandu  <params> -- <catmandu-params>
+    $ s6 --plg-run catmandu  <params> -- <catmandu-params>
 
 For example:
 
     # read data from stdin and write to stdout
-    $ sparrow plg run catmandu -- convert JSON to YAML
+    $ s6 --plg-run catmandu -- convert JSON to YAML
 
     # read data from /path/to/file.json  and write to /path/to/file.yaml
-    $ sparrow plg run catmandu \
-    --param in=/path/to/file.json \
-    --param out=/path/to/file.yaml \
+    $ s6 --plg-run catmandu@\
+    ,in=/path/to/file.json\
+    ,out=/path/to/file.yaml\
     -- convert JSON to YAML
 
 For catmandu parameters follow [Catmandu documentation](https://metacpan.org/pod/distribution/Catmandu/bin/catmandu)
@@ -30,11 +30,11 @@ For catmandu parameters follow [Catmandu documentation](https://metacpan.org/pod
 
 By sparrow tasks:
 
-    $ sparrow project create utils
+/catmandu/README
 
-    $ sparrow task add utils json-to-yaml catmandu
+/catmandu/README
 
-    $ sparrow task ini utils/json-to-yaml
+    $ s6 --task-set utils/json-to-yaml
 
       ---
       out: /path/to/file.yaml
@@ -44,7 +44,7 @@ By sparrow tasks:
         - to
         - YAML
 
-    $ sparrow task run utils/json-to-yaml --param in=/path/to/file.json
+    $ s6 --task-run utils/json-to-yaml,in=/path/to/file.json
 
 
 Or if you prefer remote run, use Sparrowdo:

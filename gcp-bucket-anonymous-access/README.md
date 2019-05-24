@@ -10,7 +10,7 @@ Sets anonymous read access to a GCP storage bucket.
 
 # USAGE
 
-    $ sparrow plg run gcp-bucket-anonymous-access --param bucket=bucket-id
+    $ s6 --plg-run gcp-bucket-anonymous-access@bucket=bucket-id
 
 # Parameters
 

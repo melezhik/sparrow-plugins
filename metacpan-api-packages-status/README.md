@@ -12,14 +12,14 @@ Checks packages statuses at MetaCPAN. A list of packages is taken from 02package
 
 # USAGE
 
-    $ sparrow plg run metacpan-api-packages-status
+    $ s6 --plg-run metacpan-api-packages-status
 
 # DEBUGGING
 
 If you are plugin developer it's probably better download 02packages file and the feed it to the plugin:
 
     $ curl http://www.cpan.org/modules/02packages.details.txt -o /tmp/02packages.details.txt
-    $ cat /tmp/02packages.details.txt | sparrow plg run metacpan-api-packages-status --param lines=20
+    $ cat /tmp/02packages.details.txt | s6 --plg-run metacpan-api-packages-status@lines=20
 
 # Parameters
 
@@ -37,7 +37,7 @@ Sleep $sleep seconds before initiating  next request to MetaCPAN API. Default va
 
 For example:
 
-    $ sparrow plg run metacpan-api-packages-status --param sleep=5
+    $ s6 --plg-run metacpan-api-packages-status@sleep=5
 
 # Author
 

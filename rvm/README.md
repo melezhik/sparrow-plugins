@@ -14,8 +14,8 @@ Install rvm and Ruby
 
 ## By sparrow
 
-    $ sparrow plg run rvm # install rvm with default Ruby
-    $ sparrow plg run rvm --param ruby_version=2.1.2 # install specific Ruby version
+    $ s6 --plg-run rvm # install rvm with default Ruby
+    $ s6 --plg-run rvm@ruby_version=2.1.2 # install specific Ruby version
 
 ## By sparrowdo
 

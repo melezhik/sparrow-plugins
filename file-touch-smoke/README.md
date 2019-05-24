@@ -8,7 +8,7 @@ Smoke tests for File::Touch module
 
 # USAGE
 
-    $ sparrow plg run file-touch-smoke
+    $ s6 --plg-run file-touch-smoke
 
 # See also
 

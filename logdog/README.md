@@ -8,11 +8,11 @@ Smart beagle to find suspicious entries in your logs for period of time.
 
 # CONFIGURATION
 
-    $ sparrow project create nginx
+/logdog/README
 
-    $ sparrow task add nginx 500-errors logdog
+/logdog/README
 
-    $ sparrow task ini nginx/500-errors 
+    $ s6 --task-set nginx/500-errors 
 
     # all the configuration
     # should be kept under
@@ -74,7 +74,7 @@ Smart beagle to find suspicious entries in your logs for period of time.
     
 # USAGE
 
-   sparrow task run nginx/500-errors 
+   s6 --task-run nginx/500-errors 
 
 # AUTHOR
 

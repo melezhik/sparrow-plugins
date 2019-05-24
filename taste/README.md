@@ -11,19 +11,19 @@ Simple wrapper for `taste` script from Bash-Snippets.
 
 Basic usage:
 
-    $ sparrow plg run taste -- <args>
+    $ s6 --plg-run taste -- <args>
 
 For example:
 
-    $ sparrow plg run taste -- -s Red Hot Chili Peppers
+    $ s6 --plg-run taste -- -s Red Hot Chili Peppers
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/taste/sparrow
 
-    $ sparrow task add utils taste-rhcp taste
+/taste/sparrow
 
-    $ sparrow task ini utils/taste-rhcp
+    $ s6 --task-set utils/taste-rhcp
 
       ---
 
@@ -31,7 +31,7 @@ Run as sparrow task:
         - '-s'
         - Red Hot Chili Peppers
 
-    $ sparrow task run utils/taste-rchp
+    $ s6 --task-run utils/taste-rchp
 
 For taste's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#taste](https://github.com/alexanderepstein/Bash-Snippets#taste)
 

@@ -14,7 +14,7 @@ CLI:
     # and runs `git pull` inside every directory
     # if directory .git found
 
-    $ sparrow plg run git-dir-pull --cwd=$PWD
+    $ s6 --plg-run git-dir-pull --cwd=$PWD
 
 # Author
 

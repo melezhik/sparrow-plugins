@@ -8,7 +8,7 @@ $ s6 --install mojolicious-app-smoke
 
 # USAGE
 
-$ sparrow plg run mojolicious-app-smoke
+$ s6 --plg-run mojolicious-app-smoke
 
 # Author
 

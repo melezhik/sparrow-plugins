@@ -14,13 +14,13 @@ CLI:
     # Resource group `myGroup`
     # place certificate into current working directory
 
-    $ sparrow plg run azure-web-app-appsettings --param app_service=webApp --param group=myGroup
+    $ s6 --plg-run azure-web-app-appsettings@app_service=webApp,group=myGroup
 
 Sparrow task
 
-    $ sparrow project create azure
+/azure-web-app-appsettings/README
     $ sparrow project task add azure webapp-settings azure-web-app-appsettings
-    $ sparrow task ini azure webapp-settings
+    $ s6 --task-set azure webapp-settings
 
     group: myGroup
     app_service: webApp
@@ -39,7 +39,7 @@ Azure resource group name.
 
 You may check if certain settings exists in application settings, by setting `required_settings` array:
 
-    $ sparrow task ini azure webapp-settings
+    $ s6 --task-set azure webapp-settings
 
     group: myGroup
     app_service: webApp

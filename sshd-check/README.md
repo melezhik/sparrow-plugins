@@ -12,7 +12,7 @@ Simple check if your sshd daemon seen at process list.
 
 # RUN
 
-    $ sparrow plg run sshd-check
+    $ s6 --plg-run sshd-check
 
 # AUTHOR
 

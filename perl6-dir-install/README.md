@@ -14,7 +14,7 @@ CLI:
     # and runs `zef install . --force-install`
     # if directory contains META6.json file
 
-    $ sparrow plg run perl6-dir-install --cwd=$PWD
+    $ s6 --plg-run perl6-dir-install --cwd=$PWD
 
 # Author
 

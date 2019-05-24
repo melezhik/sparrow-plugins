@@ -13,8 +13,8 @@ Regenerate mi6 `dist.ini` and `.gitignore` files for Perl6 project.
 
 # USAGE 
 
-    $ sparrow plg run mi6-dist-ini --cwd $PWD \
-    --param module=My::Module
+    $ s6 --plg-run mi6-dist-ini --cwd $PWD\
+    ,module=My::Module
 
 # Author
 

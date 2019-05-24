@@ -12,7 +12,7 @@ nginx-check - checks if nginx server is healthy by executing low level system ch
 
 # USAGE
 
-    $ sparrow plg run nginx-check
+    $ s6 --plg-run nginx-check
 
 # Pluign parameters
 
@@ -28,7 +28,7 @@ Example values: 10 minutes, 1 days, 3 hours
 
 # Usage Example
 
-    $ sparrow plg run nginx-check --param validate_etime=1 --param hitask="'100 seconds'"
+    $ s6 --plg-run nginx-check@validate_etime=1,hitask="'100 seconds'"
 
 # AUTHOR
 

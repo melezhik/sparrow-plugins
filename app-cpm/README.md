@@ -14,7 +14,7 @@ App::cpm client (cpm)
 
 ## Manually
 
-    $ sparrow plg run app-cpm --param list="'CGI DBI Moose'"
+    $ s6 --plg-run app-cpm@list="'CGI DBI Moose'"
 
 ## Via sparrowdo
 

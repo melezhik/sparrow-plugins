@@ -27,9 +27,9 @@ Tomtit/Sparrowdo
 Sparrow cli:
 
 
-    $ sparrow project create cluster
-    $ sparrow task add cluster sudoers ssh-sudo-try
-    $ sparrow task ini cluster sudoers 
+/ssh-sudo-try/README
+/ssh-sudo-try/README
+    $ s6 --task-set cluster sudoers 
 
       servers = 127.0.0.1,foo.bar.baz,192.168.0.0.1
   
@@ -37,13 +37,13 @@ Sparrow cli:
 
       sudo_command = sudo /bin/bash -c 'echo'
 
-    $ sparrow task run cluster sudoers
+    $ s6 --task-run cluster sudoers
 
 Setting parameters on runtime:
 
-    $ sparrow check run cluster sudoers \
-    --param servers=192.168.0.1,192.168.0.2 \
-    --param sudo_command='"sudo /etc/init.d/nginx restart'"
+    $ sparrow check run cluster sudoers\
+    ,servers=192.168.0.1,192.168.0.2\
+    ,sudo_command='"sudo /etc/init.d/nginx restart'"
  
 # AUTHOR
 

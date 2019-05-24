@@ -10,7 +10,7 @@ Simple wrapper for `stocks` script from Bash-Snippets.
 
 Basic usage:
 
-    $ sparrow plg run stocks -- <args>
+    $ s6 --plg-run stocks -- <args>
     
 For example:
 
@@ -18,18 +18,18 @@ For example:
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/stocks/sparrow
 
-    $ sparrow task add utils google-stocks stocks
+/stocks/sparrow
 
-    $ sparrow task ini utils/google-stocks
+    $ s6 --task-set utils/google-stocks
 
       ---
 
       args:
         - Google
 
-    $ sparrow task run utils/google-stocks
+    $ s6 --task-run utils/google-stocks
 
 For stocks's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#stocks](https://github.com/alexanderepstein/Bash-Snippets#stocks)
     

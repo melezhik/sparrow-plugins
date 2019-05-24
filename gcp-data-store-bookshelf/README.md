@@ -14,14 +14,14 @@ An Example of Ruby API for Google Gloud DataStore.
     $ export GOOGLE_CLOUD_KEYFILE=/path/to/json/file
 
     # list bookshelf entries:
-    $ sparrow plg run gcp-data-store-bookshelf --param project_id=$project_id
+    $ s6 --plg-run gcp-data-store-bookshelf@project_id=$project_id
 
     # add bookshelf entry:
-    $ sparrow plg run gcp-data-store-bookshelf \
-    --param project_id=$project_id --param action=add  \
-    --param title="War and Peace" \
-    --param author="Лев Николаевич Толстой" \
-    --param desciption="School Reading"
+    $ s6 --plg-run gcp-data-store-bookshelf@\
+    ,project_id=$project_id,action=add\
+    ,title="War and Peace"\
+    ,author="Лев Николаевич Толстой"\
+    ,desciption="School Reading"
 
 # Parameters
 

@@ -11,26 +11,26 @@ Simple wrapper for `short` script from Bash-Snippets.
 
 Basic usage:
 
-    $ sparrow plg run short -- <args>
+    $ s6 --plg-run short -- <args>
 
 For example:
 
-    $ sparrow plg run short -- tinyurl.com/jhkj
+    $ s6 --plg-run short -- tinyurl.com/jhkj
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/short/sparrow
 
-    $ sparrow task add utils short-unmusk-jhkj short
+/short/sparrow
 
-    $ sparrow task ini utils/short-unmusk-jhkj
+    $ s6 --task-set utils/short-unmusk-jhkj
 
       ---
 
       args:
         - tinyurl.com/jhkj
 
-    $ sparrow task run utils/short-unmusk-jhkj
+    $ s6 --task-run utils/short-unmusk-jhkj
 
 For short's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#short](https://github.com/alexanderepstein/Bash-Snippets#short)
 
