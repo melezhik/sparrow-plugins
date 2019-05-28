@@ -16,21 +16,23 @@ my @list;
 
 for my $i (@{$data->{items}}) {
 
+  my $j = $i->{Hosts};
+
   if ($node_type && $node_type eq 'worker'){
 
-    push @list, $i->{host_name} if $i->{host_name} =~ /^wn/;
+    push @list, $j->{host_name} if $j->{host_name} =~ /^wn/;
 
   } elsif ($node_type && $node_type eq 'zoo_keeper') {
 
-    push @list, $i->{host_name} if $i->{host_name} =~ /^zk/;
+    push @list, $j->{host_name} if $j->{host_name} =~ /^zk/;
 
   } elsif ($node_type && $node_type eq 'head') {
 
-    push @list, $i->{host_name} if $i->{host_name} =~ /^hn/;
+    push @list, $j->{host_name} if $j->{host_name} =~ /^hn/;
 
   } else {
 
-    push @list, $i->{host_name};
+    push @list, $j->{host_name};
 
   }
 

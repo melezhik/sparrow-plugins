@@ -1,7 +1,7 @@
 {
 
   "name" : "ambari-hosts",
-  "description" : "Retrive Ambari cluster hosts/ips information",
+  "description" : "Retrieve Ambari cluster hosts/ips information",
   "version" : "0.0.1",
   "sparrow_version": "0.3.6",
   "category" : "azure",
