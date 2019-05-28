@@ -18,8 +18,8 @@ Retrieve Ambari cluster hosts/ips information.
 
 
 
-    for %state<list><> -> $i {
-      say "{$i<hostname>} => {$i<ip>}";
+    for %state<hosts><> -> $i {
+      say "{$i<host>} => {$i<ip>}";
     }
 
 Output:
