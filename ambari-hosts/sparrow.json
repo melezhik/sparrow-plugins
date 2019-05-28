@@ -1,0 +1,9 @@
+{
+
+  "name" : "ambari-hosts",
+  "description" : "Retrieve Ambari cluster hosts/ips information",
+  "version" : "0.0.1",
+  "sparrow_version": "0.3.6",
+  "category" : "azure",
+  "url": "https://github.com/melezhik/sparrow-plugins/tree/master/ambari-hosts"
+}
