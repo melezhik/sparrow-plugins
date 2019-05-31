@@ -1,1 +1,1 @@
-generator: [ '{'.(config()->{service}).'} running' ]
+generator: print '{'.(config()->{service})."} running\n"

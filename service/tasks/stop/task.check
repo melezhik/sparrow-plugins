@@ -1,1 +1,1 @@
-generator: [ '{'.(config()->{service}).'} stopped' ]
+generator: print  '{'.(config()->{service})."} stopped\n"
