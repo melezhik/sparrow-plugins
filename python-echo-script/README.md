@@ -8,7 +8,7 @@ Simple python echo script.
 
 # USAGE
 
-    $ sparrow plg run python-echo-script
+    $ s6 --plg-run python-echo-script
 
 # Author
 

@@ -8,9 +8,9 @@ verify your minion workers, jobs
     
 # USAGE
   
-    $ sparrow project create web-app
-    $ sparrow task add web-app minion minion-check
-    $ sparrow task ini web-app minion
+/minion-check/README
+/minion-check/README
+    $ s6 --task-set web-app minion
   
     # in case you use carton install
     command = cd /path/to/your/mojo/app && carton exec ./app.pl minion
@@ -18,7 +18,7 @@ verify your minion workers, jobs
     # sets worker footprint to lookup at processes list
     worker_cmd = minion worker
 
-    $ sparrow task run web-app minion
+    $ s6 --task-run web-app minion
 
 
     <minion-tasks>

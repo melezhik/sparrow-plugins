@@ -8,7 +8,7 @@ Smoke tests for Catmandu
 
 # USAGE
 
-    $ sparrow plg run catmandu-smoke
+    $ s6 --plg-run catmandu-smoke
 
 # Author
 

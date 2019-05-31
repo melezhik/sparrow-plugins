@@ -8,10 +8,10 @@ Authenticate to Azure using service principal and save authentication data as a 
 
 # Usage
 
-    $ sparrow plg run azure-authenticate \
-      --param client_id=$ClientId \
-      --param tenant_id=$TenantId \
-      --param context=DevAndTest
+    $ s6 --plg-run azure-authenticate@\
+    ,client_id=$ClientId\
+    ,tenant_id=$TenantId\
+    ,context=DevAndTest
 
 # Parameters
 

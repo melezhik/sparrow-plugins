@@ -9,9 +9,9 @@ List ssl bindings for web application
 # usage
 
     # list ssl certs for given resource group
-    $ sparrow plg run azure-ssl-bind-list \
-    --param resource_group=$RG \
-    --param app_service=$app_service
+    $ s6 --plg-run azure-ssl-bind-list@\
+    ,resource_group=$RG\
+    ,app_service=$app_service
 
 # parameters
 

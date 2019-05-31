@@ -8,7 +8,7 @@ Multiplatform ansible installer
 
 # USAGE
 
-    $ sparrow plg run ansible-istall # install Ansible using specific installer for your platform
+    $ s6 --plg-run ansible-istall # install Ansible using specific installer for your platform
 
 # Platforms supported
 

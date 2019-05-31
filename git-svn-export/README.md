@@ -9,9 +9,9 @@ Export (multiple) svn repositories into (multiple) git repositories.
 
 # USAGE
 
-    sparrow plg run git-svn-export \
-    --param local_dir=/path/to/local/git/repositories/ \
-    --param svn_repo=http://svn_repositories/private
+    s6 --plg-run git-svn-export@\
+    ,local_dir=/path/to/local/git/repositories/\
+    ,svn_repo=http://svn_repositories/private
 
 # Parameters
 
@@ -29,7 +29,7 @@ This should be a svn repo URL.
 
 For example:
 
-    --param svn_repo=http://svn_repositories/private
+    ,svn_repo=http://svn_repositories/private
 
 ## project
 
@@ -37,13 +37,13 @@ Only proceed a given project. Should be a name of sub directory inside `$local_d
 
 For example:
 
-    --param project=baz
+    ,project=baz
 
 ## skip_init
 
 Set this parameter if you want to skip initialization stage, see `local_dir` parameter section.
 
-    --param skip_init=1
+    ,skip_init=1
 
 # See also
 

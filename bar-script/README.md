@@ -8,7 +8,7 @@ print `bar` or `rab`
 
 # USAGE
 
-    $ sparrow plg run bar-script
+    $ s6 --plg-run bar-script
 
 
 # Author

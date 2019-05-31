@@ -13,10 +13,10 @@ This plugins generates a git submodules entries based on `svn list` command outp
 
 # USAGE
 
-    $ sparrow plg run svn-to-git-submodules \
-    --param svn_repo=http://svn-repository/projects/list \
-    --param git_repo=http://git-repo/projects \
-    --param outdir=/path/to/directory/with/git/repo
+    $ s6 --plg-run svn-to-git-submodules@\
+    ,svn_repo=http://svn-repository/projects/list\
+    ,git_repo=http://git-repo/projects\
+    ,outdir=/path/to/directory/with/git/repo
 
 # Parameters 
 

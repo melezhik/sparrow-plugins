@@ -12,13 +12,13 @@ and fetches changes from related remote repositories
 # USAGE
 
     # all the list
-    $ sparrow plg run git-submodules-update \
-    --param directory=/path/to/working/copy/directory/
+    $ s6 --plg-run git-submodules-update@\
+    ,directory=/path/to/working/copy/directory/
 
     # single project
-    $ sparrow plg run git-submodules-update \
-    --param project=cups \
-    --param directory=/path/to/working/copy/directory/
+    $ s6 --plg-run git-submodules-update@\
+    ,project=cups\
+    ,directory=/path/to/working/copy/directory/
 
 # Parameters
 

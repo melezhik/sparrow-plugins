@@ -18,7 +18,7 @@ ps utility should be installed
 
     # lets find all nginx processes running since last week
 
-    $ sparrow plg run stale-proc-check --param filter=nginx --param hitask="'1 weeks'"
+    $ s6 --plg-run stale-proc-check@filter=nginx,hitask="'1 weeks'"
 
 # Plugin settings
 

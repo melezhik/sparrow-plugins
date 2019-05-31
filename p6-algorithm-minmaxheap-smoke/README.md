@@ -8,7 +8,7 @@ Smoke tests for Algorithm::MinMaxHeap
 
 # USAGE
 
-    $ sparrow plg run p6-algorithm-minmaxheap-smoke
+    $ s6 --plg-run p6-algorithm-minmaxheap-smoke
 
 # Author
 

@@ -12,7 +12,7 @@ Installs mongo db
 
 ## Manually
 
-    $ sparrow plg run mongodb
+    $ s6 --plg-run mongodb
 
 ## Sparrowdo
 

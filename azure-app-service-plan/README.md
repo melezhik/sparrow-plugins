@@ -9,11 +9,11 @@ Update Azure app service plan
 # usage
 
     # set SKU size
-    $ sparrow plg run azure-app-service-plan \
-    --param resource_group=$RG \
-    --param app_service_plan=$AppServicePlanName \
-    --param size=Medium \
-    --param workers_num=5
+    $ s6 --plg-run azure-app-service-plan@\
+    ,resource_group=$RG\
+    ,app_service_plan=$AppServicePlanName\
+    ,size=Medium\
+    ,workers_num=5
 
 # parameters
 

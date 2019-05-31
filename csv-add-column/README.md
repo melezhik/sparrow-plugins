@@ -13,10 +13,10 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/9506868/51477
 
 To add `date` value to the end of every line in CSV `$file`:
 
-    $ sparrow plg run csv-add-column \
-    --format concise \
-    --param file=/path/to/file/example.csv \
-    --param data="`date`" > output.csv
+    $ s6 --plg-run csv-add-column@\
+    --format concise\
+    ,file=/path/to/file/example.csv\
+    ,data="`date`" > output.csv
 
 # Plugin maintainer
 

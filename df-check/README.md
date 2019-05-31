@@ -12,7 +12,7 @@ elementary file system checks using df utility report
 
 # USAGE
 
-    sparrow plg run df-check
+    s6 --plg-run df-check
 
     sparrow root: [/home/melezhik/sparrow]
     2018-12-08 22:09:59 : [plg] df-check [path] /
@@ -47,7 +47,7 @@ elementary file system checks using df utility report
 
 Disk allowable used threshold as percentage ratio
 
-    $ sparrow plg run df-check --param threshold=70
+    $ s6 --plg-run df-check@threshold=70
 
 # Author
 

@@ -14,27 +14,27 @@ Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploa
 As one liners:
 
     # upload archive to CPAN without SSL verification
-    $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz
+    $ s6 --plg-run cpan-upload@distro=$PWD/app-0.0001.tar.gz
 
     # the same with SSL verification
-    $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz --param ssl_verify=on
+    $ s6 --plg-run cpan-upload@distro=$PWD/app-0.0001.tar.gz,ssl_verify=on
 
     # delete local distro after upload
-    $ sparrow plg run cpan-upload --param distro=$PWD/app-0.0001.tar.gz --param clean=on
+    $ s6 --plg-run cpan-upload@distro=$PWD/app-0.0001.tar.gz,clean=on
 
 As task:
 
 
-    $ sparrow project create cpan
+/cpan-upload/README
 
-    $ sparrow task add cpan upload cpan-upload
+/cpan-upload/README
 
-    $ sparrow task ini cpan/upload
+    $ s6 --task-set cpan/upload
 
       clean=on
       ssl_verify=off
 
-    $ sparrow task run cpan/upload --param distro=$PWD/app-0.0001.tar.gz
+    $ s6 --task-run cpan/upload,distro=$PWD/app-0.0001.tar.gz
 
 # Parameters
 

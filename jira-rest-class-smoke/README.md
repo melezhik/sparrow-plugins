@@ -8,7 +8,7 @@ Smoke tests for JIRA::REST::Class
 
 # USAGE
 
-    $ sparrow plg run jira-rest-class-smoke
+    $ s6 --plg-run jira-rest-class-smoke
 
 # Author
 

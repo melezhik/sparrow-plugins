@@ -8,7 +8,7 @@ A simple wrapper around Net::Ping to identify if host is alive.
 
 # USAGE
 
-    $ sparrow plg run net-ping --param host=sparrowhub.org
+    $ s6 --plg-run net-ping@host=sparrowhub.org
 
 # See also 
 

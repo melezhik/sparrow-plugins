@@ -5,25 +5,25 @@ Simple wrapper for `cheat` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install cheat
+    $ s6 --install cheat
 
 # USAGE
 
 Basic usage:
 
-    $ sparrow plg run cheat -- <args>
+    $ s6 --plg-run cheat -- <args>
 
 For example:
 
-    $ sparrow plg run cheat -- -i Perl
+    $ s6 --plg-run cheat -- -i Perl
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/cheat/sparrow
 
-    $ sparrow task add utils cheat-perl cheat
+/cheat/sparrow
 
-    $ sparrow task ini utils/cheat-perl
+    $ s6 --task-set utils/cheat-perl
 
       ---
 
@@ -31,7 +31,7 @@ Run as sparrow task:
         - '-i'
         - Perl
 
-    $ sparrow task run utils/cheat-perl
+    $ s6 --task-run utils/cheat-perl
 
 For cheat's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#cheat](https://github.com/alexanderepstein/Bash-Snippets#cheat)
 

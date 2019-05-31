@@ -8,7 +8,7 @@ Multiplatform ansible installer for engineers.
 
 # USAGE
 
-    $ sparrow plg run ansible-tutorial # Runs tutorial, enjoy!
+    $ s6 --plg-run ansible-tutorial # Runs tutorial, enjoy!
 
 # Author
 

@@ -13,13 +13,13 @@ Sparrow plugin to list tagged ec2 instances in human readable format.
 To dump your tagged ec2 instances in human readable format just run:
 
 
-    $ sparrow plg run  aws-list-tag-instances --param tag_key=foo --param tag_value=bar
+    $ s6 --plg-run aws-list-tag-instances@tag_key=foo,tag_value=bar
 
 Or by using sparrow task:
 
-    $ sparrow project create aws 
-    $ sparrow task add aws my-instances aws-list-tag-instances
-    $ sparrow task ini  aws/my-instances
+/aws-list-tag-instances/README
+/aws-list-tag-instances/README
+    $ s6 --task-set  aws/my-instances
 
     ---
     tag_key: foo

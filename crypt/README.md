@@ -5,21 +5,21 @@ Simple wrapper for `crypt` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install crypt
+    $ s6 --install crypt
 
 # USAGE
 
 Basic usage:
 
-    $ sparrow plg run crypt -- <args>
+    $ s6 --plg-run crypt -- <args>
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/crypt/sparrow
 
-    $ sparrow task add utils enc-file crypt
+/crypt/sparrow
 
-    $ sparrow task ini utils/enc-file
+    $ s6 --task-set utils/enc-file
 
       ---
 
@@ -28,7 +28,7 @@ Run as sparrow task:
         - /tmp/file.txt
         - /tmp/file.txt.inc
 
-    $ sparrow task run utils/enc-file
+    $ s6 --task-run utils/enc-file
 
 For crypt's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#cheat](https://github.com/alexanderepstein/Bash-Snippets#crypt)
 

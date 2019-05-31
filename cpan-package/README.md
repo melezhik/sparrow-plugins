@@ -17,7 +17,7 @@ cpanm client ( as it used to install cpan modules )
 
 ## Manually
 
-    $ sparrow plg run --param list="'CGI DBI Moose'"
+    $ s6 --plg-run,list="'CGI DBI Moose'"
 
 ## Via sparrowdo
 

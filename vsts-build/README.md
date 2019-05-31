@@ -11,11 +11,11 @@ Small wrapper for vsts build through [vsts cli](https://docs.microsoft.com/en-us
 
 Run build for current branch:
 
-    $ sparrow plg run vsts-build --param definition=BackEndBuild
+    $ s6 --plg-run vsts-build@definition=BackEndBuild
 
 List latest builds:
 
-    $ sparrow plg run vsts-build --param action=list
+    $ s6 --plg-run vsts-build@action=list
     
 Use as sparrowdo tasks:
 

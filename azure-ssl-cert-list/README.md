@@ -9,11 +9,11 @@ List ssl certificates
 # usage
 
     # list ssl certs for given resource group
-    $ sparrow plg run azure-ssl-cert-list --param resource_group=$RG 
+    $ s6 --plg-run azure-ssl-cert-list@resource_group=$RG 
 
     # list ssl certs for given resource group, filtered by thumbprint
-    $ sparrow plg run azure-ssl-cert-list --param resource_group=$RG  \
-    --param thumbprint=AABBCCDDEEAA00AA
+    $ s6 --plg-run azure-ssl-cert-list@resource_group=$RG\
+    ,thumbprint=AABBCCDDEEAA00AA
 
 # parameters
 

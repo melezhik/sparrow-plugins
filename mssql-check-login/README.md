@@ -10,11 +10,11 @@ Simple login checker based on sqlcmd utility
 
     # check if login and password are valid
     # creds passed through dsn 
-    $ sparrow plg run mssql-check-login --param dsn={dsn in MSSQL format}
+    $ s6 --plg-run mssql-check-login@dsn={dsn in MSSQL format}
 
     # check if login and password are valid
     # creds passed as is
-    $ sparrow plg run mssql-check-login --param user={login} --param pass={password} --param db_host={data base host} --param dbname={database name}
+    $ s6 --plg-run mssql-check-login@user={login},pass={password},db_host={data base host},dbname={database name}
 
 # Prerequisites
 

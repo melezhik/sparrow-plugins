@@ -11,17 +11,17 @@ Simple wrapper for `speedtest-cli` from [https://github.com/sivel/speedtest-cli]
 
 Basic usage:
 
-    $ sparrow plg run speedtest-cli -- <args>
+    $ s6 --plg-run speedtest-cli -- <args>
 
 See parameters description at [https://github.com/sivel/speedtest-cli](%url).
 
 If you need some automation:
 
-    $ sparrow project create utils
+/speedtest-cli/README
 
-    $ sparrow task add utils $task-name speedtest-cli
+/speedtest-cli/README
 
-    $ sparrow task ini utils/$task-name
+    $ s6 --task-set utils/$task-name
 
       ---
 
@@ -30,7 +30,7 @@ If you need some automation:
         - bar
         # - so on ...
 
-    $ sparrow task run utils/$task-name
+    $ s6 --task-run utils/$task-name
 
 # Asciicast example
 

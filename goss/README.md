@@ -13,16 +13,16 @@ Simple goss wrapper
 
 ## Install goss
 
-    $ sparrow plg run goss # install goss binary file, default action
+    $ s6 --plg-run goss # install goss binary file, default action
 
 ## Run goss scenarios
 
 Goss scenarios get run as sparrow tasks:
 
 
-    $ sparrow project create audit
-    $ sparrow task add audit nginx goss
-    $ sparrow task ini audit/nginx 
+/goss/README
+/goss/README
+    $ s6 --task-set audit/nginx 
 
     action validate
     goss <<HERE
@@ -42,7 +42,7 @@ Goss scenarios get run as sparrow tasks:
     
     HERE
 
-    $ sparrow task run audit/nginx
+    $ s6 --task-run audit/nginx
 
 
 # Author

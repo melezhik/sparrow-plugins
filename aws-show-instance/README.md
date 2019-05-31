@@ -12,7 +12,7 @@ Sparrow plugin to print ec2 instance info in human readable format.
 
 To dump your tagged ec2 instances in human readable format just run:
 
-    $ sparrow plg run  aws-show-instance --param id=$instance-id
+    $ s6 --plg-run aws-show-instance@id=$instance-id
 
 # Author
 

@@ -12,7 +12,7 @@ Checks if memcached server is healthy.
 
 # RUN
 
-    $ sparrow plg run memcached-check
+    $ s6 --plg-run memcached-check
 
 # AUTHOR
 

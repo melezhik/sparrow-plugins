@@ -14,7 +14,7 @@ Manages Linux/UNIX groups
 ## Manually 
 
 
-    $ sparrow plg run group --param action=create --param name=foo-users
+    $ s6 --plg-run group@action=create,name=foo-users
 
 ## Sparrowdo
 

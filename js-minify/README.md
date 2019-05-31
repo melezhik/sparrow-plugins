@@ -10,9 +10,9 @@ Minify a JavaScript file by using [JavaScript::Minifier](https://metacpan.org/po
 
 CLI:
 
-    $ sparrow plg run js-minify \
-    --param in=/path/to/in-file.js \
-    --param out=/path/to/out-file.js
+    $ s6 --plg-run js-minify@\
+    ,in=/path/to/in-file.js\
+    ,out=/path/to/out-file.js
 
 Via sparrowdo:
 

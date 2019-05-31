@@ -12,7 +12,7 @@ Checks if postgresql server is healthy.
 
 # RUN
 
-    $ sparrow plg run postgresql-check
+    $ s6 --plg-run postgresql-check
 
 # AUTHOR
 

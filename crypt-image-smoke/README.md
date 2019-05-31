@@ -8,7 +8,7 @@ Smoke tests for Crypt::Image module
 
 # USAGE
 
-    $ sparrow plg run crypt-image-smoke
+    $ s6 --plg-run crypt-image-smoke
 
 # See also
 

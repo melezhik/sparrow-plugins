@@ -10,19 +10,19 @@ Checks scheduleled vsts builds
 
 Check if the last `WebApp` *scheduled* build succeeds for today:
 
-    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp
+    $ s6 --plg-run vsts-schedule-build-check@pattern=WebApp
 
 Check if the last `WebApp` *scheduled* build succeeds for date:
 
-    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param date=2018-10-23
+    $ s6 --plg-run vsts-schedule-build-check@pattern=WebApp,date=2018-10-23
 
 Check if the `last` WebApp build succeeds for today:
 
-    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param scheduled_only=off
+    $ s6 --plg-run vsts-schedule-build-check@pattern=WebApp,scheduled_only=off
 
 Check if the `last` WebApp build succeeds:
 
-    $ sparrow plg run vsts-schedule-build-check --param pattern=WebApp --param scheduled_only=off --param date=any
+    $ s6 --plg-run vsts-schedule-build-check@pattern=WebApp,scheduled_only=off,date=any
 
 # Parameters
 

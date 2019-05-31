@@ -8,7 +8,7 @@ Smoke tests for Linux::Proc::Maps
 
 # USAGE
 
-    $ sparrow plg run linux-proc-maps-smoke
+    $ s6 --plg-run linux-proc-maps-smoke
 
 # Author
 

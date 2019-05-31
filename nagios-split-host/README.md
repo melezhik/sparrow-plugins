@@ -14,10 +14,10 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/46197347/5147
 
 Parse nagios config given by `file`, find distinct hosts blocks and save them separately into `dest` dir:
 
-    $ sparrow plg run nagios-split-host \
-    --format concise  # to strip reports lines \
-    --param file=/path/to/ngios/conf \
-    --param dest=/path/to/destination/dir
+    $ s6 --plg-run nagios-split-host@\
+    --format concise  # to strip reports lines\
+    ,file=/path/to/ngios/conf\
+    ,dest=/path/to/destination/dir
 
 
 # Plugin maintainer

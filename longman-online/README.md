@@ -8,11 +8,11 @@ Strip longman online dictionary examples and sound tracks
 
 # USAGE
 
-    $ sparrow plg run longman-online --param word=$word
+    $ s6 --plg-run longman-online@word=$word
 
 For example
 
-    $ sparrow plg run longman-online --param word=sparrow
+    $ s6 --plg-run longman-online@word=sparrow
 
 
 

@@ -12,7 +12,7 @@ Fetch phrases from longman
     # grasp phrases for word "set in", store the content into /tmp/out.txt file
     # sleep 2 seconds, before making request
   
-    $ sparrow plg run ld-fetch-word --param word=set-in --param out=/tmp/out.txt --param sleep=2
+    $ s6 --plg-run ld-fetch-word@word=set-in,out=/tmp/out.txt,sleep=2
 
 # Parameters
 
@@ -32,7 +32,7 @@ Sleep `sleep` second before making http request.
 
 Path to cache directory. If cache exists the plugin quits quirky doing nothing.
 
-    --param cache=/tmp/cache-dir/
+    ,cache=/tmp/cache-dir/
 
 # Author
 

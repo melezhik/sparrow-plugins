@@ -5,25 +5,25 @@ Simple wrapper for `ytview` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install ytview
+    $ s6 --install ytview
 
 # USAGE
 
 Basic usage:
 
-    $ sparrow plg run ytview -- <args>
+    $ s6 --plg-run ytview -- <args>
 
 For example:
 
-    $ sparrow plg run ytview -- -s Family Guy Chicken Fight
+    $ s6 --plg-run ytview -- -s Family Guy Chicken Fight
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/ytview/sparrow
 
-    $ sparrow task add utils ytview-fg ytview
+/ytview/sparrow
 
-    $ sparrow task ini utils/ytview-fg
+    $ s6 --task-set utils/ytview-fg
 
       ---
 
@@ -31,7 +31,7 @@ Run as sparrow task:
         - '-s'
         - Family Guy Chicken Fight
 
-    $ sparrow task run utils/ytview-fg
+    $ s6 --task-run utils/ytview-fg
 
 For ytview's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#ytview](https://github.com/alexanderepstein/Bash-Snippets#ytview)
 

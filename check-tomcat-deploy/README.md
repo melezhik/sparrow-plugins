@@ -17,7 +17,7 @@ A tail utility should be installed as it gets used to retrieve data from log fil
 
 ## Manually
 
-    $ sparrow plg run check-tomcat-deploy --param war='foo#bar.war,services.war' --param tomcat-version=7
+    $ s6 --plg-run check-tomcat-deploy@war='foo#bar.war,services.war',tomcat-version=7
 
 ## Sparrowdo
 

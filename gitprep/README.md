@@ -10,7 +10,7 @@ Installs [gitprep](https://github.com/yuki-kimoto/gitprep) server.
 
 # USAGE
 
-    $ sparrow plg run gitprep
+    $ s6 --plg-run gitprep
     
 # Author
 

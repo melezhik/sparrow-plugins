@@ -10,10 +10,10 @@ Compress PNG images by using [GD](https://metacpan.org/pod/GD) library.
 
 CLI:
 
-    $ sparrow plg run png-compress \
-    --param in=/path/to/in-file.png \
-    --param out=/path/to/out-file.png \
-    --param compression=5
+    $ s6 --plg-run png-compress@\
+    ,in=/path/to/in-file.png\
+    ,out=/path/to/out-file.png\
+    ,compression=5
 
 Via sparrowdo:
 

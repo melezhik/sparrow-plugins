@@ -5,25 +5,25 @@ Simple wrapper for `currency` script from Bash-Snippets.
 
 # INSTALL
 
-    $ sparrow plg install currency
+    $ s6 --install currency
 
 # USAGE
 
 Basic usage:
 
-    $ sparrow plg run currency -- <args>
+    $ s6 --plg-run currency -- <args>
 
 For example:
 
-    $ sparrow plg run currency -- USD RUB 100
+    $ s6 --plg-run currency -- USD RUB 100
 
 Run as sparrow task:
 
-    $ sparrow project create utils
+/currency/sparrow
 
-    $ sparrow task add utils currency-usd-rub currency
+/currency/sparrow
 
-    $ sparrow task ini utils/currency-usd-rub
+    $ s6 --task-set utils/currency-usd-rub
 
       ---
 
@@ -32,7 +32,7 @@ Run as sparrow task:
         - RUB
         - 100
 
-    $ sparrow task run utils/currency-usd-rub
+    $ s6 --task-run utils/currency-usd-rub
 
 For currency's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#currency](https://github.com/alexanderepstein/Bash-Snippets#currency)
 

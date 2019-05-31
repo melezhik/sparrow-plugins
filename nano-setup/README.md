@@ -11,14 +11,14 @@ A simple setup for nano rc file
 ## Manually
 
     # use default settings , apply for current user    
-    $ sparrow plg run 
+    $ s6 --plg-run 
 
 
     # override settings, apply for some user    
-    $ sparrow plg run --param tabsize=2 --param user=melezhik
+    $ s6 --plg-run,tabsize=2,user=melezhik
          
     # sets other parameter explicitly
-    $ sparrow plg run --param tabsize=2 --param speller='hunspell -x -c'
+    $ s6 --plg-run,tabsize=2,speller='hunspell -x -c'
 
 ## Sparrowdo usage
     

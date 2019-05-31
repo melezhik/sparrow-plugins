@@ -9,10 +9,10 @@ Traverse [Sparky](https://github.com/melezhik/sparky) tasks and enable/disable s
 # USAGE
 
     # Enable index update setting
-    $ sparrow plg run sparky-index-update --param dir=$PWD
+    $ s6 --plg-run sparky-index-update@dir=$PWD
 
     # Disable index update setting
-    $ sparrow plg run sparky-index-update --param dir=$PWD --param action=disable
+    $ s6 --plg-run sparky-index-update@dir=$PWD,action=disable
 
 # Parameters
 
@@ -27,7 +27,7 @@ Action: `enable|disable`. Default vaulue is `enable`;
 
     # Enable index update
 
-    --param action=enable
+    ,action=enable
 
 # See also
 

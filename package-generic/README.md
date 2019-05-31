@@ -17,7 +17,7 @@ OS supported:
 
 ## Manually 
 
-    $ sparrow plg run package-generic --param list='curl telnet nano'
+    $ s6 --plg-run package-generic@list='curl telnet nano'
 
 ## Sparrowdo
 
@@ -43,9 +43,9 @@ Default value `install`;
 You may pass `list` as HASH with keys related to OS distribution names
 to handle packages respectively to OS, here is the example with using YAML format:
 
-    $ sparrow project create packages
-    $ sparrow task add package apache package-generic
-    $ sparrow task ini packages/apache
+/package-generic/README
+/package-generic/README
+    $ s6 --task-set packages/apache
     
     list:
       debian:
@@ -54,7 +54,7 @@ to handle packages respectively to OS, here is the example with using YAML forma
         - httpd 
         - mod_ssl
     
-    $ sparrow task run packages/apache
+    $ s6 --task-run packages/apache
 
 
 Or using sparrowdo:

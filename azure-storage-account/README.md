@@ -9,20 +9,20 @@ Create Azure storage account
 # usage
 
     # Create storage account in resource group
-    $ sparrow plg run azure-storage-account \
-    --param resource_group=$RG \
-    --param name=$storage_account_name \
-    --param sku_name=$sku_name
-    --param location=$location
+    $ s6 --plg-run azure-storage-account@\
+    ,resource_group=$RG\
+    ,name=$storage_account_name\
+    ,sku_name=$sku_name
+    ,location=$location
 
 Example:
 
 
-    $ sparrow plg run azure-storage-account \
-      --param resource_group=SandBoxGroup \
-      --param name=TrashBin \
-      --param sku_name=Standard_LRS \
-      --param location=centralus \
+    $ s6 --plg-run azure-storage-account@\
+    ,resource_group=SandBoxGroup\
+    ,name=TrashBin\
+    ,sku_name=Standard_LRS\
+    ,location=centralus\
 
 # parameters
 

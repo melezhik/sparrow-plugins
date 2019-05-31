@@ -25,20 +25,20 @@ Platforms supported:
 
 ## List available distributions
 
-    $ sparrow plg run rakudo-install --param search=ubuntu
+    $ s6 --plg-run rakudo-install@search=ubuntu
 
 ## Install Rakudo with default distribution
 
 Be aware that defaults might point to pretty old versions:
 
-    $ sparrow plg run rakudo-install
+    $ s6 --plg-run rakudo-install
 
 ## Set distro's url explicitly
 
 This is preferable method:
 
-    $ sparrow plg run rakudo-install \
-    --param url=https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb
+    $ s6 --plg-run rakudo-install@\
+    ,url=https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb
 
 
 ## Sparrowdo usage

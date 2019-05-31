@@ -9,9 +9,9 @@ Check if ssl certificates are expired.
 
 # USAGE
 
-    $ sparrow project create monitoring 
-    $ sparrow task add monitoring ssl-check check-ssl-cert
-    $ sparrow task ini monitoring/ssl-check
+/check-ssl-cert/README
+/check-ssl-cert/README
+    $ s6 --task-set monitoring/ssl-check
 
     hosts:
       - google.com
@@ -19,7 +19,7 @@ Check if ssl certificates are expired.
     # check that certs are expired with 3 days
     expiration_date: 3
 
-    $ sparrow task run monitoring/ssl-check
+    $ s6 --task-run monitoring/ssl-check
 
 
 # Author
