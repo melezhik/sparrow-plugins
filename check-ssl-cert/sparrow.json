@@ -3,7 +3,6 @@
   "name" : "check-ssl-cert",
   "description" : "Check if ssl certificates are expired",
   "version" : "0.0.3",
-  "sparrow_version": "0.2.50",
   "category" : "monitoring",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/check-ssl-cert"
 }

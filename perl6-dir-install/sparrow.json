@@ -3,7 +3,6 @@
   "name" : "perl6-dir-install",
   "description" : "Walk through the list of sub directories ( located at $CWD ) and tries to install Perl6 modules found",
   "version" : "0.0.3",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/perl6-dir-install"
 }

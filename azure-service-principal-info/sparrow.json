@@ -3,7 +3,6 @@
   "name" : "azure-service-principal-info",
   "description" : "Get info about service principal",
   "version" : "0.0.1",
-  "sparrow_version": "0.3.6",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-service-principal-info"
 }

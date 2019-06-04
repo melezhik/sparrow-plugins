@@ -3,7 +3,6 @@
   "name" : "sparky-index-update",
   "description" : "Traverse sparky tasks and set no_index_update to true",
   "version" : "0.0.1",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparky-no-index-update"
 }

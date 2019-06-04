@@ -3,7 +3,6 @@
   "name" : "ld-fetch-word",
   "description" : "Fetch phrases from longman",
   "version" : "0.0.11",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ld-fetch-word"
 }

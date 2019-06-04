@@ -3,7 +3,6 @@
   "name" : "longman-online",
   "description" : "Strip longman online dictionary examples and sound tracks",
   "version" : "0.1.4",
-  "sparrow_version": "0.2.48",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/logman-online"
 }

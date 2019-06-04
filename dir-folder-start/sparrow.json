@@ -3,7 +3,6 @@
   "name" : "dir-folder-start",
   "description" : "Shows sub folders statistic for given directory",
   "version" : "0.0.2",
-  "sparrow_version": "0.2.48",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/dir-folder-start"
 }

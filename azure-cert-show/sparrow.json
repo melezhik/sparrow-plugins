@@ -3,7 +3,6 @@
   "name" : "azure-cert-show",
   "description" : "Shows essential information of Azure ssl certificate stored in Key Vault",
   "version" : "0.0.12",
-  "sparrow_version": "0.2.50",
   "category" : "azure",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-cert-show"
 }

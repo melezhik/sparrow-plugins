@@ -3,7 +3,6 @@
   "name" : "js-minify",
   "description" : "Minify a JavaScript file by using JavaScript::Minifier",
   "version" : "0.0.2",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/js-minify"
 }

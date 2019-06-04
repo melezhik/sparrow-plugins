@@ -3,7 +3,6 @@
   "name" : "catmandu",
   "description" : "Simple wrapper for Catamandu cli",
   "version" : "0.0.2",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/catmandu-sparrow"
 }

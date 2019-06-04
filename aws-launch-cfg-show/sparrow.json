@@ -3,7 +3,6 @@
   "name" : "aws-launch-cfg-show",
   "description" : "Sparrow plugin to print launch configuration in human readable format",
   "version" : "0.0.2",
-  "sparrow_version": "0.2.48",
   "category" : "aws",
   "url" : "https://github.com/melezhik/aws-launch-cfg-show"
 }

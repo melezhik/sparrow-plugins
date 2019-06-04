@@ -3,7 +3,6 @@
   "name" : "aws-show-instance",
   "description" : "Sparrow plugin to print ec2 instance info in human readable format",
   "version" : "0.0.4",
-  "sparrow_version": "0.2.49",
   "category" : "aws",
   "url" : "https://github.com/melezhik/aws-show-instance"
 }

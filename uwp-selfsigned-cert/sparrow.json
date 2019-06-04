@@ -3,7 +3,6 @@
   "name" : "uwp-self-signed-cert",
   "description" : "Generates self signed certificate to sign Microsoft app packages",
   "version" : "0.0.3",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/uwp-selfsigned-cert"
 }

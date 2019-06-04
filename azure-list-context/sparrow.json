@@ -2,7 +2,6 @@
   "name" : "azure-list-context",
   "description" : "List locally saved azure contexts",
   "version" : "0.0.2",
-  "sparrow_version": "0.3.6",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-list-context"
 }

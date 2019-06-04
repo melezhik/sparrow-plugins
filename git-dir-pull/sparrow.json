@@ -3,7 +3,6 @@
   "name" : "git-dir-pull",
   "description" : "Walks through the list of sub directories ( located at $CWD ) and invoke git pull command for every directory found.",
   "version" : "0.0.1",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-dir-pull"
 }

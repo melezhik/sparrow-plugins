@@ -3,7 +3,6 @@
   "name" : "azure-account-set",
   "description" : "Set Azure account",
   "version" : "0.0.7",
-  "sparrow_version": "0.3.6",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-account-set"
 }

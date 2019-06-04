@@ -3,7 +3,6 @@
   "name" : "gcp-data-store-bookshelf",
   "description" : "An Example of Ruby API for Google Gloud DataStore",
   "version" : "0.0.4",
-  "sparrow_version": "0.2.50",
   "category" : "gcp",
   "url" : "https://github.com/melezhik/gcp-data-store-bookshelf"
 }

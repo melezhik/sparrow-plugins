@@ -3,7 +3,6 @@
   "name" : "aws-list-tag-instances",
   "description" : "list tagged aws instances in human readable format",
   "version" : "0.0.9",
-  "sparrow_version": "0.2.48",
   "category" : "aws",
   "url" : "https://github.com/melezhik/aws-list-tag-instances"
 }

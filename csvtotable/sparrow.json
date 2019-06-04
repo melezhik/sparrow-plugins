@@ -3,6 +3,5 @@
   "version" : "0.1.1",
   "description" : "Sparrow wrapper for csvtotable",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/csvtotable",
-  "sparrow_version" : "0.2.47"
+  "url" : "https://github.com/melezhik/csvtotable"
 }

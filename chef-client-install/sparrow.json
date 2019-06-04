@@ -3,7 +3,6 @@
   "name" : "chef-client-install",
   "description" : "Install chef client",
   "version" : "0.0.1",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/chef-client-install"
 }

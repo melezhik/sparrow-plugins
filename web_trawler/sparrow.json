@@ -4,6 +4,5 @@
   "version" : "0.0.3",
   "url" : "https://gitlab.com/dlab-indecol/web_trawler",
   "category": "utilities",
-  "python_version" : 3,
-  "sparrow_version": "0.2.45"
+  "python_version" : 3
 }

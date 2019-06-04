@@ -3,7 +3,6 @@
   "name" : "git-push",
   "description" : "Make git push for current branch",
   "version" : "0.0.5",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-push"
 }

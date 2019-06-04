@@ -3,7 +3,6 @@
   "name" : "nagios-split-host",
   "description" : "Split nagios config by hosts and save found hosts configurations to distinct files",
   "version" : "0.0.2",
-  "sparrow_version": "0.2.48",
   "category" : "awk",
   "url" : "https://github.com/melezhik/nagios-split-host"
 }

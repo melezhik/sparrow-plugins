@@ -3,7 +3,6 @@
   "name" : "vsts-build",
   "description" : "Small wrapper for vsts build through vsts cli",
   "version" : "0.0.1",
-  "sparrow_version": "0.2.50",
   "category" : "vsts",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/vsts-build"
 }

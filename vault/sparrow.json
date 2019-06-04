@@ -4,6 +4,5 @@
   "version" : "0.0.2",
   "url" : "https://github.com/gabfl/vault",
   "category": "utilities",
-  "python_version" : "3",
-  "sparrow_version" : "0.2.45"
+  "python_version" : "3"
 }

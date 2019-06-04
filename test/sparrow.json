@@ -1,7 +1,6 @@
 {
   "name" : "test",
   "description" : "test plugin",
-  "sparrow_version" : "0.2.49",
   "version" : "0.0.5",
   "doc" : "sparrow.md"
 }

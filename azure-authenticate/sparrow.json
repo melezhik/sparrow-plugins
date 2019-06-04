@@ -2,7 +2,6 @@
   "name" : "azure-authenticate",
   "description" : "Authenticate to Azure using service principal and save authentication data as a context",
   "version" : "0.0.2",
-  "sparrow_version": "0.3.6",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-authenticate"
 }

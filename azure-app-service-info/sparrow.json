@@ -3,7 +3,6 @@
   "name" : "azure-app-service-info",
   "description" : "Fetch app service info",
   "version" : "0.0.4",
-  "sparrow_version": "0.3.6",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-app-service-info"
 }

@@ -3,7 +3,6 @@
   "name" : "azure-web-app-appsettings",
   "description" : "Dump/Validate azure app service application settings",
   "version" : "0.0.7",
-  "sparrow_version": "0.2.50",
   "category" : "azure",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-web-app-appsettings"
 }

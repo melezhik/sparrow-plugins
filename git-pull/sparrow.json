@@ -3,7 +3,6 @@
   "name" : "git-pull",
   "description" : "Make git pull for current branch",
   "version" : "0.0.1",
-  "sparrow_version": "0.2.50",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-pull"
 }

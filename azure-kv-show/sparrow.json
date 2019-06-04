@@ -3,7 +3,6 @@
   "name" : "azure-kv-show",
   "description" : "Simple wrapper around Azure key vault secret show command, with multiple secrets / url notation support",
   "version" : "0.0.5",
-  "sparrow_version": "0.2.50",
   "category" : "azure",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-kv-show"
 }

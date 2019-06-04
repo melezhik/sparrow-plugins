@@ -3,7 +3,6 @@
   "name" : "csv-add-column",
   "description" : "Add Column to end every line in CSV file using awk",
   "version" : "0.0.3",
-  "sparrow_version": "0.2.48",
   "category" : "awk",
   "url" : "https://github.com/melezhik/csv-add-column"
 }

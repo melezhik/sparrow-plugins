@@ -3,7 +3,6 @@
   "name" : "azure-arm-deploy",
   "description" : "Simple wrapper for az group deployment command",
   "version" : "0.0.5",
-  "sparrow_version": "0.2.50",
   "category" : "azure",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-arm-deploy"
 }

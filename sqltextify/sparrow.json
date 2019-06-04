@@ -3,7 +3,6 @@
   "name" : "sqltextify",
   "description" : "Wrapper for sqltextify.pl",
   "version" : "0.0.5",
-  "sparrow_version": "0.2.48",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sqltextify"
 }

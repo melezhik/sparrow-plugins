@@ -3,7 +3,6 @@
   "name" : "azure-app-service-plan",
   "description" : "Update Azure app service plan",
   "version" : "0.0.3",
-  "sparrow_version": "0.3.6",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-app-service-plan"
 }
