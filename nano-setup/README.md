@@ -11,19 +11,16 @@ A simple setup for nano rc file
 ## Manually
 
     # use default settings , apply for current user    
-    $ s6 --plg-run 
+    $ s6 --plg-run nano-setup
 
 
     # override settings, apply for some user    
-    $ s6 --plg-run,tabsize=2,user=melezhik
+    $ s6 --plg-run nano-setup@tabsize=2,user=melezhik
          
     # sets other parameter explicitly
-    $ s6 --plg-run,tabsize=2,speller='hunspell -x -c'
+    $ s6 --plg-run nano-setup@tabsize=2,speller='hunspell -x -c'
 
-## Sparrowdo usage
-    
-    $ cat sparrowfile
-
+## Task usage
     
     task_run  %(
       task => 'set my nano rc up',
