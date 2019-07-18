@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/taste $(cli_args)
+bash $task_dir/taste $(args)
 
 

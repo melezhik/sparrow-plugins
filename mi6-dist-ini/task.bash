@@ -1,9 +1,11 @@
+#!bash
+
 set -e
 
 module=$(config module)
 
 if test -z "$module"; then
-  echo 'usage sparrow plg run mi6-dist-ini --cwd $PWD --param module=$module_name';
+  echo 'module parameter is required';
   exit 1
 fi
 

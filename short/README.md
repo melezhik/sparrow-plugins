@@ -9,26 +9,13 @@ Simple wrapper for `short` script from Bash-Snippets.
 
 # USAGE
 
-Basic usage:
-
-    $ s6 --plg-run short -- <args>
-
-For example:
-
-    $ s6 --plg-run short -- tinyurl.com/jhkj
-
-Run as sparrow task:
-
-/short/sparrow
-
-/short/sparrow
-
     $ s6 --task-set utils/short-unmusk-jhkj
 
-      ---
-
-      args:
-        - tinyurl.com/jhkj
+      task-run "utils/short-unmusk-jhkj", "short", %(
+        args => [
+          'tinyurl.com/jhkj'
+        ]
+      );
 
     $ s6 --task-run utils/short-unmusk-jhkj
 

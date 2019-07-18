@@ -10,7 +10,7 @@ sql=$(config sql)
 
 echo "$sql" > $sql_tmpfile
 
-sqltextify.pl --sql $sql_tmpfile $(cli_args)
+sqltextify.pl --sql $sql_tmpfile $(args)
 
 unlink $sql_tmpfile
 

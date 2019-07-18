@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/cheat $(cli_args)
+bash $task_dir/cheat $(args)
 
 

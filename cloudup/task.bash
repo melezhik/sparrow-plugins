@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/cloudup $(cli_args)
+bash $task_dir/cloudup $(args)
 
 

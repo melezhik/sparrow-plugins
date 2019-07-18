@@ -1,2 +1,2 @@
-echo $(cli_args)
+echo $(args)
 pwd

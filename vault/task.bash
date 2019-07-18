@@ -1,4 +1,4 @@
 #!/bin/bash
-vault $(cli_args)
+vault $(args)
 
 

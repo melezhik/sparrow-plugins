@@ -1,5 +1,5 @@
 #!/bin/bash
 
-web_trawler $(cli_args)
+web_trawler $(args)
 
 

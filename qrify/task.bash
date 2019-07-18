@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/qrify $(cli_args)
+bash $task_dir/qrify $(args)
 
 

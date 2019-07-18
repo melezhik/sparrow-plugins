@@ -11,10 +11,9 @@ Regenerate mi6 `dist.ini` and `.gitignore` files for Perl6 project.
     $ s6 --install mi6-dist-ini
 
 
-# USAGE 
+# USAGE
 
-    $ s6 --plg-run mi6-dist-ini --cwd $PWD\
-    ,module=My::Module
+    $ s6 --plg-run mi6-dist-ini@module=My::Module
 
 # Author
 

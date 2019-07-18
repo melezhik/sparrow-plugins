@@ -1,5 +1,5 @@
 #!/bin/bash
 
-speedtest-cli $(cli_args)
+speedtest-cli $(args)
 
 
