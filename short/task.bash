@@ -1,5 +1,7 @@
 #!/bin/bash
 
-bash $task_dir/short $(args)
+set -x
+
+bash $task_dir/short $(config args)
 
 
