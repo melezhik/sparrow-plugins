@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/crypt $(args)
+bash $task_dir/crypt $(config args)
 
 

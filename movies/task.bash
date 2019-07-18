@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/movies $(args)
+bash $task_dir/movies $(config args)
 
 

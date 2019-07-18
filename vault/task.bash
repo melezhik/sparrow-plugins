@@ -1,4 +1,4 @@
 #!/bin/bash
-vault $(args)
+vault $(config args)
 
 

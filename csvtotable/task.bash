@@ -1,5 +1,5 @@
 set -e
 set -x
-csvtotable $(args)
+csvtotable $(config args)
 set +x
 

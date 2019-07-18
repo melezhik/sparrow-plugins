@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/currency $(args)
+bash $task_dir/currency $(config args)
 
 

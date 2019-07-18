@@ -1,2 +1,2 @@
-echo $(args)
+echo $(config args)
 pwd

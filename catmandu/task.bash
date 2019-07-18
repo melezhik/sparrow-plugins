@@ -4,5 +4,5 @@ in=$(config in)
 out=$(config out)
 
 
-catmandu $(args) < $in > $out
+catmandu $(config args) < $in > $out
 

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/geo $(args)
+bash $task_dir/geo $(config args)
 
 
