@@ -59,7 +59,6 @@ File with check rules for `cmd` output, should be in [Sparrow6 Task Check](https
 
 List of ssh hosts, could be fqdns or IP addresses
 
-
 * `user`
 
 Ssh user
@@ -67,6 +66,12 @@ Ssh user
 * `password`
 
 Ssh password
+
+# Localhost mode
+
+To run in localohost mode - without ssh, set host to `localhost`:
+
+    hosts => [ 'localhost' ]
 
 # Examples
 

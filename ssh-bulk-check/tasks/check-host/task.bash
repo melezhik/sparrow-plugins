@@ -2,7 +2,9 @@
 
 echo "check host [$host] ..."
 
-if test -z $password; then
+if test "$host" = "localhost"; then
+  cat $cmd | bash
+elif test -z $password; then
     cat $cmd | ssh $host -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
 else
   if test -z $user; then
