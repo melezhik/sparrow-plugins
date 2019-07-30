@@ -1,6 +1,6 @@
 {
     "name" : "package-generic",
-    "version" : "0.3.10",
+    "version" : "0.4.0",
     "description": "Generic package manager. Installs packages using OS specific package managers (yum,apt-get,apk)",
     "url" : "https://github.com/melezhik/package-generic"
 }

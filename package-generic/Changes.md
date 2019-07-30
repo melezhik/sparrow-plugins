@@ -1,3 +1,7 @@
+# 0.4.0
+
+Rewrote plugin to use Perl6
+
 # 0.3.8-10
 
 Issue warning instead of fall-back to yum, when unknown OS
