@@ -1,3 +1,5 @@
+#!perl6
+
 bash "uptime";
 
 say "os: {os()}";
@@ -11,5 +13,7 @@ task-run "install nginx", "package-generic", %(
         'epel-release', 'nginx'
       )
     )
-)
+);
 
+service-enable "nginx";
+service-restart "nginx";
