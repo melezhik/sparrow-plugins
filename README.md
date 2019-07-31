@@ -6,7 +6,7 @@ My [Sparrow6](https://github.com/melezhik/sparrow6) plugins.
 
     git clone https://github.com/melezhik/sparrow-plugins.git
 
-    find -maxdepth 2 -mindepth 2 -name sparrow.json -execdir s6 --upload \;
+    find sparrow-plugins -maxdepth 2 -mindepth 2 -name sparrow.json -execdir s6 --upload \;
 
 # See also
 
