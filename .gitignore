@@ -2,3 +2,5 @@ local
 cpanfile.snapshot
 .cache
 log.txt
+.sparrowdo
+

@@ -1,0 +1,15 @@
+bash "uptime";
+
+say "os: {os()}";
+
+task-run "install nginx", "package-generic", %(
+    list => %(
+      debian => (
+        'nginx',
+      ),
+      centos => (
+        'epel-release', 'nginx'
+      )
+    )
+)
+
