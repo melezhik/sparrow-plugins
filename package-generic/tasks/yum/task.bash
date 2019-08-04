@@ -4,8 +4,6 @@ echo trying to install $package ...
 echo os - $os
 echo installer - yum 
 
-LC_ALL=en_us-utf-8
-
 if yum -q list installed $package 2>/dev/null ; then
   :
 else
