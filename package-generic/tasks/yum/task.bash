@@ -8,7 +8,7 @@ if yum -q list installed $package 2>/dev/null ; then
   :
 else
   yum makecache fast
-  yum -y -q install $package || exit 1
+  yum -y install $package || exit 1
   yum -q list installed $package || exit 1 
 fi
 
