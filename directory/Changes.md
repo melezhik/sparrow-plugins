@@ -1,3 +1,7 @@
+# 0.2.1
+
+* Windows OS improvements - replace perl by powershell
+
 # 0.2.*
 
 * windows system support

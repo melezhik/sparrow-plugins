@@ -57,6 +57,10 @@ Sets a group a directory created will belong to
 
 Sets file permissions
 
+# OS supported
+
+* Linux
+* Windows
 
 # AUTHOR
 
