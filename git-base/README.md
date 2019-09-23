@@ -10,10 +10,7 @@ Installs git and makes simple git configuration.
 
 This command will installs git client and set git global configuration for email and name parameters. 
 
-    $ s6 --plg-run git-base@\
-    ,install_git=on\
-    ,email=melezhik@gmail.com\
-    ,name="'Alexey Melezhik'"
+    $ s6 --plg-run git-base@install_git=on,email=melezhik@gmail.com,name='Alexey Melezhik'
 
 # Parameter
 
@@ -45,11 +42,7 @@ Default value is `global`
 
 Example of `local`:
 
-    $ s6 --plg-run git-base@\
-    ,config_scope=local\
-    ,email=melezhik@gmail.com\
-    ,name="'Alexey Melezhik'"\
-    --cwd=$PWD
+    $ s6 --plg-run git-base@config_scope=local,email=melezhik@gmail.com,name='Alexey Melezhik'
 
 # set\_credential\_cache
 
