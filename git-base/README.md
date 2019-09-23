@@ -58,6 +58,7 @@ Optional.
 * Ubuntu
 * Debian
 * Minoca OS
+* Windows
  
 # Author
 

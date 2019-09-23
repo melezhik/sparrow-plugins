@@ -8,13 +8,18 @@ Make git pull for current local branch
 
 # USAGE
 
-Tomtit sceanrio:
+Tomtit scenario:
 
     $ cat .tom/pull.pl6
 
     task-run "git pull", "git-pull";
 
     $ tom pull
+
+# Platforms supported
+
+* Linux
+* Windows
 
 # Author
 

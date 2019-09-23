@@ -1,7 +1,7 @@
 {
   "name" : "git-base",
   "description" : "Installs git and makes simple git configuration.",
-  "version" : "0.3.0",
+  "version" : "0.3.1",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-base"
 }
 
