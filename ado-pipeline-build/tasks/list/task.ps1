@@ -1,3 +1,3 @@
 $branch = git symbolic-ref HEAD
-$top = config top
-az pipelines build list --branch $branch --top $top 
+$name = config name
+az pipelines build list --branch $branch | Select-String -Pattern "\s${name}\s|^ID "

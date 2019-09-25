@@ -12,9 +12,9 @@ Run build for the current branch:
 
     $ s6 --plg-run ado-pipeline-build@name=WebApp
 
-List 10 latest builds for the current branch:
+List builds for the current branch and pipeline WebApp:
 
-    $ s6 --plg-run ado-pipeline-build@action=list,top=10
+    $ s6 --plg-run ado-pipeline-build@action=list,name=WebApp
     
 Use as Sparrow6 tasks:
 
@@ -31,11 +31,6 @@ Ado pipeline definition name
 ## action
 
 Action to execute. `run|list`. Default value is `run` ( run build )
-
-
-## top
-
-Max results for `list` action. Default values is `5`
 
 # See also
 
