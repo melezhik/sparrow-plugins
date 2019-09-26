@@ -19,7 +19,8 @@ List builds for the current branch and pipeline WebApp:
 Use as Sparrow6 tasks:
 
     task_run "run my build", "ado-pipeline-build", %(
-      name => "WebApp"
+      name => "WebApp",
+      variables => "foo=1 bar=2"
     );
 
 # Parameters
@@ -31,6 +32,10 @@ Ado pipeline definition name
 ## action
 
 Action to execute. `run|list`. Default value is `run` ( run build )
+
+## variables
+
+Ado variables being set for a build run
 
 # See also
 
