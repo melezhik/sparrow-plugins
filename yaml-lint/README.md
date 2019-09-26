@@ -20,14 +20,25 @@ Tomtit/Sparrowdo
 
     task-run "lint git modified files", "yaml-lint";
 
-    # Lint files by path
+    # Lint files by path unconditionally
 
+    # Linux version
     task-run "lint these files", "yaml-lint", %(
       files => "file.yaml file2.yaml file3.yaml"
     );
 
+    # Winodows version
+    task-run "lint these files", "yaml-lint", %(
+      files => ( 'file.yaml', 'file2.yaml', 'file3.yaml' )
+    );
 
 # Requirements
+
+## Windows
+
+None
+
+## Linux
 
 * python
 * yaml python module
