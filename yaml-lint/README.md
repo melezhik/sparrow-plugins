@@ -27,7 +27,7 @@ Tomtit/Sparrowdo
       files => "file.yaml file2.yaml file3.yaml"
     );
 
-    # Winodows version
+    # Windows version
     task-run "lint these files", "yaml-lint", %(
       files => ( 'file.yaml', 'file2.yaml', 'file3.yaml' )
     );
