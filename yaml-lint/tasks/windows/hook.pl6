@@ -1,6 +1,6 @@
-my $files = config()<files>;
+my @files = config()<files><>;
 
-for $files -> $i {
+for @files -> $i {
   run_task "windows/lint", %(file => $i)
 }
 
