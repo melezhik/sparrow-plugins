@@ -24,6 +24,10 @@ Tomtit/Sparrowdo
 
 az cli
 
+# Platforms supported
+
+Linux/Windows
+
 # Author
 
 Alexey Melezhik

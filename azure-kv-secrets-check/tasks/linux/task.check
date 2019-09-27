@@ -1,0 +1,11 @@
+generator: <<CODE
+!perl6
+
+  my $list = config()<exists>;
+  if $list {
+    for $list<>.sort -> $s {
+      say "regexp: \\S+ '/secrets/$s'", ' \s+';
+    }
+  }
+
+CODE
