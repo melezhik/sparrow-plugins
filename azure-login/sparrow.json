@@ -1,0 +1,8 @@
+{
+
+  "name" : "azure-login",
+  "description" : "Login to Auzure using az cli",
+  "version" : "0.0.1",
+  "category" : "azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-login"
+}

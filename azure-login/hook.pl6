@@ -1,0 +1,1 @@
+run_task os() eq 'windows' ?? "windows" !! "linux";
