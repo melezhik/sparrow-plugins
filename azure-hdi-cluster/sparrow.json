@@ -1,0 +1,8 @@
+{
+
+  "name" : "azure-hdi-cluster",
+  "description" : "Manages hdi cluster using az cli",
+  "version" : "0.0.1",
+  "category" : "azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-hdi-cluster"
+}
