@@ -22,6 +22,36 @@ Manages hdi cluster using az cli.
       action  => "delete"
     )
 
+# Parametes
+
+## name
+
+cluster name
+
+## group
+
+Azure resource group
+
+## action
+
+`show|delete`, default value is `show`
+
+* `show` - show cluster provision state
+
+* `detete` - delete cluster
+
+## state
+
+default value is `Succeeded`
+
+Check if provision state, for example:
+
+    task-run "show my cluster", "azure-hdi-cluster", %(
+      name    => "cluster01",  # cluster name
+      group   => "rg01",       # resource group
+      state   => Failed"
+    )
+
 
 # Requirements
 

@@ -1,0 +1,8 @@
+begin:
+State
+---
+    generator: <<CODE
+    !perl6
+    say config()<state>
+    CODE
+end:
