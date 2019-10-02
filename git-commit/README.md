@@ -24,6 +24,14 @@ Tomtit sceanrio:
 
 If `check_spell` is set, run spell checks commit message by using `hunspell`
 
+# Dependencies
+
+* git cli
+
+# Platforms supported
+
+Linux/Windows
+
 # Author
 
 Alexey Melezhik
