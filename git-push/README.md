@@ -26,6 +26,10 @@ Set `confirm` to `no` to disable confirmation dialogue:
 
     task-run "push my changes", "git-push", %( confirm => "no" );
 
+# Platforms supported
+
+Windows/Linux
+
 # Author
 
 Alexey Melezhik
