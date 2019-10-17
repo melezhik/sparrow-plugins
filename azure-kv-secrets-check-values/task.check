@@ -1,0 +1,17 @@
+regexp: (\S+) \s+ '=' \s+ (\S+)
+
+generator: <<CODE
+!perl6
+
+my $dummy-value = config()<dummy-value>;
+
+say "info: dummy value: {$dummy-value}";
+
+for captures()<> -> $i {
+	
+	if $i[1] ~~ /$dummy-value/ {
+		say "assert: 0 {$i[0]} - no dummy values found"
+	}
+}
+
+CODE
