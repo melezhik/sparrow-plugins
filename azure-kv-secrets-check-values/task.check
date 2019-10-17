@@ -5,7 +5,7 @@ generator: <<CODE
 
 my $dummy-value = config()<dummy_value>;
 
-say "info: dummy value: {$dummy-value}";
+say "note: dummy value: {$dummy-value}";
 
 for captures()<> -> $i {
 	
