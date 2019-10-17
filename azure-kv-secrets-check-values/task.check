@@ -3,7 +3,7 @@ regexp: (\S+) \s+ '=' \s+ (\S+)
 generator: <<CODE
 !perl6
 
-my $dummy-value = config()<dummy-value>;
+my $dummy-value = config()<dummy_value>;
 
 say "info: dummy value: {$dummy-value}";
 

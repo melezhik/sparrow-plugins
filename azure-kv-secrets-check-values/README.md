@@ -13,13 +13,13 @@ Check azure keyvault secrets values.
 
     task-run "check secrets", "azure-kv-secrets-check-values", %(
       name => "kv100", # the name of keyvault
-      secrets => ( # these keys should exists
+      list => ( # these keys should exists
         'password1',
         'password2',
         'db-password1',
         'db-password2'
       ),
-      dummy-value => 'changeme'
+      dummy_value => 'changeme'
     )
 
 # Requirements
