@@ -1,0 +1,6 @@
+regexp: ^^ (\d+)
+
+code: <<CODE
+!perl6
+  update_state  %( build_id => capture()[0] )
+CODE
