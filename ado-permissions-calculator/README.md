@@ -27,7 +27,7 @@ Calculate CreateTag, CreateBranch permissions for Git Repositories:
 Use as Sparrow6 tasks:
 
     # Calculate View, Create permissions for Library
-    my %state = task_run "permissions sum", "ado-permissions-calculator", %(
+    task_run "permissions sum", "ado-permissions-calculator", %(
       namespace => "Library",
       permissions => qqw{View Create}
     );
