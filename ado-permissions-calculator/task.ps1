@@ -12,14 +12,17 @@ if ( [string]::IsNullOrEmpty( $namespace ) )  {
     $namespaces[$k] = $i.id
   }
 
+  if ( $namespaces.ContainsKey($namespace)) {
+    Write-Host "namespace: $($namespace), namespace_id: $($namespaces[$namespace])"
+    Write-Host "==="
+  } else {
+    Write-Host "namespace $($namespace) not found"
+    exit(1)
+  }
+
   if ( [string]::IsNullOrEmpty( $actions ) )  {
 
-    if ( $namespaces.ContainsKey($namespace)) {
       az devops security permission namespace show --id $namespaces[$namespace]
-    } else {
-      Write-Host "namespace $($namespace) not found"
-      exit(1)
-    }
 
   } else {
 

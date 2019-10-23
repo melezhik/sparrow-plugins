@@ -2,7 +2,7 @@
 
     "name" : "ado-permissions-calculator",
     "description" : "Calculate permission number for azure devops permissions",
-    "version" : "0.0.4",
+    "version" : "0.0.5",
     "category" : "ado",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-permissions-calculator"
   }
