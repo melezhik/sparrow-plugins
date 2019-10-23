@@ -1,10 +1,13 @@
 $build_id = config build_id
+$verbose = config verbose
 
 while ( $true ){
 
   $status = az pipelines build show --id $build_id --query "{status:status}" -o tsv
 
-  Write-Host "current status for build_id: <$($build_id)> - <$($status)>"
+  if ( $verbose -eq $true ) {
+    Write-Host "current status for build_id: <$($build_id)> - <$($status)>"
+  }
 
   if ( $status -eq 'completed' ) {
 

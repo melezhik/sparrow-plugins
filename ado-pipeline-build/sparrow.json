@@ -2,7 +2,7 @@
 
     "name" : "ado-pipeline-build",
     "description" : "Run and list ado builds using azure devops cli",
-    "version" : "0.0.3",
-    "category" : "vsts",
+    "version" : "0.0.4",
+    "category" : "ado",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-pipeline-build"
   }

@@ -58,6 +58,10 @@ Wait till build has finished. Should supply `build_id`
 
 List all builds for given build definition and current branch
 
+## verbose
+
+Set verbosity for `action=wait`, by default is `False` ( verbosity is disabled )
+
 ## variables
 
 Ado variables being set for a build run

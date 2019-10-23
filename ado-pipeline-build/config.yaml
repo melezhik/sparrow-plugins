@@ -1,3 +1,4 @@
 action: list
 name: WebApp
 top: 5
+verbose: false
