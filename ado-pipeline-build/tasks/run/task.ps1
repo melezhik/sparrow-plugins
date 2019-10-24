@@ -1,5 +1,13 @@
 $name = config name
-$branch = git symbolic-ref HEAD
+
+$branch = config branch
+
+if ( [string]::IsNullOrEmpty($branch) ) {
+
+  $branch = git symbolic-ref HEAD
+
+}
+
 $variables = config variables
 
 if ( -not [string]::IsNullOrEmpty($variables) ) {

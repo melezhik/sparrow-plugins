@@ -58,6 +58,10 @@ Wait till build has finished. Should supply `build_id`
 
 List all builds for given build definition and current branch
 
+## branch
+
+Git branch to run a build against. If not set current branch is taken
+
 ## verbose
 
 Set verbosity for `action=wait`, by default is `False` ( verbosity is disabled )
