@@ -30,7 +30,8 @@ if ( [string]::IsNullOrEmpty( $namespace ) )  {
 
     $list = az devops security permission namespace show --id $namespaces[$namespace] --query "[0].{actions:actions}"  -o json | ConvertFrom-Json
 
-    $sum = 0
+    $allow_sum = 0
+    $all_sum = 0
 
     if ( $actions -is [array] ) {
       $action_list = $actions
@@ -40,11 +41,12 @@ if ( [string]::IsNullOrEmpty( $namespace ) )  {
 
 
     foreach ( $i in $list.actions ) {
+        $all_sum += $i.bit
         foreach ( $j in $action_list ) {
             if ( $j -eq 'all') {
-              $sum += $i.bit
+              $allow_sum += $i.bit
             } elseif ( $j.ToLower() -eq $i.name.ToLower() ) {
-              $sum += $i.bit
+              $allow_sum += $i.bit
             }
         }
     }
@@ -53,7 +55,9 @@ if ( [string]::IsNullOrEmpty( $namespace ) )  {
 
     Write-Host "actions: $($action_list | ConvertTo-Json )"
 
-    Write-Host "sum: $sum"
+    Write-Host "Allow_sum: $allow_sum"
+
+    Write-Host "Deny_sum: $($all_sum - $allow_sum)"
 
   }
 
