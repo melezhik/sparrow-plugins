@@ -10,4 +10,13 @@ $fh.say($message);
 $fh.close;
 
 run_task("check-spell") if $check_spell;
-run_task("{os()}/commit");
+
+if os() eq 'windows' {
+
+  run_task("{os()}/commit");
+
+} else {
+
+  run_task("linux/commit");
+
+}
