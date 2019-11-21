@@ -10,7 +10,7 @@ Run and list ado builds using `azure devops cli`
 
 Run build for the current branch:
 
-    $ s6 --plg-run ado-pipeline-build@name=WebApp
+    $ s6 --plg-run ado-pipeline-build@name=WebApp,action=run
 
 List builds for the current branch and pipeline WebApp:
 
@@ -22,6 +22,7 @@ Use as Sparrow6 tasks:
     my %state = task_run "run my build", "ado-pipeline-build", %(
       name => "WebApp",
       variables => "foo=1 bar=2"
+      action => "run"
     );
 
     # wait till the my  build finishes
@@ -44,7 +45,7 @@ Ado pipeline definition name
 
 ## action
 
-Action to execute. `run|list|wait`. Default value is `run` ( run build )
+Action to execute. `run|list|wait`. Default value is `list` ( list builds )
 
 * `run`
 
