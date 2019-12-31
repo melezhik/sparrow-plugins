@@ -1,8 +1,0 @@
-# command to run your minion command line script
-command: "carton exec ./app.pl minion"
-
-# check failed tasks for last 5 minutes, 10 hours, 2 days , etc ...
-hitask: "10 minutes"
-
-worker_cmd: "minion worker"
-
