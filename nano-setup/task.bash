@@ -7,7 +7,7 @@ if (( $tabsize > 0 )); then
 set tabstospaces
 set tabsize $tabsize
 set speller "$speller"
-set hitasklog
+set historylog
 EOF
 else
   echo bad tabsize: $tabsize
