@@ -10,7 +10,7 @@ if $action eq 'install' {
   if $list.isa('Hash') { # a package list is given as Hash
     for %$list.keys -> $os {
       next unless $os eq os(); # install only packages for a target OS
-      for $list{$os}<> -> $p {
+      for $list{$os}<>.split(/\s/) -> $p {
         install_package($p,$os);  
       }
     }
