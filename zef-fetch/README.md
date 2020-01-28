@@ -20,11 +20,11 @@ say %state<directory>;
 
 * `identity`
 
-Zef identity - module, distribution, so on. Required
+Zef identity - module, distribution, so on. Required.
 
 * `user`
 
-Run zef for certain user
+Run zef for certain user. Optional.
 
 # See also
 
