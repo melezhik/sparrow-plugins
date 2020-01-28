@@ -1,6 +1,6 @@
 {
   "name" : "zef-fetch",
-  "description" : "Load zef distrubution and return location of fetch directory",
+  "description" : "Fetch zef distribution and return location of download directory",
   "version" : "0.1.0",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/zef-fetch"
 }
