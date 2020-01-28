@@ -1,0 +1,5 @@
+my %state = task-run 'zef fetch Kind', 'zef-fetch', %(
+  identity => 'Kind'
+);
+
+say %state<directory>;

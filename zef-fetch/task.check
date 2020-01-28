@@ -1,0 +1,10 @@
+regexp: 'directory:' \s+ (\S+) \s* $$
+
+code: <<CODE
+!perl6
+
+if capture().elems {
+  update_state(%( directory => capture()[0] ))
+}  
+
+CODE
