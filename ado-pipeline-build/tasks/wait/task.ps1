@@ -1,9 +1,22 @@
 $build_id = config build_id
+
 $verbose = config verbose
+
+$project = config project
+
+if ( -not [string]::IsNullOrEmpty($project) ) {
+
+    $opts += "--project $project"
+    Write-Host "project set: $project"
+
+}
+
+$status_cmd = "az pipelines build show $opts --id $build_id --query `"{status:status}`" -o tsv"
+$res_cmd = "az pipelines build show $opts --id $build_id --query `"{result:result}`" -o tsv"
 
 while ( $true ){
 
-  $status = az pipelines build show --id $build_id --query "{status:status}" -o tsv
+  $status = iex $status_cmd
 
   if ( $verbose -eq $true ) {
     Write-Host "current status for build_id: <$($build_id)> - <$($status)>"
@@ -11,7 +24,7 @@ while ( $true ){
 
   if ( $status -eq 'completed' ) {
 
-    $result = az pipelines build show --id $build_id --query "{result:result}" -o tsv
+    $result = iex $res_cmd
 
     Write-Host "result for build_id: <$($build_id)> - <$($result)>"
 

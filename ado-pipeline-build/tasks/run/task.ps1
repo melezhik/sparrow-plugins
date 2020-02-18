@@ -12,7 +12,7 @@ $variables = config variables
 
 if ( -not [string]::IsNullOrEmpty($variables) ) {
 
-    $opts = "--variables $variables"
+    $opts += "--variables $variables"
     Write-Host "variables set: $variables"
 
 }
@@ -21,7 +21,7 @@ $project = config project
 
 if ( -not [string]::IsNullOrEmpty($project) ) {
 
-    $opts = "--project $project"
+    $opts += "--project $project"
     Write-Host "project set: $project"
 
 }
