@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Run and list ado builds using `azure devops cli`
+Run Ado pipelines and list builds using `azure devops cli`
 
 # INSTALL
 
@@ -8,7 +8,7 @@ Run and list ado builds using `azure devops cli`
 
 # USAGE
 
-Run build for the current branch:
+Queue pipeline build for the current branch:
 
     $ s6 --plg-run ado-pipeline-build@name=WebApp,action=run
 
@@ -58,6 +58,10 @@ Wait till build has finished. Should supply `build_id`
 * `list`
 
 List all builds for given build definition and current branch
+
+## project
+
+Set Ado project for a pipeline to run. Optional.
 
 ## branch
 

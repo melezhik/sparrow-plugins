@@ -12,12 +12,21 @@ $variables = config variables
 
 if ( -not [string]::IsNullOrEmpty($variables) ) {
 
-    $variables_opt = "--variables $variables"
+    $opts = "--variables $variables"
     Write-Host "variables set: $variables"
 
 }
 
-$command = "az pipelines build queue --definition-name $name --branch $branch $variables_opt"
+$project = config project
+
+if ( -not [string]::IsNullOrEmpty($project) ) {
+
+    $opts = "--project $project"
+    Write-Host "project set: $project"
+
+}
+
+$command = "az pipelines build queue --definition-name $name --branch $branch $opts"
 
 Write-Host "Running: $($command)"
 
