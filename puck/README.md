@@ -11,26 +11,18 @@ Simple wrapper for `puck` script from https://github.com/NativeInstruments/puck.
 
 Basic usage:
 
-    $ s6 --plg-run puck -- <args>
+    $ s6 --plg-run puck@<args>
 
 See parameters description at [https://github.com/NativeInstruments/puck](https://github.com/NativeInstruments/puck)
 
-If you need some automation:
+Sparrow DSL:
 
-/puck/README
-
-/puck/README
-
-    $ s6 --task-set utils/$task-name
-
-      ---
-
-      args:
-        - foo
-        - bar
-        - # so on
-
-    $ s6 --task-run utils/$task-name
+    task-run "run puck", "puck", %(
+      args => [
+        %( requirements-file => "requirements.txt" ), 
+        [ "show-all" ]
+      ]
+    );
 
 # Author
 
