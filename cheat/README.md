@@ -11,27 +11,11 @@ Simple wrapper for `cheat` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run cheat -- <args>
+    $ s6 --plg-run cheat <args>
 
 For example:
 
-    $ s6 --plg-run cheat -- -i Perl
-
-Run as sparrow task:
-
-/cheat/sparrow
-
-/cheat/sparrow
-
-    $ s6 --task-set utils/cheat-perl
-
-      ---
-
-      args:
-        - '-i'
-        - Perl
-
-    $ s6 --task-run utils/cheat-perl
+    $ s6 --plg-run cheat@args="-i Perl"
 
 For cheat's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#cheat](https://github.com/alexanderepstein/Bash-Snippets#cheat)
 
