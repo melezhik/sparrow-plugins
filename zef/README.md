@@ -10,41 +10,25 @@ Wrapper for [zef](https://github.com/ugexe/zef) installer.
 
 # USAGE
 
-It's better to run it via ducky:
+
+Cli:
+
+    $ s6 --plg-run zef@list="." # install for CWD
+
+    $ s6 --plg-run zef@list="JSON::Tiny cro" # install JSON::Tiny and Cro
+
+    $ s6 --plg-run zef@list=cro,options="--/test --force" # passing options to zef
 
 
-    $ cat ducky.json
+Sparrow DSL:
 
-    {
-      "task" : "install from CWD",
-      "plugin" : "zef",
-      "data" : {
-        "list" : [
-          "."
-        ]
-      }
-    },
-    {
-      "task" : "install 2 modules",
-      "plugin" : "zef",
-      "data" : {
-        "list" : [
-          "Sparrowdo::Sparrow::Update",
-          "Sparrowdo::Cpanm::GitHub"
-        ]
-      }
-    },
-    {
-      "task" : "JSON::Unmarshal force install",
-      "plugin" : "zef",
-      "data" : {
-        "options" : "--force",
-        "list" : [
-          "JSON::Unmarshal"
-        ]
-      }
-    }
-  
+
+    task-run "install Cro", "zef", %(
+      list => "cro",
+      options => "--/test"
+    );
+
+
 # Author
 
 Alexey Melezhik
