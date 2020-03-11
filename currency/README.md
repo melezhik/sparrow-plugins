@@ -11,28 +11,11 @@ Simple wrapper for `currency` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run currency -- <args>
+    $ s6 --plg-run currency <params>
 
 For example:
 
-    $ s6 --plg-run currency -- USD RUB 100
-
-Run as sparrow task:
-
-/currency/sparrow
-
-/currency/sparrow
-
-    $ s6 --task-set utils/currency-usd-rub
-
-      ---
-
-      args:
-        - USD
-        - RUB
-        - 100
-
-    $ s6 --task-run utils/currency-usd-rub
+    $ s6 --plg-run currency@params="USD EUR 12.35"
 
 For currency's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#currency](https://github.com/alexanderepstein/Bash-Snippets#currency)
 
