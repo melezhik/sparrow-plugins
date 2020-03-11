@@ -15,7 +15,7 @@ Basic usage:
 
 For example:
 
-    $ s6 --plg-run weather@params=Saint-Petersburg
+    $ s6 --plg-run weather@args=Saint-Petersburg
 
 For weather's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#weather](https://github.com/alexanderepstein/Bash-Snippets#weather)
 

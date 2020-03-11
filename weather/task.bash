@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash $task_dir/weather $(config params)
+bash $task_dir/weather $(config args)
 
 

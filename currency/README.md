@@ -11,11 +11,11 @@ Simple wrapper for `currency` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run currency <params>
+    $ s6 --plg-run currency <args>
 
 For example:
 
-    $ s6 --plg-run currency@params="USD EUR 12.35"
+    $ s6 --plg-run currency@args="USD EUR 100"
 
 For currency's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#currency](https://github.com/alexanderepstein/Bash-Snippets#currency)
 
