@@ -29,7 +29,7 @@ Follow pre-commit docs for details.
 
 Should be file path to a directory where your Perl6 project located. 
 Usually this is the same directory where .pre-commit-config.yaml is located.
-And simple `,path=$PWD` should work for you.
+And not setting `path` should work for you.
 
 # Author
 
