@@ -12,20 +12,16 @@ App::cpm client (cpm)
 
 # USAGE
 
-## Manually
+## Cli
 
-    $ s6 --plg-run app-cpm@list="'CGI DBI Moose'"
+    $ s6 --plg-run app-cpm@list="CGI DBI Moose"
 
-## Via sparrowdo
+## Sparrow DSL
 
-    task_run  %(
-      task => 'install some modules',
-      plugin => 'app-cpm',
-      parameters => %( 
-        list => 'CGI DBI Moose',
-        install-base => '/var/app/',
-        verbose => 1
-      )
+    task-run 'install some modules','app-cpm', %( 
+      list => 'CGI DBI Moose',
+      install-base => '/var/app/',
+      verbose => 1
     );
     
 # Plugin parameters
@@ -36,7 +32,7 @@ Should be space separated list of packages to install.
 
 For example:
 
-    list CGI DBI Moose
+    CGI DBI Moose
 
 ## workers
 
