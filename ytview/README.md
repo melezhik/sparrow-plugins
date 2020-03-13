@@ -2,7 +2,6 @@
 
 Simple wrapper for `ytview` script from Bash-Snippets.
 
-
 # INSTALL
 
     $ s6 --install ytview
@@ -11,27 +10,11 @@ Simple wrapper for `ytview` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run ytview -- <args>
+    $ s6 --plg-run ytview <args>
 
 For example:
 
-    $ s6 --plg-run ytview -- -s Family Guy Chicken Fight
-
-Run as sparrow task:
-
-/ytview/sparrow
-
-/ytview/sparrow
-
-    $ s6 --task-set utils/ytview-fg
-
-      ---
-
-      args:
-        - '-s'
-        - Family Guy Chicken Fight
-
-    $ s6 --task-run utils/ytview-fg
+    $ s6 --plg-run ytview@args="-s Family Guy Chicken Fight"
 
 For ytview's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#ytview](https://github.com/alexanderepstein/Bash-Snippets#ytview)
 

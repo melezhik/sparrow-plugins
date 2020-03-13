@@ -10,26 +10,11 @@ Simple wrapper for `stocks` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run stocks -- <args>
+    $ s6 --plg-run stocks <args>
     
 For example:
 
-    $ sparrow pl run stocks -- Google
-
-Run as sparrow task:
-
-/stocks/sparrow
-
-/stocks/sparrow
-
-    $ s6 --task-set utils/google-stocks
-
-      ---
-
-      args:
-        - Google
-
-    $ s6 --task-run utils/google-stocks
+    $ s6 --plg-run stocks@args=Google
 
 For stocks's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#stocks](https://github.com/alexanderepstein/Bash-Snippets#stocks)
     
