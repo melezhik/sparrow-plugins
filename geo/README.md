@@ -11,28 +11,11 @@ Simple wrapper for `geo` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run geo -- <args>
+    $ s6 --plg-run geo <args>
 
 For example:
 
-    $ s6 --plg-run geo -- -r -d -m eth0
-
-Run as sparrow task:
-
-/geo/sparrow
-
-/geo/sparrow
-
-    $ s6 --task-set utils/geo-data
-
-      ---
-
-      args:
-        - '-r'
-        - '-d'
-        - '~m' : eth0
-
-    $ s6 --task-run utils/geo-data
+    $ s6 --plg-run geo@args="-r -d -m eth0"
 
 For geo's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#geo](https://github.com/alexanderepstein/Bash-Snippets#geo)
 

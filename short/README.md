@@ -9,15 +9,12 @@ Simple wrapper for `short` script from Bash-Snippets.
 
 # USAGE
 
-    $ s6 --task-set utils/short-unmusk-jhkj
+    $ s6 --plg-run short <args>
 
-      task-run "utils/short-unmusk-jhkj", "short", %(
-        args => [
-          'tinyurl.com/jhkj'
-        ]
-      );
+For example:
 
-    $ s6 --task-run utils/short-unmusk-jhkj
+
+    $ s6 --plg-run short@args="-s https://raku.org"
 
 For short's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#short](https://github.com/alexanderepstein/Bash-Snippets#short)
 

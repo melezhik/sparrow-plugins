@@ -11,26 +11,11 @@ Simple wrapper for `qrify` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run qrify -- <args>
+    $ s6 --plg-run qrify <args>
 
 For example:
 
-    $ s6 --plg-run qrify -- hello world
-
-Run as sparrow task:
-
-/qrify/sparrow
-
-/qrify/sparrow
-
-    $ s6 --task-set utils/qrify-text
-
-      ---
-
-      args:
-        - Hello world
-
-    $ s6 --task-run utils/qrify-text
+    $ s6 --plg-run qrify@args="Hello world"
 
 For qrify's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#qrify](https://github.com/alexanderepstein/Bash-Snippets#qrify)
 

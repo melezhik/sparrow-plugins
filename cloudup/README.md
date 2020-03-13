@@ -11,29 +11,11 @@ Simple wrapper for `cloudup` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run cloudup -- <args>
+    $ s6 --plg-run cloudup <args>
     
 For example:
 
-    $ s6 --plg-run cloudup -- -p repo1 repo2 repo3
-
-If you need some automation:
-
-/cloudup/sparrow
-
-/cloudup/sparrow
-
-    $ s6 --task-set utils/backup-top-repos
-
-      ---
-
-      args:
-        - '-p'
-        - repo1
-        - repo2
-        - repo3
-
-    $ s6 --task-run utils/backup-top-repos
+    $ s6 --plg-run cloudup@args="-p repo1 repo2 repo3"
 
 See parameters description at [https://github.com/alexanderepstein/Bash-Snippets#cloudup](https://github.com/alexanderepstein/Bash-Snippets#cloudup)
 

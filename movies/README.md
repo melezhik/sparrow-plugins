@@ -11,26 +11,11 @@ Simple wrapper for `movies` script from Bash-Snippets.
 
 Basic usage:
 
-    $ s6 --plg-run movies -- <args>
+    $ s6 --plg-run movies <args>
 
 For example:
 
-    $ s6 --plg-run movies -- Argo
-
-Run as sparrow task:
-
-/movies/sparrow
-
-/movies/sparrow
-
-    $ s6 --task-set utils/movies-argo
-
-      ---
-
-      args:
-        - Argo
-
-    $ s6 --task-run utils/movies-argo
+    $ s6 --plg-run movies@args=Argo
 
 For movies's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#movies](https://github.com/alexanderepstein/Bash-Snippets#movies)
 

@@ -13,24 +13,10 @@ Basic usage:
 
     $ s6 --plg-run crypt -- <args>
 
-Run as sparrow task:
+For example:
 
-/crypt/sparrow
 
-/crypt/sparrow
-
-    $ s6 --task-set utils/enc-file
-
-      ---
-
-      args:
-        - '-e'
-        - /tmp/file.txt
-        - /tmp/file.txt.inc
-
-    $ s6 --task-run utils/enc-file
-
-For crypt's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#cheat](https://github.com/alexanderepstein/Bash-Snippets#crypt)
+    $ s6 --plg-run crypt@args="-e /tmp/file.txt /tmp/file.txt.incrypted"
 
 # Authors
 
