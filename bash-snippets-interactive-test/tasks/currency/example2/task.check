@@ -7,9 +7,9 @@ end:
 begin:
 =========================
 | USD to RUB
-regexp: ^\|\s+Rate:\s+\d+\.\d+\s*$
+regexp: \s+ 'Rate:' \s+ \d+ '.' \d+ \s* $$
 | USD: 100
-regexp: ^\|\s+RUB:\s+\d+\.\d+\s*$
+regexp: \s+ 'RUB:' \s+ \d+ '.' \d+ \s* $$
 =========================
 end:
 
