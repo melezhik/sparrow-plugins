@@ -2,7 +2,7 @@
 ./aws-run-instance/README.md
 ./azure-web-app-appsettings/README.md
 ./check-ssl-cert/README.md
-./cpan-upload/README.md
+./cpan-upload/README.md +
 ./csvtotable/README.md
 ./goss/README.md
 ./logdog/README.md

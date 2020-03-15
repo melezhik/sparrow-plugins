@@ -2,7 +2,7 @@
 
   "name" : "cpan-upload",
   "description" : "Small wrapper for cpan-upload",
-  "version" : "0.0.7",
+  "version" : "0.0.8",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/cpan-upload"
 }

@@ -11,30 +11,14 @@ Small wrapper for [cpan-upload](https://metacpan.org/pod/distribution/CPAN-Uploa
 
 # USAGE
 
-As one liners:
-
     # upload archive to CPAN without SSL verification
-    $ s6 --plg-run cpan-upload@distro=$PWD/app-0.0001.tar.gz
+    $ s6 --plg-run cpan-upload@distro=app-0.0001.tar.gz
 
     # the same with SSL verification
-    $ s6 --plg-run cpan-upload@distro=$PWD/app-0.0001.tar.gz,ssl_verify=on
+    $ s6 --plg-run cpan-upload@distro=app-0.0001.tar.gz,ssl_verify=on
 
     # delete local distro after upload
-    $ s6 --plg-run cpan-upload@distro=$PWD/app-0.0001.tar.gz,clean=on
-
-As task:
-
-
-/cpan-upload/README
-
-/cpan-upload/README
-
-    $ s6 --task-set cpan/upload
-
-      clean=on
-      ssl_verify=off
-
-    $ s6 --task-run cpan/upload,distro=$PWD/app-0.0001.tar.gz
+    $ s6 --plg-run cpan-upload@distro=app-0.0001.tar.gz,clean=on
 
 # Parameters
 

@@ -15,12 +15,12 @@ cpanm client ( as it used to install cpan modules )
 
 ## Cli
 
-    $ s6 --plg-run cpan-package@list="App::cpm local::lib"
+    $ s6 --plg-run cpan-package@list="HTTP::Tiny App::cpm"
 
 ## Api
 
     task-run 'install some modules', 'cpan-package', %( 
-      list => 'App::cpm local::lib',
+      list => 'HTTP::Tiny App::cpm',
       install-base => '/var/app/'
     );
     
