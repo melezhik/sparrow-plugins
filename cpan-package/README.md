@@ -2,7 +2,6 @@
 
 CPAN modules installer
 
-
 # Prerequisites
 
 cpanm client ( as it used to install cpan modules )
@@ -12,22 +11,17 @@ cpanm client ( as it used to install cpan modules )
 
     $ s6 --install cpan-package
 
-
 # USAGE
 
-## Manually
+## Cli
 
-    $ s6 --plg-run,list="'CGI DBI Moose'"
+    $ s6 --plg-run cpan-package@list="App::cpm local::lib"
 
-## Via sparrowdo
+## Api
 
-    task_run  %(
-      task => 'install some modules',
-      plugin => 'cpan-package',
-      parameters => %( 
-        list => 'CGI DBI Moose',
-        install-base => '/var/app/'
-      )
+    task-run 'install some modules', 'cpan-package', %( 
+      list => 'App::cpm local::lib',
+      install-base => '/var/app/'
     );
     
 
@@ -45,8 +39,7 @@ Specify the install base to install modules. See also `-l` parameter for cpanm c
 
 ## user
 
-Specify a user which runs installer process. Normally you would need it when install modules
-into someone's home directory.
+Specify a user which runs installer process. Normally you would need it when install modules into someone's home directory.
 
 ## http_proxy
 

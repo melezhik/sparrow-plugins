@@ -1,0 +1,17 @@
+./aws-list-tag-instances/README.md
+./aws-run-instance/README.md
+./azure-web-app-appsettings/README.md
+./check-ssl-cert/README.md
+./cpan-upload/README.md
+./csvtotable/README.md
+./goss/README.md
+./logdog/README.md
+./meta6-bin/README.md
+./mssql-db-user/README.md
+./package-generic/README.md
+./speedtest-cli/README.md
+./sqltextify/README.md
+./ssh-sudo-check/README.md
+./ssh-sudo-try/README.md
+./vault/README.md
+./web_trawler/README.md

@@ -1,3 +1,7 @@
+# 0.0.6
+
+* small fixes in documentation ( after migrating to Raku )
+
 # 0.0.5
 
 * documentation improvements - example of global install

@@ -2,7 +2,7 @@
 
   "name" : "app-cpm-wrapper",
   "description" : "Simple wrapper for App::cpm",
-  "version" : "0.0.5",
+  "version" : "0.0.6",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/app-cpm-wrapper"
 }

@@ -9,7 +9,7 @@ Simple wrapper for [App::cpm](https://metacpan.org/pod/App::cpm)
 
 # USAGE
 
-Basic usage:
+Cli:
 
     $ s6 --plg-run app-cpm-wrapper@module=$module,args=$args
 
@@ -19,14 +19,17 @@ For example:
 
 See parameters description at [cpm doc](https://metacpan.org/pod/distribution/App-cpm/script/cpm)
 
-# Automation
+# API
 
     task-run "install a couple of modules", "app-cpm-wrapper", %(
       module => "HTTP::Tiny Config::Tiny"
-      args => (
-        'g', # global install
-        %( '-w' => 2 ) # number of workers
-      )
+      args => [
+        [ 'verbose' ],
+        %( 
+          workers => 2,
+          L => "/home/melezhik/base"
+        )
+      ]
     );
 
 

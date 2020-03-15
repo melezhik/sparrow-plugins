@@ -14,9 +14,9 @@ App::cpm client (cpm)
 
 ## Cli
 
-    $ s6 --plg-run app-cpm@list="CGI DBI Moose"
+    $ s6 --plg-run app-cpm@list="HTTP::Tiny CGI"
 
-## Sparrow DSL
+## API
 
     task-run 'install some modules','app-cpm', %( 
       list => 'CGI DBI Moose',
