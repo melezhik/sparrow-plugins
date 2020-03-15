@@ -10,7 +10,7 @@ See [https://metacpan.org/pod/distribution/Module-Release/script/release](https:
 
 # USAGE
 
-    $ s6 --plg-run module-release@options='-t -p -k -d',path=/foo/bar/baz
+    $ s6 --plg-run module-release@args='-t -p -k -d'
 
 # Author
 

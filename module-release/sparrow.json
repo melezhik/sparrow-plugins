@@ -1,6 +1,6 @@
 {
   "name" : "module-release",
-  "version" : "0.1.2",
+  "version" : "0.1.3",
   "description" : "just a wrapper for Module::Release release script, see https://metacpan.org/pod/distribution/Module-Release/script/release",
   "url" : "https://github.com/melezhik/module-release"
 }
