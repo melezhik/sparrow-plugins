@@ -4,7 +4,10 @@
 
 # Description
 
-This is an example of Python based Sparrow plugin. It uses `hackhttp` pip module to make http request and return http code.
+This is an example of Python based Sparrow plugin. 
+
+A `terminaltables` pip module is installed and sample table is printed out.
+
 
 # Usage
 

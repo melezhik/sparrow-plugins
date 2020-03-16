@@ -11,18 +11,14 @@ Simple wrapper for `puck` script from https://github.com/NativeInstruments/puck.
 
 Basic usage:
 
-    $ s6 --plg-run puck@<args>
+    $ s6 --plg-run puck <args>
+
+For example:
+
+    $ s6 --plg-run puck@args="--requirements-file requirements.txt --show-all"
 
 See parameters description at [https://github.com/NativeInstruments/puck](https://github.com/NativeInstruments/puck)
 
-Sparrow DSL:
-
-    task-run "run puck", "puck", %(
-      args => [
-        %( requirements-file => "requirements.txt" ), 
-        [ "show-all" ]
-      ]
-    );
 
 # Author
 

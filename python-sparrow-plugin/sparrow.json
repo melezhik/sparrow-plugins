@@ -1,6 +1,6 @@
 {
   "name" : "python-sparrow-plugin",
-  "description": "An example python based Sparrow plugin",
-  "version" : "0.0.4",
+  "description": "An example of python based Sparrow plugin",
+  "version" : "0.0.6",
   "url" : "https://github.com/melezhik/python-sparrow-plugin"
 }

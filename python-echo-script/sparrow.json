@@ -1,6 +1,6 @@
 {
     "name": "python-echo-script",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description" : "this is my simple echo script",
     "category" : "utilities",
     "url" : "https://github.com/melezhik/python-echo-script"
