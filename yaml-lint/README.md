@@ -20,10 +20,10 @@ Cli
     $ s6 --plg-run yaml-lint@files=config.yaml
 
     #  many files, using python YAML module  
-    $ s6 --plg-run yaml-lint@files="config.yaml config2.,yaml"
+    $ s6 --plg-run yaml-lint@files="config.yaml config2.yaml"
 
     #  many files, using perl YAML::XS module  
-    $ s6 --plg-run yaml-lint@files="config.yaml config2.,yaml",use_python=False
+    $ s6 --plg-run yaml-lint@files="config.yaml config2.yaml",use_python=False
 
 API
 
@@ -34,7 +34,8 @@ API
 
     # Linux version
     task-run "lint these files", "yaml-lint", %(
-      files => "file.yaml file2.yaml file3.yaml"
+      files => "file.yaml file2.yaml file3.yaml",
+      use_python => False
     );
 
     # Windows version
