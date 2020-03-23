@@ -1,12 +1,13 @@
 # SYNOPSIS
 
-Lint yaml files.
+Lint yaml files. It's convenient tool when you edit yaml files as yaml format is kinda fragile and easy to break.
 
-Whenever you change your yaml files in git, lint them through yaml python module.
+Whenever you change your yaml files in git, lint them.
 
-It's convenient tool when you edit yaml files as yaml format is kinda fragile and easy to break.
+Linter works in 2 modes:
 
-Yaml lint picks up all the git `A` or `M` files and run yaml linter for them.
+* Picks up all files changed in Git (staged or locally modified - marked as `A` or `M`) and lint them
+* Lints particular files ( see `files` parameter )
 
 # INSTALL
 
@@ -43,6 +44,10 @@ API
       files => ( 'file.yaml', 'file2.yaml', 'file3.yaml' )
     );
 
+Tomtit
+
+    tom --profile yaml
+
 # Requirements
 
 ## Windows
@@ -51,8 +56,8 @@ None
 
 ## Linux
 
-* python - yaml python module
-* perl - YAML::XS perl module
+* Python - yaml python module
+* Perl - YAML::XS perl module
 
 # Author
 
