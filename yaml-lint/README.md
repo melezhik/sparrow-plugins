@@ -14,10 +14,20 @@ Yaml lint picks up all the git `A` or `M` files and run yaml linter for them.
 
 # USAGE
 
-Tomtit/Sparrowdo
+Cli
+
+    # one file, using python YAML module  
+    $ s6 --plg-run yaml-lint@files=config.yaml
+
+    #  many files, using python YAML module  
+    $ s6 --plg-run yaml-lint@files="config.yaml config2.,yaml"
+
+    #  many files, using perl YAML::XS module  
+    $ s6 --plg-run yaml-lint@files="config.yaml config2.,yaml",use_python=False
+
+API
 
     # Lint files that modified in terms of git
-
     task-run "lint git modified files", "yaml-lint";
 
     # Lint files by path unconditionally
@@ -40,8 +50,8 @@ None
 
 ## Linux
 
-* python
-* yaml python module
+* python - yaml python module
+* perl - YAML::XS perl module
 
 # Author
 
