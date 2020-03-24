@@ -2,7 +2,7 @@
 
   "name" : "sqltextify",
   "description" : "Wrapper for sqltextify.pl",
-  "version" : "0.0.6",
+  "version" : "0.0.7",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sqltextify"
 }
