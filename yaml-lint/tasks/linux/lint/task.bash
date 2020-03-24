@@ -12,9 +12,9 @@ if test $use_python = "True"; then
 
 else
 
-  echo "perl -MYAML::XS -e 'my $yaml = join \"\", <STDIN>; Load($yaml)' < $file"
+  echo -n "perl -MYAML::XS -e 'my $yaml = join \"\", <STDIN>; Load($yaml)' < $file"
 
-  perl -MYAML::XS -e 'my $yaml = join "", <STDIN>; Load($yaml)' < $file
+  perl -MYAML::XS -e 'my $yaml = join "", <STDIN>; Load($yaml); print " ===> [OK]"' < $file
 
 fi
 
