@@ -1,0 +1,35 @@
+regexp: 'file processed:' \s+ (\d+)
+
+generator: <<CODE
+!perl6
+
+update_state %( file-processed => 0 );
+
+if capture()[0] > 0 { 
+
+  say "regexp: .* \\s+ '['  ( FAIL || OK ) ']'";
+  update_state %( file-processed => capture()[0] );
+
+}
+
+CODE
+
+generator: <<CODE
+!perl6
+
+  my $fail-cnt = 0;
+
+  if get_state()<file-processed> {
+
+    for captures()<> -> $c {
+
+        $fail-cnt++ if $c[0][0] eq "FAIL";   
+    }
+
+    say "assert: ", $fail-cnt  ?? 0 !! 1 , " no failures found";
+
+  }
+
+
+
+CODE
