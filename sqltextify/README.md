@@ -8,30 +8,23 @@ Wrapper for [sqltextify.pl](https://metacpan.org/pod/distribution/Sql-Textify/sc
 
 # USAGE
 
-Runs as task ( prefered way ):
+Cli:
 
-/sqltextify/README
-/sqltextify/README
-    $ s6 --task-set databases/users
+    $ s6 --plg-run sqltextify@args="--conn dbi:SQLite:table.sql --format markdown",sql="select * from a"
 
-    ---
+Api:
 
-      sql: select name, email from users
-      args:
-        - conn: DBI:mysql:database=accounts
-        - username: root
-        - password: secret123
-        - format: markdown
-    
+      task-run "users report", "sqltextify", %(
+        sql => "select * from a",
+        args => [
+          %(
+            conn => "dbi:SQLite:table.sql",
+            format => "markdown"
+          )
+        ]
+      );
 
-    $ s6 --task-run databases/users
-
-Runs as plugin:
-
-    $ s6 --plg-run sqltextify@\
-    ,sql='select name, email from users' --\
-    --conn DBI:mysql:database=accounts\
-    --username root --password secret123
+See arguments explanation on sqltextify.pl doc pages.
 
 # Plugin maintainer
 

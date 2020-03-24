@@ -9,7 +9,7 @@
 ./meta6-bin/README.md
 ./mssql-db-user/README.md
 ./package-generic/README.md
-./speedtest-cli/README.md
+./speedtest-cli/README.md  +
 ./sqltextify/README.md
 ./ssh-sudo-check/README.md
 ./ssh-sudo-try/README.md

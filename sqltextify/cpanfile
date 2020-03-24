@@ -1,2 +1,3 @@
 requires "Sql::Textify", ">= 0.05";
-
+requires "File::Slurp";
+requires "DBD::SQLite";
