@@ -1,7 +1,7 @@
 {
   "name" : "speedtest-cli",
   "description" : "Simple wrapper for speedtest-cli from https://github.com/sivel/speedtest-cli",
-  "version" : "0.0.5",
+  "version" : "0.0.6",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/speedtest-cli",
   "category": "utilities",
   "python_version" : 2

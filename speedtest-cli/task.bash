@@ -1,5 +1,5 @@
 #!/bin/bash
 
-speedtest-cli $(config args)
+python3 $root_dir/python-lib/speedtest.py $(config args)
 
 
