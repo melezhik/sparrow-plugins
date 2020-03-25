@@ -14,6 +14,6 @@ sqltextify.pl --sql $sql_tmpfile $(config args) > data.out
 
 cat data.out
 
-echo "report saved to out.data"
+echo "report saved to data.out"
 
 
