@@ -2,8 +2,6 @@
 
 set -e
 
-mkdir -p ~/.sqltextify
-
 sql_tmpfile=$cache_dir/query.sql
 
 sql=$(config sql)
