@@ -1,8 +1,7 @@
 {
   "name" : "vault",
   "description" : "Simple wrapper for vault script",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/gabfl/vault",
-  "category": "utilities",
-  "python_version" : "3"
+  "category": "utilities, python"
 }

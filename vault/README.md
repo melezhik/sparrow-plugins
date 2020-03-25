@@ -11,27 +11,13 @@ Simple wrapper for `vault`
 
 Basic usage:
 
-    $ s6 --plg-run vault -- <args>
+    $ s6 --plg-run vault <args>
 
 For example:
 
-    $ s6 --plg-run vault -- --erase_vault
+    $ s6 --plg-run vault@args="--erase_vault"
 
 See parameters description at [https://github.com/gabfl/vault](https://github.com/gabfl/vault)
-
-If you need some automation:
-
-/vault/README
-
-/vault/README
-
-    $ s6 --task-set utils/vault-eraser
-
-      args:
-        - 
-          - e
-
-    $ s6 --task-run utils/vault-eraser
 
 # Author
 
