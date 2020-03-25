@@ -10,12 +10,12 @@ Wrapper for [sqltextify.pl](https://metacpan.org/pod/distribution/Sql-Textify/sc
 
 Cli:
 
-    $ s6 --plg-run sqltextify@args="--conn dbi:SQLite:table.sql --format markdown",sql="select * from a"
+    $ s6 --plg-run sqltextify@args="--conn dbi:SQLite:table.sql --format markdown",sql="select * from users"
 
 Api:
 
       task-run "users report", "sqltextify", %(
-        sql => "select * from a",
+        sql => "select * from users",
         args => [
           %(
             conn => "dbi:SQLite:table.sql",
