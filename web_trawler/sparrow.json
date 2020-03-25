@@ -1,8 +1,7 @@
 {
   "name" : "web_trawler",
   "description" : "Simple wrapper for web_trawler script",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "url" : "https://gitlab.com/dlab-indecol/web_trawler",
-  "category": "utilities",
-  "python_version" : 3
+  "category": "utilities, python"
 }
