@@ -1,8 +1,11 @@
-generator: <<CODE
-
+generator:<<CODE
   my $required_settings = config()->{required_settings} || ();
   #use Data::Dumper;
   #warn Dumper($required_settings);
-  [ map {"[$_]"} @{$required_settings} ]
 
+  if (ref $required_settings){
+    print  join "\n", map {"[$_]"} @{$required_settings}
+  } else {
+    print  join "\n", map {"[$_]"} split "/", $required_settings
+  }
 CODE

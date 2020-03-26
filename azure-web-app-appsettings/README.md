@@ -8,7 +8,7 @@ Dump/Validate azure app service application settings.
 
 # USAGE
 
-CLI:
+Cli:
 
     # Dump settings for app service `webApp`
     # Resource group `myGroup`
@@ -16,14 +16,12 @@ CLI:
 
     $ s6 --plg-run azure-web-app-appsettings@app_service=webApp,group=myGroup
 
-Sparrow task
+Api:
 
-/azure-web-app-appsettings/README
-    $ sparrow project task add azure webapp-settings azure-web-app-appsettings
-    $ s6 --task-set azure webapp-settings
-
-    group: myGroup
-    app_service: webApp
+    task-run "dump app settings", "azure-web-app-appsettings", %(
+      group => "myResourceGroup",
+      app_service => "webApp"
+    )
 
 # Parameters
   
@@ -37,18 +35,32 @@ Azure resource group name.
 
 # Check required settings
 
-You may check if certain settings exists in application settings, by setting `required_settings` array:
+To verify that settings are set choose `required_settings`.
 
-    $ s6 --task-set azure webapp-settings
+Split by '/' if use cli:
 
-    group: myGroup
-    app_service: webApp
+    $ s6 --plg-run azure-web-app-appsettings@app_service=webApp,group=myGroup,\
+    required_settings=database_host/database_name/database_login/database_password
 
-    required_settings:
-      - database_host
-      - database_name
-      - database_login
-      - database_password
+Or pass as array if use API:
+
+    task-run "dump app settings", "azure-web-app-appsettings", %(
+      group => "myResourceGroup",
+      app_service => "webApp",
+      required_settings => [
+          "database_host",
+          "database_name",
+          "database_login",
+          "database_password"
+        ]
+    )
+
+
+# Prerequisites
+
+* Perl/JSON module
+
+I am going to replace by pure Raku soon.
 
 # Author
 
