@@ -27,7 +27,7 @@ OS supported:
 
 DSL shortcut:
 
-  package-install 'nano hunspell mc';
+    package-install 'nano hunspell mc';
     
 # Plugin parameters
 
