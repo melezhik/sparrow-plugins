@@ -33,9 +33,15 @@ API
 
     # Lint files by path unconditionally
 
-    # Linux version
+    # Linux version, using YAML::XS
     task-run "lint these files", "yaml-lint", %(
       files => "file.yaml file2.yaml file3.yaml",
+      use_python => False
+    );
+
+    # Linux version, using wild cards
+    task-run "lint these files", "yaml-lint", %(
+      files => "path/to/dir/*.yaml",
       use_python => False
     );
 

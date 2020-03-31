@@ -21,7 +21,7 @@ $project = config project
 
 if ( -not [string]::IsNullOrEmpty($project) ) {
 
-    $opts += "--project $project"
+    $opts += " --project $project"
     Write-Host "project set: $project"
 
 }
