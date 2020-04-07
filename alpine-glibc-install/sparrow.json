@@ -1,0 +1,6 @@
+{
+  "name" : "alpine-glibc-install",
+  "description" : "Installs glibc on Alpine",
+  "version" : "0.0.3",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/alpine-glibc-install"
+}

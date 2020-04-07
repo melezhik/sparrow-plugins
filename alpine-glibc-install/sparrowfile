@@ -1,0 +1,3 @@
+#!perl6
+
+task-run "install glibs", "alpine-glibc-install";
