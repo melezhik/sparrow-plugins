@@ -22,7 +22,7 @@ if test -z $user; then
 else
 
   if [[ $os == alpine ]]; then
-    su -s `type -P bash` -l -c "${cwd_cmd} ${envvars} ${command}" $user || exit 1
+    su -s `type -P sh` -l -c "${cwd_cmd} ${envvars} ${command}" $user || exit 1
   else
     su --shell `type -P bash` --login -c "${cwd_cmd} ${envvars} ${command}" $user || exit 1
   fi

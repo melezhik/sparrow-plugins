@@ -42,8 +42,7 @@ Example:
 
     $ s6 --plg-run,command="echo I AM OK",expect_stdout='I AM \S+'
 
-Or via sparrowdo:
-
+Or via API:
 
     task-run "server uptime", "bash", %(
       command   => 'uptime',
@@ -63,8 +62,8 @@ Use envvars parameter. For example:
     task-run "http GET request", "bash", %(
       command   => 'curl https://sparrowhub.org',
       envvars   => %(
-        http_proxy  => input_params('HttpProxy'),
-        https_proxy => input_params('HttpsProxy'),
+        http_proxy  => "http://gateway.prx:3128",
+        https_proxy => "https://gateway.prx:3128",
       )
     );
 
