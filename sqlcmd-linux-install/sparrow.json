@@ -1,6 +1,6 @@
 {
   "name" : "sqlcmd-linux-install",
   "description" : "Installs sqlcmd on linux",
-  "version" : "0.0.1",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sqlcmd-linux-install"
 }
