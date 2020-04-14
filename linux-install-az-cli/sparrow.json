@@ -1,0 +1,6 @@
+{
+  "name" : "linux-install-az-cli",
+  "description" : "Installs az cli on linux",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/linux-install-az-cli"
+}
