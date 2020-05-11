@@ -24,6 +24,9 @@ centos6)
   chkconfig --level 235 $service on || exit 1
   chkconfig --list $service || exit 1
   ;;
+centos)
+  systemctl enable $service || exit 1
+  ;;
 centos7)
   systemctl enable $service || exit 1
   ;;

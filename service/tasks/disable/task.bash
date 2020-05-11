@@ -24,6 +24,9 @@ centos6)
   chkconfig --level 235 $service off || exit 1
   chkconfig --list $service || exit 1
   ;;
+centos)
+  systemctl disable $service || exit 1
+  ;;
 centos7)
   systemctl disable $service || exit 1
   ;;
