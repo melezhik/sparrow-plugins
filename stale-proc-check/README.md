@@ -18,7 +18,7 @@ ps utility should be installed
 
     # lets find all nginx processes running since last week
 
-    $ s6 --plg-run stale-proc-check@filter=nginx,hitask="'1 weeks'"
+    $ s6 --plg-run stale-proc-check@filter=nginx,history="1 weeks"
 
 # Plugin settings
 
@@ -26,9 +26,11 @@ ps utility should be installed
 
 Sets pattern to filter desired processes. Should be perl regexp.
 
-## hitask
+## history
 
-Check process for given period of time. Default value is \`1 days', An example values:
+Check process for given period of time. Default value is `1 days`, 
+
+Example values:
 
 * 1 months
 * 10 days
