@@ -1,3 +1,7 @@
+# 0.2.2
+
+Support "centos" without version
+
 # 0.2.0
 
 Funtoo support - https://github.com/melezhik/service/issues/2
