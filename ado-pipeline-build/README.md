@@ -21,7 +21,7 @@ Use as Sparrow6 tasks:
     # queue new build
     my %state = task_run "run my build", "ado-pipeline-build", %(
       name => "WebApp",
-      variables => "foo=1 bar=2"
+      variables => "foo:1 bar:2"
       action => "run"
     );
 
@@ -73,7 +73,13 @@ Set verbosity for `action=wait`, by default is `False` ( verbosity is disabled )
 
 ## variables
 
-Ado variables being set for a build run
+Ado variables being set for a build run. Variables format:
+
+```
+var1_name:$var_value
+var2_name:$var_value
+var3_name:$var_value
+```
 
 # Dependencies
 
