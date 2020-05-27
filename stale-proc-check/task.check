@@ -1,8 +1,9 @@
-regexp: count: (\d+)
+regexp: "count:" \s+ (\d+)
 
-code: our $CNT = capture()->[0];
-
-validator: [  our $CNT == 0, 'zero stale processes found' ];
-
+generator: <<code
+!perl6
+  my $cnt = capture()[0];
+  say "assert: ", ($cnt == 0 ?? 1 !! 0), " zero stale process found";
+code
 
 

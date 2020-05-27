@@ -3,10 +3,10 @@ use strict;
 
 my $filter = config()->{filter};
 my $filter_re = qr/$filter/;
-my $hitask = config()->{hitask}; # || '1 minutes';
+my $history = config()->{history}; # || '1 minutes';
 
 set_stdout("filter: $filter");
-set_stdout("hitask: $hitask");
+set_stdout("history: $history");
 
 my $cnt = 0;
 
@@ -54,7 +54,7 @@ while (my $line = <$fh>) {
 
       }
 
-      my $check_time = DateTime->now()->subtract( reverse ( split /\s+/, $hitask ) );
+      my $check_time = DateTime->now()->subtract( reverse ( split /\s+/, $history ) );
 
       if ( DateTime->compare( $ptime, $check_time  ) == -1 ){
 
