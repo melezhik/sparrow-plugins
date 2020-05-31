@@ -1,0 +1,8 @@
+#!perl6
+
+my %state =  task-run "readme html", "text-markdown", %(
+  file => "README.md"
+);
+
+say %state<html>;
+
