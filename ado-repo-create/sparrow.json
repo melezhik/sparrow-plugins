@@ -1,0 +1,7 @@
+{
+  "name" : "ado-repo-create",
+  "description" : "Creates Git repository in Azure Devops project",
+  "version" : "0.0.1",
+  "category" : "ado",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-repo-create"
+}
