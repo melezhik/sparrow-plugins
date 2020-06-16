@@ -11,7 +11,7 @@ perl -i -p -e "s/%repo%/$repo/g; s/%project_id%/$project_id/g;" $cache_dir/reque
 
 token_base64=$(echo -n $user:$token|base64|perl -n -e 's/\n//; print')
 
-curl -f -s -L -D - $api/_apis/git/repositories?api-version=5.0  -o /dev/null \
+curl -s -L -D - $api/_apis/git/repositories?api-version=5.0  -o /dev/null \
 -H "Content-Type: application/json" \
 -H "Authorization:  Basic $token_base64" \
---data-binary  @$cache_dir/request.json 
+--data-binary  @$cache_dir/request.json | head -n 2
