@@ -1,7 +1,7 @@
 {
   "name" : "ado-repo",
   "description" : "Show information about Git repository in Azure Devops project",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "ado",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-repo"
 }

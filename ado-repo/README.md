@@ -16,6 +16,16 @@ Show information about Git repository in Azure Devops project
     say %state<id>; # repo ID
     say %state<url>; # repo URL
 
+Handling errors
+
+In case of any errors response would have defined `errorCode` field,
+with some description in `message`:
+
+
+    if %state<errorCode>.defined {
+      say "error code: {%state<errorCode>} {%state<message>}";
+    }
+
 # Authentication
 
 Create file named `~/.sparrow-azure-devops.sh`
