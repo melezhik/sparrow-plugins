@@ -1,16 +1,20 @@
 # ado-repo-create
 
-Creates Git repository in Azure Devops project
+Show information about Git repository in Azure Devops project
 
 # Install
 
     s6 --install ado-repo-create
 
-#
-
 # Usage
 
-    s6 --plg-run ado-repo-create@project=58c603ae-7f3e-514f-b0c3-237574a3g382,repo=Configurations
+    my %state = task-run "git repo", "ado-repo", %(
+      project => "Backends",
+      repo => "Catalog"
+    );
+
+    say %state<id>; # repo ID
+    say %state<url>; # repo URL
 
 # Authentication
 

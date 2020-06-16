@@ -1,0 +1,14 @@
+{
+
+  name: "%repo%",
+
+  isBlocking: true,
+
+  isDeleted: false,
+  
+  project: {
+    id: "%project_id%"
+  }
+  
+}
+
