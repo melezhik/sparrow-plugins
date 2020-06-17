@@ -1,0 +1,7 @@
+{
+  "name" : "ado-project",
+  "description" : "Get Azure Devops project data",
+  "version" : "0.0.2",
+  "category" : "ado",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-project"
+}

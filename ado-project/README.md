@@ -1,20 +1,25 @@
-# ado-repo-create
+# ado-project
 
-Show information about Git repository in Azure Devops project
+Get Azure Devops project data
 
 # Install
 
-    s6 --install ado-repo
+    s6 --install ado-project
 
 # Usage
 
-    my %state = task-run "git repo", "ado-repo", %(
+Cli
+
+    s6 --plg-run ado-project@project=Backends
+
+API
+
+    my %state = task-run "git project", "ado-project", %(
       project => "Backends",
-      repo => "Catalog"
     );
 
-    say %state<id>; # repo ID
-    say %state<url>; # repo URL
+    say %state<id>; # project ID
+    say %state<url>; # project URL
 
 Handling errors
 
