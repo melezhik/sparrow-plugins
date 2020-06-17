@@ -5,7 +5,6 @@ set -e
 cp -v $task_dir/template.json $cache_dir/request.json
 
 repo=$(config repo)
-project_id=$(config project_id)
 
 perl -i -p -e "s/%repo%/$repo/g; s/%project_id%/$project_id/g;" $cache_dir/request.json
 

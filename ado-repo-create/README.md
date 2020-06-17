@@ -8,7 +8,7 @@ Creates Git repository in Azure Devops project
 
 # Usage
 
-    s6 --plg-run ado-repo-create@project_id=58c603ae-7f3e-514f-b0c3-237574a3g382,repo=Configurations
+    s6 --plg-run ado-repo-create@project=Backends,repo=Configurations
 
 # Authentication
 
