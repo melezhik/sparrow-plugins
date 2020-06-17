@@ -1,6 +1,6 @@
 use JSON::Tiny;
 
-my %data =from-json("{root_dir()}/out.json".IO.slurp);
+my %data =from-json("{cache_root_dir()}/out.json".IO.slurp);
 
 update_state(%data);
 
