@@ -1,6 +1,6 @@
 {
   "name" : "ado-git-branch-list",
-  "description" : "Initialize Git repository in Azure Devops project",
+  "description" : "List Git branches in Ado project",
   "version" : "0.0.1",
   "category" : "ado",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-git-branch-list"
