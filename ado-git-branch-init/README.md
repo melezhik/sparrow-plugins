@@ -1,8 +1,8 @@
 # ado-git-branch-init
 
-Creates Git repository in Azure Devops project.
+Initialize Git repository in Azure Devops project.
 
-It create a brand new branch, rather then branch off from existing branch.
+The plugin creates a brand new branch, rather then branching off from existing branch.
 
 If you need to branch off see `ado-git-branch-create` plugin.
 
