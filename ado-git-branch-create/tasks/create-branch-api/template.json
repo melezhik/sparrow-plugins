@@ -1,0 +1,10 @@
+[
+
+  {
+    name:  "refs/heads/%branch%",
+    oldObjectId: "%old_object_id%",
+    newObjectId: "%new_object_id%"
+  }
+  
+]
+  

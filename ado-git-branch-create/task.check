@@ -1,1 +1,0 @@
-regexp: "HTTP/" \d "." \d \s+ ( "201 Created" || "409 Conflict" ) \s* $$

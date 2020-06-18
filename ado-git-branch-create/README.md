@@ -1,4 +1,4 @@
-# ado-repo-create
+# ado-git-branch-create
 
 Creates Git repository in Azure Devops project
 
@@ -8,7 +8,25 @@ Creates Git repository in Azure Devops project
 
 # Usage
 
-    s6 --plg-run ado-git-branch-create@project=Backends,repo=Catalog,branch=feature
+    s6 --plg-run ado-git-branch-create@project=Backends,repo=Catalog,branch_from=dev,branch=feature
+
+# Parameters
+
+* `project`
+
+Ado project name
+
+* `repo`
+
+Repository name
+
+* `branch_from`
+
+Branch to branch off
+
+* `branch`
+
+New branch name
 
 # Authentication
 
