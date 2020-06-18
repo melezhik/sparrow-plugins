@@ -1,1 +1,1 @@
-regexp: 'HTTP/1.1 201 Created' || 'HTTP/1.1 409 Conflict'
+regexp: "HTTP/" \d "." \d \s+ ( "201 Created" || "409 Conflict" ) \s* $$
