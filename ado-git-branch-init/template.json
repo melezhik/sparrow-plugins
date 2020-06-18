@@ -1,0 +1,29 @@
+{
+
+  "refUpdates": [
+
+    {
+      name:  "refs/heads/%branch%",
+      oldObjectId: "0000000000000000000000000000000000000000"
+    }
+
+  ],
+
+  commits: [
+    {
+      comment: "Initial commit. Made by Sparrow",
+      changes: [
+        {
+          changeType: "add",
+          item: {
+            path: "%path%"
+          },
+          newContent: {
+            content: "%content%",
+            contentType: "rawtext"
+          }
+        }
+      ]
+    }
+  ]
+}
