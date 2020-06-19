@@ -20,7 +20,7 @@ API
     );
 
     for %data<list><> -> $i {
-        say $i
+        say $i<name>, " by ", $i<author>
     }
 
 # Parameters

@@ -9,8 +9,8 @@ set_stdout("branches list\n=====================");
 
 for %data<value><> -> $i {
   if $i<name> ~~ / 'refs/heads/' (\S+) / {
-    push @data, "$0";
-    set_stdout($0);
+    push @data, %( name => "$0", author => $i<creator><uniqueName> );
+    set_stdout("{$0} [$i<creator><uniqueName>]");
   }
 }
 
