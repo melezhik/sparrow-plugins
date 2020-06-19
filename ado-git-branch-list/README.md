@@ -33,7 +33,7 @@ Ado project name
 
 Repository name
 
-# `author`
+* `author`
 
 Optional. Filter by author name. For example:
 
