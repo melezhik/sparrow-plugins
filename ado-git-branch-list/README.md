@@ -33,6 +33,13 @@ Ado project name
 
 Repository name
 
+# `author`
+
+Optional. Filter by author name. For example:
+
+    author=melezhik@gmail.com
+
+
 # Authentication
 
 Create file named `~/.sparrow-azure-devops.sh`
