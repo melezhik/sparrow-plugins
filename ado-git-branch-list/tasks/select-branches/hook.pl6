@@ -25,7 +25,12 @@ for %data<value><> -> $i {
       next if $name ~~ /$pattern/;
     }
 
-    push @data, %( name => $name, author => $i<creator><uniqueName> );
+    push @data, %( 
+      project => config()<project>,
+      repo => config()<repo>,
+      name => $name, 
+      author => $i<creator><uniqueName>
+    );
     set_stdout("$name [$i<creator><uniqueName>]");
   }
 }
