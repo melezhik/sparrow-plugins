@@ -5,7 +5,11 @@ my %data = from-json("{cache_root_dir()}/out.json".IO.slurp);
 
 my @data;
 
-set_stdout("branches list\n=====================");
+set_stdout("=====================");
+set_stdout("branches list");
+set_stdout("author=[{config()<author>||'ANY'}]");
+set_stdout("skip=[{config()<skip>||'NA'}]");
+set_stdout("=====================");
 
 for %data<value><> -> $i {
   if $i<name> ~~ / 'refs/heads/' (\S+) / {
