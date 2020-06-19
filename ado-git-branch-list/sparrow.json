@@ -1,7 +1,7 @@
 {
   "name" : "ado-git-branch-list",
   "description" : "List Git branches in Ado project",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "category" : "ado",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-git-branch-list"
 }

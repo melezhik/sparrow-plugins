@@ -39,6 +39,17 @@ Optional. Filter by author name. For example:
 
     author=melezhik@gmail.com
 
+* `skip`
+
+Optional. Skip branches by filter. Should be Raku regexp:
+
+    skip="^^ 'dev' || 'test' || 'master' $$"
+
+CLI example:
+
+    s6 s6 --plg-run ado-git-branch-list@project=Backends,\
+    repo=Catalog,\
+    skip="^^ 'dev' || 'master' || 'releas' $$"
 
 # Authentication
 

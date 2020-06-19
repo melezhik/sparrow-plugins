@@ -1,5 +1,6 @@
 set -e
 
+echo "==================================="
 echo "lookup branches $(config repo) ..."
 
 . ~/.sparrow-azure-devops.sh
