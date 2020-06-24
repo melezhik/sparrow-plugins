@@ -1,0 +1,10 @@
+my %state = task-run "get packages", "raku-native-deps", %(
+  path => "META6.json"
+);
+
+#say %state.perl;
+
+for %state<packages><> -> $i {
+  say "package: $i<package>"
+}
+

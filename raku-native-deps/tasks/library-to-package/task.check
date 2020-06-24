@@ -1,0 +1,19 @@
+between: {'===>'} {'<==='}
+
+  regexp: (\S+)
+
+end:
+
+generator: <<CODE
+!perl6
+
+  my @list = get_state()<packages><> || [];
+
+  for captures()<> -> $c {
+    #say  "note: push {$c[0]} ...";
+    push @list, %( package => "{$c[0]}" );
+  }
+  
+  update_state(%( packages => @list ));
+
+CODE

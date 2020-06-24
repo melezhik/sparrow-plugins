@@ -13,7 +13,15 @@ if $yaml<depends> && $yaml<depends><runtime> && $yaml<depends><runtime><requires
   for $yaml<depends><runtime><requires><> -> $d {
     if $d ~~ /^^ (\S+) ':from<native>' (.*) $$ / {
       say "parse $0 .. $1";
-      push @list, %( library => "$0", version => "$1");
+      my $library = "$0";
+      my $version-chunk = "$1";
+      my $version = $version-chunk;
+
+      if $version-chunk ~~ /':ver<' (\S*) '>'/ {
+        $version = "$0"
+      }
+
+      push @list, %( library => $library, version => $version );
     }
   }
 }

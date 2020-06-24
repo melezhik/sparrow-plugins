@@ -7,7 +7,7 @@
                 "JSON::Fast",
                 "curl:from<native>",
                 "curl:from<native>:ver<4>",
-                "libcmark:from<native>:ver<0.23.0>"
+                "cmark:from<native>:ver<0.23.0>"
             ]
         }
     }
