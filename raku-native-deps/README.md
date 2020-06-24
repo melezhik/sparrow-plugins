@@ -2,6 +2,13 @@
 
 Parses meta file of Raku module and return native dependencies as package names.
 
+Warning!
+
+The plugin is now only support CentOS system ( more OS will be added eventually ) and is quite primitive.
+It only handles `:from<native>` statements and does not use `System::Query` to handle platform specific sections.
+Though I am going to gradually improve and change things.
+
+
 # install
 
     s6 --install raku-native-deps
