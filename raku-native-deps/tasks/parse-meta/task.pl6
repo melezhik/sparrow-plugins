@@ -18,7 +18,14 @@ if $yaml<depends> && $yaml<depends><runtime> && $yaml<depends><runtime><requires
   }
 }
 
-say @list.perl;
+say "libraries found";
+say "===========================";
+for @list -> $i {
+  say $i.perl;
+}
+say "===========================";
+
+update_state(%( list => @list ));
 
 =begin example
 "curl:from<native>:ver<4>",
