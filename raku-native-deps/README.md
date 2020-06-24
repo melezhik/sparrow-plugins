@@ -10,6 +10,7 @@ Parses meta file of Raku module and return native dependencies as package names.
 
 
 Cli
+
     s6 --plg-run raku-native-deps@path=/path/to/meta.json
 
 Api
