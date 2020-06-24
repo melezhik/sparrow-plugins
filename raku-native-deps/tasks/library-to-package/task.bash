@@ -11,5 +11,5 @@ if test "$os" = "centos"; then
      echo  "<==="; 
   fi
 else
-  echo "os $os is not supporte yet, drop me a ticket if you need one";
+  echo "os $os is not supported yet, drop me a ticket if you need one";
 fi
