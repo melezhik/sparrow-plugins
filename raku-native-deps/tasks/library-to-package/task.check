@@ -7,11 +7,21 @@ end:
 generator: <<CODE
 !perl6
 
+  my @skip-list;
+  
+  if config()<skip> {
+    @skip-list = config()<skip><>;
+  }
+  
   my @list = get_state()<packages><> || [];
-
+   
   for captures()<> -> $c {
     #say  "note: push {$c[0]} ...";
-    push @list, %( package => "{$c[0]}" );
+    if @skip-list.Set{$c[0]}{
+      say  "note: skip {$c[0]} ...";
+    } else {
+      push @list, %( package => "{$c[0]}" );
+    }
   }
   
   update_state(%( packages => @list ));
