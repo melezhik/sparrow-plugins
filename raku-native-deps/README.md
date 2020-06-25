@@ -74,6 +74,13 @@ Path to META spec file, optional.
 
 Architecture. Optional, default value is `x86_64`
 
+* `skip`
+
+Skip certain packages. Optional. Array.
+
+For example:
+
+    skip => ['libcurl-0:7.61.1-12.el8.x86_64']
 
 # author
 
