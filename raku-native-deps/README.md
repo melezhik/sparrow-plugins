@@ -26,7 +26,7 @@ Api:
       path => "META6.json"
     );
 
-    for %state<packages><> {
+    for %state<packages><> -> $i {
       say "package: $i<package>"
     }
 
