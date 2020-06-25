@@ -33,7 +33,7 @@ for @list -> $i {
 }
 say "===========================";
 
-update_state(%( list => @list ));
+update_state(%( list => @list, packages => [] ));
 
 =begin example
 "curl:from<native>:ver<4>",

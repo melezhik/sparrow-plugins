@@ -1,0 +1,11 @@
+{
+    "depends"        : {
+        "runtime": {
+            "requires": [
+                "NativeCall",
+                "NativeLibs:ver<0.0.7>:auth<github:salortiz>",
+                "JSON::Fast"
+            ]
+        }
+    }
+}
