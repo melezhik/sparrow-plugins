@@ -1,10 +1,10 @@
-use YAMLish;
+use JSON::Tiny;
 
 my $path = config()<path>; 
 
 say "parse META from $path ...";
 
-my $yaml = load-yaml($path.IO.slurp);
+my $yaml = from-json($path.IO.slurp);
 
 my @list;
 
