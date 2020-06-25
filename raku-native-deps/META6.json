@@ -8,7 +8,8 @@
                 "curl:from<native>",
                 "curl:from<native>:ver<4>",
                 "cmark:from<native>:ver<0.23.0>",
-                "sqlite3:from<native>:ver<0.8.6>"
+                "gpgme:from<native>:ver<11>",
+                "sqlite3:from<native>:ver<0>"
             ]
         }
     }
