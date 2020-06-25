@@ -64,6 +64,17 @@ Example output:
     22:55:30 06/24/2020 [raku-native-deps] <===
     [task check] stdout match (r) <(\S+)> True
 
+# parameters
+
+* `path`
+
+Path to META spec file, optional.
+
+* `arch`
+
+Architecture. Optional, default value is `x86_64`
+
+
 # author
 
 Alexey Melezhik

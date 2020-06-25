@@ -1,7 +1,7 @@
 {
   "name" : "raku-native-deps",
   "description" : "Parses meta file of Raku module and return native dependencies as package names",
-  "version" : "0.0.7",
+  "version" : "0.0.8",
   "category" : "raku",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/raku-native-deps"
 }
