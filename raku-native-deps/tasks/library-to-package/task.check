@@ -17,7 +17,7 @@ generator: <<CODE
    
   for captures()<> -> $c {
     #say  "note: push {$c[0]} ...";
-    if @skip-list.Set{$c[0]}{
+    if @skip-list.Set{$c[0]} {
       say  "note: skip {$c[0]} ...";
     } else {
       push @list, %( package => "{$c[0]}" );
