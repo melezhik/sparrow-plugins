@@ -9,7 +9,7 @@
                 "curl:from<native>:ver<4>",
                 "cmark:from<native>:ver<0.23.0>",
                 "gpgme:from<native>:ver<11>",
-                "sqlite3:from<native>:ver<0>"
+                "sqlite:from<native>:ver<0>"
             ]
         }
     }

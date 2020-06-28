@@ -8,9 +8,31 @@ my $yaml = from-json($path.IO.slurp);
 
 my @list;
 
+if $yaml<depends> && $yaml<depends>.isa("Array") {
+
+  for $yaml<depends><> -> $d {
+    parse-native($d)
+  }
+}
+
 if $yaml<depends> && $yaml<depends><runtime> && $yaml<depends><runtime><requires> {
 
   for $yaml<depends><runtime><requires><> -> $d {
+    parse-native($d)
+  }
+}
+
+say "libraries found";
+say "===========================";
+for @list -> $i {
+  say $i.perl;
+}
+say "===========================";
+
+update_state(%( list => @list, packages => [] ));
+
+sub parse-native ($d) {
+
     if $d ~~ /^^ (\S+) ':from<native>' (.*) $$ / {
       say "parse $0 .. $1";
       my $library = "$0";
@@ -23,17 +45,8 @@ if $yaml<depends> && $yaml<depends><runtime> && $yaml<depends><runtime><requires
 
       push @list, %( library => $library, version => $version );
     }
-  }
-}
 
-say "libraries found";
-say "===========================";
-for @list -> $i {
-  say $i.perl;
 }
-say "===========================";
-
-update_state(%( list => @list, packages => [] ));
 
 =begin example
 "curl:from<native>:ver<4>",
