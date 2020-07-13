@@ -6,6 +6,9 @@ git-scm "https://github.com/melezhik/sparrow-plugins.git", %(
   to => "/tmp/sparrow-plugins"
 );
 
-bash "cd /tmp/sparrow-plugins/{tags()<plugin>} && s6 --upload --verbose", %(
-  description => "upload {tags()<plugin>}"
+bash "cd /tmp/sparrow-plugins/{tags()<plugin>} && ~/.raku/bin/s6 --upload --verbose", %(
+  description => "upload {tags()<plugin>}",
+  envvars => %(
+    SP6_REPO => "file:///var/www/html/repo/"
+  )
 )
