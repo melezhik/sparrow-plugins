@@ -1,0 +1,7 @@
+{
+  "name" : "set-mysql",
+  "description" : "Simple MySQL setup",
+  "version" : "0.0.1",
+  "category" : "mysql",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/set-mysql"
+}
