@@ -1,19 +1,11 @@
 #!perl6
 
-bash "uptime";
+directory "/tmp/sparrow-plugins";
 
-say "os: {os()}";
-
-task-run "install nginx", "package-generic", %(
-    list => %(
-      debian => (
-        'nginx',
-      ),
-      centos => (
-        'epel-release', 'nginx'
-      )
-    )
+git-scm "https://github.com/melezhik/sparrow-plugins.git", %(
+  to => "/tmp/sparrow-plugins"
 );
 
-service-enable "nginx";
-service-restart "nginx";
+bash "cd /tmp/sparrow-plugins/{tags()<plugin>} && s6 --upload --verbose", %(
+  description => "upload {tags()<plugin>}"
+)
