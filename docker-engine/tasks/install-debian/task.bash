@@ -1,34 +1,32 @@
-echo kernel version: $(uname -r)
+set -x
 
-sudo apt-get purge lxc-docker*
+set -e
 
-sudo apt-get purge docker.io*
+export DEBIAN_FRONTEND=noninteractive
 
-if test $(config repo_update) = "1"; then
-  sudo apt-get update -qq
-else
-  echo skip apt-get update due to repo_update unset
-fi
+apt-get update
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install apt-transport-https ca-certificates
+apt-get -y install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
 
-if test $(config add_gpg_key) = "1"; then
-  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-else
-  echo skip importing gpg key due to add_gpg_key unset
-fi
 
-sudo bash -c 'echo deb https://apt.dockerproject.org/repo debian-jessie main > /etc/apt/sources.list.d/docker.list'
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
-if test $(config repo_update) = "1"; then
-  sudo apt-get update -qq
-else
-  echo skip apt-get update due to repo_update unset
-fi
+apt-key fingerprint 0EBFCD88
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q install docker-engine
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 
-sudo service docker start
 
-sudo docker run hello-world
+apt-get update
+
+apt-get -y install docker-ce docker-ce-cli containerd.io
+
+docker run hello-world
 
