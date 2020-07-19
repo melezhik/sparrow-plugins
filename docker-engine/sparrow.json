@@ -1,6 +1,6 @@
 {
     "name" : "docker-engine",
-    "version" : "0.1.4",
+    "version" : "0.1.5",
     "description" : "installs docker engine",
     "url" : "https://github.com/melezhik/docker-engine"
 }

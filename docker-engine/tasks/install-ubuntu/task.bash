@@ -2,9 +2,11 @@ set -x
 
 set -e
 
+export DEBIAN_FRONTEND=noninteractive
+
 apt-get update
 
-apt-get install \
+apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -24,7 +26,7 @@ add-apt-repository \
 
 apt-get update
 
-apt-get install docker-ce docker-ce-cli containerd.io
+apt-get -y install docker-ce docker-ce-cli containerd.io
 
 docker run hello-world
 
