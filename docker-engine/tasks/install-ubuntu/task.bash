@@ -1,37 +1,30 @@
-echo kernel version: $(uname -r)
+set -x
 
-if test $(config repo_update) = "1"; then
-  sudo apt-get update -qq
-else
-  echo skip apt-get update due to repo_update unset
-fi
+set -e
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install apt-transport-https ca-certificates
+apt-get update
 
-if test $(config add_gpg_key) = "1"; then
-  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-else
-  echo skip importing gpg key due to add_gpg_key unset
-fi
+apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
 
-sudo bash -c 'echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list'
 
-if test $(config repo_update) = "1"; then
-  sudo apt-get update -qq
-else
-  echo skip apt-get update due to repo_update unset
-fi
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
-sudo apt-get purge lxc-docker
+apt-key fingerprint 0EBFCD88
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q install linux-image-extra-$(uname -r)
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q install apparmor
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q install docker-engine
+apt-get update
 
-sudo service docker start
+apt-get install docker-ce docker-ce-cli containerd.io
 
-sudo docker run hello-world
-
+docker run hello-world
 
