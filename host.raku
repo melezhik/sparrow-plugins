@@ -2,7 +2,7 @@ my @hosts;
 
 push @hosts, %(
   host => "rakudist.raku.org",
-  tags => "plugin=docker-engine,name=sparrow-plugins-updater"
+  tags => "plugin=postgresql-check,name=sparrow-plugins-updater"
 );
 
 say 100;
