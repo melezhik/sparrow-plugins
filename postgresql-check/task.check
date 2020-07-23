@@ -1,1 +1,1 @@
-regexp: postgres:\s+writer\s+process
+regexp: "postgres:" \s+ "writer" \s+ "process"
