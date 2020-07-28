@@ -1,0 +1,1 @@
+regexp: ^^ \s+ \S+ \s+  Ready \s+  master \s+  \S+   \s+ \S+ \s* $$
