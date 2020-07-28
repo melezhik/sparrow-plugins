@@ -12,9 +12,10 @@ Simple check for kubernetes master
 
 # RUN
 
-This command will install docker engine on your server:
+This will check if k8s master runs successfully, one need to pass a `user`
+to run `kubectl` command with:
 
-    $ s6 --plg-run k8s-master-check
+    $ s6 --plg-run k8s-master-check@user=ubuntu
 
 # Author
 
