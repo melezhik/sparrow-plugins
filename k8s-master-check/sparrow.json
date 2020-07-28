@@ -1,6 +1,6 @@
 {
     "name" : "k8s-master-check",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "Simple check for kubernetes master",
     "url" : "https://github.com/melezhik/k8s-master-check"
 }
