@@ -1,3 +1,5 @@
+set -e
+
 os=$(task_var os)
 service=$(task_var service)
 
@@ -6,32 +8,35 @@ echo service: $service
 
 case $os in
 debian)
-  update-rc.d -f $service remove || exit 1
+  update-rc.d -f $service remove 
+  ;;
+ubuntu)
+  systemctl disable $service 
   ;;
 funtoo)
-  rc-update del $service defaults || exit 1
+  rc-update del $service defaults 
   ;;
 minoca)
-  update-rc.d -f $service remove || exit 1
+  update-rc.d -f $service remove 
   ;;
 centos5)
-  chkconfig --del $service || exit 1
-  chkconfig --level 235 $service off || exit 1
-  chkconfig --list $service || exit 1
+  chkconfig --del $service 
+  chkconfig --level 235 $service off 
+  chkconfig --list $service 
   ;;
 centos6)
-  chkconfig --del $service || exit 1
-  chkconfig --level 235 $service off || exit 1
-  chkconfig --list $service || exit 1
+  chkconfig --del $service 
+  chkconfig --level 235 $service off 
+  chkconfig --list $service 
   ;;
 centos)
-  systemctl disable $service || exit 1
+  systemctl disable $service 
   ;;
 centos7)
-  systemctl disable $service || exit 1
+  systemctl disable $service 
   ;;
 archlinux)
-  systemctl disable $service || exit 1
+  systemctl disable $service 
   ;;
 alpine)
   rc-update del $service

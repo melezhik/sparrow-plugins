@@ -1,3 +1,5 @@
+set -e
+
 os=$(task_var os)
 service=$(task_var service)
 
@@ -6,35 +8,38 @@ echo service: $service
 
 case $os in
 debian)
-  update-rc.d $service defaults || exit 1
+  update-rc.d $service defaults 
+  ;;
+ubuntu)
+  systemctl enable $service 
   ;;
 funtoo)
-  rc-update add $service defaults || exit 1
+  rc-update add $service defaults 
   ;;
 minoca)
-  update-rc.d $service defaults || exit 1
+  update-rc.d $service defaults 
   ;;
 centos5)
-  chkconfig --add $service || exit 1
-  chkconfig --level 235 $service on || exit 1
-  chkconfig --list $service || exit 1
+  chkconfig --add $service 
+  chkconfig --level 235 $service on 
+  chkconfig --list $service 
   ;;
 centos6)
-  chkconfig --add $service || exit 1
-  chkconfig --level 235 $service on || exit 1
-  chkconfig --list $service || exit 1
+  chkconfig --add $service 
+  chkconfig --level 235 $service on 
+  chkconfig --list $service 
   ;;
 centos)
-  systemctl enable $service || exit 1
+  systemctl enable $service 
   ;;
 centos7)
-  systemctl enable $service || exit 1
+  systemctl enable $service 
   ;;
 archlinux)
-  systemctl enable $service || exit 1
+  systemctl enable $service 
   ;;
 alpine)
-  rc-update add $service || exit 1
+  rc-update add $service 
   ;;
 esac
 

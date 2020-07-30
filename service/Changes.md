@@ -1,3 +1,7 @@
+# 0.2.3
+
+Use systemctl for enabling/disabling services in ubuntu
+
 # 0.2.2
 
 Support "centos" without version

@@ -5,7 +5,7 @@ shopt -s nocasematch;
 if [[ $os =~ "debian" ]]; then
   run_task $(config action) os debian service $service
 elif [[ "$os" =~ "ubuntu" ]]; then
-  run_task $(config action) os debian service $service
+  run_task $(config action) os ubuntu service $service
 elif [[ "$os" =~ "amazon" ]]; then
   run_task $(config action) os amazon service $service
 elif [[ "$os" =~ "centos" ]]; then
