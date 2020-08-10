@@ -2,7 +2,7 @@ my @hosts;
 
 push @hosts, %(
   host => "rakudist.raku.org",
-  tags => "plugin=service,name=sparrow-plugins-updater"
+  tags => "plugin={tags()<plugin>},name=sparrow-plugins-updater"
 );
 
 say 100;
