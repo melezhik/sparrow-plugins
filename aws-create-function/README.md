@@ -26,6 +26,22 @@ DSL
 
 # Parameters
 
+* `function_name`
+
+Optional
+
+* `zip_file`
+
+Optional
+
+* `role`
+
+Required
+
+* `runtime`
+
+Optional
+
 # Dependencies
 
 aws cli
