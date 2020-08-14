@@ -1,6 +1,6 @@
 {
     "name" : "aws-create-function",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "Create aws lambda function",
     "url" : "https://github.com/melezhik/aws-create-function",
     "category" : "aws"

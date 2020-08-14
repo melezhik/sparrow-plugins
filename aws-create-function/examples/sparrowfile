@@ -1,0 +1,5 @@
+task-run ".", %(
+  role => "arn:aws:iam::654173224926:role/lambda-ex",
+  zip_file => "examples/function.zip"
+);
+

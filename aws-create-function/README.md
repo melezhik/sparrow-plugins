@@ -26,6 +26,8 @@ DSL
 
 # Parameters
 
+See parameters description at `aws lambda create-function` documentation pages
+
 * `function_name`
 
 Optional
