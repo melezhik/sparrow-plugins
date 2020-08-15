@@ -1,10 +1,10 @@
 task-run ".", %(
   args => [
     %( 
-      'function-name'  => "my-function",
-      'zip-file' => 'fileb://examples/function.zip',
+     'function-name'  => "my-function",
+      'zip-file' => 'fileb://examples/function.tar.gz',
     ),
-    #[ "dry-run" ]
-  ]
+    [ "dry-run" ]
+  ],
 );
 
