@@ -9,15 +9,22 @@ Simple wrapper for `curl`.
 
 # USAGE
 
-    $ s6 --task-set utils/curl
+DSL
 
-      task-run "utils/curl", "curl", %(
-        args => [
-          %( '-D' => '-' ), [ 'verbose', '-f', '-L' ], 'http://perl6.com'
-        ]
-      );
-      
-    $ s6 --task-run utils/curl
+    task-run "utils/curl", "curl", %(
+      args => [
+        %( 
+          '-D' => '-',
+          'output' => '/dev/null'
+        ),
+        [
+          'silent',
+          '-f',
+          'location'
+        ],
+        'http://raku.org'
+      ]
+    );
 
 # Authors
 
