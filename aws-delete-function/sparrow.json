@@ -1,0 +1,7 @@
+{
+    "name" : "aws-delete-function",
+    "version" : "0.0.1",
+    "description" : "delete aws lambda function",
+    "url" : "https://github.com/melezhik/aws-delete-function",
+    "category" : "aws"
+}

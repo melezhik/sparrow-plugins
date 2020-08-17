@@ -1,0 +1,4 @@
+name: my-function
+handler: index.handler
+runtime: nodejs12.x
+zip_file: function.zip

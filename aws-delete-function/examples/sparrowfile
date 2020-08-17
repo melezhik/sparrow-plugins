@@ -1,0 +1,8 @@
+task-run ".", %(
+  args => [
+    %(
+      function-name  => "my-function"
+    )
+  ]
+);
+
