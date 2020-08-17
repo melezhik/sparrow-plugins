@@ -1,0 +1,1 @@
+regexp: '"LastUpdateStatus":' \s+ '"Successful"'
