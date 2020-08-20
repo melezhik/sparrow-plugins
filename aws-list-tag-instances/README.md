@@ -15,8 +15,6 @@ Cli:
 
 Raku:
 
-Or by using sparrow task:
-
     task-run "foo=bar instances", "aws-list-tag-instances", %(
       tag_key => "foo"
       tag_value => "bar"
