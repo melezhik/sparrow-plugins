@@ -2,7 +2,7 @@
 
   "name" : "aws-run-instance",
   "description" : "run aws instance",
-  "version" : "0.0.13",
+  "version" : "0.0.14",
   "category" : "aws",
   "url" : "https://github.com/melezhik/aws-run-instance"
 }
