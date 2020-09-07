@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Sparrow plugin for mi6 utility.
+Sparrow plugin for ddt utility.
 
 # Platforms supported
 
@@ -8,24 +8,22 @@ Sparrow plugin for mi6 utility.
 
 # INSTALL
 
-    $ s6 --install raku-utils-mi6
+    $ s6 --install raku-utils-ddt
 
 # RUN
 
 DSL. The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
 mechanism to convert Raku data into command line parameters, so one could write something like that:
 
-    # run `mi6 --keep release`
-    task-run "module release", "raku-utils-mi6", %(
+    task-run "run tests", "raku-utils-ddt", %(
       args => [
-        ["keep"],
-        "release"
+        %( "-C" => "test" ),
       ]
     );
 
 # Parameters
 
-See parameters description at [mi6](https://modules.raku.org/dist/App::Mi6:cpan:SKAJI) documentation pages
+See parameters description at [ddt](https://github.com/kalkin/Ddt) documentation pages
 
 # Author
 
@@ -33,4 +31,4 @@ See parameters description at [mi6](https://modules.raku.org/dist/App::Mi6:cpan:
 
 # See also
 
-[mi6](https://modules.raku.org/dist/App::Mi6:cpan:SKAJI)
+[Ddt](https://github.com/kalkin/Ddt)
