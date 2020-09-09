@@ -1,6 +1,6 @@
 # azure-ssl-bind-list
 
-List ssl bindings for web application
+List ssl bindings for a web application
 
 # install
 
@@ -9,9 +9,7 @@ List ssl bindings for web application
 # usage
 
     # list ssl certs for given resource group
-    $ s6 --plg-run azure-ssl-bind-list@\
-    ,resource_group=$RG\
-    ,app_service=$app_service
+    $ s6 --plg-run azure-ssl-bind-list@resource_group=$RG,app_service=$app_service
 
 # parameters
 

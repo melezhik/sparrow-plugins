@@ -13,12 +13,7 @@ if the column with number `$match_col_num` in both files matches but column with
 
 # USAGE
 
-    $ s6 --plg-run file-compare-columns@\
-    --format concise \ # to hide overly info 
-    ,file1=/path/to/file1\
-    ,file2=/path/to/file2\
-    ,match_col_num=1\
-    ,mismatch_col_num=3
+    $ s6 --plg-run file-compare-columns@file1=/path/to/file1,file2=/path/to/file2,match_col_num=1,mismatch_col_num=3
 
 # Plugin maintainer
 

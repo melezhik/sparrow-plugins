@@ -2,7 +2,7 @@
 
   "name" : "file-compare-columns",
   "description" : "Simple file/columns compare tool",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/file-compare-columns"
 }

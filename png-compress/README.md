@@ -8,21 +8,17 @@ Compress PNG images by using [GD](https://metacpan.org/pod/GD) library.
 
 # USAGE
 
-CLI:
+Cli:
 
-    $ s6 --plg-run png-compress@\
-    ,in=/path/to/in-file.png\
-    ,out=/path/to/out-file.png\
-    ,compression=5
+    $ s6 --plg-run png-compress@in=/path/to/in-file.png,out=/path/to/out-file.png,compression=5
 
-Via sparrowdo:
+Raku:
 
     task-run 'compress PNG image', 'png-compress', %(
-        in  => 'in.png',      
-        out => '/tmp/out.png',
-        compression => 5      
+      in  => 'in.png',
+      out => '/tmp/out.png',
+      compression => 5
     );
-    
 
 # Author
 

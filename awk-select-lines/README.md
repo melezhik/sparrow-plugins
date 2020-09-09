@@ -2,8 +2,9 @@
 
 Select lines between two patterns using awk.
 
-The author of original awk script is [fedorqui](https://stackoverflow.com/users/1983854/fedorqui)
-the code is taken from [StackOverflow](https://stackoverflow.com/a/38972737/5147708).
+The author of original awk script is [fedorqui](https://stackoverflow.com/users/1983854/fedorqui).
+
+The code is taken from [StackOverflow](https://stackoverflow.com/a/38972737/5147708).
 
 
 # INSTALL
@@ -14,17 +15,11 @@ the code is taken from [StackOverflow](https://stackoverflow.com/a/38972737/5147
 
 To print lines between two patterns (`$pat1` and `$pat1`) in `$file`:
 
-    $ s6 --plg-run awk-select-lines@\
-    --format concise  # to strip reports lines 
-    ,file=/path/to/file/example.txt\
-    ,pat1=PAT1,pat2=PAT2\
-    ,mode=2
+    $ s6 --plg-run awk-select-lines@file=/path/to/file/example.txt,pat1=PAT1,pat2=PAT2,mode=2
 
 Setting mode:
 
-`Mode` parameter define the selection logic, based on explanation taken from
-
-[https://stackoverflow.com/a/38972737/5147708](https://stackoverflow.com/a/38972737/5147708)
+`Mode` parameter define the selection logic, based on explanation taken from [https://stackoverflow.com/a/38972737/5147708](https://stackoverflow.com/a/38972737/5147708)
 
 
 * `mode=1` (default mode) - Print lines between PAT1 and PAT2

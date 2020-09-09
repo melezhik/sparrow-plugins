@@ -48,10 +48,10 @@ Creates mssql user and grants permissions for database.
     check_connection: off
 
     $ s6 --task-run databases/create-login
-    
+
 # Prerequisites
 
-* sqlcmd client 
+* sqlcmd client
 
 # Author
 

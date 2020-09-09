@@ -1,7 +1,7 @@
 {
 
   "name": "git-svn-export",
-  "version" : "0.4.9",
+  "version" : "0.4.10",
   "url" : "https://github.com/melezhik/git-svn-export",
   "description" : "Export (multiple) svn repositories into (multiple) git repositories."
 }

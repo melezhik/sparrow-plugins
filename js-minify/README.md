@@ -8,19 +8,16 @@ Minify a JavaScript file by using [JavaScript::Minifier](https://metacpan.org/po
 
 # USAGE
 
-CLI:
+Cli:
 
-    $ s6 --plg-run js-minify@\
-    ,in=/path/to/in-file.js\
-    ,out=/path/to/out-file.js
+    $ s6 --plg-run js-minify@in=/path/to/in-file.js,out=/path/to/out-file.js
 
-Via sparrowdo:
+Raku:
 
     task-run 'js minifier', 'js-minify', %(
-        in  => 'in.js',      
-        out => '/tmp/out.js',      
+        in  => 'in.js',
+        out => '/tmp/out.js',
     );
-    
 
 # Author
 

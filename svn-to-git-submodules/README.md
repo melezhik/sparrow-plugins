@@ -18,7 +18,7 @@ This plugins generates a git submodules entries based on `svn list` command outp
     ,git_repo=http://git-repo/projects\
     ,outdir=/path/to/directory/with/git/repo
 
-# Parameters 
+# Parameters
 
 ## svn_repo
 

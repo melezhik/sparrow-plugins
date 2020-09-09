@@ -17,7 +17,6 @@ Create Azure storage account
 
 Example:
 
-
     $ s6 --plg-run azure-storage-account@\
     ,resource_group=SandBoxGroup\
     ,name=TrashBin\

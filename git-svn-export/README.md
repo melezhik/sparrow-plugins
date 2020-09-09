@@ -9,9 +9,7 @@ Export (multiple) svn repositories into (multiple) git repositories.
 
 # USAGE
 
-    s6 --plg-run git-svn-export@\
-    ,local_dir=/path/to/local/git/repositories/\
-    ,svn_repo=http://svn_repositories/private
+    s6 --plg-run git-svn-export@,local_dir=/path/to/local/git/repositories/,svn_repo=http://svn_repositories/private
 
 # Parameters
 

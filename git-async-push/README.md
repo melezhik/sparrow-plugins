@@ -10,9 +10,7 @@ Make an asynchronous push to remote git repositories.
 
 # USAGE
 
-    s6 --plg-run git-async-push@\
-    ,git_remote=https://bitbucket.org/superteam\
-    ,local_dir=/path/to/local/git/repositories/
+    s6 --plg-run git-async-push@git_remote=https://bitbucket.org/superteam,local_dir=/path/to/local/git/repositories/
 
 
 # Parameters
@@ -23,7 +21,7 @@ This should be a remote git repository URL _representing_ a realm of your multip
 
 For example, if you use BitBucket, this could be a `team` container:
 
-    ,git_remote=https://bitbucket.org/superteam
+    git_remote=https://bitbucket.org/superteam
 
 ## local_dir
 
@@ -56,7 +54,7 @@ Only proceed a given project. Should be a name of sub directory inside `$local_d
 
 For example:
 
-    ,project=baz
+    project=baz
 
 ## postfix
 
@@ -64,13 +62,13 @@ An optional parameter, if set - add `$postfix` string to the name of remote repo
 
 For example:
 
-    ,postfix='-bar-baz'
+    postfix='-bar-baz'
 
 This technically means that for `foo` directory will be used a following remote repository:
 
     # foo repository:
     /home/melezhik/repos/foo -- remote git url ---> $git_remote/foo-bar-baz.git
-    
+
 # Author
 
 Alexey Melezhik

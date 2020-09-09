@@ -37,15 +37,10 @@ Be aware that defaults might point to pretty old versions:
 
 This is preferable method:
 
-    $ s6 --plg-run rakudo-install@\
-    ,url=https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb
+    $ s6 --plg-run rakudo-install@url=https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb
 
 
-## Sparrowdo usage
-
-You can use Sparrowdo to install Rakudo:
-
-    $ cat sparrowfile
+## Raku
 
     task-run 'install Rakudo', 'rakudo-install', %(
       url =>  'https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb'

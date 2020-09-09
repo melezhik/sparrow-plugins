@@ -1,6 +1,6 @@
 # azure-app-service-plan
 
-Update Azure app service plan 
+Update Azure app service plan
 
 # install
 

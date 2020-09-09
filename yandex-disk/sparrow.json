@@ -2,7 +2,7 @@
 
   "name" : "yandex-disk",
   "description" : "CLI for Yandex::Disk",
-  "version" : "0.0.4",
+  "version" : "0.0.5",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/yandex-disk"
 }

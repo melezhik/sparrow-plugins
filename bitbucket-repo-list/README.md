@@ -10,10 +10,7 @@ List Bitbucket repositories. Pagination included! (:
 
 # USAGE
 
-    $ s6 --plg-run bitbucket-repo-list@\
-    ,login=superuser,password=keep-it-secret\
-    ,team=heroes\
-    ,project=humans
+    $ s6 --plg-run bitbucket-repo-list@login=superuser,password=keep-it-secret,team=heroes,project=humans
 
 # Parameters
 

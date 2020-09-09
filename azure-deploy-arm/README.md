@@ -8,9 +8,7 @@ Deploy ARM template
 
 # usage
 
-    $ s6 --plg-run azure-deploy-arm@\
-    ,resource_group=$RG\
-    ,path=C:\tmp\resources.json
+    $ s6 --plg-run azure-deploy-arm@resource_group=$RG,path=C:\tmp\resources.json
 
 # parameters
 

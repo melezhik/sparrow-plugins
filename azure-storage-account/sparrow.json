@@ -2,7 +2,7 @@
 
   "name" : "azure-storage-account",
   "description" : "Create Azure storage account",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-storage-account"
 }

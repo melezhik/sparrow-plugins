@@ -2,7 +2,7 @@
 
   "name" : "awk-select-lines",
   "description" : "Select lines between two patterns using awk",
-  "version" : "0.0.4",
+  "version" : "0.0.5",
   "category" : "awk",
   "url" : "https://github.com/melezhik/awk-select-lines"
 }

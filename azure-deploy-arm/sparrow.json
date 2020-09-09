@@ -2,7 +2,7 @@
 
   "name" : "azure-deploy-arm",
   "description" : "Deploy arm template",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "category" : "azure",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-deploy-arm"
 }

@@ -16,30 +16,21 @@ Simple file manager.
     ,owner=melezhik\
     ,group=users
 
-## Via sparrowdo
+## Raku
 
-    $ cat sparrowfile
-  
-    task_run %(
-      task    => 'create file',
-      plugin  => 'file',
-      parameters => %(
-        action  => 'create',
-        owner   => 'Bill',
-        group   => 'Users',
-        mode    => '644',
-        target  => '/etc/bill/hello.txt'
-        content => 'hello Bill!'
-      )
+    task-run "create file", %(
+      action  => 'create',
+      owner   => 'Bill',
+      group   => 'Users',
+      mode    => '644',
+      target  => '/etc/bill/hello.txt'
+      content => 'hello Bill!'
     );
 
-    task_run %(
-      task    => 'delete file',
-      plugin  => 'file',
-      parameters => %(
-        action  => 'delete',
-        target  => '/etc/bill/hello.txt'
-    )
+    task-run "delete file", %(
+      action  => 'delete',
+      target  => '/etc/bill/hello.txt'
+    );
 
 # Parameters
 
@@ -47,7 +38,7 @@ Simple file manager.
 
 One of two - `create|delete`. Default value is 'create'. Should be set.
 
-## source 
+## source
 
 If source is set then copy `source` into `target`. Source should be file path. No default value. Optional.
 
