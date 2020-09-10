@@ -1,0 +1,7 @@
+{
+    "name" : "[% name %]",
+    "version" : "[% version %]",
+    "description" : "[% desc %]",
+    "url" : "[% url %]",
+    "category" : "raku, utils"
+}

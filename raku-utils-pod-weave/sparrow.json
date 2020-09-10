@@ -1,0 +1,7 @@
+{
+    "name" : "raku-utils-pod-weave",
+    "version" : "0.0.1",
+    "description" : "Sparrow plugin for Pod::Weave pod-weave utility",
+    "url" : "https://github.com/codesections/pod-weave",
+    "category" : "raku, utils"
+}
