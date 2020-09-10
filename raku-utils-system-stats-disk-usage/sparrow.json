@@ -1,0 +1,5 @@
+{
+  "name" : "raku-utils-system-stats-disk-usage",
+  "description" : "Disk usage info using System::Stats::DISKUsage",
+  "version" : "0.0.1"
+}
