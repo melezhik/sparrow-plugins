@@ -30,10 +30,22 @@ template-create "{$plg-name}/README.md", %(
   ),
 );
 
+template-create "{$plg-name}/example.raku", %(
+  source => ".tom/templates/example.raku".IO.slurp,
+  variables => %(
+    name => $plg-name,
+    bin => $bin
+  ),
+);
+
 file "{$plg-name}/rakufile", %(
   content => "{$module-name} --/test"
 );
 
 file "{$plg-name}/task.bash", %(
   content => "set -e\nargs=\$(config args)\nset -x\n{$bin} \$args"
+);
+
+file "{$plg-name}/config.yaml", %(
+  content => "args: \"--help\""
 );
