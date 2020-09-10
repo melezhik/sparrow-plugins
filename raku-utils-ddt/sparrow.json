@@ -1,6 +1,6 @@
 {
     "name" : "raku-utils-ddt",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "Sparrow plugin for dtd utility",
     "url" : "https://github.com/melezhik/raku-utils-ddt",
     "category" : "raku"
