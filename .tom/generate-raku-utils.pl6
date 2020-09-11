@@ -1,10 +1,10 @@
-my $bin = "pod-weave";
+my $bin = config()<bin>;
 my $plg-name = "raku-utils-{$bin}";
-my $module-name = "Pod::Weave";
-my $gh-url = "https://github.com/codesections/pod-weave";
-my $version = "0.0.1";
+my $module-name = config()<module-name>;
+my $url = config()<url>;
+my $version = config()<version>;
 
-my $desc = "Sparrow plugin for {$module-name} {$bin} utility";
+my $desc = config()<description>;
 
 directory $plg-name;
 
@@ -13,7 +13,7 @@ template-create "{$plg-name}/sparrow.json", %(
   variables => %(
     name => $plg-name,
     module => $module-name,
-    url => $gh-url,
+    url => $url,
     desc => $desc,
     version => $version,
   ),
@@ -24,14 +24,16 @@ template-create "{$plg-name}/README.md", %(
   variables => %(
     name => $plg-name,
     module => $module-name,
-    url => $gh-url,
+    url => $url,
     desc => $desc,
     bin => $bin
   ),
 );
 
-template-create "{$plg-name}/example.raku", %(
-  source => ".tom/templates/example.raku".IO.slurp,
+directory "{$plg-name}/.tomty";
+
+template-create "{$plg-name}/.tomty/test.pl6", %(
+  source => ".tom/templates/test.pl6".IO.slurp,
   variables => %(
     name => $plg-name,
     bin => $bin

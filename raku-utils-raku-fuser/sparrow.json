@@ -1,0 +1,7 @@
+{
+    "name" : "raku-utils-raku-fuser",
+    "version" : "0.0.1",
+    "description" : "Sparrow plugin for Linux::Fuser - Discover which process has a file open, in pure Raku",
+    "url" : "https://modules.raku.org/dist/Linux::Fuser:cpan:JSTOWE",
+    "category" : "raku, utils"
+}
