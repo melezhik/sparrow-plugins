@@ -1,17 +1,16 @@
 use v6;
-#use System::Stats::DISKUsage;
 
-#my %diskUsage = DISK_Usage();
+use System::Stats::DISKUsage;
 
-#say "\nDisk Usage per second:\n";
-#say "Drive BytesRead BytesWritten\n";
+my %diskUsage = DISK_Usage();
 
-#for %diskUsage.sort(*.key)>>.kv -> ($drive, $usage) {
+say "\nDisk Usage per second:\n";
+say "Drive BytesRead BytesWritten\n";
 
-#	printf "%-5s %-9d %-d\n", $drive, $usage<bytesreadpersec>, $usage<byteswrittenpersec>;
+for %diskUsage.sort(*.key)>>.kv -> ($drive, $usage) {
 
-#}
+	printf "%-5s %-9d %-d\n", $drive, $usage<bytesreadpersec>, $usage<byteswrittenpersec>;
 
-use String::Rotate;
+}
 
 
