@@ -6,4 +6,4 @@ my %mem = MEM_Usage();
 say "Total: %mem<total> bytes";
 say " Free: %mem<free> bytes";
 say " Used: %mem<used> bytes";
-say "Usage: %mem<usage-percent>%";
+say "Usage: %mem<usage-percent>";
