@@ -2,7 +2,7 @@
 
 Disk usage info using System::Stats::MEMUsage
 
-# Istall
+# Install
 
     s6 --install raku-utils-system-stats-mem-usage
 
