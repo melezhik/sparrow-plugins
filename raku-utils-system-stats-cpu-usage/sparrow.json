@@ -1,0 +1,5 @@
+{
+  "name" : "raku-utils-system-stats-cpu-usage",
+  "description" : "Provides Statistics CPU Usage in percentage using System::Stats::CPUsage",
+  "version" : "0.0.1"
+}
