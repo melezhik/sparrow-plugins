@@ -7,11 +7,11 @@ touch $cache_root_dir/stat.txt
 j=0
 
 if test -z "$files"; then
-  for i in $(git status --short | awk 'match($1, "M"){print $2}' |  grep -P '\.(yml|yaml)$'); do
+  for i in $(git status --short | awk 'match($1, "M"){print $2}' |  perl -n -e 'print if /\.(yml|yaml)$/'); do
     run_task linux/lint file $i out $cache_root_dir/stat.txt;
     let "j=j+1"
   done
-  for i in $(git status --short | awk 'match($1, "A"){print $2}' |  grep -P '\.(yml|yaml)$'); do
+  for i in $(git status --short | awk 'match($1, "A"){print $2}' |  perl -n -e 'print if /\.(yml|yaml)$/'); do
     run_task linux/lint file $i out $cache_root_dir/stat.txt;
     let "j=j+1"
   done
@@ -22,8 +22,8 @@ else
   done
 fi
 
-echo "=====================" $cache_root_dir/stat.txt
+set_stdout "=====================" $cache_root_dir/stat.txt
 
-echo "file processed: $j" >> $cache_root_dir/stat.txt
+set_stdout "file processed: $j" >> $cache_root_dir/stat.txt
 
 

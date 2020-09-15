@@ -65,6 +65,10 @@ None
 * Python - yaml python module
 * Perl - YAML::XS perl module
 
+# Platforms supported
+
+Windows, Linux, Mac OS
+
 # Author
 
 Alexey Melezhik
