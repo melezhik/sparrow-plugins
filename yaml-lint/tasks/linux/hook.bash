@@ -22,8 +22,6 @@ else
   done
 fi
 
-set_stdout "=====================" $cache_root_dir/stat.txt
-
-set_stdout "file processed: $j" >> $cache_root_dir/stat.txt
+echo "file processed: $j" >> $cache_root_dir/stat.txt
 
 
