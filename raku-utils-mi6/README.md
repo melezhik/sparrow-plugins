@@ -18,7 +18,8 @@ mechanism to convert Raku data into command line parameters, so one could write 
     # run `mi6 --keep release`
     task-run "module release", "raku-utils-mi6", %(
       args => [
-        ["keep"],
+        ["yes","keep"],
+        %( next-version => "0.1.1" )
         "release"
       ]
     );
