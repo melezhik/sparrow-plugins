@@ -1,0 +1,8 @@
+{
+  "name" : "git-branch-delete",
+  "description" : "Remove git branch (local and remote)",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-branch-delete",
+  "category" : "git, utils"
+}
+
