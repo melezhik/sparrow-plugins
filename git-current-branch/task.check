@@ -1,0 +1,6 @@
+regexp: "current branch:" \s+ "refs/heads/" (\S+)
+
+code: <<CODE
+!perl6
+update_state %( branch => capture()[0])
+CODE
