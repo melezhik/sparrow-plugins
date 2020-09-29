@@ -1,0 +1,8 @@
+{
+  "name" : "git-current-branch",
+  "description" : "Get current git branch",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-current-branch",
+  "category" : "git, utils"
+}
+

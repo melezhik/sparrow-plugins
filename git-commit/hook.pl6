@@ -7,6 +7,7 @@ my $file = "{cache_root_dir()}/commit.msg";
 my $fh = open $file, :w;
 
 $fh.say($message);
+
 $fh.close;
 
 run_task("check-spell") if $check_spell;

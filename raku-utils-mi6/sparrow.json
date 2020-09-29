@@ -1,6 +1,6 @@
 {
     "name" : "raku-utils-mi6",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "Sparrow plugin for mi6 utility",
     "url" : "https://github.com/melezhik/raku-utils-mi6",
     "category" : "raku"

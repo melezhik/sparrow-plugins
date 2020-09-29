@@ -15,11 +15,11 @@ Sparrow plugin for mi6 utility.
 DSL. The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
 mechanism to convert Raku data into command line parameters, so one could write something like that:
 
-    # run `mi6 --keep release`
+    # run `mi6 --keep --next-version=0.1.1 release`
     task-run "module release", "raku-utils-mi6", %(
       args => [
         ["yes","keep"],
-        %( next-version => "0.1.1" )
+        %( next-version => "=0.1.1" ),
         "release"
       ]
     );
