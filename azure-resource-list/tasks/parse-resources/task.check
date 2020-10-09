@@ -1,12 +1,13 @@
 generator: <<CODE
+!perl6
 
-  my $list = config()->{list};
+  my @list = config()<list> || ();
 
-  print "note: ========================= [ check ] ========================== \n";
+  say "note: ========================= [ check ] ========================== ";
 
-  if ($list){
-    for my $s (@{$list}){
-      print "regexp: ^^ '[", $s, "]'\n";
+  if @list {
+    for @list -> $s {
+      say "regexp: ^^ '[$s]'";
     }
   }
 
