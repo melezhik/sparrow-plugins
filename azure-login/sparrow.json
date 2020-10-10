@@ -2,7 +2,7 @@
 
   "name" : "azure-login",
   "description" : "Login to Auzure using az cli",
-  "version" : "0.0.1",
-  "category" : "azure",
+  "version" : "0.0.2",
+  "category" : "azure, cli",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-login"
 }

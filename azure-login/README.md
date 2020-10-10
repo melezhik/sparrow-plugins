@@ -7,20 +7,19 @@ Login to Auzure using az cli.
     $ s6 --install azure-login
 
 # USAGE
- 
-    # Login using app registration principal
+
+    # Login using service principal
 
     task-run "login to azure", "azure-login", %(
         tenant    => config()<azure><tenant>, # Azure Tenant ID
-        app_reg   => config()<azure><app-reg>, # Application registration URL
+        user   => config()<azure><user>, # ClientId or Application registration URL
         password  => config()<azure><password>, # Password ( AKA client secret )
         subs      => config()<azure><subscription> # Subscription ( name or id )
     )
 
-
 # Requirements
 
-az cli 
+az cli
 
 # Platforms supported
 
