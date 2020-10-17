@@ -1,0 +1,18 @@
+<div>
+    {% if something %}
+    </div>
+{% endif %}
+
+<div>
+    <span>
+    </div>
+</span>
+
+  {% if something %}
+ <div> not indented properly
+      </div>
+   {% endif %}
+
+{% if something %}<a href="somewhere">{% endif %}
+    <p>something</p>
+{% if not something %}</a>{% endif %}
