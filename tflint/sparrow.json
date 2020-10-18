@@ -1,7 +1,7 @@
 {
 
   "name" : "tflint",
-  "description" : "Warapper for tflint",
+  "description" : "Wrapper for tflint",
   "version" : "0.0.1",
   "category" : "utilities, linter, tf, terraform, go",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/tflint"
