@@ -10,8 +10,8 @@ Wrapper for [tflint](https://github.com/terraform-linters/tflint)
 
     task-run "lint my code", "tflint", %(
       args => [
-        "template-directory/",
-        [ "deep" ]
+        ".",
+        ["force", "no-color"]
       ]
     );
 
