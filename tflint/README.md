@@ -19,6 +19,12 @@ Wrapper for [tflint](https://github.com/terraform-linters/tflint)
 
 See [tflint](https://github.com/terraform-linters/tflint) documentation.
 
+# OS supported
+
+* `linux`
+
+* `mac os`
+
 # Author
 
 Alexey Melezhik
