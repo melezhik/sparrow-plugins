@@ -1,8 +1,8 @@
 {
 
   "name" : "jinjalint",
-  "description" : "Wrapper for jinjalint",
-  "version" : "0.0.1",
+  "description" : "Wrapper for jinja2-lint",
+  "version" : "0.0.2",
   "category" : "utilities, python, linter, jinja, templater",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/jinjalint"
 }

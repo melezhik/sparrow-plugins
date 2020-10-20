@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Wrapper for [jinjalint](https://github.com/motet-a/jinjalint)
+Wrapper for [jinja2-lint](https://github.com/drm/jinja2-lint)
 
 # INSTALL
 
@@ -10,14 +10,13 @@ Wrapper for [jinjalint](https://github.com/motet-a/jinjalint)
 
     task-run "lint my code", "jinjalint", %(
       args => [
-        "template-directory/",
-        [ "verbose" ]
+        "template-directory/*.j2",
       ]
     );
 
 # Args
 
-See [jinjalint](https://github.com/motet-a/jinjalint)  documentation.
+See [jinja2-lint](https://github.com/drm/jinja2-lint) documentation.
 
 # Author
 
