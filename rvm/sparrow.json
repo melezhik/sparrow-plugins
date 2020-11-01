@@ -3,5 +3,5 @@
   "version" : "0.0.2",
   "description" : "install rvm and Ruby",
   "category" : "applications",
-  "url" : "https://github.com/melezhik/sparrow-rvm"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparrow-rvm"
 }

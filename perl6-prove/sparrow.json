@@ -3,5 +3,5 @@
   "description" : "pre-commit hook - runs prove for Perl6 project",
   "version" : "0.0.10",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/perl6-prove"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/perl6-prove"
 }

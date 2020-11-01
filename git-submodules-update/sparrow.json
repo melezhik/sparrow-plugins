@@ -2,7 +2,7 @@
   "name" : "git-submodules-update",
   "description" : "recursively update git submodules",
   "version" : "0.1.9",
-  "url" : "https://github.com/melezhik/git-submodules-update.git",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-submodules-update.git",
   "category": "utilities"
 }
 

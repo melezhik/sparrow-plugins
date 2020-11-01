@@ -2,5 +2,5 @@
     "version": "0.5.1",
     "name": "stale-proc-check",
     "description" : "Find stale processes at your server",
-    "url": "https://github.com/melezhik/stale-proc-check.git"
+    "url": "https://github.com/melezhik/sparrow-plugins/tree/master/stale-proc-check.git"
 }

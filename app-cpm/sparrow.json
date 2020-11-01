@@ -2,6 +2,6 @@
   "name" : "app-cpm",
   "version" : "0.0.5",
   "description" : "Install CPAN modules using App::cpm - a fast CPAN module installer",
-  "url" : "https://github.com/melezhik/app-cpm"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/app-cpm"
 
 }

@@ -2,5 +2,5 @@
   "name" : "sendmail",
   "description" : "read text from STDIN and send it by email as attched file",
   "version" : "0.0.2",
-  "url" : "https://github.com/melezhik/sendmail.git"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sendmail.git"
 }

@@ -2,6 +2,6 @@
 
   "name": "git-async-push",
   "version" : "0.1.16",
-  "url" : "https://github.com/melezhik/git-async-push",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-async-push",
   "description" : "Make an asynchronous push to remote git repositories"
 }

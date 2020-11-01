@@ -2,6 +2,6 @@
     "name" : "aws-configure-function",
     "version" : "0.0.1",
     "description" : "update aws lambda function configuration",
-    "url" : "https://github.com/melezhik/aws-configure-function",
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-configure-function",
     "category" : "aws"
 }

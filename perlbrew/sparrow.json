@@ -2,5 +2,5 @@
     "name" : "perlbrew",
     "version" : "0.1.4",
     "description" : "A simple wrapper to automate perlbrew installation",
-    "url" : "https://github.com/melezhik/perlbrew.git"
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/perlbrew.git"
 }

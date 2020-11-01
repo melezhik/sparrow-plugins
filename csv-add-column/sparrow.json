@@ -4,5 +4,5 @@
   "description" : "Add Column to end every line in CSV file using awk",
   "version" : "0.0.4",
   "category" : "awk",
-  "url" : "https://github.com/melezhik/csv-add-column"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/csv-add-column"
 }

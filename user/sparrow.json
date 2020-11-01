@@ -2,6 +2,6 @@
   "name" : "user",
   "version" : "0.2.1",
   "description" : "Manages Linux users",
-  "url" : "https://github.com/melezhik/user",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/user",
   "category" : "sparrowdo"
 }

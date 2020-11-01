@@ -4,5 +4,5 @@
   "description" : "Simple login checker based on sqlcmd utility",
   "version" : "0.0.2",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/mssql-check-login"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/mssql-check-login"
 }

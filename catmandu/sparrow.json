@@ -4,5 +4,5 @@
   "description" : "Simple wrapper for Catamandu cli",
   "version" : "0.0.2",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/catmandu-sparrow"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/catmandu-sparrow"
 }

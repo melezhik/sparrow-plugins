@@ -2,5 +2,5 @@
   "name" : "catmandu-smoke",
   "description" : "Smoke tests for Catmandu",
   "version" : "0.0.1",
-  "url" : "https://github.com/melezhik/catmandu-smoke"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/catmandu-smoke"
 }

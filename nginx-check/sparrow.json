@@ -2,6 +2,6 @@
   "version" : "0.1.2",
   "name"    : "nginx-check",
   "description" : "checks if nginx server is healthy by executing low level system checks ( ps, etime )",
-  "url"         : "https://github.com/melezhik/nginx-check",
+  "url"         : "https://github.com/melezhik/sparrow-plugins/tree/master/nginx-check",
   "category"    : "monitoring"
 }

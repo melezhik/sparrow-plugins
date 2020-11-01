@@ -4,5 +4,5 @@
   "description" : "list tagged aws instances in human readable format",
   "version" : "0.0.11",
   "category" : "aws",
-  "url" : "https://github.com/melezhik/aws-list-tag-instances"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-list-tag-instances"
 }

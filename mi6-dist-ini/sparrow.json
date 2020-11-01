@@ -4,5 +4,5 @@
   "description" : "Regenerate mi6 dist.ini and .gitignore files for Perl6 project",
   "version" : "0.0.4",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/mi6-dist-ini"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/mi6-dist-ini"
 }

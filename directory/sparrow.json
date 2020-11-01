@@ -2,5 +2,5 @@
   "name" : "directory",
   "version" : "0.2.0",
   "description" : "Manages directories",
-  "url" : "https://github.com/melezhik/directory"  
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/directory"  
 }

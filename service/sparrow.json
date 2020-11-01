@@ -2,5 +2,5 @@
   "name" : "service",
   "version" : "0.2.3",
   "description" : "Manages Linux services",
-  "url" : "https://github.com/melezhik/service"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/service"
 }

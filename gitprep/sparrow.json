@@ -2,5 +2,5 @@
   "version" : "0.2.1",
   "name" : "gitprep",
   "description" : "Installs gitprep server",
-  "url" : "https://github.com/melezhik/gitprep-install"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/gitprep-install"
 }

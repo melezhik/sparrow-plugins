@@ -2,5 +2,5 @@
   "name" : "file",
   "version" : "0.0.7",
   "description": "Simple file manager",
-  "url" : "https://github.com/melezhik/file"  
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/file"  
 }

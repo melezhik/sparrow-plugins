@@ -2,6 +2,6 @@
   "name" : "perl-app",
   "version" : "0.1.5",
   "description" : "Installs Perl psgi application and dependencies, runs application as ubic service with Starman",
-  "url" : "https://github.com/melezhik/perl-app"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/perl-app"
 }
 

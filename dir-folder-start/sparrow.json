@@ -4,5 +4,5 @@
   "description" : "Shows sub folders statistic for given directory",
   "version" : "0.0.2",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/dir-folder-start"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/dir-folder-start"
 }

@@ -2,5 +2,5 @@
     "name" : "package-generic",
     "version" : "0.4.1",
     "description": "Generic package manager. Installs packages using OS specific package managers (yum,apt-get,apk)",
-    "url" : "https://github.com/melezhik/package-generic"
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/package-generic"
 }

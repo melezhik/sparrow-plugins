@@ -2,5 +2,5 @@
   "name" : "web-service-fake-smoke",
   "description" : "Smoke tests for Web Service Faker",
   "version" : "0.0.3",
-  "url" : "https://github.com/melezhik/web-service-fake-smoke"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/web-service-fake-smoke"
 }

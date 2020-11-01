@@ -4,5 +4,5 @@
   "description" : "list private aws images",
   "version" : "0.0.3",
   "category" : "aws",
-  "url" : "https://github.com/melezhik/aws-list-private-images"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-list-private-images"
 }

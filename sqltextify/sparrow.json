@@ -4,5 +4,5 @@
   "description" : "Wrapper for sqltextify.pl",
   "version" : "0.0.8",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/sqltextify"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sqltextify"
 }

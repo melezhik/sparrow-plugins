@@ -2,6 +2,6 @@
   "name" : "cpan-package",
   "version" : "0.1.4",
   "description" : "simple cpan modules installer",
-  "url" : "https://github.com/melezhik/cpan-package"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/cpan-package"
 
 }

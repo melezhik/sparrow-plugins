@@ -3,6 +3,6 @@
     "name": "sshd-check",
     "engine": "generic", 
     "description" : "simple check if your sshd daemon seen at process list",
-    "url" : "https://github.com/melezhik/outth-sshd.git",
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/outth-sshd.git",
     "category" : "monitoring"
 }

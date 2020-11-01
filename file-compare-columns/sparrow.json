@@ -4,5 +4,5 @@
   "description" : "Simple file/columns compare tool",
   "version" : "0.0.4",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/file-compare-columns"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/file-compare-columns"
 }

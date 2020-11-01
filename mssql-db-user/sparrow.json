@@ -4,5 +4,5 @@
   "description" : "Creates mssql user and grants permissions for database",
   "version" : "0.0.18",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/mssql-db-user"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/mssql-db-user"
 }

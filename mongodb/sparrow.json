@@ -2,5 +2,5 @@
   "name" : "mongodb",
   "version" : "0.0.2",
   "description" : "Installs mongo db",
-  "url" : "https://github.com/melezhik/mongodb"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/mongodb"
 }

@@ -2,5 +2,5 @@
     "name"            : "mojolicious-app-smoke",
     "description"     : "smoke tests for our Mojolicious application",
     "version"         : "0.0.2",
-    "url"             : "https://github.com/melezhik/mojolicious-app-smoke"
+    "url"             : "https://github.com/melezhik/sparrow-plugins/tree/master/mojolicious-app-smoke"
 }

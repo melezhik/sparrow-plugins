@@ -2,6 +2,6 @@
   "name" : "ruby-test",
   "version" : "0.1.3",
   "description" : "test ruby plugin",
-  "url" : "https://github.com/melezhik/ruby-test.git"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ruby-test.git"
 }
 

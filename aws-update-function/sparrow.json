@@ -2,6 +2,6 @@
     "name" : "aws-update-function",
     "version" : "0.0.1",
     "description" : "Update aws lambda function code",
-    "url" : "https://github.com/melezhik/aws-update-function",
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-update-function",
     "category" : "aws"
 }

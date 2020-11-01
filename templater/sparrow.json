@@ -2,5 +2,5 @@
   "name" : "templater",
   "version" : "0.0.13",
   "description": "Simple templater",
-  "url" : "https://github.com/melezhik/templater"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/templater"
 }

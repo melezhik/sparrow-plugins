@@ -4,5 +4,5 @@
   "description" : "Strip longman online dictionary examples and sound tracks",
   "version" : "0.1.4",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/logman-online"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/logman-online"
 }

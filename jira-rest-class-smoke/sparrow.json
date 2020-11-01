@@ -2,5 +2,5 @@
   "name" : "jira-rest-class-smoke",
   "description" : "Smoke tests for JIRA-REST-Class",
   "version" : "0.0.1",
-  "url" : "https://github.com/melezhik/jira-rest-class-smoke"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/jira-rest-class-smoke"
 }

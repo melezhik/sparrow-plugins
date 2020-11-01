@@ -2,5 +2,5 @@
   "name" : "perl-file-dir-dumper-smoke",
   "description" : "Smoke tests for File::Dir::Dumper module",
   "version" : "0.0.4",
-  "url" : "https://github.com/melezhik/perl-file-dir-dumper-smoke"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/perl-file-dir-dumper-smoke"
 }

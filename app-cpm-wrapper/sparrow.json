@@ -4,5 +4,5 @@
   "description" : "Simple wrapper for App::cpm",
   "version" : "0.0.6",
   "category" : "utilities",
-  "url" : "https://github.com/melezhik/app-cpm-wrapper"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/app-cpm-wrapper"
 }

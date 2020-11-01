@@ -2,6 +2,6 @@
 
   "name": "svn-to-git-submodules",
   "version" : "0.0.11",
-  "url" : "https://github.com/melezhik/svn-to-git-submodules",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/svn-to-git-submodules",
   "description" : "generate git submodules entries based on output from svn list command"
 }

@@ -3,5 +3,5 @@
     "name": "outth-mysql-cookbook",
     "engine": "generic", 
     "description" : "outthentic tests for opscode mysql cookook",
-    "url": "https://github.com/melezhik/outth-mysql-cookbook.git"
+    "url": "https://github.com/melezhik/sparrow-plugins/tree/master/outth-mysql-cookbook.git"
 }
