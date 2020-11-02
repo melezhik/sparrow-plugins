@@ -58,8 +58,8 @@ sub dump-matrix (%high) {
 
 sub search ( $x ) {
 
-    my $upper_row =  ceiling($N / 2);
-    my $upper_col = ceiling($N / 2);
+    my $upper_row =  ceiling($N / 2) - 1;
+    my $upper_col = ceiling($N / 2) - 1;
 
     my $lower_row =  $upper_row + 1;
     my $lower_col =  $upper_col + 1;
@@ -78,7 +78,7 @@ sub search ( $x ) {
     if $x == $lower_val or $x == $upper_val {
       say "found x=[$x]";
       return True
-    } elsif $x > $lower_val && $x < $upper_val {
+    } elsif $x > $upper_val {
       say "go down the river"
     } elsif $x < $lower_val {
       say "go up the river"
