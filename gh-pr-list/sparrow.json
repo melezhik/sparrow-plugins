@@ -1,0 +1,8 @@
+{
+  "name" : "gh-pr-list",
+  "description" : "Get PRs list for a GutHub repository",
+  "version" : "0.0.4",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/gh-pr-list",
+  "category" : "git, utils, github"
+}
+
