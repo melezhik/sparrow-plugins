@@ -1,0 +1,8 @@
+{
+  "name" : "git-commits-by-author-and-period",
+  "description" : "List total commits by author for period of time",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-commits-by-author-and-period",
+  "category" : "git, utils"
+}
+
