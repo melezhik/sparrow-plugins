@@ -20,7 +20,7 @@ for "{cache_dir()}/stat.txt".IO.lines -> $i {
   }
 }
 
-say %list.perl;
+#say %list.perl;
 
 my @list;
 
@@ -33,6 +33,6 @@ for %list.keys -> $e {
 
 }
 
-say @list.perl;
+#say @list.perl;
 
 update_state %( list => @list );

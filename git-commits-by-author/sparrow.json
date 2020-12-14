@@ -1,7 +1,7 @@
 {
   "name" : "git-commits-by-author",
   "description" : "List total commits by author (sorted by commit count)",
-  "version" : "0.0.2",
+  "version" : "0.0.7",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-commits-by-author",
   "category" : "git, utils"
 }
