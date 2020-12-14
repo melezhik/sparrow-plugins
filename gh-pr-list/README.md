@@ -40,9 +40,15 @@ Local git repositories folders. Default value is `$PWD` Examples:
 
     repo => "/home/melezhik/projects/repo1" # You can use absolute paths
 
+# Platforms supported
+
+* Linux
+* MacOS
+
+
 # Requirements
 
-GH cli should be installed
+MacOS - GH cli should be installed
 
 # Author
 
