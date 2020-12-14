@@ -10,7 +10,7 @@ List total commits by author (sorted by commit count)
 
 Cli
 
-    s6 --plg-run git-commits-by-author
+    $ s6 --plg-run git-commits-by-author
 
 Raku
 
