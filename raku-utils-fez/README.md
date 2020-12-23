@@ -11,13 +11,16 @@ Sparrow plugin for fez - one way to upload your dists to the masses.
 The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
 mechanism to convert Raku data into command line parameters, so a typical usage is something like that:
 
-    task-run "run raku-fez", "raku-utils-fez", %(
-      args => [
-        # some Raku parameters
-        # that map command line
-        # invocation
-      ]
-    );
+```
+task-run "fez login", "raku-utils-fez", %(
+  args => [
+    # some Raku parameters
+    # that map command line
+    # invocation
+    'login'
+  ]
+);
+```
 
 # Parameters
 

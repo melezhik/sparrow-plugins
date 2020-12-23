@@ -1,6 +1,6 @@
 {
     "name" : "raku-utils-fez",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "Sparrow plugin for fez - one way to upload your dists to the masses",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/raku-utils-fez",
     "category" : "raku, utils"
