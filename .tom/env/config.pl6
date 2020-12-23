@@ -1,7 +1,7 @@
 %(
-  bin => "raku-fuser",
-  module-name => "Linux::Fuser",
-  description => "Sparrow plugin for Linux::Fuser - Discover which process has a file open, in pure Raku",
-  url => "https://modules.raku.org/dist/Linux::Fuser:cpan:JSTOWE",
+  bin => "raku-fez",
+  module-name => "fez",
+  description => "Sparrow plugin for fez - one way to upload your dists to the masses",
+  url => "https://github.com/tony-o/raku-fez.git",
   version => "0.0.1"
 )
