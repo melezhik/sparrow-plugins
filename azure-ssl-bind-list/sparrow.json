@@ -2,7 +2,7 @@
 
   "name" : "azure-ssl-bind-list",
   "description" : "List ssl bindings for web application",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "category" : "azure",
-  "url": "https://bitbucket.org/melezhik2/sparrow-azure-plugins/src/master/"
+  "url": "https://github.com/melezhik/sparrow-plugins/tree/master/azure-ssl-bind-list"
 }

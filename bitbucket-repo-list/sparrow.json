@@ -1,6 +1,6 @@
 {
   "name" : "bitbucket-repo-list",
-  "version" : "0.0.5",
+  "version" : "0.0.6",
   "description" : "List Bitbucket repositories. Pagination included! (:",
-  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/bitbucket-repo-list.git"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/bitbucket-repo-list"
 }
