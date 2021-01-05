@@ -1,0 +1,8 @@
+{
+  "name" : "sparky-db",
+  "description" : "Utility to manipulate Sparky SQLite DB",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparky-db",
+  "category" : "go, utils, sparky"
+}
+
