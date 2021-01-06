@@ -15,14 +15,12 @@ func main() {
 
   args := flag.Args()
 
-  db_name := fmt.Sprintf( "%v/.sparky/projects/db.sqlite3", os.Getenv("HOME"))
-
-  if len(args) >= 1 {
-    fmt.Printf("Read database from cli args: %v\n",args[0])
-    db_name = args[0]
-  }
+  db_name := args[0]
+  max := args[1]
 
   fmt.Printf("Database: %v\n",db_name)
+
+  fmt.Printf("Max: %v\n",max)
 
   if _, err := os.Stat(db_name); os.IsNotExist(err) {
 		log.Fatal(err)
@@ -36,22 +34,27 @@ func main() {
 
 	defer db.Close()
 
-	rows, err := db.Query("select id, description from builds")
+	q := fmt.Sprintf("select id, project, description, dt from builds order by id desc limit %v",max)
+
+	rows, err := db.Query(q)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	defer rows.Close()
-
+	i := 0;
 	for rows.Next() {
 		var id int
+		var project string
 		var desc string
-		err = rows.Scan(&id, &desc)
+		var dt string
+		err = rows.Scan(&id, &project, &desc, &dt)
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Println(id, desc)
+		i++;	
+		fmt.Println(i, id, project, desc, dt)
 	}
 
 	err = rows.Err()
