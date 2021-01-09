@@ -1,0 +1,8 @@
+{
+  "name" : "fez-login",
+  "description" : "Provides fez login",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/fez-login",
+  "category" : "raku, utils"
+}
+

@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+log_user 1
+
+set user [lindex $argv 0];
+set password [lindex $argv 1];
+
+set timeout -1
+
+spawn fez login
+
+expect "*?Username:*"
+
+send -- "$user\r"
+
+expect "*?Password:*"
+
+send -- "$password\r"
+
+expect eof
+
