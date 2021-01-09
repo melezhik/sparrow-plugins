@@ -1,1 +1,1 @@
-login successful, you can now upload dists
+regexp: :i 'login successful'

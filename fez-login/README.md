@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Provide fez login
+Provides fez login
 
 # INSTALL
 
