@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+
+set name [lindex $argv 0];
+
+set website [lindex $argv 1];
+
+set email [lindex $argv 2];
+
+set timeout -1
+
+spawn fez meta
+
+expect "*?display name*"
+
+send -- "$name\r"
+
+expect "*?website*"
+
+send -- "$website\r"
+
+expect "*?email*"
+
+send -- "$email\r"
+
+expect eof
+

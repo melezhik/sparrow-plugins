@@ -1,8 +1,7 @@
 #!/usr/bin/expect -f
 
-log_user 1
-
 set user [lindex $argv 0];
+
 set password [lindex $argv 1];
 
 set timeout -1
