@@ -1,6 +1,6 @@
 {
   "name" : "nano-setup",
-  "version" : "0.1.4",
+  "version" : "0.1.5",
   "description": "set up nano rc file",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/nano-setup"
 }

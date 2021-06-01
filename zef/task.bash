@@ -2,7 +2,7 @@
 
 set -e
 
-export PATH=/opt/rakudo/bin:~/.perl6/bin:$PATH
+export PATH=/opt/rakudo/bin:~/.perl6/bin:~/.raku/bin:$PATH
 declare -a list=$(config list)
 options=$(config options)
 

@@ -8,6 +8,7 @@ set tabstospaces
 set tabsize $tabsize
 set speller "$speller"
 set historylog
+set positionlog
 EOF
 else
   echo bad tabsize: $tabsize
