@@ -2,38 +2,30 @@
 
 Wrapper for [csvtotable](https://github.com/vividvilla/csvtotable) utility.
 
-
 # INSTALL
 
     $ s6 --install csvtotable
 
 # USAGE
 
-Basic usage:
+Cli:
 
-    $ s6 --plg-run -- <args>
+    $ s6 --plg-run csvtotable@args=<args>
 
 For example:
 
-    $ s6 --plg-run csvtotable -- /tmp/goog.csv /tmp/goog.html  --caption 'my table'
+    $ s6 --plg-run csvtotable@args='/tmp/google.csv /tmp/google.html  --caption "my table"'
 
 
-Run as sparrow task:
+Raku:
 
-/csvtotable/README
-
-/csvtotable/README
-
-    $ s6 --task-set utils/csv-to-html
-
-    ---
-    args:
-      - /tmp/goog.csv 
-      - /tmp/goog.html
-      - caption: my table
-
-
-    $ s6 --task-run utils/csv-to-html
+    task-run "convert", "csvtotable", %(
+      args => [
+        "/tmp/goog.csv",
+        "/tmp/goog.html",
+        %(  caption => "my table", ),
+      ]  
+    )
 
 
 # Author
