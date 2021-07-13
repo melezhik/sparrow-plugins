@@ -1,0 +1,7 @@
+{
+  "name" : "oc-get-pods",
+  "description" : "Get openshift pods",
+  "version" : "0.0.1",
+  "category" : "openshift, k8s",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/oc-get-pods"
+}

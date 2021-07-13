@@ -1,0 +1,8 @@
+{
+  "name" : "cli-weather",
+  "description" : "Simple wrapper for cli-weather script",
+  "version" : "0.0.1",
+  "url" : "https://github.com/vatsa287/cli-weather",
+  "category": "utilities",
+  "python_version" : "3"
+}
