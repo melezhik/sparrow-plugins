@@ -30,7 +30,7 @@ Raku
 
 ## container
 
-Name of container. Optional. If not set _first_ container in containers list is check.
+Name of container. Optional. If not set _the first_ container in a containers list is check.
 
 ## volume-mounts
 
