@@ -1,0 +1,61 @@
+generator: <<RAKU
+!perl6
+
+if config()<env> {
+  say "note: >>> check env";
+  say 'between: {"[env_start]"} {"[env_end]"}';
+  my %env = config<env>;
+  for %env -> $i {
+    say "[{$i.key}={$i.value}]"
+  }
+  say "end:";
+}
+
+if config()<volume-mounts> {
+  say "note: >>> check volume mounts";
+  say 'between: {"[volume_mounts_start]"} {"[volume_mounts_end]"}';
+  if config<volume-mounts>.isa(Array) {
+    for config<volume-mounts><> -> $i {
+      say $i
+    }
+  } else {
+    my %h = config<volume-mounts>;
+    for %h -> $i {
+      say "[{$i.key} {$i.value}]"
+    }
+  }
+  say "end:";
+}
+
+if config()<command> {
+  say "note: >>> check command";
+  say "begin:";
+  say "[command_start]";
+  if config<command>.isa(Str) {
+    say config<command>;
+  } else {
+    for config<command><> -> $i {
+      say $i
+    }
+  }
+  say "[command_end]";
+  say "end:";
+}
+
+if config()<command-args> {
+  say "note: >>> check command args";
+  say "begin:";
+  say "[command_args_start]";
+  if config<command-args>.isa(Str) {
+    say config<command-args>;
+  } else {
+    for config<command-args><> -> $i {
+      say $i
+    }
+  }
+  say "[command_args_end]";
+  say "end:";
+}
+
+RAKU
+
