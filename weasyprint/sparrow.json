@@ -1,0 +1,6 @@
+{
+  "name" : "weasyprint",
+  "description": "weasyprint wrapper",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/weasyprint"
+}
