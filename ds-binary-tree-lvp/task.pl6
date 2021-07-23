@@ -11,7 +11,8 @@ class Node {
 }
 
 
-sub printLevelOrder($root) {
+
+sub printLeftView($root) {
 
   my @q;
   my @data;
@@ -19,14 +20,24 @@ sub printLevelOrder($root) {
   @q.unshift: $root;
 
   while True {
-    my $i = @q.pop or last;
-    push @data, $i.data;
-    @q.unshift: $i.left if $i.left;
-    @q.unshift: $i.right if $i.right;
-    say "queue: ", @q.elems;
+
+    my $z = @q.elems or last;
+
+    for 1 .. $z -> $j {
+
+      my $i = @q.pop;
+
+      @q.unshift: $i.left if $i.left;
+      @q.unshift: $i.right if $i.right;
+
+      @data.push: $i.data if $j == 1;
+      
+    }
+
   }
 
   return @data;
+
 }
  
 say q:to /END/;
@@ -44,5 +55,5 @@ $root.right = Node.new(3);
 $root.left.left = Node.new(4);
 $root.left.right = Node.new(5);
 
-say printLevelOrder($root).perl;
+say printLeftView($root).perl;
 
