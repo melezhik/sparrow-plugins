@@ -1,6 +1,6 @@
 {
   "name" : "ds-binary-tree-bft",
-  "description": "An example of binary tree breadth first traversal using Raku",
+  "description": "An example of binary tree breadth first traversal with recursion using Raku",
   "version" : "0.0.2",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-bft",
   "category" : "datastructures, algorithm"

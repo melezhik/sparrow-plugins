@@ -1,10 +1,10 @@
+# ds-binary-tree-bft
+
+An example of binary tree breadth first traversal with recursion using Raku
+
 # Install
 
     s6 --install ds-binary-tree-bft
-
-# Description
-
-An example of binary tree breadth first traversal using Raku.
 
 # Usage
 
