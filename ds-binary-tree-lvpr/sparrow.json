@@ -1,7 +1,7 @@
 {
-  "name" : "ds-binary-tree-lwpr",
+  "name" : "ds-binary-tree-lvpr",
   "description": "Print left view of binary tree with recursive search using Raku",
   "version" : "0.0.1",
-  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-lwpr",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-lvpr",
   "category" : "datastructures, algorithm"
 }
