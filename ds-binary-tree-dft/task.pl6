@@ -19,6 +19,13 @@ sub printInOrder($root) {
      
 }
  
+
+my $root = Node.new(1);
+$root.left = Node.new(2);
+$root.right = Node.new(3);
+$root.left.left = Node.new(4);
+$root.left.right = Node.new(5);
+
 say q:to /END/;
 
           1
@@ -28,12 +35,27 @@ say q:to /END/;
      4   5
 END
 
-my $root = Node.new(1);
-$root.left = Node.new(2);
-$root.right = Node.new(3);
-$root.left.left = Node.new(4);
-$root.left.right = Node.new(5);
-
 say "=== InOrder";
+printInOrder($root);
+say "===";
+
+$root = Node.new(4);
+$root.left = Node.new(2);
+$root.right = Node.new(6);
+$root.left.left = Node.new(1);
+$root.left.right = Node.new(3);
+$root.right.left = Node.new(5);
+$root.right.right = Node.new(7);
+
+say q:to /END/;
+
+          4
+        /   \
+       2     6
+      / \   /  \  
+     1   3 5    7
+END
+
+say "=== InOrder2";
 printInOrder($root);
 say "===";
