@@ -32,7 +32,7 @@ sub height($node) {
 
 sub printLevelOrder($root) {
   my $h = height($root);
-  for (1 .. $h+1) -> $i {
+  for (1 .. $h) -> $i {
       say "i=[$i]";
       printCurrentLevel($root, $i)
   }
@@ -54,7 +54,7 @@ sub printCurrentLevel($root , $level) {
 
     if $level == 1 {
         
-        say ">> boom! .................. next node is: [", $root.data, "]";
+        say ">> boom! .................. node found: [", $root.data, "]";
         say "return from printCurrentLevel, buy-buy!";
 
     } elsif ( $level > 1 ) {
@@ -76,6 +76,8 @@ say q:to /END/;
        2    3
       / \      
      4   5
+    /     \
+   6       7
 END
 
 my $root = Node.new(1);
@@ -83,6 +85,12 @@ $root.left = Node.new(2);
 $root.right = Node.new(3);
 $root.left.left = Node.new(4);
 $root.left.right = Node.new(5);
+$root.left.left.left = Node.new(6);
+$root.left.right.right = Node.new(7);
+
+#$root.left = Node.new(2);
+#$root.left.left = Node.new(3);
+#$root.left.left.left = Node.new(4);
 
 printLevelOrder($root);
 
