@@ -1,0 +1,7 @@
+{
+  "name" : "ds-binary-tree-lvp",
+  "description": "Print left view of binary tree using Raku",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-lvp",
+  "category" : "datastructures, algorithm"
+}
