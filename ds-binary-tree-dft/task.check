@@ -39,3 +39,18 @@ begin:
   3
   regexp: ^^ '===' $$
 end:
+
+begin:
+  regexp: ^^ '=== InOrder3' $$
+  a
+  b
+  c
+  d
+  e
+  f
+  g
+  h
+  i
+  j
+  regexp: ^^ '===' $$
+end:

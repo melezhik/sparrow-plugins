@@ -2,7 +2,7 @@ class Node {
 
     has $.left is rw;
     has $.right is rw;
-    has Int $.data;
+    has $.data;
 
     submethod new( $data ) {
       self.bless(:$data);
@@ -118,4 +118,35 @@ END
 
 say "=== PreOrder";
 printPreOrder($root);
+say "===";
+
+# =================
+
+$root = Node.new('f');
+
+$root.left = Node.new('d');
+$root.right = Node.new('g');
+
+$root.left.left = Node.new('b');
+$root.left.right = Node.new('e');
+$root.left.left.left = Node.new('a');
+$root.left.left.right = Node.new('c');
+
+$root.right.right = Node.new('i');
+$root.right.right.left = Node.new('h');
+$root.right.right.right = Node.new('j');
+
+say q:to /END/;
+
+          f
+        /   \
+       d     g
+      / \     \  
+     b   e     i
+    / \       / \
+   a   c     h   j
+END
+
+say "=== InOrder3";
+printInOrder($root);
 say "===";
