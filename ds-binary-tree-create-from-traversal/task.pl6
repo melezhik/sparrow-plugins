@@ -14,9 +14,11 @@ class Node {
 
 sub search (@arr, $start, $end, $v) {
 
-    my $ind =  @arr($start .. $end).first($v,:k);
-    say "search @arr, $start, $end, $v ==> index found $ind";
-    return $ind;
+    print "search {@arr.perl}, start=$start, end=$end, value=$v ";
+    my $ind =  @arr[$start .. $end].first($v,:k);
+    print "==> index found: $ind \n";
+    #return $ind;
+    exit(0);
 
 }
 
@@ -36,3 +38,31 @@ sub build-tree (@inOrder, @preOrder, $start, $end) {
   return $node;
 
 }
+
+say q:to /END/;
+
+                A
+              /   \
+             /     \
+           D B E   F C
+
+
+                A
+              /   \
+             /     \
+            B       C
+           / \      /
+          /   \    /
+        D      E  F
+END
+
+my @in-order = ['D', 'B', 'E', 'A', 'F', 'C'];
+
+my @pre-order =  ['A', 'B', 'D', 'E', 'C', 'F'];
+
+my $root = build-tree(
+  @in-order,
+  @pre-order,
+  0, # start 
+  @in-order.elems - 1 # end
+);
