@@ -25,8 +25,6 @@ sub printInOrder($root) {
 
 sub search (@arr, $start, $end, $v) {
 
-    #exit if $r++ > 10;
-
     print "search [$v] in {@arr[$start .. $end]} ... ";
     my $ind =  @arr[$start .. $end].first($v,:k);
     print "index found: $ind, next search is [$next-search] \n";
@@ -35,6 +33,10 @@ sub search (@arr, $start, $end, $v) {
 }
 
 sub build-tree (@inOrder, @preOrder, $start, $end) {
+
+  exit if $r++ >= 6;
+
+  say "rec num: $r";
 
   return if $start > $end;
 
@@ -57,11 +59,26 @@ sub build-tree (@inOrder, @preOrder, $start, $end) {
 
   my $ind = search(@inOrder,$start,$end,$node.data);
   
-  say "deep dive, start=$start, end={$ind-1} |@inOrder[$start .. $ind-1]|";
-  $node.left = build-tree(@inOrder,@preOrder, $start, $ind - 1);
+  say "deep dive, left. start=$start, end={$ind-1} |@inOrder[$start .. $ind-1]|";
+  my $a = build-tree(@inOrder,@preOrder, $start, $ind - 1);
 
-  say "deep dive, start={$ind+1}, end={$end} |@inOrder[$ind+1 .. $end]|";
-  $node.right = build-tree(@inOrder,@preOrder, $ind + 1, $end);
+  say "data returned form left search: {$a||'NA'}";
+
+  return $node unless $a;
+
+  $node.left = $a;
+  say "attach {$a.data} to {$node.data} from left";
+
+  say "deep dive, right. start={$ind+1}, end={$end} |@inOrder[$ind+1 .. $end]|";
+
+  $a = build-tree(@inOrder,@preOrder, $ind + 1, $end);
+
+  say "data returned form right search: {$a||'NA'}";
+
+  return $node unless $a;
+
+  $node.right = $a;
+  say "attach {$a.data} to {$node.data} from right";
 
   return $node;
 
