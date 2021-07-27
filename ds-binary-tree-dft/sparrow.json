@@ -1,7 +1,7 @@
 {
   "name" : "ds-binary-tree-dft",
   "description": "An example of binary tree depth first traversal using Raku",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-dft",
   "category" : "datastructures, algorithm"
 }

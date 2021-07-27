@@ -150,3 +150,31 @@ END
 say "=== InOrder3";
 printInOrder($root);
 say "===";
+
+# =================
+
+say q:to /END/;
+
+            A
+          /   \
+         /     \
+        B       C
+       / \      /
+      /   \    /
+    D      E  F
+END
+
+$root = Node.new('A');
+
+$root.left = Node.new('B');
+$root.right = Node.new('C');
+
+$root.left.left = Node.new('D');
+$root.left.right = Node.new('E');
+
+$root.right.left = Node.new('F');
+
+
+say "=== InOrder4";
+printInOrder($root);
+say "===";

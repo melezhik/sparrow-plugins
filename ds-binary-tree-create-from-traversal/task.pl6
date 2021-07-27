@@ -1,5 +1,6 @@
 my $preIndex = 0;
 my $r = 0;
+my $next-search;
 
 class Node {
 
@@ -13,17 +14,6 @@ class Node {
 
 }
 
-sub search (@arr, $start, $end, $v) {
-
-    exit if $r++ > 10;
-
-    print "search [$v] in {@arr[$start .. $end]} ... ";
-    my $ind =  @arr[$start .. $end].first($v,:k);
-    print "index found: $ind \n";
-    return $ind;
-
-}
-
 sub printInOrder($root) {
 
     # left child first, then parent and right child
@@ -33,9 +23,24 @@ sub printInOrder($root) {
 
 }
 
+sub search (@arr, $start, $end, $v) {
+
+    #exit if $r++ > 10;
+
+    print "search [$v] in {@arr[$start .. $end]} ... ";
+    my $ind =  @arr[$start .. $end].first($v,:k);
+    print "index found: $ind, next search is [$next-search] \n";
+    return $ind;
+
+}
+
 sub build-tree (@inOrder, @preOrder, $start, $end) {
 
   return if $start > $end;
+
+  return unless @preOrder[$preIndex];
+
+  say "\t\tconstruct node: @preOrder[$preIndex]";
 
   my $node = Node.new(@preOrder[$preIndex]);
 
@@ -48,12 +53,14 @@ sub build-tree (@inOrder, @preOrder, $start, $end) {
 
   return unless $node.data; 
 
-  my $ind = search(@inOrder,$start,$end,$node.data);
+  $next-search = @preOrder[$preIndex] || "NA";
 
-  say "deep dive, start=$start, end={$ind-1} @inOrder[$start .. $ind-1]";
+  my $ind = search(@inOrder,$start,$end,$node.data);
+  
+  say "deep dive, start=$start, end={$ind-1} |@inOrder[$start .. $ind-1]|";
   $node.left = build-tree(@inOrder,@preOrder, $start, $ind - 1);
 
-  say "deep dive, start={$ind+1}, end={$end} @inOrder[$ind+1 .. $end]";
+  say "deep dive, start={$ind+1}, end={$end} |@inOrder[$ind+1 .. $end]|";
   $node.right = build-tree(@inOrder,@preOrder, $ind + 1, $end);
 
   return $node;
