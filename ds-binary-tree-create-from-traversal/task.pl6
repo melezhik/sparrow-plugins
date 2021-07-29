@@ -1,6 +1,5 @@
 my $preIndex = 0;
 my $r = 0;
-my $next-search;
 
 class Node {
 
@@ -26,15 +25,20 @@ sub printInOrder($root) {
 sub search (@arr, $start, $end, $v) {
 
     print "search [$v] in {@arr[$start .. $end]} ... ";
-    my $ind =  @arr[$start .. $end].first($v,:k);
-    print "index found: $ind, next search is [$next-search] \n";
-    return $ind;
+    for $start .. $end  -> $i {
+      if @arr[$i] eq $v {
+        say "index found: $i";
+        return $i 
+      }
+    }
 
 }
 
 sub build-tree (@inOrder, @preOrder, $start, $end) {
 
-  exit if $r++ >= 6;
+  #exit if $r++ >= 6;
+
+  $r++;
 
   say "rec num: $r";
 
@@ -55,30 +59,31 @@ sub build-tree (@inOrder, @preOrder, $start, $end) {
 
   return unless $node.data; 
 
-  $next-search = @preOrder[$preIndex] || "NA";
-
   my $ind = search(@inOrder,$start,$end,$node.data);
   
   say "deep dive, left. start=$start, end={$ind-1} |@inOrder[$start .. $ind-1]|";
+
   my $a = build-tree(@inOrder,@preOrder, $start, $ind - 1);
 
-  say "data returned form left search: {$a||'NA'}";
+  say "data returned form left build-tree: {$a ?? $a.data !! 'Null'}";
 
-  return $node unless $a;
+  #return $node unless $a;
 
   $node.left = $a;
-  say "attach {$a.data} to {$node.data} from left";
+
+  say "attach {$a ?? $a.data !! 'Null'} to {$node.data} from left";
 
   say "deep dive, right. start={$ind+1}, end={$end} |@inOrder[$ind+1 .. $end]|";
 
   $a = build-tree(@inOrder,@preOrder, $ind + 1, $end);
 
-  say "data returned form right search: {$a||'NA'}";
+  say "data returned form right build-tree: {$a ?? $a.data !! 'Null'}";
 
-  return $node unless $a;
+  #return $node unless $a;
 
   $node.right = $a;
-  say "attach {$a.data} to {$node.data} from right";
+
+  say "attach {$a ?? $a.data !! 'Null'} to {$node.data} from right";
 
   return $node;
 
@@ -115,6 +120,10 @@ my $root = build-tree(
   0, # start 
   @in-order.elems - 1 # end
 );
+
+use Data::Dump;
+
+say Dump($root);
 
 say "=== InOrder";
 printInOrder($root);
