@@ -1,0 +1,7 @@
+{
+  "name" : "ds-binary-tree-create-from-traversal",
+  "description": "An example of creation of binary tree from InOrder and PreOrder traversals arrays",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-create-from-traversal",
+  "category" : "datastructures, algorithm"
+}
