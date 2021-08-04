@@ -1,8 +1,7 @@
 {
-
   "name" : "yaml-lint",
   "description" : "Lint yaml files",
-  "version" : "0.0.6",
+  "version" : "0.0.7",
   "category" : "utilities",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/yaml-lint"
 }
