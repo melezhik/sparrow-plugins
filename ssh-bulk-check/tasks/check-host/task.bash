@@ -1,6 +1,7 @@
 #!bash
 
-echo "check host [$host] ..."
+echo "check host [$host]"
+echo "=========================================================="
 
 if test "$host" = "localhost"; then
   cat $cmd | bash
