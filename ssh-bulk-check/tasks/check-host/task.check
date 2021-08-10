@@ -1,5 +1,4 @@
 generator: <<CODE
-!bash
-  state=$(config state)
-  cat $state
+!perl6
+  say config()<state>.IO.slurp;
 CODE
