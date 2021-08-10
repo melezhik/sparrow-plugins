@@ -1,1 +1,2 @@
 ignore_error;
+ignore_task_check_error;
