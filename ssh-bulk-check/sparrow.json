@@ -1,7 +1,7 @@
 {
   "name" : "ssh-bulk-check",
   "description" : "Check multiple hosts states over ssh",
-  "version" : "0.0.6",
+  "version" : "0.0.7",
   "category" : "monitoring",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ssh-bulk-check"
 }

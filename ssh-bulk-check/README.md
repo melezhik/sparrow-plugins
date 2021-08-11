@@ -40,7 +40,7 @@ Check command:
     user foo exists
 
 
-    # passwordless variant
+Passwordless variant:
 
     task-run "check my hosts", "ssh-bulk-check", %(
 
