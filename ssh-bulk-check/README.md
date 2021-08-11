@@ -8,7 +8,9 @@ Check multiple hosts states over ssh.
 
 # USAGE
 
-    task-run "check my hosts", "ssh-bulk-check", %(
+Raku:
+
+    my %state = task-run "check my hosts", "ssh-bulk-check", %(
 
       cmd => "files/cmd.sh",
       state => "files/state.check",
@@ -18,6 +20,9 @@ Check multiple hosts states over ssh.
 
     );
 
+    die "some checks failed" if %state<__data__><task-check-err-cnt>;
+
+Check command:
 
     cat files/check.sh
 
@@ -69,7 +74,7 @@ Ssh password
 
 # Localhost mode
 
-To run in localohost mode - without ssh, set host to `localhost`:
+To run in localhost mode - without ssh, set host to `localhost`:
 
     hosts => [ 'localhost' ]
 
@@ -84,7 +89,6 @@ cmd.sh
     echo "end check"
 
 state.check
-
 
     between: { '/tmp/ dir size' } { end \s+ check }
     
@@ -103,7 +107,6 @@ state.check
     end:    
 
 ## Check that processes run 
-
 
 cmd.sh
 
@@ -130,37 +133,6 @@ state.check
     
     end:
     
-## Example report
-
-
-    20:01:46 04/29/2019 [check my hosts] check host [192.168.0.1]
-    20:01:46 04/29/2019 [check my hosts] ===
-    20:01:46 04/29/2019 [check my hosts] /var/data
-    20:01:46 04/29/2019 [check my hosts] /var/data is a directory
-    20:01:46 04/29/2019 [check my hosts] ===
-    20:01:46 04/29/2019 [check my hosts] check /tmp/ dir size
-    20:01:46 04/29/2019 [check my hosts] 40K        /tmp/
-    20:01:46 04/29/2019 [check my hosts] end check
-    20:01:46 04/29/2019 [check my hosts] ===
-    20:01:46 04/29/2019 [check my hosts] check if nginx is alive
-    20:01:46 04/29/2019 [check my hosts] root      1243  0.0  0.0 140628  1500 ?        Ss   18:32   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
-    20:01:46 04/29/2019 [check my hosts] www-data  1244  0.0  0.0 143300  6264 ?        S    18:32   0:00 nginx: worker process
-    20:01:46 04/29/2019 [check my hosts] www-data  1245  0.0  0.0 143300  6264 ?        S    18:32   0:00 nginx: worker process
-    20:01:46 04/29/2019 [check my hosts] end check
-    20:01:46 04/29/2019 [check my hosts] ===
-    20:01:46 04/29/2019 [check my hosts] end check host [192.168.0.1]
-    [task check] ====================================================
-    [task check] check results
-    [task check] ====================================================
-    [task check] stdout match </var/data is a directory> True
-    [task check] ===
-    [task check] stdout match (r) <^^ \d+(\w+) \s+ '/tmp/'> True
-    [task check] <the size of /tmp dir is less then 1 GB> True
-    [task check] ===
-    [task check] stdout match (r) </usr/sbin/nginx -g daemon on; master_process on;> True
-    [task check] stdout match (r) <^^ 'www-data' \s+ .* \s+ worker \s+ process $$> True
-    [task check] <no more 2 nginx worker launched> True
-    
 # Requirements
 
 * ssh
@@ -170,4 +142,3 @@ state.check
 # Author
 
 Alexey Melezhik
-
