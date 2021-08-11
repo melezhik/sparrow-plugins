@@ -32,6 +32,8 @@ Check command:
     id foo && echo "user foo exists"
 
 
+Check rules:
+
     cat files/state.check
 
     /var/data exists

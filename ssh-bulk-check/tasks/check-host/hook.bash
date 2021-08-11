@@ -1,2 +1,2 @@
-ignore_error;
-ignore_task_check_error;
+ignore_error
+ignore_task_check_error
