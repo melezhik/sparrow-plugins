@@ -1,4 +1,6 @@
 generator: <<CODE
 !perl6
+  say "note: ", "verify host [{task_var('host')}] start";
   say config()<state>.IO.slurp;
+  say "note: ", "verify host [{task_var('host')}] end";
 CODE
