@@ -2,7 +2,7 @@
 
   "name" : "python-helpers",
   "description" : "Python helpers",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "gitlab",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/python-helpers"
 }

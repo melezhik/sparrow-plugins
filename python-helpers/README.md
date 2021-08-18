@@ -1,6 +1,10 @@
 # python-helpers
 
-Python helpers
+Python helpers. 
+
+# warning
+
+Some logic and code taken from an original ohmyzshell plugin, but adapted to Sparrow plugin.
 
 # install
 
