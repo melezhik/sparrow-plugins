@@ -1,0 +1,8 @@
+{
+
+  "name" : "python-helpers",
+  "description" : "Python helpers",
+  "version" : "0.0.1",
+  "category" : "gitlab",
+  "url": "https://github.com/melezhik/sparrow-plugins/tree/master/python-helpers"
+}
