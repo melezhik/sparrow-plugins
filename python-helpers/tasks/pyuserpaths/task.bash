@@ -2,6 +2,8 @@
 
 set +e
 
+echo "run tasks/pyuserpaths"
+
 targets=("python3" "python3")  # bins
 
 # Get existing interpreters.

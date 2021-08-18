@@ -2,6 +2,8 @@
 
 #set -e
 
+echo "run tasks/clean-cache"
+
 echo "clean python cache from dir: [$dir]";
 
 for d in $dir; do
