@@ -24,6 +24,10 @@ Some logic and code taken from an original ohmyzshell plugin, but adapted to Spa
 
 Deletes byte-code and cache files from a list of directories or the current one.
 
+* `pyuserpaths`
+
+Generates a command to add --user site-packages to PYTHONPATH, for all installed python versions.
+
 ## dir
 
 Raku Array. List of directories.
