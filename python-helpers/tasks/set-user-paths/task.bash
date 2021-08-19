@@ -2,7 +2,7 @@
 
 set +e
 
-echo "run tasks/pyuserpaths"
+echo "run tasks/set-user-paths"
 
 targets=("python3" "python3")  # bins
 
