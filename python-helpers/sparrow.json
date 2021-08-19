@@ -2,7 +2,7 @@
 
   "name" : "python-helpers",
   "description" : "Python helpers",
-  "version" : "0.0.5",
-  "category" : "ohmyzsh",
+  "version" : "0.0.6",
+  "category" : "ohmyzsh, python, pip",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/python-helpers"
 }

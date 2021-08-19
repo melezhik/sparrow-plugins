@@ -20,6 +20,8 @@ Some logic and code taken from original ohmyzshell plugins, but adapted to Sparr
 
 ## task
 
+Sets task to run.
+
 * `clean-cache`
 
 Deletes byte-code and cache files from a list of directories or the current one.
@@ -37,6 +39,17 @@ For system wide installation override `pip_options`:
     task-run "upg", "python-helpers", %(
       task => "pip-upgrade-all",
       pip_options => ""
+    );
+
+* `pip-install-from-req`
+
+Install packages from requirements.txt file.
+
+You can also override `pip_options`:
+
+    task-run "upg", "python-helpers", %(
+      task => "pip-install-from-req",
+      pip_options => "--verbose"
     );
 
 ## dir

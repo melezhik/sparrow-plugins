@@ -1,2 +1,3 @@
 dir: .
 pip_options: --user
+req_path: requirements.txt
