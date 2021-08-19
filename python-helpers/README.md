@@ -1,6 +1,6 @@
 # python-helpers
 
-Python helpers. 
+Python helpers for daily work.
 
 # warning
 
@@ -36,7 +36,7 @@ Update all installed packages.
 
 For system wide installation override `pip_options`:
 
-    task-run "upg", "python-helpers", %(
+    task-run "update", "python-helpers", %(
       task => "pip-upgrade-all",
       pip_options => ""
     );
@@ -47,7 +47,7 @@ Install packages from requirements.txt file.
 
 You can also override `pip_options`:
 
-    task-run "upg", "python-helpers", %(
+    task-run "inst-from-req", "python-helpers", %(
       task => "pip-install-from-req",
       pip_options => "--verbose"
     );
@@ -70,5 +70,4 @@ For example:
 # Author
 
 Alexey Melezhik
-
 
