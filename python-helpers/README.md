@@ -52,6 +52,10 @@ You can also override `pip_options`:
       pip_options => "--verbose"
     );
 
+* `pip-uninstall-from-req`
+
+Uninstall packages from requirements.txt file.
+
 ## dir
 
 Raku Array. List of directories.
