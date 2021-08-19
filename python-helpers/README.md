@@ -67,6 +67,18 @@ For example:
       dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
     );
 
+## pip
+
+Sets pip command. By default `pip3` is used.
+
+For example:
+
+    # use default pip
+    task-run "inst-from-req", "python-helpers", %(
+      task => "pip-install-from-req",
+      pip => "pip"
+    );
+
 # See also
 
 [ohmyzsh plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
