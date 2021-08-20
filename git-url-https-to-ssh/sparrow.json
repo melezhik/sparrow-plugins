@@ -1,0 +1,8 @@
+{
+
+  "name" : "git-url-https-to-ssh",
+  "description" : "Replace github git https URL by ssh equivalent",
+  "version" : "0.0.1",
+  "category" : "git, github",
+  "url": "https://github.com/melezhik/sparrow-plugins/tree/master/git-url-https-to-ssh"
+}
