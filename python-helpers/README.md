@@ -34,11 +34,11 @@ Generates a command to add --user site-packages to PYTHONPATH, for all installed
 
 Update all installed packages.
 
-For system wide installation override `pip_options`:
+For user installation override `pip_options`:
 
     task-run "update", "python-helpers", %(
       task => "pip-upgrade-all",
-      pip_options => ""
+      pip_options => "--user"
     );
 
 * `pip-install-from-req`
@@ -49,7 +49,7 @@ You can also override `pip_options`:
 
     task-run "inst-from-req", "python-helpers", %(
       task => "pip-install-from-req",
-      pip_options => "--verbose"
+      pip_options => "--user --verbose"
     );
 
 * `pip-uninstall-from-req`

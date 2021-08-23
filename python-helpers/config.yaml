@@ -1,4 +1,4 @@
 dir: .
-pip_options: --user
+pip_options: ""
 req_path: requirements.txt
 pip: pip3
