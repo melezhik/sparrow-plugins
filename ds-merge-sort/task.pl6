@@ -48,6 +48,6 @@ sub merge-sort(@a) {
 }
 
 
-say "a-sort1:", merge-sort([12, 11, 13, 5, 6, 7]);;
-say "a-sort2:", merge-sort([2, 1, 7, 5, 56, 7, 6]);;
+say "a-sort1:", merge-sort([12, 11, 13, 5, 6, 7]);
+say "a-sort2:", merge-sort([2, 1, 7, 5, 56, 7, 6]);
 
