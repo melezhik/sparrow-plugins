@@ -1,0 +1,7 @@
+{
+  "name" : "ds-selection-sort",
+  "description": "Selection sort. Raku implementation",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-selection-sort",
+  "category" : "datastructures, algorithm, sort"
+}
