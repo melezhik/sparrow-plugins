@@ -1,0 +1,7 @@
+{
+  "name" : "ds-bubble-sort",
+  "description": "Bubble sort. Raku implementation",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-bubble-sort",
+  "category" : "datastructures, algorithm, sort"
+}
