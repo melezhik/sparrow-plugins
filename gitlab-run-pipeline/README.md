@@ -18,8 +18,18 @@ Runs gitlab pipeline
         use_salt => True
       )
     );
-  
-# parameters
+
+# authentication
+
+Create `~/.gitlab.sh` with the following content:
+
+    export gitlab_trigger={token}
+
+Where {token} is a gitlab [trigger token](https://docs.gitlab.com/ee/ci/triggers/#trigger-token).
+
+Alternatively, just export `gitlab_trigger` env variable explicitly.
+
+# Plugin parameters
 
 ## gitlab_api
 
