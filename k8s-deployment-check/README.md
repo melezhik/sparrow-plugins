@@ -118,6 +118,4 @@ See some examples here:
 
 # Author
 
-Aleksei Melezhik
-
-
+Alexey Melezhik

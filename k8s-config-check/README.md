@@ -69,14 +69,6 @@ Examples:
       DB_PASSWORD => 'supeRsecRet1'
     )
 
-## command
-
-Array|Str. Docker command
-
-## command-args
-
-Array|Str. Docker command arguments
-
 # Examples
 
 See some examples here:
@@ -89,6 +81,6 @@ See some examples here:
 
 # Author
 
-Aleksei Melezhik
+Alexey Melezhik
 
 
