@@ -13,6 +13,8 @@ if config<container> {
   say ">>> verify [resource={config()<resource_type>}] [name={config<name>},namespace={config()<namespace>},container={$cnt-name}]";
 }
 
+update_state($c);
+
 if $c<env> {
 
   say "[env_start]";

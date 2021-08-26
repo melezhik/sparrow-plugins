@@ -27,6 +27,18 @@ Raku
       )
     );
 
+    # Access k8s resource
+
+    say %data.keys.perl; 
+
+    # ("env", "image", "imagePullPolicy", "command", 
+    # "terminationMessagePolicy", "name", "envFrom", "ports", 
+    # "__data__", 
+    # "args", 
+    # "terminationMessagePath", "livenessProbe", "resources", "volumeMounts").Seq
+
+    say %data.command;
+
 # Verification parameters
 
 ## name
