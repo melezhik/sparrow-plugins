@@ -1,6 +1,6 @@
 # k8s-config-check
 
-Check k8s deployments and stateful sets
+Check k8s config maps and secrets
 
 # Install
 
