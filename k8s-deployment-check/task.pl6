@@ -6,12 +6,12 @@ use MIME::Base64;
 my $c;
 
 if config<container> {
-  say ">>> verify deployment. name={config<name>},namespace={config()<namespace>},container={config()<container>}";
+  say ">>> verify [resource={config()<resource_type>}] [name={config<name>},namespace={config()<namespace>},container={config()<container>}]";
   $c = get_state()<spec><template><spec><containers>.grep({ .<name> eq config()<container> })[0];
 } else {
   $c = get_state()<spec><template><spec><containers>[0];
   my $cnt-name =  $c<name>;
-  say ">>> verify deployment. name={config<name>},namespace={config()<namespace>},container={$cnt-name}";
+  say ">>> verify [resource={config()<resource_type>}] [name={config<name>},namespace={config()<namespace>},container={$cnt-name}]";
 }
 
 if $c<env> {

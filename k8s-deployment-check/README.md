@@ -37,6 +37,12 @@ Name of deployment. Required.
 
 Name of namespace. Required.
 
+## resource_type
+
+Resource type to check:
+
+deployment|statefulset. Optional. Default value is `deployment`. Use `statefulset` to validate k8s stateful sets.
+
 ## container
 
 Name of container. Optional. If not set _the first_ container in a containers list is check.
