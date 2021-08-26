@@ -11,6 +11,7 @@ Check k8s deployment
 Raku
 
     my %data = task-run "dpl check", "k8s-deployment-check" %(
+      name => "animals",
       namespace => "pets",
       cat => %(
         command => "/usr/bin/cat",
@@ -27,6 +28,14 @@ Raku
     );
 
 # Verification parameters
+
+## name
+
+Name of deployment. Required.
+
+## namspace
+
+Name of namespace. Required.
 
 ## container
 
