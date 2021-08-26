@@ -17,9 +17,9 @@ Raku
         args => [
           "eat", "milk", "fish" 
         ],
-        env => {
-          "ENABLE_LOGGING" => "false",
-        }
+        env => [
+          "ENABLE_LOGGING"
+        ]
         volume-mounts => {
           foo-bar => "/opt/foo/bar",
         }
@@ -56,9 +56,7 @@ Hash:
 
 ## env
 
-Hash. List of environment variables in a format:
-
-    name => value
+List of environment variables
 
 ## command
 

@@ -23,11 +23,7 @@ if $c<env> {
   #say @e.perl;
 
   for @e -> $i {
-    if $i<value>:exists {
-      say "[{$i<name>}={$i<value>}]"
-    } else {
-      say "[{$i<name>}]"
-    }
+    say "[{$i<name>}]"
   }
 
   say "[env_end]";

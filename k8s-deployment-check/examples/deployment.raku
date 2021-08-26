@@ -8,9 +8,9 @@ task-run ".", %(
   volume-mounts => %(
     www-data => "/var/www"
   ),
-  env => {
-    DEMO_GREETING => "Hello from the environment",
-  },
+  env => [
+    'DEMO_GREETING',
+  ],
   #command => qw{
   #  /usr/bin/dumb-init
   #  --

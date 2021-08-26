@@ -4,9 +4,9 @@ generator: <<RAKU
 if config()<env> {
   say "note: >>> check env";
   say 'between: {"[env_start]"} {"[env_end]"}';
-  my %env = config<env>;
-  for %env -> $i {
-    say "[{$i.key}={$i.value}]"
+  my @env = config<env><>;
+  for @env -> $i {
+    say "[$i]"
   }
   say "end:";
 }
