@@ -10,6 +10,8 @@ Check k8s config maps and secrets
 
 Raku
 
+    # Verify that web-config has entries
+
     my %data = task-run "cm check", "k8s-config-check", %(
       type => "configmap",
       name => "web-config",
@@ -22,6 +24,10 @@ Raku
         'regexp: "[password=" \S+ "]" $$',
       ]
     );
+
+    # Access to entries
+
+    say %data<data><password>;
 
 # Verification parameters
 
