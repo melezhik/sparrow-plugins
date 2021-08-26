@@ -1,0 +1,7 @@
+{
+  "name" : "k8s-config-check",
+  "description" : "Check k8s config maps and secrets",
+  "version" : "0.0.1",
+  "category" : "k8s",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/k8s-config-check"
+}

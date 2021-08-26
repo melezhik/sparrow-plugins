@@ -1,0 +1,20 @@
+generator: <<RAKU
+!perl6
+
+if config()<data> {
+  say "note: >>> check data";
+  say 'between: {"[data_start]"} {"[data_end]"}';
+  if config<data>.isa(Array) {
+    for config<data><> -> $i {
+      say $i
+    }
+  } else {
+    my %h = config<data>;
+    for %h -> $i {
+      say "[{$i.key}={$i.value}]"
+    }
+  }
+  say "end:";
+}
+
+RAKU

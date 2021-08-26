@@ -33,7 +33,7 @@ Raku
 
 Name of deployment. Required.
 
-## namspace
+## namespace
 
 Name of namespace. Required.
 
@@ -81,7 +81,7 @@ Examples:
       "DB_PASSWORD"
     ]
 
-    # check if DB_PASSWORD gets read from secret named "postgresql", key "database-password"
+    # check if DB_PASSWORD var gets read from secret named "postgresql", key "database-password"
     [
       "DB_LOGIN",
       "DB_PASSWORD=secret:postgresql:database-password"
@@ -93,9 +93,9 @@ Examples:
     ]
 
     # Hash form
-
     %(
-      DB_LOGIN  => "admin"
+      DB_LOGIN  => "admin",
+      DB_PASSWORD => "secret:postgresql:database-password"
     )
 
 ## command
