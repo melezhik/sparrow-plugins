@@ -2,14 +2,24 @@ generator: <<RAKU
 !perl6
 
 if config()<env> {
+
   say "note: >>> check env";
   say 'between: {"[env_start]"} {"[env_end]"}';
-  my @env = config<env><>;
-  for @env -> $i {
-    say "[$i]"
+
+  if config<env>.isa(Array) {
+    for config<env><> -> $i {
+      say "regexp: ^^ '[' '$i' '=' .* ']' \$\$"
+    }
+  } else {
+    my %h = config<env>;
+    for %h -> $i {
+      say "[{$i.key}={$i.value}]"
+    }
   }
+
   say "end:";
 }
+
 
 if config()<volume-mounts> {
   say "note: >>> check volume mounts";

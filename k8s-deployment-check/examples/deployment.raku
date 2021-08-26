@@ -11,8 +11,4 @@ task-run ".", %(
   env => [
     'DEMO_GREETING',
   ],
-  #command => qw{
-  #  /usr/bin/dumb-init
-  #  --
-  #}
 );

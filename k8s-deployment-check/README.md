@@ -1,6 +1,6 @@
 # k8s-deployment-check
 
-Check k8s deployment
+Check k8s deployments and stateful sets
 
 # Install
 
@@ -71,7 +71,32 @@ Hash:
 
 ## env
 
-List of environment variables
+Array|Hash of environment variables.
+
+Examples:
+
+    # just check environment variables names
+    [
+      "DB_LOGIN",
+      "DB_PASSWORD"
+    ]
+
+    # check if DB_PASSWORD gets read from secret named "postgresql", key "database-password"
+    [
+      "DB_LOGIN",
+      "DB_PASSWORD=secret:postgresql:database-password"
+    ]
+
+    # check explicit values
+    [
+      "DB_LOGIN=admin"
+    ]
+
+    # Hash form
+
+    %(
+      DB_LOGIN  => "admin"
+    )
 
 ## command
 

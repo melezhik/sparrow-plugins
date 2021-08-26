@@ -1,7 +1,6 @@
 #!raku
 
 use JSON::Tiny;
-use MIME::Base64;
 
 my $c;
 
@@ -20,10 +19,14 @@ if $c<env> {
 
   my @e = $c<env><>;
 
-  #say @e.perl;
-
   for @e -> $i {
-    say "[{$i<name>}]"
+    if $i<value>:exists {
+      say "[{$i<name>}={$i<value>}]"
+    } elsif $i<valueFrom>:exists and $i<valueFrom><secretKeyRef>:exists and $i<valueFrom><secretKeyRef><key>:exists {
+      say "[{$i<name>}=secret:{$i<valueFrom><secretKeyRef><name>}:{$i<valueFrom><secretKeyRef><key>}]"
+    } else {
+      say "[{$i<name>}]"
+    }
   }
 
   say "[env_end]";
@@ -54,8 +57,6 @@ if $c<command> {
 
   say "[command_start]";
 
-  #say $c<command>.perl;
-
   for $c<command><> -> $i {
     say $i;
   }
@@ -68,8 +69,6 @@ if $c<command> {
 
   say "[command_args_start]";
 
-  #say $c<args>.perl;
-
   for $c<args><> -> $i {
     say $i;
   }
@@ -77,7 +76,6 @@ if $c<command> {
   say "[command_args_end]";
 
 }
-
 
 say "==================================================================";
 
