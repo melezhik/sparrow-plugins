@@ -16,9 +16,11 @@ sub merge-sort(@a) {
 
   say "middle index: $m ({@a[$m]})";
 
-  @tmp = merge-sort(@a[0 .. $m]); my @left = @tmp[1].flat; $inv-cnt += @tmp[0];
+  my $cnt;
 
-  @tmp = merge-sort(@a[$m + 1 .. *]); my @right = @tmp[1].flat; $inv-cnt += @tmp[0];
+  ($cnt, my @left) = merge-sort(@a[0 .. $m]).flat; $inv-cnt += $cnt;
+
+  ($cnt, my @right) =  merge-sort(@a[$m + 1 .. *]).flat; $inv-cnt += $cnt;
 
   say "join {@left} <=> {@right}";
 
