@@ -1,8 +1,9 @@
-my $inv-cnt = 0;
 
 sub merge-sort(@a) {
 
   my @tmp;
+
+  my $inv-cnt = 0;
 
   say @a.perl;
 
@@ -15,9 +16,9 @@ sub merge-sort(@a) {
 
   say "middle index: $m ({@a[$m]})";
 
-  @tmp = merge-sort(@a[0 .. $m]); my @left = @tmp[1].flat;
+  @tmp = merge-sort(@a[0 .. $m]); my @left = @tmp[1].flat; $inv-cnt += @tmp[0];
 
-  @tmp = merge-sort(@a[$m + 1 .. *]); my @right = @tmp[1].flat;
+  @tmp = merge-sort(@a[$m + 1 .. *]); my @right = @tmp[1].flat; $inv-cnt += @tmp[0];
 
   say "join {@left} <=> {@right}";
 
@@ -57,6 +58,8 @@ sub merge-sort(@a) {
 
 
 #say "a-sort1:", merge-sort([12, 11, 13, 5, 6, 7]);
-#say "a-sort2:", merge-sort([2, 1, 7, 5, 56, 7, 6]);
 
+say "a-sort2:", merge-sort([2, 1, 7, 5, 56, 7, 6]);
 say "a-sort3:", merge-sort([8, 4, 2, 1]);
+say "a-sort4:", merge-sort([3,1,2]);
+say "a-sort5:", merge-sort([1,2,3,4,5,6]);

@@ -1,0 +1,7 @@
+{
+  "name" : "ds-inv-count-merge-sort",
+  "description": "Inversions count by merge sort. Raku implementation",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-inv-count-merge-sort",
+  "category" : "datastructures, algorithm, sort"
+}
