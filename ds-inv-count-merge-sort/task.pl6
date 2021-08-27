@@ -65,3 +65,4 @@ say "a-sort2:", merge-sort([2, 1, 7, 5, 56, 7, 6]);
 say "a-sort3:", merge-sort([8, 4, 2, 1]);
 say "a-sort4:", merge-sort([3,1,2]);
 say "a-sort5:", merge-sort([1,2,3,4,5,6]);
+say "a-sort6:", merge-sort([3,5,1,4,2]);
