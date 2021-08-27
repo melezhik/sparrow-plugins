@@ -1,7 +1,7 @@
 {
   "name" : "k8s-deployment-check",
   "description" : "Check k8s deployments and stateful sets",
-  "version" : "0.0.8",
+  "version" : "0.0.9",
   "category" : "k8s",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/k8s-deployment-check"
 }

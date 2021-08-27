@@ -37,7 +37,7 @@ Raku
     # "args", 
     # "terminationMessagePath", "livenessProbe", "resources", "volumeMounts").Seq
 
-    say %data.command;
+    say %data<command>;
 
 # Verification parameters
 
