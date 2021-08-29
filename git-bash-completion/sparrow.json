@@ -1,0 +1,8 @@
+{
+
+  "name" : "git-bash-completion",
+  "description" : "Installs git bash completion",
+  "version" : "0.0.1",
+  "category" : "git, completion, bash",
+  "url": "https://github.com/melezhik/sparrow-plugins/tree/master/git-bash-completion"
+}
