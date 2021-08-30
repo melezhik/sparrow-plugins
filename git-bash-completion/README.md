@@ -14,6 +14,12 @@ Raku
 
 curl
 
+# os supported
+
+* `Darwin`
+
+For other Linux systems use native packages
+
 # author
 
 Alexey Melezhik
