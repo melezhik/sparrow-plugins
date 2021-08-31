@@ -1,0 +1,47 @@
+note: check header
+regexp: ^^ "name=" \S+ $$
+
+generator: <<RAKU
+!perl6
+
+if config()<annotations> {
+
+  say "note: >>> check annotations";
+  say 'between: {"[annotations_start]"} {"[annotations_end]"}';
+
+  if config<annotations>.isa(Array) {
+    for config<annotations><> -> $i {
+      say "regexp: ^^ '[' '$i' '=' .* ']' \$\$"
+    }
+  } else {
+    my %h = config<annotations>;
+    for %h -> $i {
+      say "[{$i.key}={$i.value}]"
+    }
+  }
+
+  say "end:";
+}
+
+if config()<labels> {
+
+  say "note: >>> check labels";
+  say 'between: {"[labels_start]"} {"[labels_end]"}';
+
+  if config<labels>.isa(Array) {
+    for config<labels><> -> $i {
+      say "regexp: ^^ '[' '$i' '=' .* ']' \$\$"
+    }
+  } else {
+    my %h = config<labels>;
+    for %h -> $i {
+      say "[{$i.key}={$i.value}]"
+    }
+  }
+
+  say "end:";
+}
+
+
+RAKU
+
