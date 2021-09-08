@@ -1,8 +1,7 @@
 {
   "name" : "stocks",
-  "description" : "Simple wrapper for stocks script from Bash-Snippets",
-  "version" : "0.0.5",
-  "url" : "https://github.com/alexanderepstein/Bash-Snippets#stocks",
-  "category": "utilities",
-  "doc" : "sparrow.md"
+  "description" : "Get stocks price using yfinance module",
+  "version" : "0.1.0",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/stocks",
+  "category": "utilities, python, money, stocks"
 }

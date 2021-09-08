@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Simple wrapper for `stocks` script from Bash-Snippets.
+Get stocks price using yfinance module
 
 # INSTALL
 
@@ -8,18 +8,12 @@ Simple wrapper for `stocks` script from Bash-Snippets.
 
 # USAGE
 
-Basic usage:
+    $ s6 --plg-run stocks@name=MSFT
 
-    $ s6 --plg-run stocks <args>
-    
-For example:
+# See also
 
-    $ s6 --plg-run stocks@args=Google
+[yfinance](https://github.com/ranaroussi/yfinance)
 
-For stocks's arguments description follow [https://github.com/alexanderepstein/Bash-Snippets#stocks](https://github.com/alexanderepstein/Bash-Snippets#stocks)
-    
 # Authors
 
-* The author of main script is [Alex Epstein](https://github.com/alexanderepstein)
-
-* The plugin maintainer is [Alexey Melezhik](https://github.com/melezhik/)
+Alexey Melezhik
