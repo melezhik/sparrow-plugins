@@ -1,0 +1,7 @@
+{
+  "name" : "cro-yaml",
+  "description" : "Simple cro yaml file generator",
+  "version" : "0.0.1",
+  "category" : "utilities, yaml, cro, raku, web",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/cro-yaml"
+}
