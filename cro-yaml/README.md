@@ -30,7 +30,7 @@ Application id. Required
 
 ## name
 
-Application description
+Application description. Required
 
 # Author
 
