@@ -1,0 +1,7 @@
+{
+  "name" : "config-bindish-check",
+  "description" : "Lint BIND9/named kind of config files",
+  "version" : "0.0.1",
+  "category" : "utilities, raku, config, bind, named",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/config-bindish-check"
+}
