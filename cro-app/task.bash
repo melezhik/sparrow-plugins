@@ -36,3 +36,16 @@ echo "generate templates"
 mkdir -p templates
 
 echo "<.message>" > templates/main.crotmp
+
+
+echo "================================="
+
+echo "consider adding following dependencies to your META6.json"
+
+echo cro
+echo Cro::HTTP
+echo Cro::WebApp
+
+echo "================================="
+
+echo "zef --/test cro Cro::HTTP Cro::WebApp"
