@@ -8,7 +8,7 @@ Lint BIND9/named kind of config files
 
 # USAGE
 
-    # Lint files that modified in terms of git
+    # Lint config.named file
     task-run "conf-lint", "config-bindish-check", %(
       path => "config.named"
     );
