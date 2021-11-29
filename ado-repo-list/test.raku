@@ -1,7 +1,7 @@
 use Sparrow6::DSL;
 
 my %state = task-run ".", %( 
-  project => "test"
+  project => "test2"
 );
 
 for %state<list><> -> $r {

@@ -1,3 +1,7 @@
+# 0.0.3
+
+Revert task.check but with more accurate regexp
+
 # 0.0.2
 
 Nov 29, 2021 - remove task checks cause they are fragile (200 VS 200 OK)
