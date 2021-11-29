@@ -1,4 +1,4 @@
-# ado-repo-create
+# ado-repo-list
 
 List Git repositories in Azure Devops project
 
@@ -7,7 +7,6 @@ List Git repositories in Azure Devops project
     s6 --install ado-repo-list
 
 # Usage
-
 
 CLI
 
@@ -20,9 +19,9 @@ API
     );
 
     for %state<list><> -> $r {
-      say $r<name>;
-      say $r<id>;
-      say $r<defaultBranch>;
+      say "name: {$r<name>}";
+      say "id: {$r<id>}";
+      say "default branch: {$r<defaultBranch>||'NA'}";
     }
 
 # Authentication
