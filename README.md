@@ -15,4 +15,3 @@ My [Sparrow6](https://github.com/melezhik/sparrow6) plugins.
 # Author
 
 Alexey Melezhik
-
