@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-List total commits by author (sorted by commit count)
+Get directories updated between git commits
 
 # INSTALL
 
@@ -39,10 +39,6 @@ Git commit sha
 # Requirements
 
 Git client
-
-# See also
-
-https://gist.github.com/eyecatchup/3fb7ef0c0cbdb72412fc
 
 # Author
 
