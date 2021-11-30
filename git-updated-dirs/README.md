@@ -25,7 +25,16 @@ Directory with a local git repo
 
 ## level
 
-Level of directories. Optional. Default value is `0` 
+Level of directories. Optional. Default value is `0` -  the first level directories. 
+(`1` for the second level directories, so on ).
+
+## commit_old 
+
+Git commit sha
+
+## commit_new
+
+Git commit sha
 
 # Requirements
 
