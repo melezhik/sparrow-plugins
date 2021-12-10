@@ -4,7 +4,7 @@ cd $(config dir)
 
 echo "pwd:" `pwd`
 
-echo "getting diff ..."
+echo "getting diff: $(config commit_old) => $(config commit_new)"
 
 git diff --name-status $(config commit_old)..$(config commit_new)
 

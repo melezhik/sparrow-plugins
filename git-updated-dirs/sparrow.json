@@ -1,7 +1,7 @@
 {
   "name" : "git-updated-dirs",
   "description" : "Get directories updated between git commits",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-updated-dirs",
   "category" : "git, utils"
 }
