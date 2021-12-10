@@ -1,6 +1,6 @@
 # Test
 
-This is a test plugin.
+This is a test plugin
 
 # Usage
 
