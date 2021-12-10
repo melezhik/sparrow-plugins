@@ -10,21 +10,19 @@ Check k8s deployments and stateful sets
 
 Raku
 
-    my %data = task-run "dpl check", "k8s-deployment-check" %(
+    my %data = task-run "dpl check", "k8s-deployment-check", %(
       name => "animals",
       namespace => "pets",
-      cat => %(
-        command => "/usr/bin/cat",
-        args => [
-          "eat", "milk", "fish" 
-        ],
-        env => [
-          "ENABLE_LOGGING"
-        ]
-        volume-mounts => {
-          foo-bar => "/opt/foo/bar",
-        }
-      )
+      command => "/usr/bin/cat",
+      args => [
+        "eat", "milk", "fish" 
+      ],
+      env => [
+        "ENABLE_LOGGING"
+      ]
+      volume-mounts => {
+        foo-bar => "/opt/foo/bar",
+      }
     );
 
     # Access k8s resource
@@ -109,6 +107,10 @@ Examples:
       DB_LOGIN  => "admin",
       DB_PASSWORD => "secret:postgresql:database-password"
     )
+
+## image
+
+Str. Image name
 
 ## command
 

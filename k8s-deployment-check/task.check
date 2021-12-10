@@ -1,6 +1,13 @@
 generator: <<RAKU
 !perl6
 
+if config()<image> {
+
+  say "note: >>> check image";
+  say "[image={config()<image>}]";
+
+}
+
 if config()<env> {
 
   say "note: >>> check env";

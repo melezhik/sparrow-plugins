@@ -15,6 +15,10 @@ if config<container> {
 
 update_state($c);
 
+if $c<image> {
+  say "[image={$c<image>}]"
+}
+
 if $c<env> {
 
   say "[env_start]";
