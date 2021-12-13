@@ -19,7 +19,7 @@ if $c<image> {
   say "[image={$c<image>}]"
 }
 
-if $c<env> || ( $c<env> || config()<verbose> ) {
+if $c<env> && ( config()<env> || config()<verbose> ) {
 
   say "[env_start]";
 

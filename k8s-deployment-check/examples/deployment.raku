@@ -8,9 +8,9 @@ task-run ".", %(
   volume-mounts => %(
     shared-files => "/usr/share/nginx\@html"
   ),
-  env => [
+  env2 => [
     'DEMO_GREETING',
   ],
-  #verbose => True
+  verbose => True,
   image => "nginx:1.7.9"
 );
