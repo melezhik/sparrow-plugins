@@ -11,4 +11,6 @@ task-run ".", %(
   env => [
     'DEMO_GREETING',
   ],
+  #verbose => True
+  image => "nginx:1.7.9"
 );

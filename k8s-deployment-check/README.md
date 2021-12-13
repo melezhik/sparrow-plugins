@@ -13,6 +13,7 @@ Raku
     my %data = task-run "dpl check", "k8s-deployment-check", %(
       name => "animals",
       namespace => "pets",
+      image => "blackcat:1.0.0",
       command => "/usr/bin/cat",
       args => [
         "eat", "milk", "fish" 
@@ -56,6 +57,10 @@ deployment|statefulset. Optional. Default value is `deployment`. Use `statefulse
 ## container
 
 Name of container. Optional. If not set _the first_ container in a containers list is check.
+
+## image
+
+Image name.
 
 ## volume-mounts
 
@@ -119,6 +124,12 @@ Array|Str. Docker command
 ## command-args
 
 Array|Str. Docker command arguments
+
+## verbose
+
+Enable verbose mode. Dumps many k8s resource attributes, not only those are being checked.
+
+Optional. Default value is `False` ( disabled )
 
 # Examples
 
