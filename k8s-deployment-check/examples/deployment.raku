@@ -3,10 +3,10 @@
 use Sparrow6::DSL;
 
 task-run ".", %(
-  name => "nginx-deployment",
-  namespace => "melezhik-sandbox",
+  name => "nginx-sandbox",
+  namespace => "default",
   volume-mounts => %(
-    www-data => "/var/www"
+    shared-files => "/usr/share/nginx\@html"
   ),
   env => [
     'DEMO_GREETING',
