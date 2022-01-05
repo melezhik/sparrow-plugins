@@ -21,7 +21,7 @@ if test -f ./config.sh; then
 fi
 
 rm -rf *.tar.gz
-wget $distro
+wget -q $distro
 tar xzf *.tar.gz
 
 echo "./config.sh --acceptTeeEula --unattended --url $url --auth pat --token **** --agent $agent --runAsService"
