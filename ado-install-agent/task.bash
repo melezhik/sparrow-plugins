@@ -15,7 +15,7 @@ mkdir -p $workdir/$agent
 
 cd $workdir/$agent
 
-if test -f ./config.sh; then
+if test -f config.sh; then
   echo "seems agent is already installed, trying to remove it first ..."
   ./config.sh remove  --auth pat --token $token
 fi
