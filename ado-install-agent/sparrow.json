@@ -1,7 +1,7 @@
 {
   "name" : "ado-install-agent",
   "description" : "Install/configure ado build agent",
-  "version" : "0.0.7",
+  "version" : "0.0.8",
   "category" : "ado",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-install-agent"
 }

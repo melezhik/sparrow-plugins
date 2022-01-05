@@ -17,7 +17,11 @@ cd $workdir/$agent
 
 if test -f config.sh; then
   echo "seems agent is already installed, trying to remove it first ..."
+  set +e
+  sudo ./svc.sh stop
+  sudo ./svc.sh uninstall
   ./config.sh remove  --auth pat --token $token
+  set -e
 fi
 
 rm -rf *.tar.gz
