@@ -15,6 +15,25 @@ Install/configure ado build agent
       token => "foo-bar-baz-foo-bar-baz",
     );
 
+# Parameters
+
+## distro
+
+Link to agent distribution tarball
+
+## url
+
+Ado server URL, should include org name
+
+## agent
+
+Agent name. Required. Should not be empty
+
+## token
+
+Ado PAT
+
+
 # Author
 
 Aleksei Melezhik
