@@ -11,7 +11,7 @@ if test -z $agent; then
   exit 1
 fi
 
-cp $root_dir/$task_dir/install.bash /home/$user/.agent-install.bash
+cp $task_dir/install.bash /home/$user/.agent-install.bash
 
 chmod a+xr /home/$user/.agent-install.bash
 
