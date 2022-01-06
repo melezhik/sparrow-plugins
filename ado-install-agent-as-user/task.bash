@@ -11,6 +11,11 @@ if test -z $agent; then
   exit 1
 fi
 
-su --shell `type -P bash` --login -c "${root_dir}/install.bash $distro $url $token $agent" $user
+sudo cp $root_dir/install.bash /home/$user/.agent-install.bash
+
+sudo chmod a+xr /home/$user/.agent-install.bash
+
+
+su --shell `type -P bash` --login -c "${root_dir}/.agent-install.bash $distro $url $token $agent" $user
 
 echo "{ 'dir' : '/home/$user/.agents/$agent', 'command' : './run.sh'  } " > $cache_root_dir/state.json
