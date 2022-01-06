@@ -5,6 +5,7 @@ url=$(config url)
 token=$(config token)
 agent=$(config agent)
 user=$(config user)
+action=$(config action)
 
 if test -z $agent; then
   echo "agent parameter is required"
