@@ -4,6 +4,7 @@ distro=$1
 url=$2
 token=$3
 agent=$4
+
 workdir=~/.agents
 
 if test -z $agent; then
@@ -35,14 +36,3 @@ echo "./config.sh --acceptTeeEula --unattended --url $url --auth pat --token ***
 --auth pat \
 --token $token \
 --agent $agent \
-
-echo "spawning agnent process ..."
-
-nohup ./run.sh > agent.log 2>&1 &
-
-echo $! > .pid
-
-echo "pid:"
-
-cat .pid
-
