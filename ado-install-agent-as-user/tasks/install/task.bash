@@ -11,7 +11,7 @@ if test -z $agent; then
   exit 1
 fi
 
-sudo cp $root_dir/install.bash /home/$user/.agent-install.bash
+sudo cp $root_dir/$task_dir/install.bash /home/$user/.agent-install.bash
 
 sudo chmod a+xr /home/$user/.agent-install.bash
 
