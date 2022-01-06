@@ -1,11 +1,17 @@
 set -e
 
-distro=$1
-url=$2
+action=$1
+agent=$2
 token=$3
-agent=$4
+distro=$4
+url=$5
 
 workdir=~/.agents
+
+if test -z $action; then
+  echo "action parameter is required"
+  exit 1
+fi
 
 if test -z $agent; then
   echo "agent parameter is required"
@@ -21,6 +27,11 @@ if test -f config.sh; then
   set +e
   ./config.sh remove  --auth pat --token $token
   set -e
+fi
+
+if test $action = "uninstall"; then
+  echo "action = uninstall, exiting"
+  exit
 fi
 
 rm -rf *.tar.gz

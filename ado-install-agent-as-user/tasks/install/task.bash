@@ -15,5 +15,5 @@ cp $task_dir/install.bash /home/$user/.agent-install.bash
 
 chmod a+xr /home/$user/.agent-install.bash
 
-su --shell `type -P bash` --login -c "/home/$user/.agent-install.bash $distro $url $token $agent" $user
+su --shell `type -P bash` --login -c "/home/$user/.agent-install.bash $action $agent $token $distro $url" $user
 
