@@ -9,12 +9,20 @@ Install/configure ado build agent with user privileges
 
 # Usage
 
-    task-run "install", "ado-install-agent-as-user", %(
+    my %state = task-run "install", "ado-install-agent-as-user", %(
       distro => "https://vstsagentpackage.azureedge.net/agent/2.195.2/vsts-agent-linux-x64-2.195.2.tar.gz",
-      url => "https://dev.azure.com/melezhik77",
+      url => "https://dev.azure.com/test77",
       agent => "agent01",
-      token => "foo-bar-baz-foo-bar-baz",
-      user => "agent"
+      token => "foo-bar-baz-000",
+      user => "agent",
+    );
+
+    say %state.perl;
+
+    systemd-service "ado-agent", %(
+      user => "agent",
+      workdir => %state<dir> ,
+      command => "/usr/bin/bash --login -c '{%state<command>}'"
     );
 
 # Parameters
@@ -38,6 +46,17 @@ Ado PAT
 ## user
 
 Linux user name, agent will run with the user privileges
+
+# Output
+
+## dir
+
+agent working dir
+
+## command
+
+agent run command
+
 
 # Author
 

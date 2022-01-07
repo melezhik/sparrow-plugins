@@ -1,0 +1,7 @@
+{
+  "name" : "openssl-cert",
+  "description" : "Create self signed SSL cert using openssl client",
+  "version" : "0.0.1",
+  "category" : "ssl",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/openssl-cert"
+}
