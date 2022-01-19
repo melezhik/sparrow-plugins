@@ -8,13 +8,14 @@ Create azure service principle and grant contributor permission to resource grou
 
 # Usage
 
-    task-run "create", "azure-create-sp", %(
+    my %state = task-run "create", "azure-create-sp", %(
       name => "sp_ci",
       rg => "my resource group",
       subscription => "12345678",
     );
 
-    say %state.perl;
+    say %state<appId>;
+    say %state<password>;
 
 # Parameters
 
