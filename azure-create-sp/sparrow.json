@@ -1,0 +1,7 @@
+{
+  "name" : "azure-create-sp",
+  "description" : "Create azure service principle",
+  "version" : "0.0.1",
+  "category" : "ado, azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-create-sp"
+}
