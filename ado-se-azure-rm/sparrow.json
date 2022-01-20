@@ -1,0 +1,7 @@
+{
+  "name" : "ado-se-azure-rm",
+  "description" : "Create ado service endpoint for Azure RM",
+  "version" : "0.0.1",
+  "category" : "ado, azure",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ado-se-azure-rm"
+}
