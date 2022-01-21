@@ -2,7 +2,6 @@
 
 Simple wrapper for `curl`.
 
-
 # INSTALL
 
     $ s6 --install curl
