@@ -1,5 +1,8 @@
-mode: create
 name: dpl01
+mode: create
+
+subgroup: group
+location: eastus
+
 verbose: false
 app_service_restart: false
-location: eastus

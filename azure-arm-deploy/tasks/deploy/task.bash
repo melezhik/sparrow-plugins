@@ -1,12 +1,14 @@
 set -e
 
-group=$(config group)
 name=$(config name)
+mode=$(config mode)
 template=$(config template)
+
+group=$(config group)
+subgroup=$(config subgroup)
 
 location=$(config template)
 
-mode=$(config mode)
 verbose=$(config verbose)
 
 app_service_restart=$(config app_service_restart)
