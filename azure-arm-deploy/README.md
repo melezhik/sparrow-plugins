@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Simple wrapper for az group deployment command.
+Simple wrapper for az deployment command.
 
 # Why
 
@@ -16,16 +16,10 @@ Because it makes my life simpler.
 
 # USAGE
 
-    # Deploy, pass parameters from file
-    task-run "deploy", "azure-arm-deploy", %(
-      group => "rg01", # azure resource group
-      template => "/path/to/template.json", # ARM/Bicep template
-      parameters => "/path/to/params.json", # parameters file
-    );
-
-    # Deploy, pass parameters as Raku Hash
+    # Group deploy, ARM parameters passed as Raku Hash
 
     task-run "deploy", "azure-arm-deploy", %(
+      name => "VMs", # deployment name, optional
       group => "assmt-dev",
       template => "bicep/appservice.bicep",
       parameters => {
@@ -37,19 +31,41 @@ Because it makes my life simpler.
       verbose => True,
     );
 
+    # Group deployment, ARM parameters passed from from file
+
+    task-run "deploy", "azure-arm-deploy", %(
+      group => "rg01", # azure resource group
+      template => "/path/to/template.json", # ARM/Bicep template
+      parameters => "/path/to/params.json", # ARM parameters file
+    );
+
     # Restart Azure app service upon successful deployment:
 
     task-run "deploy and restart", "azure-arm-deploy", %(
+      name => "webapp", # deployment name, optional
       group => "rg01", # azure resource group
-      name => "dpl0",
       template => "/path/to/template.json", # ARM/Bicep template
       parameters => "/path/to/params.json", # parameters
       app_service => "web-app", # Azure app service name
       app_service_restart => True, # restart app service
     );
 
+    # Subscrption deployment, resource group
+    task-run "deploy", "azure-arm-deploy", %(
+      subgroup => "sub",  # we deploy into a subscription
+      location => "eastus2", # subscription deployment needs a location
+      template => "bicep/rg.bicep",
+      parameters => { # ARM parameters for template
+        groupName => { value => "RG01" },
+        groupLocation => { value => "eastus2" },
+      },
+    );
 
 # Parameters
+
+## suboup
+
+Deployment subgroup. `group|sub`, optional, default value is `group` ( corresponds resource group deployment )
 
 ## group
 
