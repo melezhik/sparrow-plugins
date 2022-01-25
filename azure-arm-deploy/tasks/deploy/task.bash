@@ -7,7 +7,7 @@ template=$(config template)
 group=$(config group)
 subgroup=$(config subgroup)
 
-location=$(config template)
+location=$(config location)
 
 verbose=$(config verbose)
 
