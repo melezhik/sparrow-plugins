@@ -2,7 +2,7 @@
 
   "name" : "azure-role",
   "description" : "Manages Azure roles assignments",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "category" : "azure, security",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-role"
 }
