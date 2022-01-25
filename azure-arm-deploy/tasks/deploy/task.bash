@@ -14,7 +14,7 @@ verbose=$(config verbose)
 app_service_restart=$(config app_service_restart)
 app_service=$(config app_service)
 
-echo "deployment into subgroup: {$subgroup}, mode: ${mode}, verbose: {$verbose}, template: {$template}"
+echo "deployment into subgroup: ${subgroup}, mode: ${mode}, verbose: {$verbose}, template: {$template}"
 
 if test "${verbose}" = "True"; then
   verbose_opt="--verbose"
@@ -26,7 +26,7 @@ else
 fi
 
 if test "${mode}" = "create"; then
-  if test "${suboup}" = "group"; then
+  if test "${subgroup}" = "group"; then
     echo az deployment group create $verbose_opt -n "${name}" -g "${group}" --template-file "${template}" --parameters @"${parameters}"
     az deployment group create $verbose_opt -n "${name}" -g "${group}" --template-file "${template}" --parameters @"${parameters}" -o table 2>&1
     if test "${app_service_restart}" = "True"; then
