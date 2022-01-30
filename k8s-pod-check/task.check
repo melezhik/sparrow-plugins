@@ -1,0 +1,4 @@
+generator: <<CODE
+!perl6
+say "regexp: ^^ '{config()<name>}' \\S+ \\s+ POD_OK \$\$";
+CODE
