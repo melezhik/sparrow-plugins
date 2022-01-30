@@ -26,6 +26,10 @@ Prefix in pod name. Required.
 
 K8s namespace. Optional, default value is `default`
 
+## num
+
+Number of pods running. Optional. Default value is `1`
+
 # Dependencies
 
 `k8s cli`

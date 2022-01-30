@@ -1,5 +1,7 @@
 use Data::Dump;
 
+say config().perl;
+
 #say Dump(get_state());
 
 say "===========================";
