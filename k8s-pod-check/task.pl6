@@ -6,7 +6,14 @@ say config().perl;
 
 say "===========================";
 
-print "{cache_root_dir()}/data.txt".IO.slurp;
+my $i = 0;
+
+for "{cache_root_dir()}/data.txt".IO.lines -> $l {
+
+  say $l if ++$i == 1;
+  say $l if $l.contains(config()<name>);
+
+};
 
 say "===========================";
 
@@ -18,14 +25,16 @@ for get_state()<items><> -> $c {
   my $cnt-ready = $c<status><containerStatuses><>.grep(.<ready>).elems;
   my $cnt-not-ready = $c<status><containerStatuses><>.grep({! .<ready> }).elems;
 
- if $c<status><phase> eq "Running" 
-    && $cnt-not-ready == 0 
-    && $c<status><containerStatuses>.elems == $cnt-ready {
-    say $c<metadata><name>, " POD_OK"
+  next unless $c<metadata><name>.contains(config()<name>);
+
+  if $c<status><phase> eq "Running" 
+      && $cnt-not-ready == 0 
+      && $c<status><containerStatuses>.elems == $cnt-ready {
+      say $c<metadata><name>, " POD_OK"
   } else {
     say $c<metadata><name>, " POD_NOT_OK"
   }
- 
+   
   #say "image=[{$c<image>}] ready=[{$c<ready>}] started=[{$c<started>}]"
 }
 
