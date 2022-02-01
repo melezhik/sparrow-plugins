@@ -50,6 +50,30 @@ For example:
 
 Enable debug mode. Optional. Default value is false.
 
+# Authentication
+
+Create file named `~/.sparrow-azure-devops.sh`
+
+```
+token=$PAT
+api=https://dev.azure.com/$organization
+user=$api_user
+```
+
+Where:
+
+* `user`
+
+User to sign requests
+
+* `token`
+
+User personal access token (PAT)
+
+* `api`
+
+Azure DevOps API URL
+
 # Requirements
 
 curl
