@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Get and print variable group in convenient way.
+Get/Print Ado variable group.
 
 # INSTALL
 
@@ -9,92 +9,46 @@ Get and print variable group in convenient way.
 # USAGE
 
     task-run "read my vars", "ado-read-variable-groups", %(
-      organization => "CompanyX",
-      project => "CoolKids"
-      group_id => 1234,
-      user  => "buddy",
-      token => "paSworRdd"
+      project => "CoolKids",
+      name => "funky_vars",
     );
-
-# Sample Output
-
-    20:01:15 05/03/2019 [read my vars] ================[ TestGroup] =================
-    20:01:15 05/03/2019 [read my vars] +-------------+---------------+
-    20:01:15 05/03/2019 [read my vars] | name        | value         |
-    20:01:15 05/03/2019 [read my vars] O=============O===============O
-    20:01:15 05/03/2019 [read my vars] | email       | mail@mail.org |
-    20:01:15 05/03/2019 [read my vars] +-------------+---------------+
-    20:01:15 05/03/2019 [read my vars] | environment | dev           |
-    20:01:15 05/03/2019 [read my vars] +-------------+---------------+
-    20:01:15 05/03/2019 [read my vars] | login       | admin         |
-    20:01:15 05/03/2019 [read my vars] +-------------+---------------+
-    20:01:15 05/03/2019 [read my vars] | name        | Alexey        |
-    20:01:16 05/03/2019 [read my vars] +-------------+---------------+
-    20:01:16 05/03/2019 [read my vars] | password    | qwerty        |
-    20:01:16 05/03/2019 [read my vars] +-------------+---------------+
-    20:01:16 05/03/2019 [read my vars] | product_id  | 1002          |
-    20:01:16 05/03/2019 [read my vars] +-------------+---------------+
 
 # State
 
-Returns a list of variables, if you need to handle the one programmatically
+Returns a list of variables:
 
     my %state = task-run "read my vars", "ado-read-variable-groups", %(
-      organization => "CompanyX",
       project => "CoolKids"
-      group_id => 1234,
-      user  => "buddy",
-      token => "paSworRdd"
+      name => "funky_vars",
     );
-  
+
     for %state<list><> -> $i {
-    
+
       say "{$i<name>} = {$i<value>}";
-    
+
     }
-    
-
-Output:
-
-    email = mail@mail.org
-    environment = dev
-    login = admin
-    name = Alexey
-    password = qwerty
-    product_id = 1002
-        
 
 # Parameters
 
-## organization
-
-Ado organization
-
 ## project
 
-Ado project
+Ado project name. Required.
 
-## group_id
+## name
 
-  Group Variable ID
-
-## user
-
-Ado user, used for authentication
+  Variable group name. Required.
 
 ## only
 
-Only load given list of variables, for example:
+Get only selected variables. Optional.
 
-  only => ( 'login', 'password' )
+For example:
 
-## token
-
-Ado token, used for authentication
+  only => ( 'login', 'password' ) # login and password variables only
 
 ## debug
 
-Enable debug mode to print http request data
+Enable debug mode. Optional. Default value is false.
 
 # Requirements
 
