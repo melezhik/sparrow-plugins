@@ -2,8 +2,6 @@ use Data::Dump;
 
 say config().perl;
 
-#say Dump(get_state());
-
 say "===========================";
 
 my $i = 0;
@@ -24,6 +22,8 @@ for get_state()<items><> -> $c {
 
   next unless $c<metadata><name>.contains(config()<name>);
  
+  say Dump($c,:color(False)) if config()<debug>;
+
   my $cnt-ready = $c<status><containerStatuses><>.grep(.<ready>).elems;
   my $cnt-not-ready = $c<status><containerStatuses><>.grep({! .<ready> }).elems;
 

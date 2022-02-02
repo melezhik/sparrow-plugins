@@ -30,6 +30,10 @@ K8s namespace. Optional, default value is `default`
 
 Number of pods running. Optional. Default value is `1`
 
+## debug
+
+Bool. Enable debug mode. Optional. Default value is `False`
+
 # Dependencies
 
 `k8s cli`
