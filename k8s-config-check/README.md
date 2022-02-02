@@ -75,6 +75,12 @@ Examples:
       DB_PASSWORD => 'supeRsecRet1'
     )
 
+# sensitive
+
+Bool. `True|False`. Optional. Default value is `True`
+
+Don't show secret values.
+
 # Examples
 
 See some examples here:

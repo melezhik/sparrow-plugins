@@ -2,7 +2,7 @@
 
 set -e
 
-resource_type=$(config resource_type)
+resource_type=$(config type)
 
 name=$(config name)
 
