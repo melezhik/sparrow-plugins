@@ -21,11 +21,11 @@ for get_state()<items><> -> $c {
 
   #say Dump($c);
   #say Dump($c<status>);
+
+  next unless $c<metadata><name>.contains(config()<name>);
  
   my $cnt-ready = $c<status><containerStatuses><>.grep(.<ready>).elems;
   my $cnt-not-ready = $c<status><containerStatuses><>.grep({! .<ready> }).elems;
-
-  next unless $c<metadata><name>.contains(config()<name>);
 
   if $c<status><phase> eq "Running" 
       && $cnt-not-ready == 0 
