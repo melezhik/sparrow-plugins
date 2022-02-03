@@ -43,6 +43,10 @@ Use as Sparrow6 tasks:
 
 Ado pipeline definition name
 
+## definition_id
+
+Alternatively one can chose `definition_id` to select pipeline by build definition ID.
+
 ## action
 
 Action to execute. `run|list|wait`. Default value is `list` ( list builds )
