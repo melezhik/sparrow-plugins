@@ -26,8 +26,8 @@ if ( -not [string]::IsNullOrEmpty($project) ) {
 
 }
 
-$command = "az pipelines build queue --definition-name $name --branch $branch $opts --output table"
+$command = "az pipelines build queue --definition-name $name --branch $branch $opts --output json"
 
 Write-Host "Running: $($command)"
 
-iex $command
+iex $command | Out-File -FilePath "$(cache_root_dir)/state.json"

@@ -21,7 +21,7 @@ Use as Sparrow6 tasks:
     # queue new build
     my %state = task_run "run my build", "ado-pipeline-build", %(
       name => "WebApp",
-      variables => "foo:1 bar:2"
+      variables => "foo:1 bar:2",
       action => "run"
     );
 
