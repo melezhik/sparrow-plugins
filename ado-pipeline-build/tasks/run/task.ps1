@@ -28,7 +28,7 @@ if ( -not [string]::IsNullOrEmpty($project) ) {
 }
 
 if ( -not [string]::IsNullOrEmpty($definition_id) ) {
-  $command = "az pipelines build queue --definition_id $definition_id --branch $branch $opts --output json"
+  $command = "az pipelines build queue --definition-id $definition_id --branch $branch $opts --output json"
 } else {
   $command = "az pipelines build queue --definition-name $name --branch $branch $opts --output json"
 }

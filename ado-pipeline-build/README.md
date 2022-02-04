@@ -34,7 +34,6 @@ Raku:
 
     # get build properties
     say %state<id>; # build id
-
     say %state<buildNumber>; # build number 
 
     # wait till a build is finished
