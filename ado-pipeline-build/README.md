@@ -25,13 +25,23 @@ Use as Sparrow6 tasks:
       action => "run"
     );
 
+    # get build properties
+
+    say %state<id>; # build id
+
+    say %state<buildNumber>; # build number 
+
     # wait till the my  build finishes
-    my %st = task_run "wait my build", "ado-pipeline-build", %(
+    my %res = task_run "wait my build", "ado-pipeline-build", %(
       action => "wait",
-      build_id => %state<build_id>
+      build_id => %state<id>
     );
 
-    say %st<result>; # build result: failed/succeeded
+    # get build result
+
+    say %res<status>; # completed
+
+    say %res<result>; # failed/succeeded/canceled
 
     # list all builds for given build definition and current branch
     task_run "last builds", "ado-pipeline-build", %(
