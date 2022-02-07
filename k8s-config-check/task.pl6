@@ -3,8 +3,6 @@
 use JSON::Tiny;
 use MIME::Base64;
 
-say ">>> verify [resource={config()<type>}] [name={config<name>},namespace={config()<namespace>}]";
-
 my  $c = get_state();
 
 if $c<data> {
@@ -21,5 +19,5 @@ if $c<data> {
   say "[data_end]";
 }
 
-say "==================================================================";
+
 

@@ -29,6 +29,27 @@ Raku
 
     say %data<data><password>;
 
+    # Verify group of resources:
+
+    $checks-failed = 0;
+
+    for 'c-map1', 'c-map2', 'c-map3' -> $cm {
+
+      my %st = task-run "pod check", "k8s-pod-check", %(
+        type => "configmap",
+        name => $cm,
+        namespace => "dashboards",
+        die-on-check-fail => False,
+      );
+
+      $checks-failed += %st<__data__><task-check-err-cnt> || 0;
+
+    }
+
+    say "checks failed: ", $checks-failed;
+
+    die if $checks-failed;
+
 # Verification parameters
 
 ## name
@@ -80,6 +101,12 @@ Examples:
 Bool. `True|False`. Optional. Default value is `True`
 
 Don't show secret values.
+
+## die-on-check-fail
+
+Don't die if a check fails, useful when test a group of resources.
+
+Optional. Default values is `True`.
 
 # Examples
 

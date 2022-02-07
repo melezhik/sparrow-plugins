@@ -149,7 +149,7 @@ Array|Str. Docker command arguments
 
 ## die-on-check-fail
 
-Don't die if a pod check fails, useful when test a group of pods.
+Don't die if a check fails, useful when test a group of resources.
 
 Optional. Default values is `True`.
 
