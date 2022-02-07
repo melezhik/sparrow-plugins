@@ -28,7 +28,7 @@ Checks that k8s pod(s) is running
         die-on-check-fail => False,
       );
 
-      $checks-failed += %st<task-check-checks-failed> || 0;
+      $checks-failed += %st<__data__><task-check-err-cnt> || 0;
 
     }
 

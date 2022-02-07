@@ -1,2 +1,3 @@
 resource_type: deployment
 verbose: false
+die-on-check-fail: false
