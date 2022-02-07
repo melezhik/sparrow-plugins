@@ -1,3 +1,4 @@
 namespace: default
 name: foo
 num: 1
+die-on-check-fail: false
