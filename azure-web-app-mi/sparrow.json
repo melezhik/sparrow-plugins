@@ -2,7 +2,7 @@
 
   "name" : "azure-web-app-mi",
   "description" : "Assign managed identity to web application",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "category" : "azure, web, paas",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-web-app-mi"
 }
