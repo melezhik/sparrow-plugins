@@ -1,15 +1,13 @@
 use Data::Dump;
 use Terminal::Table;
 
-say Dump(get_state()) if config()<debug>;
-
 my @report = ( ["name", "value"], );
 
 my @list;
 
 my $data = get_state()<value>.grep({$_<name> eq config()<name> })[0];
 
-say Dump($data);
+say Dump($data) if config()<debug>;
 
 my $group-name = $data<name>;
 my $group-id = $data<id>;

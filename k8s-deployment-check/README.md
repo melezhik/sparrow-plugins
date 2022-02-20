@@ -10,6 +10,8 @@ Check k8s deployments and stateful sets
 
 Raku
 
+    # Verify k8s deployment 
+
     my %data = task-run "dpl check", "k8s-deployment-check", %(
       name => "animals",
       namespace => "pets",
@@ -37,6 +39,26 @@ Raku
     # "terminationMessagePath", "livenessProbe", "resources", "volumeMounts").Seq
 
     say %data<command>;
+
+    # Verify group of deployments:
+
+    $checks-failed = 0;
+
+    for 'dpl1', 'dpl2', 'dpl3' -> $d {
+
+      my %st = task-run "dpl $d check", "k8s-deployment-check", %(
+        name => $p,
+        namespace => "dev",
+        die-on-check-fail => False,
+      );
+
+      $checks-failed += %st<__data__><task-check-err-cnt> || 0;
+
+    }
+
+    say "checks failed: ", $checks-failed;
+
+    die if $checks-failed;
 
 # Verification parameters
 
@@ -124,6 +146,12 @@ Array|Str. Docker command
 ## command-args
 
 Array|Str. Docker command arguments
+
+## die-on-check-fail
+
+Don't die if a check fails, useful when test a group of resources.
+
+Optional. Default values is `True`.
 
 ## verbose
 

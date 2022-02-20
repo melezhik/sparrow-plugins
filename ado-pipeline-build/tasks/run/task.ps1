@@ -1,4 +1,5 @@
 $name = config name
+$definition_id = config definition_id
 
 $branch = config branch
 
@@ -26,8 +27,13 @@ if ( -not [string]::IsNullOrEmpty($project) ) {
 
 }
 
-$command = "az pipelines build queue --definition-name $name --branch $branch $opts --output table"
+if ( -not [string]::IsNullOrEmpty($definition_id) ) {
+  $command = "az pipelines build queue --definition-id $definition_id --branch $branch $opts --output json"
+} else {
+  $command = "az pipelines build queue --definition-name $name --branch $branch $opts --output json"
+}
+
 
 Write-Host "Running: $($command)"
 
-iex $command
+iex $command | Out-File -FilePath "$(cache_root_dir)/state.json"
