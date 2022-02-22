@@ -25,6 +25,7 @@ if test "${verbose}" = "True"; then
   echo "parameters:"
   echo "===================="
   cat "${parameters}"
+  echo
 else
   verbose_opt=""
 fi
