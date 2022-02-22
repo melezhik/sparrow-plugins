@@ -21,6 +21,10 @@ if test "${verbose}" = "True"; then
   echo "template:"
   echo "===================="
   cat "${template}"
+  echo "===================="
+  echo "parameters:"
+  echo "===================="
+  cat "${parameters}"
 else
   verbose_opt=""
 fi
