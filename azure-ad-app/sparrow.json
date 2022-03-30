@@ -1,0 +1,8 @@
+{
+
+  "name" : "azure-ad-app",
+  "description" : "Get info for Azure ad app",
+  "version" : "0.0.1",
+  "category" : "azure, ad",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-ad-app"
+}

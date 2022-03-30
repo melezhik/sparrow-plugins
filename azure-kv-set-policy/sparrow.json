@@ -1,0 +1,8 @@
+{
+
+  "name" : "azure-kv-set-policy",
+  "description" : "Assign policy to key vault",
+  "version" : "0.0.1",
+  "category" : "azure, keyvault, security",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/azure-kv-set-policy"
+}

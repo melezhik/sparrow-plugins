@@ -1,1 +1,2 @@
-resource_type: configmap
+type: configmap
+sensitive: true

@@ -10,9 +10,12 @@ Check k8s deployments and stateful sets
 
 Raku
 
+    # Verify k8s deployment 
+
     my %data = task-run "dpl check", "k8s-deployment-check", %(
       name => "animals",
       namespace => "pets",
+      image => "blackcat:1.0.0",
       command => "/usr/bin/cat",
       args => [
         "eat", "milk", "fish" 
@@ -37,6 +40,26 @@ Raku
 
     say %data<command>;
 
+    # Verify group of deployments:
+
+    $checks-failed = 0;
+
+    for 'dpl1', 'dpl2', 'dpl3' -> $d {
+
+      my %st = task-run "dpl $d check", "k8s-deployment-check", %(
+        name => $p,
+        namespace => "dev",
+        die-on-check-fail => False,
+      );
+
+      $checks-failed += %st<__data__><task-check-err-cnt> || 0;
+
+    }
+
+    say "checks failed: ", $checks-failed;
+
+    die if $checks-failed;
+
 # Verification parameters
 
 ## name
@@ -56,6 +79,10 @@ deployment|statefulset. Optional. Default value is `deployment`. Use `statefulse
 ## container
 
 Name of container. Optional. If not set _the first_ container in a containers list is check.
+
+## image
+
+Image name.
 
 ## volume-mounts
 
@@ -119,6 +146,18 @@ Array|Str. Docker command
 ## command-args
 
 Array|Str. Docker command arguments
+
+## die-on-check-fail
+
+Don't die if a check fails, useful when test a group of resources.
+
+Optional. Default values is `True`.
+
+## verbose
+
+Enable verbose mode. Dumps many k8s resource attributes, not only those are being checked.
+
+Optional. Default value is `False` ( disabled )
 
 # Examples
 

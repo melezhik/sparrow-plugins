@@ -12,6 +12,7 @@ if ( -not [string]::IsNullOrEmpty($project) ) {
 }
 
 $status_cmd = "az pipelines build show $opts --id $build_id --query `"{status:status}`" -o tsv"
+
 $res_cmd = "az pipelines build show $opts --id $build_id --query `"{result:result}`" -o tsv"
 
 while ( $true ){
@@ -27,6 +28,10 @@ while ( $true ){
     $result = iex $res_cmd
 
     Write-Host "result for build_id: <$($build_id)> - <$($result)>"
+
+    $st = @{result = $result; status = $status}
+
+    update_state $st
 
     break
 

@@ -1,1 +1,0 @@
-requires "Text::Table::Tiny", ">=0.04";

@@ -1,0 +1,50 @@
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: www-data
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-sandbox
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: shared-files
+          persistentVolumeClaim:
+            claimName: www-data
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        volumeMounts:
+          - name: shared-files
+            mountPath: /usr/share/nginx
+            subPath: html
+        ports:
+        - containerPort: 80
+        env:
+        - name: DEMO_GREETING
+          value: "Hello from the environment"
+        - name: DEMO_FAREWELL
+          value: "Such a sweet sorrow"

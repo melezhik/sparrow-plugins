@@ -8,30 +8,45 @@ Run Ado pipelines and list builds using `azure devops cli`
 
 # USAGE
 
-Queue pipeline build for the current branch:
+Queue WebApp pipeline build for the current branch:
 
     $ s6 --plg-run ado-pipeline-build@name=WebApp,action=run
 
-List builds for the current branch and pipeline WebApp:
+List builds for the current branch and pipeline named WebApp:
 
     $ s6 --plg-run ado-pipeline-build@action=list,name=WebApp
 
-Use as Sparrow6 tasks:
+Raku:
 
     # queue new build
     my %state = task_run "run my build", "ado-pipeline-build", %(
       name => "WebApp",
-      variables => "foo:1 bar:2"
+      variables => "foo:1 bar:2",
       action => "run"
     );
 
-    # wait till the my  build finishes
-    task_run "wait my build", "ado-pipeline-build", %(
-      action => "wait",
-      build_id => %state<build_id>
+    # the same but using build definition id, instead of pipeline name
+    my %state = task_run "run my build", "ado-pipeline-build", %(
+      definition_id => "121255",
+      variables => "foo:1 bar:2",
+      action => "run"
     );
 
-    # list all builds for given build definition and current branch
+    # get build properties
+    say %state<id>; # build id
+    say %state<buildNumber>; # build number 
+
+    # wait till a build is finished
+    my %res = task_run "wait my build", "ado-pipeline-build", %(
+      action => "wait",
+      build_id => %state<id>
+    );
+
+    # get build results
+    say %res<status>; # completed
+    say %res<result>; # failed/succeeded/canceled
+
+    # list all builds for a named pipeline and current branch
     task_run "last builds", "ado-pipeline-build", %(
       name => "WebApp",
       action => "list"
@@ -41,7 +56,11 @@ Use as Sparrow6 tasks:
 
 ## name
 
-Ado pipeline definition name
+Ado pipeline definition name.
+
+## definition_id
+
+Ado pipeline definition id.
 
 ## action
 

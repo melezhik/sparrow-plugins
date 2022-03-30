@@ -1,0 +1,14 @@
+generator: <<CODE
+!perl6
+say "regexp: ^^ '{config()<name>}' \\S+ \\s+ POD_OK \$\$";
+CODE
+
+
+generator: <<CODE
+!perl6
+
+if captures() {
+  say "assert: ", captures()<>.elems == config()<num> ?? "1" !! "0", " {config()<num>} pods are running";
+}
+
+CODE
