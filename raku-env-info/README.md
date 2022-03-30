@@ -19,7 +19,4 @@ say "zef env: ", $s<zef>;
 
 [Alexey Melezhik](mailto:melezhik@gmail.com)
 
-# See also
-
-[fez](https://github.com/tony-o/raku-fez.git)
 

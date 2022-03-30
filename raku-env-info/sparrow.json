@@ -1,6 +1,6 @@
 {
     "name" : "raku-env-info",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "Dump Raku environment info",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/raku-env-info",
     "category" : "raku, utils"
