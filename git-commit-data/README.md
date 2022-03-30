@@ -15,6 +15,13 @@ say "sha: ", $s<sha>;
 say "comment: ", $s<comment>;
 ```
 
+# Parameters
+
+
+## dir
+
+Chdir to `dir`. Optional. Default value is `.` (cwd)
+
 # Author
 
 [Alexey Melezhik](mailto:melezhik@gmail.com)
