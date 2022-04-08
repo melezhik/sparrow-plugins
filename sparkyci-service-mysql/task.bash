@@ -17,6 +17,6 @@ sudo mysqladmin create sparky
 
 sudo mysql -e "CREATE USER sparky@'127.0.0.1' IDENTIFIED BY 'sparky'"
 
-sudo mysql -e "GRANT ALL ON sparky.* TO 'sparky'@'127.0.0.1'"
+sudo mysql -e "GRANT ALL ON sparky.* TO 'sparky'"
 
-mysql -usparky -psparky -e 'create table foo (a text)' -h 127.0.0.1 sparky
+mysql -usparky -psparky -e 'create table foo (a text)' sparky
