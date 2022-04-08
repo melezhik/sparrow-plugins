@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Official [Sparrow6](https://github.com/melezhik/sparrow6) plugins.
+Official [Sparrow6](https://github.com/melezhik/sparrow6) plugins
 
 # INSTALL
 
