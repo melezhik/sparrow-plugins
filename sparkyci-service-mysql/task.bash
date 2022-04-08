@@ -7,5 +7,6 @@ echo "=================================="
 sudo apk add mysql mysql-client
 sudo mysql_install_db --user=mysql --datadir=/var/lib/mysql
 sudo bash -c "nohup /usr/bin/mysqld_safe &"
+sleep 5
 sudo bash -c "echo select 1 | mysql"
 
