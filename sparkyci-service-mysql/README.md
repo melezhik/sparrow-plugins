@@ -8,7 +8,9 @@ Installs mysql service on sparkyci
 
 # Usage
 
-      s6 --plg-run sparkyci-service-mysql
+Raku
+
+      task-run "mysql", "sparkyci-service-mysql";
 
 # Author
 
