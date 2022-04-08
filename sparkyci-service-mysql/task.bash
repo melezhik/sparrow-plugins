@@ -15,8 +15,8 @@ sudo bash -c "echo select 1 | mysql"
 
 sudo mysqladmin create sparky
 
-sudo mysql -e "CREATE USER sparky@'127.0.0.1' IDENTIFIED BY 'sparky'"
+sudo mysql -e "CREATE USER sparky@'localhost' IDENTIFIED BY 'sparky'"
 
-sudo mysql -e "GRANT ALL ON sparky.* TO 'sparky'"
+sudo mysql -e "GRANT ALL ON sparky.* TO 'sparky'@'localhost'"
 
 mysql -usparky -psparky -e 'create table foo (a text)' sparky
