@@ -8,5 +8,13 @@ sudo apk add mysql mysql-client
 sudo mysql_install_db --user=mysql --datadir=/var/lib/mysql
 sudo bash -c "nohup /usr/bin/mysqld_safe &"
 sleep 5
+
 sudo bash -c "echo select 1 | mysql"
 
+sudo mysqladmin create sparky
+
+sudo mysql -e "CREATE USER sparky@'127.0.0.1' IDENTIFIED BY 'sparky'"
+
+sudo mysql -e "GRANT ALL ON sparky.* TO 'sparky'@'127.0.0.1'"
+
+mysql -usparky -psparky -e 'create table foo (a text)' sparky
