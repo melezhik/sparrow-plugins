@@ -1,6 +1,8 @@
 set -e
 set -x
 
+2>&1
+
 echo "installing mysql service on sparky"
 echo "=================================="
 
@@ -17,4 +19,4 @@ sudo mysql -e "CREATE USER sparky@'127.0.0.1' IDENTIFIED BY 'sparky'"
 
 sudo mysql -e "GRANT ALL ON sparky.* TO 'sparky'@'127.0.0.1'"
 
-mysql -usparky -psparky -e 'create table foo (a text)' sparky
+mysql -usparky -psparky -e 'create table foo (a text)' -h 127.0.0.1 sparky
