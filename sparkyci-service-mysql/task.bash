@@ -6,14 +6,14 @@ set -x
 echo "installing mysql service on sparky"
 echo "=================================="
 
-sudo apk add mysql mysql-client
-sudo mysql_install_db --user=mysql --datadir=/var/lib/mysql
-sudo bash -c "nohup /usr/bin/mysqld_safe &"
+sudo apk add mariadb-common mariadb-client mariadb
+sudo mariadb-install-db --user=mysql --datadir=/var/lib/mysql
+sudo bash -c "nohup /usr/bin/mariadbd-safe &"
 sleep 5
 
 sudo bash -c "echo select 1 | mysql"
 
-sudo mysqladmin create sparky
+sudo mariadb-admin create sparky
 
 sudo mysql -e "CREATE USER sparky@'localhost' IDENTIFIED BY 'sparky'"
 

@@ -1,6 +1,6 @@
 # sparkyci-service-mysql
 
-Installs mysql service on sparkyci
+Installs mysql (aka mariadb) service on sparkyci
 
 # Install
 
