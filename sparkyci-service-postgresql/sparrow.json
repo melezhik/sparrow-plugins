@@ -1,6 +1,6 @@
 {
   "name" : "sparkyci-service-postgresql",
   "description" : "Installs postgresql service on sparkyci",
-  "version" : "0.0.1",
+  "version" : "0.0.8",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparkyci-service-postgresql"
 }

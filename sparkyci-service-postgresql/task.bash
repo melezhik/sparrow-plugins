@@ -13,19 +13,23 @@ echo "======================================="
 
 sudo apk add postgresql
 
-mkdir /var/lib/postgresql/data
-chown postgres:postgres /run/postgresql/data
-chmod 0700 /var/lib/postgresql/data
+sudo mkdir -p /run/postgresql
+sudo chown postgres:postgres /run/postgresql
 
-sh -l -c 'initdb -D /var/lib/postgresql/data'
+sudo mkdir -p /var/lib/postgresql/data
+sudo chown postgres:postgres /var/lib/postgresql/data
 
-su - postgres sh -l -c 'pg_ctl start -D /var/lib/postgresql/data'
+sudo chmod 0700 /var/lib/postgresql/data
+
+sudo -u postgres sh -c -l 'initdb -D /var/lib/postgresql/data'
+
+sudo -u postgres sh -c -l 'pg_ctl start -D /var/lib/postgresql/data'
 
 sleep 5
 
-su - postgres sh -l -c 'createuser $db_user with password "$db_pass" '
-su - postgres sh -l -c 'createdb $db_name'
-su - postgres sh -l -c 'psql -c "grant all privileges on database $db_name to $db_user"'
+sudo -u postgres psql -c "create user $db_user with password '$db_pass'"
+sudo -u postgres sh -l -c "createdb $db_name"
+sudo -u postgres psql -c "grant all privileges on database $db_name to $db_user"
 
 export PGPASSWORD=$db_pass
 
