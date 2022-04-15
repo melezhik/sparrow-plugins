@@ -1,0 +1,6 @@
+{
+  "name" : "sparkyci-package-xml",
+  "description" : "Installs xml meta package on sparkyci",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparkyci-package-xml"
+}
