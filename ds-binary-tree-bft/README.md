@@ -14,6 +14,8 @@ An example of binary tree breadth first traversal with recursion using Raku
 
     s6 --plg-run ds-binary-tree-bft@language=perl
 
+    s6 --plg-run ds-binary-tree-bft@language=python
+
 # Author
 
 Alexey Melezhik
