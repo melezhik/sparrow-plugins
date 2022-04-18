@@ -6,4 +6,4 @@ set -x
 echo "installing build-essential packages on sparky"
 echo "============================================="
 
-sudo apk add g++ make
+sudo apk add build-base
