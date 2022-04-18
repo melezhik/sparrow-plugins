@@ -1,9 +1,11 @@
+my @nodes;
+
 class Node {
 
     has $.left is rw;
     has $.right is rw;
     has Int $.data;
-
+    has Int @.nodes;
     submethod new( $data ) {
       self.bless(:$data);
     };
@@ -55,6 +57,7 @@ sub printCurrentLevel($root , $level) {
     if $level == 1 {
         
         say ">> boom! .................. node found: [", $root.data, "]";
+        @nodes.push: $root.data;
         say "return from printCurrentLevel, buy-buy!";
 
     } elsif ( $level > 1 ) {
@@ -80,6 +83,7 @@ say q:to /END/;
    6       7
 END
 
+
 my $root = Node.new(1);
 $root.left = Node.new(2);
 $root.right = Node.new(3);
@@ -94,3 +98,4 @@ $root.left.right.right = Node.new(7);
 
 printLevelOrder($root);
 
+print "[", @nodes.join(" "), "]\n";
