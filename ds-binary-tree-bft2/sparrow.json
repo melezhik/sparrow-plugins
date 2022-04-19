@@ -1,7 +1,7 @@
 {
   "name" : "ds-binary-tree-bft2",
   "description": "An example of binary tree breadth first traversal with fifo queue using Raku",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-binary-tree-bft2",
   "category" : "datastructures, algorithm"
 }
