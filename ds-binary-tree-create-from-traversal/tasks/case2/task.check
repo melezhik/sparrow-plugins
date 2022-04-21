@@ -1,0 +1,9 @@
+begin:
+  === InOrder
+  B
+  A
+  C
+  D
+  E
+  ===
+end:

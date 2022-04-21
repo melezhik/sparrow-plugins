@@ -121,9 +121,9 @@ my $root = build-tree(
   @in-order.elems - 1 # end
 );
 
-use Data::Dump;
+#use Data::Dump;
 
-say Dump($root);
+#say Dump($root);
 
 say "=== InOrder";
 printInOrder($root);
