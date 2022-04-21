@@ -1,14 +1,14 @@
-# sparkyci-package-mysql
+# sparkyci-package-xml
 
-Installs mysql meta package on sparkyci
+Installs xml/xslt meta package on sparkyci
 
 # Install
 
-    s6 --install sparkyci-package-mysql
+    s6 --install sparkyci-package-xml
 
 # Usage
 
-    task-run "mysql package", "sparkyci-package-mysql";
+    task-run "xml package", "sparkyci-package-xml";
 
 # Author
 
