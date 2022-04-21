@@ -15,6 +15,7 @@ An example of creation of binary tree from InOrder and PreOrder traversals array
 To run different cases use `case` parameter:
 
     s6 --plg-run ds-binary-tree-create-from-traversal@case=case2
+    s6 --plg-run ds-binary-tree-create-from-traversal@case=case3
 
 # See also
 
