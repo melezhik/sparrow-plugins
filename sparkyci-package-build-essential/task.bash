@@ -6,4 +6,4 @@ set -x
 echo "installing build-essential packages on sparky"
 echo "============================================="
 
-sudo apk add build-base
+sudo apk add build-base libffi-dev
