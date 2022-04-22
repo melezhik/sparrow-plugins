@@ -10,7 +10,14 @@ An example of binary tree depth first traversal using Raku
 
     s6 --plg-run ds-binary-tree-dft
 
+# Other languages
+
+    s6 --plg-run ds-binary-tree-dft@language=python
+
 # Author
 
 Alexey Melezhik
 
+# See also
+
+* https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/

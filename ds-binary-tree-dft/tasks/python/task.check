@@ -1,0 +1,47 @@
+begin:
+in order1
+pick G
+pick D
+pick B
+pick E
+pick A
+pick F
+pick C
+===
+end:
+
+
+begin:
+pre order1
+pick A
+pick B
+pick D
+pick G
+pick E
+pick C
+pick F
+===
+end:
+
+begin:
+pre order2
+pick A
+pick B
+pick D
+pick E
+pick C
+pick F
+===
+end:
+
+
+begin:
+in order2
+D
+B
+E
+A
+F
+C
+===
+end:
