@@ -10,6 +10,11 @@ Bubble sort. Raku implementation
 
     s6 --plg-run ds-bubble-sort
 
+# See also
+
+https://www.geeksforgeeks.org/bubble-sort/
+
+
 # Author
 
 Alexey Melezhik

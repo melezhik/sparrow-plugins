@@ -8,6 +8,7 @@ sub selection-sort (@a) {
 
     my $max = @a[0];
     my $max-index = 0;
+    say "set max to: $max";
     
     for 0 .. $j  -> $i {
 

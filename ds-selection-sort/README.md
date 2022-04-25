@@ -10,6 +10,14 @@ Selection sort. Raku implementation
 
     s6 --plg-run ds-selection-sort
 
+# Other languages:
+
+    s6 --plg-run ds-selection-sort@language=python
+
+# See also
+
+https://www.geeksforgeeks.org/selection-sort/
+
 # Author
 
 Alexey Melezhik
