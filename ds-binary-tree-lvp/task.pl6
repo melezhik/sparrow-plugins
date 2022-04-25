@@ -12,7 +12,7 @@ class Node {
 
 
 
-sub printLeftView($root) {
+sub printLeftViewFIFO($root) {
 
   my @q;
   my @data;
@@ -55,5 +55,29 @@ $root.right = Node.new(3);
 $root.left.left = Node.new(4);
 $root.left.right = Node.new(5);
 
-say printLeftView($root).perl;
+say "leftsubtreeFIFO: ", printLeftViewFIFO($root).perl;
+
+my $max = 0;
+my $current = 1;
+
+my @data;
+
+sub TraverseLeftViewRecusrive ($root,$current) {
+
+  if $current > $max {
+    $max = $current;
+    @data.push: $root.data;
+  }
+
+  TraverseLeftViewRecusrive($root.left, $current + 1) if $root.left;
+  
+  TraverseLeftViewRecusrive($root.right, $current + 1) if $root.right;
+
+}
+
+TraverseLeftViewRecusrive($root,$current);
+
+say "TraverseLeftViewRecusrive: ", @data.perl;
+
+
 
