@@ -50,6 +50,16 @@ def traverse_pre_order (node):
        traverse_pre_order(node['right'])
 
 
+def traverse_post_order (node):
+  if 'left' in node:
+    traverse_post_order(node['left'])
+  if 'right' in node:
+    traverse_post_order(node['right'])
+  if node:
+    d = node['data']
+    print(f'pick {d}')
+
+
 
 print("in order1")
 traverse_in_order(nodes)
@@ -84,4 +94,8 @@ print("===")
 
 print("in order2")
 traverse_in_order(nodes)
+print("===")
+
+print("post order1")
+traverse_post_order(nodes)
 print("===")

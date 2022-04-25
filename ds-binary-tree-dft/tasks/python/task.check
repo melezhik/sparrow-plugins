@@ -45,3 +45,14 @@ F
 C
 ===
 end:
+
+begin:
+post order1
+D
+E
+B
+F
+C
+A
+===
+end:
