@@ -1,6 +1,6 @@
 # ds-insertion-sort
 
-Insertion sort. Raku implementation
+Insertion sort. Raku and Python implementation
 
 # Install
 
@@ -8,7 +8,13 @@ Insertion sort. Raku implementation
 
 # Usage
 
+Raku:
+
     s6 --plg-run ds-insertion-sort
+
+Python:
+
+    s6 --plg-run ds-insertion-sort@language=python
 
 # See also
 

@@ -6,19 +6,19 @@ sub insertion-sort (@a) {
 
     my $x = @a[$i];
 
-    say "x: $x";
+    say "candidate x: $x";
 
     my $j = $i;
 
     while $j > 0 && @a[$j-1] > $x  {
-      say "nn {$i}| swap: {@a[$j]} <=> {@a[$j-1]}";
+      say "nn {$i}| shift: {@a[$j-1]} => ";
       @a[$j] =  @a[$j-1];
       $j--;  
     }
 
-    say "jump_x: $x => {@a[$j]}";
-
     @a[$j] = $x;
+
+    say "jump_x: $x => ind[$j]", " ordered part: ", @a[0..$i];
 
   }
 
