@@ -1,7 +1,7 @@
 {
   "name" : "ds-insertion-sort",
   "description": "Insertion sort. Raku and Python implementation",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-insertion-sort",
   "category" : "datastructures, algorithm, sort"
 }

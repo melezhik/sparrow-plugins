@@ -1,17 +1,18 @@
 
 def insertion_sort (list):
-  i = 0
+  i = 1
   print(f"input: {list}")
-  while i <= len(list) - 2:
-    c = list[i+1]
-    print(f"list border: {list[i]} | candidate: {c}")
+  while i <= len(list) - 1:
+    print(f"i: {i}")
+    c = list[i]
+    print(f"list border: {list[i-1]} | candidate: {c}")
     j = i
-    while c < list[j] and j >= 0:
-      list[j+1] = list[j]
+    while c < list[j-1] and j > 0:
+      list[j] = list[j-1]
       print(f"shift {list[j]}")
       j = j - 1
-    print(f"set last j: {j+1} to {c}")  
-    list[j+1] = c
+    print(f"set last j: {j} to {c}")  
+    list[j] = c
     i = i + 1 
 
 
