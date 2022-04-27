@@ -1,6 +1,6 @@
 # ds-bubble-sort
 
-Bubble sort. Raku implementation
+Bubble sort. Raku and Python implementation
 
 # Install
 
@@ -8,7 +8,13 @@ Bubble sort. Raku implementation
 
 # Usage
 
+Raku:
+
     s6 --plg-run ds-bubble-sort
+
+Python:
+
+    s6 --plg-run ds-bubble-sort@language=python
 
 # See also
 
