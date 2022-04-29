@@ -1,6 +1,6 @@
 # ds-merge-sort
 
-Merge sort. Raku implementation
+Merge sort. Raku and Python implementation
 
 # Install
 
@@ -8,7 +8,17 @@ Merge sort. Raku implementation
 
 # Usage
 
+Raku:
+
     s6 --plg-run ds-merge-sort
+
+Python:
+
+    s6 --plg-run ds-merge-sort@language=python
+
+# Also see 
+
+https://www.geeksforgeeks.org/merge-sort/
 
 # Author
 

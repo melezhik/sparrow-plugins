@@ -1,7 +1,7 @@
 {
   "name" : "ds-merge-sort",
-  "description": "Merge sort. Raku implementation",
-  "version" : "0.0.1",
+  "description": "Merge sort. Raku and Python implementation",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-merge-sort",
   "category" : "datastructures, algorithm, sort"
 }
