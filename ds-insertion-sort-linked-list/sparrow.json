@@ -1,0 +1,7 @@
+{
+  "name" : "ds-insertion-sort-linked-list",
+  "description": "Insertion sort with a single linked list. Raku and Python implementation",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-insertion-sort-linked-list",
+  "category" : "datastructures, algorithm, sort"
+}
