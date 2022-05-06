@@ -1,16 +1,15 @@
+class Node {
+
+  has Int  $.data is rw;
+  has Node $.next is rw;
+  
+}
+
 class LinkedList {
 
-  has LinkedList $.next is rw;
+  has Node $.head is rw;
 
-  has LinkedList $.head is rw;
-
-  has Int $.data;
-
-  method TWEAK {
-    self.head = self;
-  }
-
-  method push ($node) {
+  method push (Node $node) {
 
     say "push data: {$node.data} to list";
 
@@ -20,22 +19,32 @@ class LinkedList {
 
   }
 
+  method as-array {
+
+    my $s = self.head;
+    my @l;
+
+    while $s {
+      @l.push: $s.data;
+      $s = $s.next;
+    }
+    return @l
+  }
 }
 
 my $l = LinkedList.new;
 
-$l.push(LinkedList.new(data => 5));
+$l.push(Node.new(data => 5));
 
-$l.push(LinkedList.new(data => 20));
+$l.push(Node.new(data => 20));
 
-$l.push(LinkedList.new(data => 4));
+$l.push(Node.new(data => 4));
 
-$l.push(LinkedList.new(data => 3));
+$l.push(Node.new(data => 3));
 
-$l.push(LinkedList.new(data => 30));
+$l.push(Node.new(data => 30));
 
-
-
+say $l.as-array;
 
 my $sorted-list = LinkedList.new;
 
@@ -43,13 +52,13 @@ sub push-sorted ($a) {
 
   my $s = $sorted-list.head;
   
-  say "list head: {$s.data||'NULL'}";
+  say "list head: {$s||'NULL'}";
 
-  if $s.data {
+  if $s {
 
     if $s.data > $a {
       say "attach $a to head";
-      $sorted-list.push(LinkedList.new(data => $a));
+      $sorted-list.push(Node.new(data => $a));
     } else {
 
       say "iterate over list, next is: {$s.next.data}||'NULL'";
@@ -57,7 +66,7 @@ sub push-sorted ($a) {
       while $s.next.data && $s.next.data < $a {
         $s = $s.next;
       }
-      my $n = LinkedList.new(data => $a, next => $s.next);
+      my $n = Node.new(data => $a);
       say "insert {$a} before {$s.next.data}";
       $n.next = $s.next;
       $s.next = $n;
@@ -67,7 +76,7 @@ sub push-sorted ($a) {
   } else {
 
     say "attach $a to head - first not null element";
-    $sorted-list.push(LinkedList.new(data => $a));
+    $sorted-list.push(Node.new(data => $a));
 
   }
  
@@ -76,28 +85,13 @@ sub push-sorted ($a) {
 
 sub insertion-sort (LinkedList $l) {
 
-  my $s = $l.head;
-
-  while $s.data {
-    say "process {$s.data}";
-    push-sorted($s.data);
-    $s = $s.next;
+  for $l.as-array -> $i {
+    say "process {$i}";
+    push-sorted($i);
   }
 
 }
 
-
 insertion-sort($l);
 
-my @sorted;
-
-my $s = $sorted-list.head;
-
-while $s.data {
-  say ">> {$s.data}";
-  @sorted.push: $s.data;
-  $s = $s.next;
-}
-
-
-say "sorted1: {@sorted}";
+say "sorted1: {$sorted-list.as-array}";
