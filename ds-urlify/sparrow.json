@@ -1,0 +1,7 @@
+{
+  "name" : "ds-urlify",
+  "description": "Perl implimentation of urlify task",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-urlify",
+  "category" : "datastructures, algorithm, sort"
+}
