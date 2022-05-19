@@ -1,0 +1,7 @@
+{
+  "name" : "ds-palindrome-permutation",
+  "description": "Perl implimentation of palindrome permutation task",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-palindrome-permutation",
+  "category" : "datastructures, algorithms, interviews"
+}
