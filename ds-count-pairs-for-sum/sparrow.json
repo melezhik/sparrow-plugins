@@ -1,0 +1,7 @@
+{
+  "name" : "ds-count-pairs-for-sum",
+  "description": "Perl implimentation of count pairs with given sum task",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-count-pairs-for-sum",
+  "category" : "datastructures, algorithms, interviews"
+}
