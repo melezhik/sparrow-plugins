@@ -1,0 +1,7 @@
+{
+  "name" : "ds-trapping-rain-water",
+  "description": "Perl implimentation of trapping rain water task",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-trapping-rain-water",
+  "category" : "datastructures, algorithms, interviews"
+}
