@@ -1,7 +1,7 @@
 {
   "name" : "ds-meta-cafeteria",
   "description": "Python implimentation of meta cafeteria task",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-meta-cafeteria",
   "category" : "datastructures, algorithms, interviews"
 }
