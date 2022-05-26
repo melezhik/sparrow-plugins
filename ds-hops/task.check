@@ -1,0 +1,3 @@
+|frogs:[1] | max_frog_index:1 | holes_sum: 0 | N:3 | F:1 | cnt:0|
+|frogs:[2, 4, 5] | max_frog_index:5 | holes_sum: 1 | N:6 | F:3 | cnt:0|
+

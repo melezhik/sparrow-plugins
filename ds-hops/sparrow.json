@@ -1,0 +1,7 @@
+{
+  "name" : "ds-hops",
+  "description": "Python implimentation of meta hops task",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-hops",
+  "category" : "datastructures, algorithms, interviews"
+}

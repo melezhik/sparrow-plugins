@@ -1,18 +1,14 @@
-# ds-trapping-rain-water
+# ds-meta-cafeteria
 
 Python implimentation of meta cafeteria task.
 
 # Install
 
-    s6 --install ds-trapping-rain-water
+    s6 --install ds-meta-cafeteria
 
 # Usage
 
-    s6 --plg-run ds-trapping-rain-water
-
-# See also
-
-https://www.geeksforgeeks.org/trapping-rain-water/
+    s6 --plg-run ds-meta-cafeteria
 
 # Author
 
