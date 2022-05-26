@@ -51,5 +51,16 @@ def calc_cnt (a,b,gap):
     else:
       return 0   
 
+def getMaxAdditionalDinersCount2(N: int, K: int, M: int, S: List[int]) -> int:
+
+  S.sort()
+  count = 0
+  # S = [2, 6] -> [-1, 2, 6] [2, 6, 12]
+  for start, end in zip([-K]+S, S+[N+K+1]):
+    delta = (end - start) // (K + 1) - 1
+    print(f"start={start} | end={end} | delta={delta}")
+    count += delta
+  return count
+
 a = getMaxAdditionalDinersCount(10,1,2,[2,6])
 a = getMaxAdditionalDinersCount(15,2,3,[11,6,14])
