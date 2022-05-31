@@ -1,0 +1,7 @@
+{
+  "name" : "ds-meta-rabbit-hole",
+  "description": "Python implementation of meta rabbit hole task",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-meta-rabbit-hole",
+  "category" : "datastructures, algorithms, interviews"
+}
