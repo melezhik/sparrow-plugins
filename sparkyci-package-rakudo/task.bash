@@ -1,6 +1,6 @@
 set -e
 
-rakudo_version=$(config rakudo_version)
+rakudo_version=$(config version)
 
 set -x
 
@@ -22,3 +22,4 @@ cd /data/whateverable/ && sudo wget -q https://whateverable.6lang.org/$rakudo_ve
 
 sudo zstd -dqc -- $rakudo_version | sudo tar -x --absolute-names
 
+/tmp/whateverable/rakudo-moar/$rakudo_version/bin/raku --version
