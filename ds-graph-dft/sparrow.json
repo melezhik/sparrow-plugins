@@ -1,0 +1,7 @@
+{
+  "name" : "ds-graph-dft",
+  "description": "Directed graph depth first traversal. Raku implementation",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-graph-dft",
+  "category" : "datastructures, algorithm, sort"
+}

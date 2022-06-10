@@ -18,7 +18,7 @@ Python:
 
 # Also see 
 
-https://www.geeksforgeeks.org/graph-bft/
+https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
 
 # Author
 
