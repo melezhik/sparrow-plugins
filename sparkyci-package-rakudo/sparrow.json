@@ -1,0 +1,6 @@
+{
+  "name" : "sparkyci-package-rakudo",
+  "description" : "Installs rakudo meta package on sparkyci",
+  "version" : "0.0.2",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparkyci-package-rakudo"
+}
