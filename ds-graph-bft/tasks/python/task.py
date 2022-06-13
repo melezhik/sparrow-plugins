@@ -55,15 +55,21 @@ class Graph:
 #Create a graph given in
 #the above diagram
 g = Graph()
+
 g.addEdge(0, 1)
 g.addEdge(0, 2)
+
 g.addEdge(1, 2)
+
+g.addEdge(1, 0)
+
 g.addEdge(2, 0)
 g.addEdge(2, 3)
-g.addEdge(3, 3)
+
+g.addEdge(3, 2)
  
-# print ("Following is Breadth First Traversal"
-#                   " (starting from vertex 2)")
+print ("Following is Breadth First Traversal"
+                   " (starting from vertex 2)")
 print("case1: ",end="")
 g.BFS(2)
 print("")
@@ -81,8 +87,8 @@ g.addEdge(4, 5)
 g.addEdge(3, 3)
 g.addEdge(5, 5)
  
-#print ("Following is Breadth First Traversal"
-#                  " (starting from vertex 0)")
+print ("Following is Breadth First Traversal"
+                  " (starting from vertex 0)")
 
 print("case2: ",end="")
 g.BFS(0)
