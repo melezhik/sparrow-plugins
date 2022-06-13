@@ -28,7 +28,7 @@ class Graph {
 
     while @q {
       my $next = @q.shift;
-      @out.push: $next;
+      @out.push: $next unless %seen{$next};
       %seen{$next} = 1;
       if %!data{$next}:exists {
         for %!data{$next}<> -> $i {
