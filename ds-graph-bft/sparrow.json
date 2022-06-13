@@ -1,7 +1,7 @@
 {
   "name" : "ds-graph-bft",
   "description": "Directed graph breadth first traversal. Raku and Python implementation",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ds-graph-bft",
   "category" : "datastructures, algorithm, sort"
 }

@@ -23,8 +23,8 @@ class Graph:
  
         # Mark all the vertices as not visited
         visited = [False] * len(self.graph)
-        print(f"graph: {self.graph}")
-        print(f"visited: {visited}")
+        #print(f"graph: {self.graph}")
+        #print(f"visited: {visited}")
         # Create a queue for BFS
         queue = []
  
@@ -45,14 +45,15 @@ class Graph:
             # has not been visited, then mark it
             # visited and enqueue it
             for i in self.graph[s]:
+                #print(f"check i: {i}")
                 if visited[i] == False:
                     queue.append(i)
                     visited[i] = True
  
 # Driver code
  
-# Create a graph given in
-# the above diagram
+#Create a graph given in
+#the above diagram
 g = Graph()
 g.addEdge(0, 1)
 g.addEdge(0, 2)
@@ -61,6 +62,28 @@ g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
  
-print ("Following is Breadth First Traversal"
-                  " (starting from vertex 2)")
+# print ("Following is Breadth First Traversal"
+#                   " (starting from vertex 2)")
+print("case1: ",end="")
 g.BFS(2)
+print("")
+
+# Create a graph given in
+# the above diagram
+g = Graph()
+g.addEdge(0, 1)
+g.addEdge(0, 3)
+g.addEdge(1, 2)
+g.addEdge(1, 4)
+g.addEdge(2, 4)
+g.addEdge(4, 5)
+
+g.addEdge(3, 3)
+g.addEdge(5, 5)
+ 
+#print ("Following is Breadth First Traversal"
+#                  " (starting from vertex 0)")
+
+print("case2: ",end="")
+g.BFS(0)
+print("")

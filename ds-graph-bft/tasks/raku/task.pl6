@@ -44,7 +44,6 @@ class Graph {
 }
 
 
-
 my $g = Graph.new;
 
 $g.add(0, 1);
@@ -59,4 +58,22 @@ $g.dump;
 
 my @r = $g.bft(2);
 
-say @r;
+say "case1: ", @r;
+
+$g = Graph.new;
+
+$g.add(0, 1);
+
+$g.add(0, 3);
+
+$g.add(1, 2);
+$g.add(1, 4);
+
+$g.add(4, 5);
+
+$g.dump;
+
+@r = $g.bft(0);
+
+say "case2: ", @r;
+
