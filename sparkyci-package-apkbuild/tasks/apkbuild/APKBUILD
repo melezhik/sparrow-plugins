@@ -1,0 +1,33 @@
+# Contributor:
+# Maintainer:
+pkgname=%pkgname%
+pkgver=0.2.2
+pkgrel=3
+pkgdesc="%pkgdesc%"
+url="%url%"
+arch="all !s390x !riscv64"
+license="%license%"
+depends="rakudo %depends%"
+makedepends="rakudo-dev"
+#checkdepends=""
+#install=""
+subpackages="$pkgname-doc"
+source="$pkgname-$pkgver.tar.gz::%source%"
+builddir="$srcdir"/%builddir%
+
+
+check() {
+	# Replace with proper check command(s)
+	# prove -e 'raku -Ilib'
+	:
+}
+
+package() {
+	set -x	
+	ls -l	
+	RAKUDO_RERESOLVE_DEPENDENCIES=0 /usr/share/rakudo/tools/install-dist.raku \
+		--to="$pkgdir"/usr/share/rakudo/vendor --for=vendor
+	install -Dvm644 LICENSE META6.json README.md \
+		-t "$pkgdir"/usr/share/doc/"$pkgname"
+
+}
