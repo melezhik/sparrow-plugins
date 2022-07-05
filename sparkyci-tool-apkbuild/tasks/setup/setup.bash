@@ -1,5 +1,9 @@
+set -e
+
 pub_key=$1
 prv_key=$2
+pkgname=$3
+
 apk update
 apk add curl alpine-sdk
 apk add rakudo
@@ -18,3 +22,5 @@ echo $pub_key > /home/builder/.abuild/builder-62c0a309.rsa.pub
 chmod a+r /home/builder/.abuild/builder-62c0a309.rsa.pub
 echo PACKAGER_PRIVKEY="/home/builder/.abuild/builder-62c0a309.rsa" > /home/builder/.abuild/abuild.conf
 chmod a+r /home/builder/.abuild/abuild.conf
+mkdir -p /home/builder/packages/$pkgname
+chown -R builder /home/builder/packages/$pkgname

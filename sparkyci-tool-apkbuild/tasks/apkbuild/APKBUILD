@@ -15,7 +15,6 @@ subpackages="$pkgname-doc"
 source="$pkgname-$pkgver.tar.gz::%source%"
 builddir="$srcdir"/%builddir%
 
-
 check() {
 	# Replace with proper check command(s)
 	# prove -e 'raku -Ilib'
