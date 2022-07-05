@@ -1,8 +1,8 @@
 # Contributor:
 # Maintainer:
 pkgname=%pkgname%
-pkgver=0.2.2
-pkgrel=3
+pkgver=%pkgver%
+pkgrel=%pkgrel%
 pkgdesc="%pkgdesc%"
 url="%url%"
 arch="all !s390x !riscv64"
