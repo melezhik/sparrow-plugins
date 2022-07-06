@@ -9,6 +9,15 @@ $apk-str.=subst("%pkgdesc%",config()<pkgdesc>);
 $apk-str.=subst("%url%",config()<url>);
 $apk-str.=subst("%license%",config()<license>);
 $apk-str.=subst("%source%",config()<source>);
+
+my $builddir;
+
+config()<source> ~~ /.* '/' (\S+) '.tar.gz' /;
+
+$builddir = "{$1}";
+
+say "builddir: {$builddir}";
+
 $apk-str.=subst("%builddir%",config()<builddir>);
 
 "{$target_dir}/APKBUILD".IO.spurt($apk-str);
