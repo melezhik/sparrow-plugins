@@ -1,0 +1,8 @@
+{
+
+  "name" : "git-fix-email",
+  "description" : "Fix pushed commits with wrong email",
+  "version" : "0.0.1",
+  "category" : "utilities, git",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/git-fix-email"
+}

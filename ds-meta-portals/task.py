@@ -28,8 +28,8 @@ class Graph:
         print(f"start from s: {s} ({symbols[s]})")
         # Mark all the vertices as not visited
         visited = [False] * len(self.graph)
-        print(f"graph: {self.graph}")
-        print(f"visited: {visited}")
+        #print(f"graph: {self.graph}")
+        #print(f"visited: {visited}")
         # Create a queue for BFS
         queue = []
  
@@ -55,7 +55,7 @@ class Graph:
             print(f"{symbols[s]}_{s}", end = " ")
             if symbols[s] == "E":
                 print(f"exit found. hops: {dist[s]}")
-                return    
+                return dist[s]   
             # Get all adjacent vertices of the
             # dequeued vertex s. If a adjacent
             # has not been visited, then mark it
@@ -67,15 +67,17 @@ class Graph:
                     visited[i] = True
                     dist[i] = dist[s] + 1;
             print("")    
+        print(f"no exit found")
+        return -1
 
 def getSecondsRequired(R: int, C: int, G: List[List[str]]) -> int:
     # Write your code here
     g = Graph()
     global symbols
+    symbols = [] 
     portals = {}
     j = - 1
     for r in range(R):
-        print(f"\n")    
         for c in range(C):
             j = j + 1        
             n = G[r][c]
@@ -110,7 +112,7 @@ def getSecondsRequired(R: int, C: int, G: List[List[str]]) -> int:
             if n != '.' and n != '#' and n !='S' and n != 'E':
                 if n in portals:
                     for k in portals[n]:
-                        print(f"teleport from {i}({symbols[i]}) to {k}({symbols[k]})")
+                        #print(f"teleport from {i}({symbols[i]}) to {k}({symbols[k]})")
                         g.addEdge(i,k)
                         g.addEdge(k,i)
                 #continue
@@ -138,11 +140,11 @@ def getSecondsRequired(R: int, C: int, G: List[List[str]]) -> int:
 
             if n == "S":
                 s_i = i 
-                print(f"start index set to {s_i}")
+                #print(f"start index set to {s_i}")
 
     print("\n//////////////////")
-    g.BFS(s_i)
-    return 0
+    h = g.BFS(s_i)
+    return h
 
 getSecondsRequired(3,3,[
     [ '.', 'E', '.'],
@@ -151,14 +153,20 @@ getSecondsRequired(3,3,[
 ])  
 
 
-#getSecondsRequired(3,4,[
-#    [ 'a','.','S','a' ],
-#    [ '#','#','#','#' ],
-#    [ 'E','b','.','b' ]
-#])
+getSecondsRequired(3,4,[
+    [ 'a','.','S','a' ],
+    [ '#','#','#','#' ],
+    [ 'E','b','.','b' ]
+])
 
-# getSecondsRequired(3,4,[
-#     ['a','S','.','b'],
-#     ['#','#','#','#'],
-#     ['E','b','.','a']
-# ])
+getSecondsRequired(3,4,[
+     ['a','S','.','b'],
+     ['#','#','#','#'],
+     ['E','b','.','a']
+ ])
+
+
+getSecondsRequired(1,9,[
+ ["x","S",".",".","x",".",".","E","x"]
+]
+)
