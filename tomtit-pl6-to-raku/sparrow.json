@@ -2,7 +2,7 @@
 
   "name" : "tomtit-pl6-to-raku",
   "description" : "Tomtit scenarios and configurations - rename pl6 to raku",
-  "version" : "0.0.4",
+  "version" : "0.0.5",
   "category" : "utilities, tomtit",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/tomtit-pl6-to-raku"
 }
