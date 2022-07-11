@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Scenarios and configurations - rename pl6 to raku 
+Rename files `*.pl6` to `*.raku` 
 
 # INSTALL
 
