@@ -10,7 +10,7 @@ Scenarios and configurations - rename pl6 to raku
 
 Cli:
 
-    $ s6 --install tomtit-pl6-to-raku
+    $ s6 --plg-run tomtit-pl6-to-raku
 
 Via Tomtit:
 
