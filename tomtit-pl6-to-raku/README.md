@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Tomtit scenarios and configurations - rename pl6 to raku 
+Scenarios and configurations - rename pl6 to raku 
 
 # INSTALL
 
@@ -17,6 +17,12 @@ Via Tomtit:
     $ tom --profile tomtit
 
     $ tom tomtit-pl6-to-raku
+
+# Parameters
+
+## dir
+
+Working directory. Optional. Default value is `.` (cwd)
 
 # Author
 
