@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Rename files `*.pl6` to `*.raku` 
+Rename files `*.pl6, *.pm6` to `*.raku, *.rakumod`
 
 # INSTALL
 
