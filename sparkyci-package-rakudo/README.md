@@ -9,8 +9,22 @@ Installs rakudo meta package on sparkyci
 # Usage
 
     task-run "rakudo package", "sparkyci-package-rakudo", %(
-      version => "d4e8b671ab38d7b02b3f1eaa263b4ee6da1cad01"
+      version => "4f519c2"
     );
+
+# Parameters
+
+## version
+
+Rakudo version. Optional. Default values is `HEAD`.
+
+Examples:
+
+```
+4f519c2 # short SHA
+4f519c2ea8c63ce26deae8fc6f854081485605f6 # full SHA
+HEAD # symbolic name
+```
 
 # Author
 

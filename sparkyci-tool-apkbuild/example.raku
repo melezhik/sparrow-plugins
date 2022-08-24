@@ -1,4 +1,4 @@
-task-run ".", %(
+task-run "sparkyci-tool-apkbuild", "sparkyci-tool-apkbuild", %(
   pkgname => "raku-kind",
   pkgver => "0.2.2",
   pkgrel => 3,

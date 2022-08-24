@@ -1,6 +1,7 @@
 set -e
 
 rakudo_version=$(config version)
+glibc_url=$(config glic_url)
 
 set -x
 
@@ -8,18 +9,28 @@ set -x
 
 
 echo "installing rakudo packages on sparky"
-echo "==================================="
+echo "===================================="
 
-sudo apk add wget zstd
+sudo apk add wget zstd curl
 
-wget --quiet --no-clobber --no-check-certificate https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.31-r0/glibc-2.31-r0.apk
+curl -fskL $glibc_url -o $cache_dir/glibc.apk
 
-sudo apk add --allow-untrusted glibc-2.31-r0.apk
+sudo apk add --allow-untrusted $cache_dir/glibc.apk
 
 sudo mkdir -p /data/whateverable/
 
-cd /data/whateverable/ && sudo wget -q https://whateverable.6lang.org/$rakudo_version
+cd /data/whateverable/ && sudo curl -fsLk  https://whateverable.6lang.org/$rakudo_version \
+-o $rakudo_version -D $cache_dir/headers.txt
 
-sudo zstd -dqc -- $rakudo_version | sudo tar -x --absolute-names
+sha=$(raku -e 'print $_ for lines().map({/"X-Full-Commit:"\s+(\S+)/; $0}).grep({$_})'  \
+< $cache_dir/headers.txt )
 
-/tmp/whateverable/rakudo-moar/$rakudo_version/bin/raku --version
+echo "sha found: $sha"
+
+if test $sha -ne $rakudo_version; then
+  sudo mv -v $rakudo_version $sha
+fi
+
+sudo zstd -dqc -- $sha | sudo tar -x --absolute-names
+
+/tmp/whateverable/rakudo-moar/$sha/bin/raku --version
