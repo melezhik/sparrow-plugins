@@ -34,3 +34,6 @@ fi
 sudo zstd -dqc -- $sha | sudo tar -x --absolute-names
 
 /tmp/whateverable/rakudo-moar/$sha/bin/raku --version
+
+echo "export RAKUBIN=/tmp/whateverable/rakudo-moar/$sha/bin/raku" >> ~/.profile
+
