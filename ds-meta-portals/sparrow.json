@@ -1,0 +1,7 @@
+{
+  "name" : "sd-meta-portals",
+  "description": "Meta portals coding puzzle solution",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sd-meta-portals",
+  "category" : "datastructures, algorithm, graph"
+}
