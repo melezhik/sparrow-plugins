@@ -1,7 +1,7 @@
 set -e
 
 rakudo_version=$(config version)
-glibc_url=$(config glic_url)
+glibc_url=$(config glibc_url)
 
 echo "installing rakudo packages on sparky"
 echo "===================================="
