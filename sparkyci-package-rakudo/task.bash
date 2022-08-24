@@ -24,7 +24,7 @@ sha=$(raku -e 'print $_ for lines().map({/"X-Full-Commit:"\s+(\S+)/; $0}).grep({
 
 echo "sha found: $sha"
 
-if test $sha -ne $rakudo_version; then
+if test $sha != $rakudo_version; then
   sudo mv -v $rakudo_version $sha
 fi
 
