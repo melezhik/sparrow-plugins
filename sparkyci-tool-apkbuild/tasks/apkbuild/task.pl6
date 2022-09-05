@@ -9,6 +9,8 @@ $apk-str.=subst("%pkgdesc%",config()<pkgdesc>);
 $apk-str.=subst("%url%",config()<url>);
 $apk-str.=subst("%license%",config()<license>);
 $apk-str.=subst("%source%",config()<source>);
+$apk-str.=subst("%depends%",config()<depends>);
+  
 
 my $builddir;
 
