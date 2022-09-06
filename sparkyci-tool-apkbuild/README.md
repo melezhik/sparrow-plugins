@@ -25,9 +25,50 @@ Build alpine package for Raku module distribution
                   tKf0LgAR463GG2TIKKgMJF440oYDUgTHkicHD+p8dIpR9jLW2KpS0BKpsKqiRNvp
                   ryimMf6SKpUzqWI8fBrfYXG5nCWwEkHxQAOn0n7PyaDkGSWUaOUeV0H9l6epOSfH
                   WwIDAQAB",
-
       prv_key => "keep it secret"
     ),
+
+# Parameters
+
+## pkgname
+
+Alpine package name
+
+## pkgver
+
+Alpine package version
+
+## pkgrel
+
+Alpine package release number
+
+## source
+
+Alpine package source
+
+## url
+
+Package URL
+
+## builddir
+
+Directory inside the srcdir where the main package source is unpacked
+
+## depends
+
+Run-time dependency package(s)
+
+## license
+
+License(s) for the package. Optional
+
+## pub_key
+
+Public key. Optional
+
+## prv_key
+
+Private key. Optional
 
 # Author
 
