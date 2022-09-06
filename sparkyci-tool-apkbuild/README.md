@@ -16,7 +16,8 @@ Build alpine package for Raku module distribution
       source => "https://360.zef.pm/C/RO/CROMTIT/84b480156c520677f7360b9f9aac98e6d96939e9.tar.gz",
       url => "https://github.com/melezhik/Cromtit",
       builddir => 'dist',
-      depends => "raku-Yamlish raku-Data-Dump"
+      depends => "raku-Yamlish raku-Data-Dump",
+      license => "Artistic-2.0",
       pub_key => "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzfGPHUnYGEm28weCa6d5
                   qoM0lSHP+8fzkQGrwwQJEpyeAqxjeSBJUBFiTc+qNnF42nbGAH8FtxJnw5MfvaB2
                   iHMP8q0H2qiTfjGf1Ky+/3/Ile8kEWSDtFBpz2FibqHCwwQOtAn3GVmaPIHQg8aO
