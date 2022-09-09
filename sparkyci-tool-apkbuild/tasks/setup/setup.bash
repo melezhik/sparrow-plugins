@@ -2,7 +2,6 @@ set -e
 
 pub_key=$1
 prv_key=$2
-pkgname=$3
 
 apk update
 apk add curl alpine-sdk
@@ -30,8 +29,9 @@ if [[ -n $pub_key  ]] && [[ -n $prv_key ]]; then
 
   chown -R builder /home/builder/.abuild/abuild.conf
 
+else
+
+  su - builder -c "abuild-keygen -a -i"
+
 fi
 
-mkdir -p /home/builder/packages/$pkgname
-
-chown -R builder /home/builder/packages/

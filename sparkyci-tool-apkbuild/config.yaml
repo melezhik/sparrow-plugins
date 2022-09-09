@@ -1,2 +1,3 @@
 license: Artistic-2.0
 depends: ""
+action: setup

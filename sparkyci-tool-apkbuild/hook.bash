@@ -1,5 +1,5 @@
-run_task setup
+action=$(config action)
 
-run_task apkbuild
+run_task $action
 
-run_task package
+
