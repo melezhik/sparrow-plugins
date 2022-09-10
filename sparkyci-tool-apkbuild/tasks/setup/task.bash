@@ -37,7 +37,7 @@ if [[ -n $pub_key  ]] && [[ -n $prv_key ]]; then
 
 else
 
-  su - builder -c "abuild-keygen -a -i"
+  su - builder -c "abuild-keygen -a -i -n"
 
 fi
 
