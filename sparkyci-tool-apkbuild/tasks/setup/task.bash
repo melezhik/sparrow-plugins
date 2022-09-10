@@ -8,7 +8,13 @@ apk add curl alpine-sdk
 apk add rakudo
 apk add rakudo-dev
 apk add sudo
-echo | adduser -G wheel builder
+
+if id -u builder 2>/dev/null 1>/dev/null; then
+  echo "user builder exists, skip creation"
+else
+  adduser --disabled-password -G wheel builder
+fi
+
 echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 mkdir -p /var/cache/distfiles
 chmod a+w /var/cache/distfiles
