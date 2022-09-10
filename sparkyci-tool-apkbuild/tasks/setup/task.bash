@@ -1,5 +1,37 @@
-pub_key=$(config pub_key)
-prv_key=$(config prv_key)
+set -e
 
-sudo bash $root_dir/setup.bash $pub_key $prv_key
+pub_key=$1
+prv_key=$2
+
+apk update
+apk add curl alpine-sdk
+apk add rakudo
+apk add rakudo-dev
+apk add sudo
+echo | adduser -G wheel builder
+echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
+mkdir -p /var/cache/distfiles
+chmod a+w /var/cache/distfiles
+
+
+if [[ -n $pub_key  ]] && [[ -n $prv_key ]]; then
+  echo "setup public and private key"
+
+  echo "private key path: /home/builder/.abuild/builder-62c0a309.rsa"
+  echo $prv_key > /home/builder/.abuild/builder-62c0a309.rsa
+  chown -R builder /home/builder/.abuild/builder-62c0a309.rsa
+
+  echo "public key path: /home/builder/.abuild/builder-62c0a309.rsa.pub"
+  echo $pub_key > /home/builder/.abuild/builder-62c0a309.rsa.pub
+  chown -R builder /home/builder/.abuild/builder-62c0a309.rsa.pub
+
+  echo PACKAGER_PRIVKEY="/home/builder/.abuild/builder-62c0a309.rsa" > /home/builder/.abuild/abuild.conf
+
+  chown -R builder /home/builder/.abuild/abuild.conf
+
+else
+
+  su - builder -c "abuild-keygen -a -i"
+
+fi
 
