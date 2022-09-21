@@ -1,6 +1,6 @@
 {
   "name" : "license-spdx",
   "description" : "Check License using License::SPDX",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/license-spdx"
 }

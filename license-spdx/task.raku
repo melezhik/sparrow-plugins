@@ -20,3 +20,5 @@ if "{config()<dir>}/LICENSE".IO ~~ :f {
     %s<status> = "FAIL";
 	  %s<message> = "LICENSE file does not exit";
 }
+
+update_state(%s);
