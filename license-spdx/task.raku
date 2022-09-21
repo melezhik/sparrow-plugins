@@ -1,10 +1,15 @@
 use License::SPDX;
+use JSON::Tiny;
 
 my $l = License::SPDX.new;
 my %s;
 
-if "{config()<dir>}/LICENSE".IO ~~ :f {
-  if $l.get-license("{config()<dir>}/LICENSE".IO.slurp()) -> $license {
+my $json = from-json("{config()<dir>}/META6.json".IO.slurp());
+
+if $json<license> {
+  say "parse license: {$json<license>}";
+  %s<license> = $json<license>;
+  if $l.get-license($json<license>) -> $license {
 	  if $license.is-deprecated-license {
       %s<status> = "DEPRECATED";
   	  %s<message> = "deprecated licence";
@@ -18,7 +23,7 @@ if "{config()<dir>}/LICENSE".IO ~~ :f {
   }
 } else {
     %s<status> = "FAIL";
-	  %s<message> = "LICENSE file does not exit";
+	  %s<message> = "META6.json - license field does not exit";
 }
 
 update_state(%s);

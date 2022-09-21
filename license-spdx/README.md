@@ -13,10 +13,18 @@ Check License using License::SPDX
     dir => ".",
   );
 
-  say $s<status>;
-  say $s<message>;
+  say $s<license>; # license string
+  say $s<status>; # license status - OK|FAIL|DEPRECATED
+  say $s<message>; # short descriptive message
 
 ```
+# Parameters
+
+## dir
+
+Directory with "META6.json" file. Optional. Default value is '.'
+
+
 # Author
 
 Alexey Melezhik
