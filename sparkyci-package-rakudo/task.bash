@@ -8,7 +8,7 @@ set -x
 echo "installing rakudo packages on sparky"
 echo "===================================="
 
-sudo apk add wget zstd curl
+sudo apk add wget zstd curl tar
 
 curl -fskL $glibc_url -o $cache_dir/glibc.apk
 
