@@ -12,14 +12,16 @@ if $json<license> {
   if $l.get-license($json<license>) -> $license {
 	  if $license.is-deprecated-license {
       %s<status> = "DEPRECATED";
-  	  %s<message> = "deprecated licence";
+  	  %s<message> = "deprecated license";
+      %s<data> = $json<license>;
     } else {
       %s<status> = "OK";
-  	  %s<message> = "licence is good";
+  	  %s<message> = "license is good";
+      %s<data> = $json<license>;
     }
   } else {
     %s<status> = "FAIL";
-	  %s<message> = "not a good licence";
+	  %s<message> = "not a good license";
   }
 } else {
     %s<status> = "FAIL";
