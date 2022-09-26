@@ -18,6 +18,7 @@ Build alpine package for Raku module distribution
                   ryimMf6SKpUzqWI8fBrfYXG5nCWwEkHxQAOn0n7PyaDkGSWUaOUeV0H9l6epOSfH
                   WwIDAQAB",
       prv_key => "keep it secret",
+      keyname => "builder.rsa"
     );
 
     task-run "Cromtit package", "sparkyci-tool-apkbuild", %(
@@ -78,6 +79,10 @@ Run-time dependency package(s)
 ## license
 
 License(s) for the package. Optional
+
+## keyname
+
+Public/Private key pair name. Optional. Default value is `builder.rsa`
 
 ## pub_key
 

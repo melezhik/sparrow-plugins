@@ -2,6 +2,7 @@ set -e
 
 pub_key=$1
 prv_key=$2
+key_name=$3
 
 apk update
 apk add curl alpine-sdk
@@ -20,18 +21,19 @@ mkdir -p /var/cache/distfiles
 chmod a+w /var/cache/distfiles
 
 
-if [[ -n $pub_key  ]] && [[ -n $prv_key ]]; then
+if [[ -n $pub_key  ]] && [[ -n $prv_key ]] && [[ ! -f $keyname ]]; then
+
   echo "setup public and private key"
 
-  echo "private key path: /home/builder/.abuild/builder-62c0a309.rsa"
-  echo $prv_key > /home/builder/.abuild/builder-62c0a309.rsa
-  chown -R builder /home/builder/.abuild/builder-62c0a309.rsa
+  echo "private key path: /home/builder/.abuild/$keyname"
+  echo $prv_key > /home/builder/.abuild/$keyname
+  chown -R builder /home/builder/.abuild/$keyname
 
-  echo "public key path: /home/builder/.abuild/builder-62c0a309.rsa.pub"
-  echo $pub_key > /home/builder/.abuild/builder-62c0a309.rsa.pub
-  chown -R builder /home/builder/.abuild/builder-62c0a309.rsa.pub
+  echo "public key path: /home/builder/.abuild/$keyname.pub"
+  echo $pub_key > /home/builder/.abuild/$keyname.pub
+  chown -R builder /home/builder/.abuild/$keyname.pub
 
-  echo PACKAGER_PRIVKEY="/home/builder/.abuild/builder-62c0a309.rsa" > /home/builder/.abuild/abuild.conf
+  echo PACKAGER_PRIVKEY="/home/builder/.abuild/$keyname" > /home/builder/.abuild/abuild.conf
 
   chown -R builder /home/builder/.abuild/abuild.conf
 
