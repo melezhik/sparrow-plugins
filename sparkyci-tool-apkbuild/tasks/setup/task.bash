@@ -16,6 +16,9 @@ else
   adduser --disabled-password -G wheel builder
 fi
 
+# add user builder to abuild group
+addgroup builder abuild
+
 echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 mkdir -p /var/cache/distfiles
 chmod a+w /var/cache/distfiles
