@@ -39,7 +39,7 @@ if [[ -n $pub_key  ]] && [[ -n $prv_key ]] && [[ ! -f $keyname ]]; then
 
 else
 
-  test -f  /home/builder/.abuild/*.rsa || su - builder -c "abuild-keygen -a -i -n"
+  ls -l /home/builder/.abuild/*.rsa || su - builder -c "abuild-keygen -a -i -n"
 
 fi
 
