@@ -22,11 +22,11 @@ check() {
 }
 
 package() {
-	set -x	
+	#set -x	
 	ls -l	
 	RAKUDO_RERESOLVE_DEPENDENCIES=0 /usr/share/rakudo/tools/install-dist.raku \
 		--to="$pkgdir"/usr/share/rakudo/vendor --for=vendor
-	install -Dvm644 LICENSE META6.json README.md \
+	install -Dvm644 META6.json README.md \
 		-t "$pkgdir"/usr/share/doc/"$pkgname"
 
 }

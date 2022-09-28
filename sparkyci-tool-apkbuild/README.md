@@ -64,6 +64,10 @@ Alpine package release number
 
 Alpine package source
 
+## source_extension
+
+Source archive file extension. Optional. Default value is `tar.gz`
+
 ## url
 
 Package URL
