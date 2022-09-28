@@ -38,7 +38,7 @@ Build alpine package for Raku module distribution
 
 ## action
 
-Actual action to perform. One of two:
+Actual action to perform. One of three:
 
 * `setup`
 
@@ -47,6 +47,10 @@ Set up Alpine packager tool-chain
 * `create`
 
 Create an Alpine package for Raku module
+
+* `nginx`
+
+Setup alpine repository and server it via nginx
 
 ## pkgname
 
