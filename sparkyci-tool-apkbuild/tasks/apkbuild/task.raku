@@ -11,6 +11,7 @@ $apk-str.=subst("%license%",config()<license>);
 $apk-str.=subst("%source%",config()<source>);
 $apk-str.=subst("%depends%",config()<depends>);
 $apk-str.=subst("%builddir%",config()<builddir>);
+$apk-str.=subst("%extension%",config()<source_extension>);
 
 "{$target_dir}/APKBUILD".IO.spurt($apk-str);
 

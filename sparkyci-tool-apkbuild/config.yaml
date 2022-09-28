@@ -2,3 +2,4 @@ license: Artistic-2.0
 depends: ""
 action: setup
 keyname: builder.rsa
+source_extension: tar.gz
