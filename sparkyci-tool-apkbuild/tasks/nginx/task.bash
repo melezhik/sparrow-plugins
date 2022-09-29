@@ -26,7 +26,7 @@ HERE
 
 echo "start nginx server ..."
 
-ps uax|grep nginx|grep master || nohup nginx -g "daemon off;" 1>/tmp/nginx.log 2>&1 &
+ps uax|grep nginx|grep master || nohup nginx -g "daemon off;" >/dev/null 2>&1 &
 
 curl 127.0.0.1/key.rsa.pub -f -s
 curl 127.0.0.1/x86_64/APKINDEX.tar.gz -o /dev/null -f -s -D -
