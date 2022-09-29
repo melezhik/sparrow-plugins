@@ -3,7 +3,10 @@ set -x
 
 apk add nginx
 
-ln -fs /home/builder/.abuild/*.rsa.pub /home/builder/packages/raku-packages/key.rsa.pub
+ln -sf  /home/builder/.abuild/*.rsa.pub /home/builder/packages/raku-packages/
+cd /home/builder/packages/raku-packages/
+k=$(ls -1 *.rsa.pub)
+echo "public key: $k"
 
 cat << HERE > /etc/nginx/http.d/default.conf
 server {
@@ -30,9 +33,10 @@ ps uax|grep nginx|grep master || nginx -g "daemon off;" >/dev/null 2>&1 &
 
 echo "nginx server started"
 
-echo "check nginx endpoints ..."
+echo "check nginx endpoint ..."
 
-curl 127.0.0.1/key.rsa.pub -f -s
+curl 127.0.0.1/$k -f -s
+
 curl 127.0.0.1/x86_64/APKINDEX.tar.gz -o /dev/null -f -s -D -
 
 echo "done"
