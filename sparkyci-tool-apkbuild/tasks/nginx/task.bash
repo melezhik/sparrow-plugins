@@ -30,10 +30,10 @@ ps uax|grep nginx|grep master || nginx -g "daemon off;" >/dev/null 2>&1 &
 
 echo "nginx server started"
 
-#echo "check nginx endpoints ..."
+echo "check nginx endpoints ..."
 
-#curl 127.0.0.1/key.rsa.pub -f -s
-#curl 127.0.0.1/x86_64/APKINDEX.tar.gz -o /dev/null -f -s -D -
+curl 127.0.0.1/key.rsa.pub -f -s
+curl 127.0.0.1/x86_64/APKINDEX.tar.gz -o /dev/null -f -s -D -
 
 echo "done"
 
