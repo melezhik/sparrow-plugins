@@ -4,4 +4,4 @@ pkgname=$(config pkgname)
 
 set -x
 
-su - builder -c "cd /home/builder/ && mkdir -p raku-packages/$pkgname && cd raku-packages/$pkgname && abuild checksum && abuild -Kcr"
+su - builder -c "cd /home/builder/ && mkdir -p raku-packages/$pkgname && cd raku-packages/$pkgname abuild -Kcr"
