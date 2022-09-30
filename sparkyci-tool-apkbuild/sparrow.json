@@ -1,6 +1,6 @@
 {
   "name" : "sparkyci-tool-apkbuild",
   "description" : "Build alpine package for Raku module distribution",
-  "version" : "0.0.35",
+  "version" : "0.0.36",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparkyci-tool-apkbuild"
 }
