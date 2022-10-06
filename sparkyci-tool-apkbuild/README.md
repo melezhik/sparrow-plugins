@@ -100,6 +100,10 @@ buildcommand => "/usr/share/rakudo/vendor/bin/zef build ."
 
 License(s) for the package. Optional.
 
+# readme
+
+Readme file path. Optional. Default value is `README.md`.
+
 ## keyname
 
 Public/Private key pair name. Optional. Default value is `builder.rsa`.
