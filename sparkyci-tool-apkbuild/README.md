@@ -84,6 +84,10 @@ Directory inside the srcdir where the main package source is unpacked
 
 Run-time dependency package(s)
 
+## makedepends
+
+Specifies build dependencies for the package
+
 ## license
 
 License(s) for the package. Optional
