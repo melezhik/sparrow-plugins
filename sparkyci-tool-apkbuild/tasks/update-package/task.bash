@@ -3,7 +3,7 @@ set -e
 pkgname=$(config pkgname)
 
 if test -f "/home/builder/raku-packages/${pkgname}/APKBUILD.old"; then
-  if diff -wt "/home/builder/raku-packages/${pkgname}/APKBUILD.new" "/home/builder/raku-packages/${pkgname}/APKBUILD.old"; then
+  if diff -wbBt "/home/builder/raku-packages/${pkgname}/APKBUILD.new" "/home/builder/raku-packages/${pkgname}/APKBUILD.old"; then
     echo "keep /home/builder/raku-packages/${pkgname}/APKBUILD ..."
     su - builder -c "cd /home/builder/raku-packages/$pkgname && abuild -cKr"
   else
