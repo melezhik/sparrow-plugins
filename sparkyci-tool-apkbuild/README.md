@@ -82,11 +82,11 @@ Directory inside the srcdir where the main package source is unpacked
 
 ## depends
 
-Run-time dependency package(s)
+Run-time dependency package(s). Optional.
 
 ## makedepends
 
-Specifies build dependencies for the package
+Specifies build dependencies for the package. Optional.
 
 ## license
 

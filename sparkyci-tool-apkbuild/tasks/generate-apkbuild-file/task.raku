@@ -10,7 +10,12 @@ $apk-str.=subst("%url%",config()<url>);
 $apk-str.=subst("%license%",config()<license>);
 $apk-str.=subst("%source%",config()<source>);
 $apk-str.=subst("%depends%",config()<depends>);
-$apk-str.=subst("%makedepends%"," {config()<makedepends>}") if config()<makedepends>;
+if config()<makedepends> {
+  $apk-str.=subst("%makedepends%"," {config()<makedepends>}") 
+} else {
+  $apk-str.=subst("%makedepends%","") 
+}
+
 $apk-str.=subst("%builddir%",config()<builddir>);
 $apk-str.=subst("%extension%",config()<source_extension>);
 
