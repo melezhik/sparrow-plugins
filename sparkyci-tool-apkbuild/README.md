@@ -54,23 +54,23 @@ Setup alpine repository and server it via nginx
 
 ## pkgname
 
-Alpine package name
+Alpine package name. Required.
 
 ## pkgver
 
-Alpine package version
+Alpine package version. Required.
 
 ## pkgrel
 
-Alpine package release number
+Alpine package release number. Required.
 
 ## source
 
-Alpine package source
+Alpine package source. Required.
 
 ## source_extension
 
-Source archive file extension. Optional. Default value is `tar.gz`
+Source archive file extension. Optional. Default value is `tar.gz`.
 
 ## url
 
@@ -78,7 +78,7 @@ Package URL
 
 ## builddir
 
-Directory inside the srcdir where the main package source is unpacked
+Directory inside the srcdir where the main package source is unpacked. Required.
 
 ## depends
 
@@ -88,21 +88,29 @@ Run-time dependency package(s). Optional.
 
 Specifies build dependencies for the package. Optional.
 
+## buildcommand
+
+Optional build command to be run before packaging. For example:
+
+```raku
+buildcommand => "/usr/share/rakudo/vendor/bin/zef build ."
+```
+
 ## license
 
-License(s) for the package. Optional
+License(s) for the package. Optional.
 
 ## keyname
 
-Public/Private key pair name. Optional. Default value is `builder.rsa`
+Public/Private key pair name. Optional. Default value is `builder.rsa`.
 
 ## pub_key
 
-Public key. Optional
+Public key. Optional.
 
 ## prv_key
 
-Private key. Optional
+Private key. Optional.
 
 # Author
 

@@ -15,7 +15,11 @@ if config()<makedepends> {
 } else {
   $apk-str.=subst("%makedepends%","") 
 }
-
+if config()<buildcommand> {
+  $apk-str.=subst("#%buildcommand%"," {config()<buildcommand>}") 
+} else {
+  $apk-str.=subst("#%buildcommand%","") 
+}
 $apk-str.=subst("%builddir%",config()<builddir>);
 $apk-str.=subst("%extension%",config()<source_extension>);
 

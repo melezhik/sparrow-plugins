@@ -22,7 +22,8 @@ check() {
 }
 
 package() {
-	#set -x	
+	#set -x
+  #%buildcommand%	
 	ls -l	
 	RAKUDO_RERESOLVE_DEPENDENCIES=0 /usr/share/rakudo/tools/install-dist.raku \
 		--to="$pkgdir"/usr/share/rakudo/vendor --for=vendor
