@@ -1,6 +1,6 @@
 # sparkyci-package-python
 
-Installs python3/pip3 meta package on sparkyci
+Installs python3/pip/py3-pytest packages
 
 # Install
 

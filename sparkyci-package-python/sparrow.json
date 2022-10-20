@@ -1,6 +1,6 @@
 {
   "name" : "sparkyci-package-python",
-  "description" : "Installs python meta package on sparkyci",
-  "version" : "0.0.3",
+  "description" : "Installs python3/pip/py3-pytest packages",
+  "version" : "0.0.4",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparkyci-package-python"
 }

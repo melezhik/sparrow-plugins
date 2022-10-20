@@ -3,7 +3,8 @@ set -x
 
 2>&1
 
-echo "installing python3/pip packages on sparkyci"
-echo "==========================================="
+echo "installing python3/pip/py3-pytest packages"
+echo "=========================================="
 
-sudo apk add python3 py3-pip python3-dev
+sudo apk add python3 py3-pip python3-dev py3-pytest
+
