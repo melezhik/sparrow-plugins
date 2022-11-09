@@ -1,6 +1,6 @@
 {
   "name" : "go-example",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "description" : "golang API example",
   "category" : "golang",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/go-example"

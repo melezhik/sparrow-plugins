@@ -10,9 +10,11 @@ Golang API example
 # USAGE
 
 ```
-task-run "go api", "go-example", %(
+my $s = task-run "go api", "go-example", %(
   foo => "Bar"
 );
+
+say "message: ", $s<state><Message>;
 
 ```
 # Author
