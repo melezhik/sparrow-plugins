@@ -1,0 +1,6 @@
+{
+  "name" : "docker-cli",
+  "description" : "Simple wrapper against docker cli",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/docker-cli"
+}
