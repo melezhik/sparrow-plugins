@@ -13,7 +13,7 @@ Simple task to run/stop docker
 Run docker named "foo", with image "alpine:latest"
 
 ```raku
-task-run ".", %(
+task-run "docker run", "docker-cli", %(
   action => "run",
   name => "foo",
   image => "alpine:latest"
@@ -23,7 +23,7 @@ task-run ".", %(
 Inject secrets from vault, vault path is "/sparrow":
 
 ```raku
-task-run ".", %(
+task-run "docker run", "docker-cli", %(
   vault_path => "/sparrow/",
   vars => "foo bar baz",
   action => "run",
@@ -35,7 +35,7 @@ task-run ".", %(
 ## Stop docker
 
 ```raku
-task-run ".", %(
+task-run "docker stop", "docker-cli", %(
   action => "stop",
   name => "foo"
 );

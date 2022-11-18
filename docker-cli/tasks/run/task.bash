@@ -12,8 +12,8 @@ echo "about to start docker name=$name, image=$image, dry_run=$dry_run"
 
 vars_docker=""
 
-echo "pass vars from vault: $vars"
 if test -n "$vars"; then
+  echo "pass vars from vault: $vars"
   for v in $vars; do
     vars_docker="$vars_docker --env $v=\$(vault kv get --field value --format table ${vault_path}${v})"
   done
