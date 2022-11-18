@@ -5,6 +5,7 @@ task-run ".", %(
   vars => "foo bar baz",
   action => "run",
   name => "worker",
-  image => "melezhik/sparrow:alpine"
+  image => "melezhik/sparrow:alpine",
+  #dry_run => True,
 );
 

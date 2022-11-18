@@ -1,6 +1,6 @@
 # docker-cli
 
-Simple wrapper against docker cli
+Simple task to run/stop docker
 
 # Install
 
