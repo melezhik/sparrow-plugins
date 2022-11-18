@@ -15,7 +15,7 @@ vars_docker=""
 if test -n "$vars"; then
   echo "pass vars from vault: $vars"
   for v in $vars; do
-    vars_docker="$vars_docker --env $v=\$(vault kv get --field value --format table ${vault_path}${v})"
+    vars_docker="$vars_docker --env $v=\$(vault kv get --field ${v} ${vault_path})"
   done
 fi
 

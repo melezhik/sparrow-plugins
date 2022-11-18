@@ -1,7 +1,7 @@
 {
   "name" : "docker-cli",
   "description" : "Simple task to run/stop docker",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/docker-cli",
   "category" : "docker, vault"
 }
