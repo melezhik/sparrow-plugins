@@ -20,7 +20,11 @@ task-run "docker run", "docker-cli", %(
 );
 ```
 
-Inject secrets from vault, vault path is "/sparrow":
+Inject secrets from vault. 
+
+Vault paths are: "/sparrow/foo", "/sparrow/bar", "/sparrow/baz".
+
+Secret data should be placed in `value` key.
 
 ```raku
 task-run "docker run", "docker-cli", %(
