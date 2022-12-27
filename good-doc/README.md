@@ -1,6 +1,19 @@
 # SYNOPSIS
 
-Execute code snippets found in README file
+Verify that documentation is good enough:
+
+* It contains at least one piece of (Raku) code
+
+* This piece of code is executed without errors
+
+# Current state
+
+The plugin will search for the first block of Raku code snippet inside README
+file and execute it. 
+
+That is it. 
+
+This very first version does not do anything more.
 
 # INSTALL
 
@@ -15,11 +28,7 @@ In SparrowCI pipeline:
   plugin: good-doc
 ```
 
-The plugin will search for the first block of Raku code snippet inside README
-file and execute it. That is it. This very first version does not
-anything more.
-
-# Paramteres
+# Parameters
 
 ## path
 

@@ -1,8 +1,8 @@
 {
 
   "name" : "good-doc",
-  "description" : "Execute code snippets found in README file",
-  "version" : "0.0.1",
+  "description" : "Verify that documentation is good enough",
+  "version" : "0.0.2",
   "category" : "utilities, ci, sparrowci",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/good-doc"
 }
