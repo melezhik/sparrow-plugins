@@ -7,6 +7,7 @@ my $doc =  config()<path>.IO.slurp();
 if $doc ~~ /'```' (\S*)(.*)'```'/ {
   "{cache_root_dir()}/code.raku".IO.spurt("$1");
   run_task "run", %(
+    dir => config()<path>.IO.dirname,
     file  => "{cache_root_dir()}/code.raku"
   );
 }
