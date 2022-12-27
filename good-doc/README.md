@@ -24,7 +24,6 @@ This very first version does not do anything more.
 In SparrowCI pipeline:
 
 ```yaml
-  ok
   plugin: good-doc
 ```
 
