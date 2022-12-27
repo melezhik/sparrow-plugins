@@ -24,7 +24,12 @@ This very first version does not do anything more.
 In SparrowCI pipeline:
 
 ```yaml
-  plugin: good-doc
+tasks:
+  -
+    name: good-doc
+    plugin: good-doc
+    config: 
+      path: source/README.md
 ```
 
 # Parameters
