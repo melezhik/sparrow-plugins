@@ -1,3 +1,7 @@
+unless config()<path>.IO ~~ :f {
+  die "{config()<path>} does not exist";
+}
+
 my $doc =  config()<path>.IO.slurp();
 
 # very naive implimentation
