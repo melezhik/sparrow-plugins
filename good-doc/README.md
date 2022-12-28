@@ -38,6 +38,16 @@ tasks:
 
 Path to README file. Optional. Default value is "README.md"
 
+## rakudo_path
+
+Use rakudo from file path, this should be rakudobrew path. Optional. 
+
+Example:
+
+```yaml
+  rakudo_path: /var/.sparrowdo/env/main/.sparrowdo/rakudo-moar-2022.07-01-linux-x86_64-gcc
+```
+
 # Author
 
 Alexey Melezhik
