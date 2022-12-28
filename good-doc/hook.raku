@@ -7,7 +7,7 @@ if  config()<path>.IO ~~ :f {
   # looking for the very first block
   # of ``` ... ````
 
-  if $doc ~~ /'```' (\S*)(.*)'```'/ {
+  if $doc ~~ /'```' (\S*) (.+?) '```'/ {
     "{cache_root_dir()}/code.raku".IO.spurt("$1");
     run_task "run", %(
       dir => config()<path>.IO.dirname,
