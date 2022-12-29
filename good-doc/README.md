@@ -45,7 +45,7 @@ Use rakudo from file path, this should be rakudobrew path. Optional.
 Example:
 
 ```yaml
-  rakudo_path: /var/.sparrowdo/env/main/.sparrowdo/rakudo-moar-2022.07-01-linux-x86_64-gcc
+  rakudo_path: "{{ CWD }}/rakudo-moar-2022.07-01-linux-x86_64-gcc"
 ```
 
 # Author

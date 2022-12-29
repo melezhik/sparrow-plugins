@@ -2,7 +2,7 @@
 
   "name" : "good-doc",
   "description" : "Verify that documentation is good enough",
-  "version" : "0.0.13",
+  "version" : "0.0.14",
   "category" : "utilities, ci, sparrowci",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/good-doc"
 }

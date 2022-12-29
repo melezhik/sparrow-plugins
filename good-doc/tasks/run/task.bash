@@ -8,7 +8,7 @@ rakudo_path=$(config rakudo_path)
 
 if ! test -z $rakudo_path; then
   echo "Using rakudo from $rakudo_path:"
-  eval "$($rakudo_path/scripts/set-env.sh)"
+  eval "$($rakudo_path/scripts/set-env.sh --quiet)"
   raku --version
 fi
 
