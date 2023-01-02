@@ -12,10 +12,10 @@ secrets:
 tasks:
   -
     name: gitea-reporter
+    default: true
     plugin: gitea-reporter
     config: 
       gitea_url: http://127.0.0.1:3000
-      sparrowci_url: http://127.0.0.1:2222
       action: commit-status
 ```
 
