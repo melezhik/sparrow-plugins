@@ -30,11 +30,11 @@ if $action eq "commit-status" {
   }
 
   if $user && $repo && $status && %*ENV<SCM_SHA> {
-    run_task: "commit-status", %(
+    run_task("commit-status", %(
       user => $user,
       repo => $repo,
       status => $status
-    )
+    ))
   } else {
     set_stdout("don't know how to run commit-status, some parameters are missing")
   }
