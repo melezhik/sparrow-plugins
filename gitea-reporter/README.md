@@ -2,13 +2,9 @@
 
 Gitea reporter
 
-# INSTALL
-
-    $ s6 --install gitea-reporter
-
 # USAGE
 
-In SparrowCI pipeline, to report commit status to gitea:
+In SparrowCI reporter pipeline, to report commit status back to gitea:
 
 ```yaml
 secrets:

@@ -2,7 +2,7 @@
 
   "name" : "gitea-reporter",
   "description" : "Gitea reporter",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "utilities, ci, sparrowci, gitea",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/gitea-reporter"
 }
