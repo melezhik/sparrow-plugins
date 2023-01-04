@@ -5,7 +5,7 @@ gt_url=$(config gitea_url)
 cat << HERE > $cache_dir/status.json
 {
   "context": "hello",
-  "description": "sparrowci build $status",
+  "description": "sparrowci build: $status",
   "state": "$status",
   "target_url": "$BUILD_URL"
 }

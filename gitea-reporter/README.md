@@ -15,7 +15,7 @@ tasks:
     default: true
     plugin: gitea-reporter
     config: 
-      gitea_url: http://127.0.0.1:3000
+      gitea_url: http://host.docker.internal:3000
       action: commit-status
 ```
 
