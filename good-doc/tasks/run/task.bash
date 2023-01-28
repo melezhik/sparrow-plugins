@@ -14,4 +14,4 @@ fi
 
 echo "run raku -I lib $file ..."
 
-raku -I lib $file || echo "warn: good_doc failed"
+timeout -t 600s -m 1000000k raku -I lib $file || echo "warn: good_doc failed"
