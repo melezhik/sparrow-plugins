@@ -8,12 +8,14 @@ Create aws subnet
 
 ## API
 
+```yaml
 name: create-subnet
 plugin: aws-subnet
 config:
   sb_name: subn_01
   vpc_id: foobar
   cidr_block: 10.0.0.0/24
+```
 
 # Dependencies
 
