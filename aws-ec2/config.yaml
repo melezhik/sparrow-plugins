@@ -1,3 +1,2 @@
 action: get
-cidr_block: 10.0.0.0/24
 type: t2.micro
