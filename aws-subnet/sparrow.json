@@ -1,6 +1,6 @@
 {
     "name" : "aws-subnet",
-    "version" : "0.0.4",
+    "version" : "0.0.5",
     "description" : "Create/get aws subnet",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-subnet",
     "category" : "aws"
