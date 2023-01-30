@@ -35,7 +35,6 @@ State:
 
 ```yaml
   id: $instance_id
-
 ```
 
 # Dependencies
