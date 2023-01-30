@@ -34,7 +34,6 @@ State:
 
 ```yaml
   sn-id: $subnet_id
-
 ```
 
 # Dependencies
