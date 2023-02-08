@@ -1,0 +1,7 @@
+{
+    "name" : "aws-ec2",
+    "version" : "0.0.2",
+    "description" : "Create/get aws ec2 instance",
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-ec2",
+    "category" : "aws, cloud"
+}

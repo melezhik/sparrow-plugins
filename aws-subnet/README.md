@@ -23,7 +23,7 @@ config:
 ### Get
 
 ```yaml
-name: create-subnet
+name: get-subnet
 plugin: aws-subnet
 config:
   action: get
@@ -34,7 +34,6 @@ State:
 
 ```yaml
   sn-id: $subnet_id
-
 ```
 
 # Dependencies
