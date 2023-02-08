@@ -1,6 +1,6 @@
 {
   "name" : "sparrowci-package-rakudo",
   "description" : "Installs rakudo package on sparrowci",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparrowci-package-rakudo"
 }
