@@ -1,6 +1,6 @@
 {
     "name" : "docker-engine",
-    "version" : "0.1.15",
+    "version" : "0.1.16",
     "description" : "installs docker engine",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/docker-engine"
 }

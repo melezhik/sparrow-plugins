@@ -28,9 +28,9 @@ echo \
 
 sudo apt-get update
 
-export user=$USER
+echo "current user:" $(whoami)
 
-echo "user: $user"
+export user=$(whoami)
 
 if test "$cli_only" = "True"; then
   sudo apt-get install -y docker-ce-cli
