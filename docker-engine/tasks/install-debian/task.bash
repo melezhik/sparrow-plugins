@@ -1,32 +1,37 @@
+set -e
+
+cli_only=$(config cli_only)
+
 set -x
 
-set -e
+echo "cli_only: ${cli_only}"
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get update
+sudo apt-get update
 
-apt-get -y install \
-    apt-transport-https \
+sudo apt-get update
+sudo apt-get install \
     ca-certificates \
     curl \
-    gnupg-agent \
-    software-properties-common
+    gnupg \
+    lsb-release
 
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+sudo mkdir -m 0755 -p /etc/apt/keyrings
 
-apt-key fingerprint 0EBFCD88
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
-   $(lsb_release -cs) \
-   stable"
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+sudo apt-get update
 
-apt-get update
+if test "$cli_only" = "true"; then
+  sudo apt-get install docker-ce-cli
+else
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+fi
 
-apt-get -y install docker-ce docker-ce-cli containerd.io
-
-docker run hello-world
-
+sudo usermod -a -G docker ${USER}
