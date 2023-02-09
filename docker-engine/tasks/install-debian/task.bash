@@ -28,12 +28,17 @@ echo \
 
 sudo apt-get update
 
-if test "$cli_only" = "True"; then
-  sudo apt-get install -y docker-ce-cli
-else
-  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-fi
-
 export user=$USER
 
-sudo --preserve-env=user usermod -a -G docker $user
+echo "user: $user"
+
+if test "$cli_only" = "True"; then
+  sudo apt-get install -y docker-ce-cli
+  sudo groupadd docker
+  sudo --preserve-env=user usermod -a -G docker $user
+else
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo --preserve-env=user usermod -a -G docker $user
+fi
+
+
