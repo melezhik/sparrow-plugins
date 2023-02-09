@@ -34,4 +34,6 @@ else
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
 
-sudo usermod -a -G docker ${USER}
+export user=$USER
+
+sudo --preserve-env=user usermod -a -G docker $user
