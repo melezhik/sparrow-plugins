@@ -2,12 +2,6 @@
 
 Installs docker engine on Linux box
 
-# Platforms supported
-
-* Ubuntu
-
-* Debian
-
 # INSTALL
 
     $ s6 --install docker-engine
@@ -15,10 +9,12 @@ Installs docker engine on Linux box
 # API
 
 ```yaml
-task: install-docker
-plugin: docker-engine
-config:
-  cli_only: true
+tasks:
+  -
+    name: install-docker
+    plugin: docker-engine
+    config:
+      cli_only: true
 ```
 
 Parameters:
@@ -26,6 +22,12 @@ Parameters:
 * `cli_only`
 
 Install docker cli only. Optional.
+
+# Platforms supported
+
+* Ubuntu
+
+* Debian
 
 # Author
 
