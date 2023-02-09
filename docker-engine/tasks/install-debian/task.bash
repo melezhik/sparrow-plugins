@@ -11,7 +11,7 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 
 sudo apt-get update
-sudo apt-get install \
+sudo apt-get install -y \
     ca-certificates \
     curl \
     gnupg \
@@ -29,9 +29,9 @@ echo \
 sudo apt-get update
 
 if test "$cli_only" = "true"; then
-  sudo apt-get install docker-ce-cli
+  sudo apt-get install -y docker-ce-cli
 else
-  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
 
 sudo usermod -a -G docker ${USER}
