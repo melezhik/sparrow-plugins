@@ -19,7 +19,7 @@ gitlab_api=$(config gitlab_api)
 debug=$(config debug)
 
 if test "$debug" = "True"; then
-  echo curl -X POST -fs -H "PRIVATE-TOKEN: $gitlab_trigger" -F ref=$ref "$variables" $gitlab_api/projects/$project/trigger/pipeline
+  echo curl -X POST -fs -F token=$gitlab_trigger -F ref=$ref "$variables" $gitlab_api/projects/$project/trigger/pipeline
 fi
 
-curl -X POST -fs -H "PRIVATE-TOKEN: $gitlab_trigger" -F ref=$ref "$variables" $gitlab_api/projects/$project/trigger/pipeline
+curl -X POST -fs -F token=$gitlab_trigger -F ref=$ref "$variables" $gitlab_api/projects/$project/trigger/pipeline
