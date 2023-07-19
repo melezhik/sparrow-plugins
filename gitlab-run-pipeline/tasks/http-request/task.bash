@@ -18,8 +18,12 @@ project=$(config project)
 gitlab_api=$(config gitlab_api)
 debug=$(config debug)
 
+cmd="curl -X POST -fs -F token=$gitlab_trigger \
+-F ref=$ref $variables \
+$gitlab_api/projects/$project/trigger/pipeline"
+
 if test "$debug" = "True"; then
-  echo curl -X POST -fs -F token=$gitlab_trigger -F ref=$ref "$variables" $gitlab_api/projects/$project/trigger/pipeline
+  echo $cmd
 fi
 
-curl -X POST -fs -F token=$gitlab_trigger -F ref=$ref "$variables" $gitlab_api/projects/$project/trigger/pipeline
+eval $cmd
