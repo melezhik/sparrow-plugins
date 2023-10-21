@@ -35,6 +35,7 @@ sleep 5
 sudo -u postgres psql -c "create user $db_user with password '$db_pass'"
 sudo -u postgres sh -l -c "createdb $db_name"
 sudo -u postgres psql -c "grant all privileges on database $db_name to $db_user;"
+sudo -u postgres psql -c "ALTER DATABASE $db_name OWNER to $db_user;"
 
 export PGPASSWORD=$db_pass
 
