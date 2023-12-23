@@ -1,4 +1,5 @@
 set -e
+arch=$(config arch)
 set -x
 
 apk add nginx
@@ -29,7 +30,7 @@ HERE
 
 echo "start nginx server ..."
 
-ps uax|grep nginx|grep master || nginx -g "daemon off;" >/dev/null 2>&1 &
+ps uax|grep nginx|grep master || nohup nginx -g "daemon off;" >~/nginx.log 2>&1 </dev/null & 
 
 echo "nginx server started"
 
@@ -37,7 +38,7 @@ echo "check nginx endpoint ..."
 
 curl 127.0.0.1/$k -f -s
 
-curl 127.0.0.1/x86_64/APKINDEX.tar.gz -o /dev/null -f -s -D -
+curl 127.0.0.1/$arch/APKINDEX.tar.gz -o /dev/null -f -s -D -
 
 echo "done"
 

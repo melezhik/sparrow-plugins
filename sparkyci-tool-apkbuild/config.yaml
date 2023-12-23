@@ -4,3 +4,4 @@ action: setup
 keyname: builder.rsa
 source_extension: tar.gz
 readme: README.md
+arch: aarch64
