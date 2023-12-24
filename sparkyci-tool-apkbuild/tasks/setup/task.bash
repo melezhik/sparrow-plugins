@@ -10,6 +10,9 @@ apk add rakudo
 apk add rakudo-dev
 apk add sudo
 
+grep "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" /etc/apk/repositories || \
+echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
+
 if id -u builder 2>/dev/null 1>/dev/null; then
   echo "user builder exists, skip creation"
 else
