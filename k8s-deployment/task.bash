@@ -5,6 +5,7 @@ app_name=$(config app_name)
 image=$(config image)
 container_port=$(config container_port)
 dry_run=$(config dry_run)
+replicas=$(config replicas)
 
 cat << HERE > $cache_dir/deployment.yaml
 apiVersion: apps/v1
