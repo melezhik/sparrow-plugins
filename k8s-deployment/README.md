@@ -33,6 +33,10 @@ Container image name. Required.
 
 Number of replicas. Optional. Default value is 3.
 
+## container_port
+
+Container port. Optional. Default value is 80.
+
 # dry_run
 
 Dry run mode. Optional. Default value is False.
