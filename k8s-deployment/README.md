@@ -1,6 +1,6 @@
 # k8s-deployment
 
-Create k8s deployment
+Create, delete k8s deployment
 
 # Install
 
@@ -10,12 +10,27 @@ Create k8s deployment
 
     task-run "dpl create", "k8s-deployment", %(
       deployment_name => "nginx",
+      namespace => "default",
       app_name => "nginx",
       image => "nginx:1.14.2",
       replicas => 3,
     );
 
+    task-run "dpl delete", "k8s-deployment", %(
+      deployment_name => "nginx",
+      namespace => "default",
+      action => "delete",
+    );
+
 # Parameters
+
+## action
+
+Action to perform. Optional. Default value is `create`
+
+## namespace
+
+Kubernetes namespace. Optional. Default value is `default`
 
 ## deploy_name
 
@@ -31,15 +46,15 @@ Container image name. Required.
 
 ## replicas
 
-Number of replicas. Optional. Default value is 3.
+Number of replicas. Optional. Default value is `3`.
 
 ## container_port
 
-Container port. Optional. Default value is 80.
+Container port. Optional. Default value is `80`.
 
 # dry_run
 
-Dry run mode. Optional. Default value is False.
+Dry run mode. Optional. Default value is `False`.
 
 # Dependencies
 

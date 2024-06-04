@@ -6,6 +6,7 @@ image=$(config image)
 container_port=$(config container_port)
 dry_run=$(config dry_run)
 replicas=$(config replicas)
+namespace=$(config namespace)
 
 cat << HERE > $cache_dir/deployment.yaml
 apiVersion: apps/v1
@@ -31,7 +32,7 @@ spec:
         - containerPort: $container_port
 HERE
 
-echo "kubectl apply -f $cache_dir/deployment.yaml"
+echo "kubectl apply -f $cache_dir/deployment.yaml -n $namespace"
 echo "==========================================="
 echo "$cache_dir/deployment.yaml:"
 cat $cache_dir/deployment.yaml
@@ -40,5 +41,5 @@ echo "==========================================="
 if test "$dry_run" = "True"; then
   echo "dry run is enabled, exit here"
 else
-  kubectl apply -f $cache_dir/deployment.yaml
+  kubectl apply -f $cache_dir/deployment.yaml -n $namespace
 fi
