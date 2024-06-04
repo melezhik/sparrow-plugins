@@ -1,1 +1,1 @@
-run_task $(config action)
+run_task action $(config action)

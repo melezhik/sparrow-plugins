@@ -1,7 +1,7 @@
 {
   "name" : "k8s-deployment",
   "description" : "Create, delete k8s deployments",
-  "version" : "0.0.5",
+  "version" : "0.0.6",
   "category" : "k8s, kubernetes",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/k8s-deployment"
 }
