@@ -13,12 +13,12 @@ DSL
     task-run "utils/curl", "curl", %(
       args => [
         %( 
-          '-D' => '-',
-          'output' => '/dev/null'
+          :output</dev/null>,
+          :dump-header('-'),
         ),
         [
           'silent',
-          '-f',
+          'fail',
           'location'
         ],
         'http://raku.org'
@@ -28,6 +28,3 @@ DSL
 # Authors
 
 * [Alexey Melezhik](https://github.com/melezhik/)
-
-
-

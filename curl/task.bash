@@ -1,3 +1,4 @@
-echo curl $(config args)
+args=$(config args)
+echo "curl $args"
 echo "====================="
-curl $(config args)
+eval "curl $args"
