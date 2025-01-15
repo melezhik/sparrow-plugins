@@ -8,12 +8,13 @@ Check and configure /etc/mkinitcpio.conf for Ditana Linux installer
 
 # Usage
 
-    task-run "configure mkinitcpio.conf", "ditana-installer-configure-mkinitcpio", %(
-      :path</etc/mkinitcpio.conf>,
-      :use_init_systemd,
-      :encrypt_root_partition,
-    );
-
+```raku
+task-run "configure mkinitcpio.conf", "ditana-installer-configure-mkinitcpio", %(
+  :path</etc/mkinitcpio.conf>,
+  :use_init_systemd,
+  :encrypt_root_partition,
+);
+```
 
 # Parameters
 
@@ -29,16 +30,12 @@ Bool. Optional. Default value is False
 
 Bool. Optional. Default value is False
 
-# Dependencies
-
-`grep`
-
 # Author
 
 Alexey Melezhik
 
 # Credits
 
-This is port of [https://github.com/acrion/ditana-installer/blob/main/airootfs/root/bind-mount/root/configure-mkinitcpio.yaml](configure-mkinitcpio.yaml) playbook by Stefan Zipproth
+This is a port of [configure-mkinitcpio.yaml](https://github.com/acrion/ditana-installer/blob/main/airootfs/root/bind-mount/root/configure-mkinitcpio.yaml) playbook written by Stefan Zipproth
 
 

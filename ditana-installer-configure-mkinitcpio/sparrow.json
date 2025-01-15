@@ -1,7 +1,7 @@
 {
   "name" : "ditana-installer-configure-mkinitcpio",
   "description" : "Check and configure /etc/mkinitcpio.conf for Ditana Linux installer",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "ditana linux",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ditana-installer-configure-mkinitcpio"
 }
