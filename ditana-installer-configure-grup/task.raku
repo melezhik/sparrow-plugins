@@ -8,9 +8,8 @@ say "apply patches ...";
 
 if config()<enable_os_prober>  {
   say 'Enable OS prober';
-  $cfg ~~ s/^^ "#" \s* "GRUB_DISABLE_OS_PROBER=" /GRUB_DISABLE_OS_PROBER=false/;
+  $cfg ~~ s/^^ "#" \s* "GRUB_DISABLE_OS_PROBER=" .* /GRUB_DISABLE_OS_PROBER=false/;
 }
-
 
 say "changed cfg: ", $cfg;
 

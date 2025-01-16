@@ -23,6 +23,14 @@ task-run "configure grub.conf", "ditana-installer-configure-grub", %(
 
 Path to grub configuration file. Optional. Default value is /etc/default/grub
 
+## enable_os_prober
+
+Enable OS prober. Optional. Default value is `False`
+
+# encrypt_root_partition
+
+Use encrypted root partition. Optional. Default value is `False`
+
 # Author
 
 Alexey Melezhik
