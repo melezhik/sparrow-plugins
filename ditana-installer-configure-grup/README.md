@@ -13,7 +13,7 @@ task-run "configure grub.conf", "ditana-installer-configure-grup", %(
   :path</etc/default/grub>,
   :encrypt_root_partition,
   :enable_os_prober,
-  :20grup_timeout,
+  :20grub_timeout,
 );
 ```
 

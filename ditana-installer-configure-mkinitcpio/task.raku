@@ -101,6 +101,7 @@ for @req-checks -> $c {
 }
 
 # registers
+
 for @registers -> $r {
   #say $r<re>;
   my $pattern = $r<re>;
