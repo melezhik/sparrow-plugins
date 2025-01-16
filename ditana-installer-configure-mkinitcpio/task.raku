@@ -113,6 +113,12 @@ for @registers -> $r {
   say $r<title>, " ", $r<result>
 }
 
+# check required checks statuses
+
+for @req-checks -> $c {
+  die "{$c<name>} FAIL" unless $c<result>;
+}
+
 # patches
 
 say "apply patches ...";
@@ -123,13 +129,11 @@ if config()<zfs_filesystem> && %registers-statuses<zfs> {
 }
 
 
-# print required checks statuses, so 
-# we can check them via task.check
-for @req-checks -> $c {
-  say "$c<name> $c<result>";
-}
+say "====================";
 
 say "changed cfg: ", $cfg;
+
+say "====================";
 
 say "save changes to $path ...";
 

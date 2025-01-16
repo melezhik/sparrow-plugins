@@ -1,3 +1,0 @@
-udev_systemd_check True
-filesystems_check True
-kms_check True
