@@ -1,7 +1,7 @@
 {
   "name" : "ditana-installer-configure-grub",
   "description" : "Check and configure /etc/default/grub for Ditana Linux installer",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "category" : "ditana linux grub",
-  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ditana-installer-configure-grub"
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ditana-installer-configure-grup"
 }
