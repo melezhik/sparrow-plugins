@@ -4,12 +4,12 @@ Check and configure /etc/default/grub for Ditana Linux installer
 
 # Install
 
-    s6 --install ditana-installer-configure-grup
+    s6 --install ditana-installer-configure-grub
 
 # Usage
 
 ```raku
-task-run "configure grub.conf", "ditana-installer-configure-grup", %(
+task-run "configure grub.conf", "ditana-installer-configure-grub", %(
   :path</etc/default/grub>,
   :encrypt_root_partition,
   :enable_os_prober,
