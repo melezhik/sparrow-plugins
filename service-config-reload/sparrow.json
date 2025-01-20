@@ -1,7 +1,7 @@
 {
   "name" : "service-config-reload",
   "description" : "Deploy configuration file and restart service upon changes",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "linux",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/service-config-reload"
 }

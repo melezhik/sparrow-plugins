@@ -1,1 +1,2 @@
-echo $(config path)
+echo $service
+echo $path
