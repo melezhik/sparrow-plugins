@@ -1,0 +1,7 @@
+{
+  "name" : "python-httpx",
+  "description" : "Simple wrapper for python httpx cli",
+  "version" : "0.0.2",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/python-httpx",
+  "category": "utilities, http, cli"
+}
