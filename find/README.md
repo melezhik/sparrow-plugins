@@ -24,11 +24,11 @@ File extension, optional, default is `go`
 
 ## search1
 
-First string to search
+First string to search. Mandatory
 
 # search2
 
-Second string to search
+Second string to search. Optional
 
 # exclude
 
