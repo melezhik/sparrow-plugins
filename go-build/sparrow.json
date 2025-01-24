@@ -1,0 +1,7 @@
+{
+  "name" : "go-build",
+  "description" : "Build golang project",
+  "version" : "0.0.1",
+  "category" : "go, utils",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/go-build"
+}
