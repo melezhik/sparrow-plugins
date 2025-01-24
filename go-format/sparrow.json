@@ -1,0 +1,7 @@
+{
+  "name" : "go-format",
+  "description" : "Runs go formater golang project",
+  "version" : "0.0.1",
+  "category" : "go, utils",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/go-format"
+}
