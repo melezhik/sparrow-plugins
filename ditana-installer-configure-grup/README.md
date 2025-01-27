@@ -8,6 +8,8 @@ Check and configure /etc/default/grub for Ditana Linux installer
 
 # Usage
 
+Deploy configuration:
+
 ```raku
 task-run "configure grub.conf", "ditana-installer-configure-grub", %(
   :path</etc/default/grub>,
@@ -17,11 +19,24 @@ task-run "configure grub.conf", "ditana-installer-configure-grub", %(
 );
 ```
 
+Validate configuration:
+
+```raku
+task-run "validate grub.conf", "ditana-installer-configure-grub", %(
+  :path</etc/default/grub>,
+  :action<validate>,
+);
+```
+
 # Parameters
 
 ## path
 
 Path to grub configuration file. Optional. Default value is /etc/default/grub
+
+## action
+
+`deploy|validate`. Action to perfrom. Default value is `deploy` - deploy configuration.
 
 ## enable_os_prober
 
@@ -30,6 +45,7 @@ Enable OS prober. Optional. Default value is `False`
 # encrypt_root_partition
 
 Use encrypted root partition. Optional. Default value is `False`
+
 
 # Author
 
