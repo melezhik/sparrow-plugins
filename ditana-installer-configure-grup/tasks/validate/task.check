@@ -1,10 +1,15 @@
-begin:
->>>
-[GRUB_CMDLINE_LINUX=""]
-[GRUB_CMDLINE_LINUX_DEFAULT="rootfstype=ext4 quiet splash acpi_osi="]
+note: validate config
+
+between: {'>>>'}  {'<<<'}
+
 [GRUB_DEFAULT=0]
 [GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`]
 [GRUB_HIDDEN_TIMEOUT_QUIET=true]
 regexp: ^^ "[GRUB_TIMEOUT=" <[2..9]> \d* "]" $$
-<<<
+
+note: disalow undefined GRUB_CMDLINE_LINUX 
+!regexp: ^^ \s* 'GRUB_CMDLINE_LINUX=""' \s* $$
+
+note: disalow GRUB_DISTRIBUTOR
+!regexp: ^^ \s* '[GRUB_DISTRIBUTOR=' \S+ 
 end:
