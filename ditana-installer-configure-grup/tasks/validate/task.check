@@ -3,7 +3,6 @@ note: validate config
 between: {'>>>'}  {'<<<'}
 
 [GRUB_DEFAULT=0]
-[GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`]
 [GRUB_HIDDEN_TIMEOUT_QUIET=true]
 regexp: ^^ "[GRUB_TIMEOUT=" <[2..9]> \d* "]" $$
 
