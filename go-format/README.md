@@ -1,6 +1,6 @@
 # go-format
 
-Runs go formater golang project
+Runs go formater for golang project
 
 # Install
 
@@ -21,7 +21,7 @@ Files to apply go fmt command, optional, default value is `*.go`.
 Examples:
 
 ```
-task-run "go format otes files", "go-format", %(
+task-run "go format tests", "go-format", %(
   files => "*_test.go"
 );
 ```
