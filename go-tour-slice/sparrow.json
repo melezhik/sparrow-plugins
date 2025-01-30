@@ -1,7 +1,7 @@
 {
   "name" : "go-tour-slice",
   "description" : "Go tour slice example",
-  "version" : "0.0.11",
+  "version" : "0.0.12",
   "category" : "golang, gotour",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/go-tour-slice"
 }
