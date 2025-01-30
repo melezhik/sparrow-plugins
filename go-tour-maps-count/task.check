@@ -1,8 +1,2 @@
-PASS
-
-generator: <<RAKU
-!raku
-  my $cnt = matched().elems;
-  say "note: found PASS: $cnt";
-  say "assert: ", ($cnt == 4 ?? 1 !! 0), " found 4 PASS";  
-RAKU
+regexp: PASS
+!regexp: FAIL
