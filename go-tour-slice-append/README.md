@@ -1,15 +1,15 @@
 # go-tour-slices-of-slices
 
-Go tour slices of slices example
+Go tour slice append
 
 # Install
 
-    s6 --install go-tour-slices-of-slices
+    s6 --install go-tour-slice-append
 
 # Usage
 
 ```bash
-s6 --plg-run go-tour-slices-of-slices
+s6 --plg-run go-tour-slice-append
 ```
 
 # Author
