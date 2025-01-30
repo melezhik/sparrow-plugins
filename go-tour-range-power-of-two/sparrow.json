@@ -1,7 +1,7 @@
 {
   "name" : "go-tour-range-power-of-two",
   "description" : "Go tour range powers of two example",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "golang, gotour",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/go-tour-range-power-of-two"
 }
