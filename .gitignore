@@ -5,3 +5,5 @@ log.txt
 .sparrowdo
 raku-lib
 task.go.bin
+go.sum
+go.mod
