@@ -4,3 +4,4 @@ cpanfile.snapshot
 log.txt
 .sparrowdo
 raku-lib
+task.go.bin

@@ -1,0 +1,8 @@
+within: ^^ \s* "HOOKS=(" .* ")" \s* $$
+  note: should have base  udev filesystems in HOOKS
+  regexp: <?wb> base <?wb> 
+  regexp: <?wb> udev <?wb>
+  regexp: <?wb> filesystems <?wb>
+  note: should not have keyboard
+  !regexp: <?wb> keyboard <?wb>
+end:

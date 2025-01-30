@@ -2,13 +2,10 @@ note: validate config
 
 between: {'>>>'}  {'<<<'}
 
-[GRUB_DEFAULT=0]
-[GRUB_HIDDEN_TIMEOUT_QUIET=true]
-regexp: ^^ "[GRUB_TIMEOUT=" <[2..9]> \d* "]" $$
+  note: allow to boot on crypted disks
+  regexp: ^^ \s* "GRUB_ENABLE_CRYPTODISK=" (<[y 1 true]>  | '"true"' | '"yes"' )
 
-note: disalow undefined GRUB_CMDLINE_LINUX 
-!regexp: ^^ \s* 'GRUB_CMDLINE_LINUX=""' \s* $$
+  note: never allow to enable os prober
+  !regexp: ^^ \s* "GRUB_DISABLE_OS_PROBER=" (<[y 1 true]> | '"true"' | '"yes"' )
 
-note: disalow GRUB_DISTRIBUTOR
-!regexp: ^^ \s* '[GRUB_DISTRIBUTOR=' \S+ 
 end:

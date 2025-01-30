@@ -9,7 +9,7 @@ my @out;
 for $path.IO.lines -> $i {
   $i.chomp;
   next unless $i ~~ /\S+/;
-  @out.push("[$i]") unless $i ~~ /^ \s* '#'/;
+  @out.push("$i") unless $i ~~ /^ \s* '#'/;
 };
 
 say sort(@out).join("\n");
