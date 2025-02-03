@@ -1,0 +1,7 @@
+{
+  "name" : "go-tour-pointers-to-struct",
+  "description" : "Go tour pointers-to-struct example",
+  "version" : "0.0.1",
+  "category" : "golang, gotour",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/go-tour-pointers-to-struct"
+}
