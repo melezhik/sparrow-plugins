@@ -1,0 +1,6 @@
+begin:
+value: 3.141592653589793 type: main.myFloat
+3.141592653589793
+value: &{Hello} type: *main.TT
+Hello
+end:
