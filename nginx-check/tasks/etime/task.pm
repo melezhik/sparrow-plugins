@@ -34,7 +34,10 @@ sub validate_nginx_etime {
 
       my $check_time = DateTime->now()->subtract( reverse ( split /\s+/, $hitask ) );
 
-
-      [ ! ( DateTime->compare( $ptime, $check_time  ) == -1 ) , "nginx master process runs no longer then $hitask" ]
+      if ( DateTime->compare( $ptime, $check_time  ) == -1 ) {
+        print "assert: 1 nginx master process runs no longer then $hitask";
+      } else {
+        print "assert: 0 nginx master process runs no longer then $hitask";
+      }
 
 }

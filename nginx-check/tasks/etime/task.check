@@ -1,14 +1,11 @@
-regexp: .*
-
-regexp: (\d+)\s+(.*)\s+(\S+)
+regexp: (\d+) \s+ (.*) \s+ (\S+)
 
 generator: <<CODE
+!perl
 
 if ( config()->{validate_etime} ) { 
-
-  [ 'validator: validate_nginx_etime(@{capture()})' ] 
-
-} else { [] }
+  validate_nginx_etime(@{capture()})'
+}
 
 CODE
 

@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-nginx-check - checks if nginx server is healthy by executing low level system checks ( ps, etime )
+Simple nginx health checker
 
 # INSTALL
 
@@ -9,10 +9,10 @@ nginx-check - checks if nginx server is healthy by executing low level system ch
 # USAGE
 
 ```
-    task-run "nginx checker", "nginx-check", %(
-      :validate_etime,
-      :hitask("100 seconds")
-    )
+task-run "nginx checker", "nginx-check", %(
+  :validate_etime,
+  :hitask("100 seconds")
+)
 ```
 
 # Pluign parameters
