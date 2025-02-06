@@ -3,8 +3,16 @@ regexp: (\d+) \s+ (.*) \s+ (\S+)
 generator: <<CODE
 !perl
 
-if ( config()->{validate_etime} ) { 
-  validate_nginx_etime(@{capture()})'
+use ValidateEtime;
+  
+if ( config()->{validate_etime} ) {
+  my @data = @{capture()};
+  print "note: etime check\n"; 
+  print "note: pid=$data[0], cmd=$data[1], tm=$data[2]\n"; 
+  validate_nginx_etime(
+    @data, 
+    config()->{hitask}
+  )
 }
 
 CODE

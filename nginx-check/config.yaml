@@ -1,5 +1,4 @@
-nginx:
-  validate_etime:  true
-  hitask: "10 minutes"
+validate_etime:  true
+hitask: "10 minutes"
 
 

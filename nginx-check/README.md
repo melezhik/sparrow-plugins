@@ -19,13 +19,19 @@ task-run "nginx checker", "nginx-check", %(
 
 ## validate_etime
 
-Validate nginx master process age. Optional, Default is false.
+Validate nginx master process age. Optional, Default is true.
 
 ## hitask
-    
+
 If `validate_etime` is set, verify that process is younger than given time period.
 
-Example values: 10 minutes, 1 days, 3 hours
+Default value is `10 minutes`
+
+Example values: 
+
+- 10 minutes
+- 1 days
+- 3 hours
 
 # AUTHOR
 

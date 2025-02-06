@@ -1,11 +1,17 @@
+package ValidateEtime;
+
 use DateTime;
+
+use Exporter qw(import);
+
+our @EXPORT = qw(validate_nginx_etime);
 
 sub validate_nginx_etime {
 
       my $pid = shift;
       my $cmd = shift;
       my $tm  = shift;
-      my $hitask = config()->{hitask};
+      my $hitask = shift;
 
       my ($ptime, $days, $h, $m, $s);
 
@@ -35,9 +41,9 @@ sub validate_nginx_etime {
       my $check_time = DateTime->now()->subtract( reverse ( split /\s+/, $hitask ) );
 
       if ( DateTime->compare( $ptime, $check_time  ) == -1 ) {
-        print "assert: 1 nginx master process runs no longer then $hitask";
+        print "assert: 1 nginx master process runs no longer then $hitask\n";
       } else {
-        print "assert: 0 nginx master process runs no longer then $hitask";
+        print "assert: 0 nginx master process runs no longer then $hitask\n";
       }
 
 }
