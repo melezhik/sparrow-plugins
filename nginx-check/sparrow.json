@@ -1,5 +1,5 @@
 {
-  "version" : "0.1.7",
+  "version" : "0.1.8",
   "name"    : "nginx-check",
   "description" : "Simple nginx health checker",
   "url"         : "https://github.com/melezhik/sparrow-plugins/tree/master/nginx-check",
