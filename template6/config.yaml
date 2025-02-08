@@ -1,0 +1,5 @@
+template_dir: "templates"
+template: "config"
+vars: {}
+target: out.txt
+dry_run: false
