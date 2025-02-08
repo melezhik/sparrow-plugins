@@ -22,7 +22,7 @@ my %state = task-run "deploy server config", "template6", %(
  :dry_run, 
 );
 
-say $state<status>;
+say %state<status>;
 
 # 1 - target first time created
 # 0 - target has not changed
