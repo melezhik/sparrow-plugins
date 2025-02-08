@@ -26,7 +26,7 @@ say %state<status>;
 
 # 1 - target first time created
 # 0 - target has not changed
-# 2 - target has chanhged
+# 2 - target has changed
 
 ```
 
