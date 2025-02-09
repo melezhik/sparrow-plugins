@@ -1,4 +1,4 @@
-# go-tour-template6
+# template6
 
 Templater based on Raku Template6 module
 
