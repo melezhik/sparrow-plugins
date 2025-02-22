@@ -1,3 +1,7 @@
+# 0.4.2
+
+Rocky linux support
+
 # 0.4.1
 
 Split by spaces for `package-generic(% list => %LIST )` call

@@ -43,6 +43,8 @@ if $action eq 'install' {
     run_task 'yum', %( action => 'install', package => $p );
   } elsif  $os ~~ /:i fedora/ {
     run_task 'yum', %( action => 'install', package => $p );
+  } elsif  $os ~~ /:i rocky/ {
+    run_task 'yum', %( action => 'install', package => $p );
   } else {
     #run_task 'yum', %( action => 'install', package => $p );
     set_stdout("warning! unknown os - $os , skip package install");
