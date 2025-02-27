@@ -40,6 +40,20 @@ Template directory. Optional, default value `templates/`
 
 Template name (without `tt` extension). Optional. Default value `config`
 
+## content
+
+Read template from string, rather then from file:
+
+```
+my %state = task-run "deploy server config", "template6", %(
+ vars => %(
+  :name<Alex>,
+ ),
+ :target</tmp/greetings.txt>,
+ :content("Hello [% name %]"),
+);
+```
+
 ## target
 
 Target file. Optional. Default value `out.txt`

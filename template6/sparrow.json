@@ -1,7 +1,7 @@
 {
   "name" : "template6",
   "description" : "Templater based on Raku Template6",
-  "version" : "0.0.5",
+  "version" : "0.0.6",
   "category" : "template, template6",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/template6"
 }

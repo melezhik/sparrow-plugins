@@ -2,7 +2,7 @@ use Sparrow6::DSL;
 
 my %state = task-run ".", %(
  vars => %(
-  :name<alex2>,
+  :name<alex8>,
  ),
  :target</tmp/out.txt>,
  :template_dir<examples>,
@@ -11,3 +11,15 @@ my %state = task-run ".", %(
 );
 
 say %state<status>;
+
+my %state2 = task-run ".", %(
+ vars => %(
+  :name<alex10>,
+ ),
+ :target</tmp/out2.txt>,
+ :content("Hello [% name %]"),
+ #:dry_run, 
+);
+
+say %state<status>;
+
