@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package pe.projects.test_service.user;
+
+import "google/api/annotations.proto";
+
+option go_package = "gl.1440.space/platform/go/projects/test-service/pkg/proto/user;user";
+
+service UserService {
+  rpc UserCreate (UserCreateRequest) returns (UserCreateResponse) {
+    option (google.api.http) = {
+      post: "/user"
+      body: "*"
+    };
+  }
+  rpc UserGet (UserGetRequest) returns (UserGetResponse) {
+    option (google.api.http) = {
+      get: "/user/{user_id}"
+    };
+  }
+  rpc UserDelete (UserDeleteRequest) returns (UserDeleteResponse) {
+    option (google.api.http) = {
+      delete: "/user/{user_id}"
+    };
+  }
+}
+
+message UserCreateRequest {
+  string first_name = 1;
+  string last_name = 2;
+  int64 age = 3;
+}
+
+message UserCreateResponse {
+  int64 id = 1;
+}
+
+message UserGetRequest {
+  int64 user_id = 1;
+}
+
+message UserGetResponse {
+  string first_name = 1;
+  string last_name = 2;
+  int64 age = 3;
+}
+
+message UserDeleteRequest {
+  int64 user_id = 1;
+}
+
+message UserDeleteResponse {
+  int64 user_id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  int64 age = 4;
+}

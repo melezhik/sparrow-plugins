@@ -1,0 +1,8 @@
+generator: <<RAKU
+!raku
+
+use Parser;
+parse-message(config()<type>);
+RAKU
+
+

@@ -1,0 +1,13 @@
+regexp:  ([ "message" || "enum" ]) \s+  (\S+)  \s+ \{
+
+note: "types list"
+note: ============
+
+code: <<RAKU
+!raku
+
+for captures().flat -> $i {
+  say $i[0], " ", $i[1];
+}
+
+RAKU

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package platform.go.projects.test_service2.guess;
+
+import "google/api/annotations.proto";
+
+option go_package = "gl.1440.space/platform/go/projects/test-service2/pkg/proto/guess;guess";
+
+service GuessService {
+  rpc EvenOdd (GuessRequest) returns (GuessResponse) {
+    option (google.api.http) = {
+      post: "/guess"
+      body: "*"
+    };
+  }
+}
+
+message GuessRequest {
+  Assumption assumption = 1;
+}
+
+message GuessResponse {
+  string success = 1;
+  int64 system_number = 2;
+}
+
+enum Assumption {
+  ASSUMPTION_UNSPECIFIED = 0;
+  ASSUMPTION_EVEN_UNSPECIFIED = 1;
+  ASSUMPTION_ODD = 2;
+}
