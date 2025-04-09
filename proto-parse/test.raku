@@ -6,6 +6,8 @@ my $st = task-run ".", %(
 
 say $st<list><>.raku;
 
+say "===";
+
 task-run ".", %(
   :file<examples/user.proto>,
   :action<dump>,

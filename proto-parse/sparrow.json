@@ -1,7 +1,7 @@
 {
   "name" : "proto-parser",
   "description" : "Protobuff parser",
-  "version" : "0.0.7",
+  "version" : "0.0.10",
   "category" : "golang, proto, protobuf",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/proto-parse"
 }

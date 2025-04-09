@@ -1,7 +1,7 @@
 regexp:  ([ "message" || "enum" ]) \s+  (\S+)  \s+ \{
 
-note: "types list"
-note: ============
+#note: "types list"
+#note: ============
 
 code: <<RAKU
 !raku
@@ -9,7 +9,7 @@ code: <<RAKU
 my @list;
 
 for captures().flat -> $i {
-  say $i[0], " ", $i[1];
+  #say $i[0], " ", $i[1];
   @list.push: %( name => $i[1], type => $i[0] );
 }
 

@@ -2,6 +2,7 @@ generator: <<RAKU
 !raku
 
 use Parser;
+say "note: lookup {config()<type>} ...";
 parse-message(config()<type>);
 RAKU
 

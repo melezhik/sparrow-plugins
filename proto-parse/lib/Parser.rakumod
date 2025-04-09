@@ -14,7 +14,7 @@ our sub parse-message($type) is export {
   code: <<RAKU
   !raku
   for matched().flat -> $i {
-    say $i;
+    say "\t", $i;
   }
   RAKU
 
