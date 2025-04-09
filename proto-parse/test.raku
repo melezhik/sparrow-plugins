@@ -1,7 +1,14 @@
 use Sparrow6::DSL;
 
-task-run "dump type", "proto-parser", %(
+my $st = task-run ".", %(
+  :file<examples/user.proto>,
+);
+
+say $st<list><>.raku;
+
+task-run ".", %(
   :file<examples/user.proto>,
   :action<dump>,
   :type<UserCreateRequest>,
 );
+

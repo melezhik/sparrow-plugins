@@ -6,8 +6,13 @@ note: ============
 code: <<RAKU
 !raku
 
+my @list;
+
 for captures().flat -> $i {
   say $i[0], " ", $i[1];
+  @list.push: %( name => $i[1], type => $i[0] );
 }
+
+update_state(%( list => @list ));
 
 RAKU
