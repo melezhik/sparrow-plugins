@@ -11,13 +11,13 @@ Parse ptotobuff spec
 ```
 # list types
 
-task-run "list types", "proto-parse", %(
+task-run "list types", "proto-parser", %(
   :file<path/to/proto/file>
 );
 
 # dump specific type
 
-task-run "list types", "proto-parse", %(
+task-run "dump type", "proto-parser", %(
   :file<path/to/proto/file>,
   :action<dump>,
   :type<HelloWorldRequest>,
