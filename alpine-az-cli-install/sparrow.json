@@ -1,6 +1,6 @@
 {
   "name" : "alpine-az-cli-install",
   "description" : "Installs az cli on Alpine",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/alpine-az-cli-install"
 }
