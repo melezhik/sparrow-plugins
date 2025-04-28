@@ -3,11 +3,13 @@ db_pass=$(config db_pass)
 db_name=$(config db_name)
 
 sudo apk add mariadb-common mariadb-client mariadb
-sudo mariadb-upgrade --user=mysql --datadir=/var/lib/mysql && echo "mariadb initialized"
+sudo mariadb-install-db --user=mysql --datadir=/var/lib/mysql && echo "mariadb initialized"
 sudo bash -c "nohup /usr/bin/mariadbd-safe &"
 sleep 5
 
+echo "select_start"
 sudo bash -c "echo select 1 | mariadb"
+echo "select_end"
 
 sudo mariadb-admin create $db_name 2>&1 && echo "database created"
 

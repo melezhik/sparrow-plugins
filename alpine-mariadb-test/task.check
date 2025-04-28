@@ -1,5 +1,5 @@
 note: mariadb should be initialized
-regexp: "mysql.user table already exists!" || "mariadb initialized"
+mariadb initialized
 
 note: database should be created
 regexp: "Can't create database 'test'; database exists" || "database created"
@@ -10,9 +10,18 @@ regexp: "ERROR 1396" || "user created"
 note: table should be created
 regexp: "Table 'foo' already exists" || "table foo created"
 
+note: select test
+begin:
+select_start
+1
+1
+select_end
+end:
+
 note: insert test
 begin:
 insert_start
+count(*)
 1
 insert_end
 end:
