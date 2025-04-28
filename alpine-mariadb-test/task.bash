@@ -2,15 +2,8 @@ db_user=$(config db_user)
 db_pass=$(config db_pass)
 db_name=$(config db_name)
 
-set -x
-
-2>&1
-
-echo "installing mariadb service on sparky"
-echo "=================================="
-
 sudo apk add mariadb-common mariadb-client mariadb
-sudo mariadb-install-db --user=mariadb --datadir=/var/lib/mariadb
+sudo mariadb-install-db --user=mysql --datadir=/var/lib/mysql
 sudo bash -c "nohup /usr/bin/mariadbd-safe &"
 sleep 5
 
