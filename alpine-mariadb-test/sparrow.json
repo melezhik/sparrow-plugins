@@ -1,7 +1,7 @@
 {
   "name" : "alpine-mariadb-test",
   "description" : "Installs and tests mariadb on alpine linux",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/alpine-mariadb-test",
   "category": "alpine, test, mariadb"
 }

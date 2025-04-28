@@ -19,8 +19,10 @@ mariadb -u$db_user -p$db_pass -e 'create table foo (a text)' $db_name 2>&1 && ec
 
 echo "insert_start"
 
-mariadb -u$db_user -p$db_pass -e 'insert into foo (a) values("text")' $db_name
+pid=$$
 
-mariadb -u$db_user -p$db_pass -e 'select * from foo' $db_name
+mariadb -u$db_user -p$db_pass -e "insert into foo (a) values(\"$pid\")" $db_name
+
+mariadb -u$db_user -p$db_pass -e "select count(*) from foo where a = \"$pid\"" $db_name
 
 echo ""insert_end
