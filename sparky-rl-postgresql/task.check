@@ -1,0 +1,11 @@
+note: postgresql should be seen in a repo index
+begin:
+regexp: [Available || Installed] \s+ Packages
+postgresql-server.
+end:  
+
+note: database should be initialized 
+regexp: ["Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log" || "ERROR: Data directory /var/lib/pgsql/data is not empty!"]
+
+note: postgresql server should be started
+Started PostgreSQL database server

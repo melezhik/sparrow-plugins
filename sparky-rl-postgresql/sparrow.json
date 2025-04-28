@@ -1,0 +1,7 @@
+{
+    "name" : "sparky-rl-postgresql",
+    "description" : "Installs and tests postgresql on rocky linux",
+    "version" : "0.0.1",
+    "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/sparky-rl-postgresql",
+    "category": "rocky, test, postgresql"
+  }
