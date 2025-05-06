@@ -2,7 +2,7 @@
 
   "name" : "aws-cw-cpu",
   "description" : "Sparrow plugin to show CPUUtilization for ec2 instance",
-  "version" : "0.0.10",
+  "version" : "0.0.11",
   "category" : "aws",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-cw-cpu"
 }

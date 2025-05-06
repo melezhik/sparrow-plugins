@@ -4,18 +4,23 @@ Sparrow plugin to show `CPUUtilization` for ec2 instance.
 
 # INSTALL
 
-    $ s6 --install aws-cw-cpu
+```
+s6 --install aws-cw-cpu
+```
 
 # USAGE
 
 To get CPU load for the last 2 weeks with daily granularity:
 
-    $ s6 --plg-run aws-cw-cpu@instance_id=$instance-id,range='2 weeks'
-
+```
+s6 --plg-run aws-cw-cpu@instance_id=bla_bla_bla,range='2 weeks'
+```
 
 The same instance, for the last 10 days:
 
-    $ s6 --plg-run aws-cw-cpu@instance_id=$instance-id,range='10 days'
+```
+s6 --plg-run aws-cw-cpu@instance_id=bla_bla_bla,range='10 days'
+```
 
 # Parameters
 
