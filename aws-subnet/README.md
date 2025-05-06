@@ -4,7 +4,9 @@ Create/get aws subnet
 
 # INSTALL
 
-    $ s6 --install aws-subnet
+```
+s6 --install aws-subnet
+```
 
 ## API
 
@@ -21,7 +23,7 @@ task-run "create subnet", "aws-subnet", %(
 
 ### Get
 
-```yaml
+```
 my $data = task-run "subn_01", "aws-subnet", %(
   :action<get>,
   :sb_name<subn_01>,
