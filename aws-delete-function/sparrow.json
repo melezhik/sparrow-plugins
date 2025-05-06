@@ -1,6 +1,6 @@
 {
     "name" : "aws-delete-function",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "delete aws lambda function",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-delete-function",
     "category" : "aws"

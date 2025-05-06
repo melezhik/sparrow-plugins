@@ -4,37 +4,33 @@ Create/get aws ec2 instance
 
 # INSTALL
 
-    $ s6 --install aws-ec2
-
-## API
-
-### Create
-
-```yaml
-name: create-ec2
-plugin: aws-ec2
-config:
-  action: create
-  name: host_01
-  type: t2.micro
-  subnet_id: foobarbaz
-  image: ami-0e322da50e0e90e21
+```
+s6 --install aws-ec2
 ```
 
-### Get
+# Usage
 
-```yaml
-name: get-ec2 
-plugin: aws-ec2
-config:
-  action: get
-  name: host_01
+## Create instance
+
+```
+task-run "create ec2", "aws-ec2", %(
+  :action<create>,
+  :name<node0>,
+  :image<ami-0e322da50e0e90e21>,
+  :type<t2.micro>,
+  :subnet_id<foobarbaz>,
+);
 ```
 
-State:
+### Get instance
 
-```yaml
-  id: $instance_id
+```
+my $data = task-run "get ec2", "aws-ec2", %(
+  :action<get>,
+  :name<node0>,
+);
+
+say $data<id>;
 ```
 
 # Dependencies

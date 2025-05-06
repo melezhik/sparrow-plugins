@@ -8,32 +8,36 @@ Update aws lambda function code
 
 # INSTALL
 
-    $ s6 --install aws-update-function
+```
+s6 --install aws-update-function
+```
 
-# RUN
+# Usage
 
-DSL. The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
+The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
 mechanism to convert Raku data into command line parameters, so one could write something like that:
 
-    task-run "update aws lambda", "aws-update-function", %(
-      args => [
-        %( 
-          function-name  => "my-function",
-          zip-file => "fileb://my-function.zip",
-        )
-      ]
-    );
+```
+task-run "update aws lambda", "aws-update-function", %(
+  args => [
+    %( 
+      function-name  => "my-function",
+      zip-file => "fileb://my-function.zip",
+    )
+  ]
+);
 
-    # dry-run mode
-    task-run "update aws lambda", "aws-update-function", %(
-      args => [
-        %( 
-          function-name  => "my-function",
-          zip-file => "fileb://my-function.zip",
-        ),
-        [ "dry-run" ]
-      ]
-    );
+# dry-run mode
+task-run "update aws lambda", "aws-update-function", %(
+  args => [
+    %( 
+      function-name  => "my-function",
+      zip-file => "fileb://my-function.zip",
+    ),
+    [ "dry-run" ]
+  ]
+);
+```
 
 # Parameters
 

@@ -8,13 +8,15 @@ Update aws lambda function configuration
 
 # INSTALL
 
-    $ s6 --install aws-configure-function
+```
+s6 --install aws-configure-function
+```
 
-# RUN
+# API
 
-DSL. The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
+The plugin uses [args stringification](https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md#args-stringification)
 mechanism to convert Raku data into command line parameters, so one could write something like that:
-
+s
     task-run "configure aws lambda", "aws-configure-function", %(
       args => [
         %(

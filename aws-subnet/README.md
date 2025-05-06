@@ -10,30 +10,23 @@ Create/get aws subnet
 
 ### Create
 
-```yaml
-name: create-subnet
-plugin: aws-subnet
-config:
-  action: create
-  sb_name: subn_01
-  vpc_id: foobar
-  cidr_block: 10.0.0.0/24
+```
+task-run "create subnet", "aws-subnet", %(
+  :action<create>,
+  :sb_name<subn_01>,
+  :vpc_id<foobar>,
+  cidr_block => "10.0.0.0/24",
+);
 ```
 
 ### Get
 
 ```yaml
-name: get-subnet
-plugin: aws-subnet
-config:
-  action: get
-  sb_name: subn_01
-```
-
-State:
-
-```yaml
-  sn-id: $subnet_id
+my $data = task-run "subn_01", "aws-subnet", %(
+  :action<get>,
+  :sb_name<subn_01>,
+);
+say $data<sn-id>; # subnet ID
 ```
 
 # Dependencies
