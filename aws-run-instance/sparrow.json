@@ -1,8 +1,8 @@
 {
 
   "name" : "aws-run-instance",
-  "description" : "run aws instance",
-  "version" : "0.0.15",
+  "description" : "Run aws instance",
+  "version" : "0.0.16",
   "category" : "aws",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-run-instance"
 }
