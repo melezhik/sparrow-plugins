@@ -16,7 +16,7 @@ s6 --install aws-create-function
 
 Cli
 
-````
+```
 s6 --plg-run aws-create-function@role=arn:aws:iam::654173224926:role/lambda-ex,zip_file=/tmp/function.zip
 ```
 
