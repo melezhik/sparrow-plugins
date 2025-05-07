@@ -8,21 +8,26 @@ Create aws lambda function
 
 # INSTALL
 
-    $ s6 --install aws-create-function
+```
+s6 --install aws-create-function
+```
 
 # RUN
 
 Cli
 
-    $ s6 --plg-run aws-create-function@role=arn:aws:iam::654173224926:rolelambda-ex,zip_file=/tmp/function.zip
+````
+s6 --plg-run aws-create-function@role=arn:aws:iam::654173224926:role/lambda-ex,zip_file=/tmp/function.zip
+```
 
 Raku
 
-    task-run "create aws lambda", "aws-create-function", %(
-      role => "arn:aws:iam::654173224926:role/lambda-ex",
-      zip_file => "/path/to/zip/file.zip"
-    );
-
+```
+task-run "create aws lambda", "aws-create-function", %(
+  role => "arn:aws:iam::654173224926:role/lambda-ex",
+  zip_file => "/path/to/file.zip"
+);
+```
 
 # Parameters
 

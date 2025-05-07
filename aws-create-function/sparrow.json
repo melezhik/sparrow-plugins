@@ -1,6 +1,6 @@
 {
     "name" : "aws-create-function",
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "description" : "Create aws lambda function",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/aws-create-function",
     "category" : "aws"
