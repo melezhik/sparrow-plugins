@@ -1,8 +1,7 @@
 {
-
   "name" : "nanorc-raku",
   "description" : "Installs Raku nanorc syntax highlighter",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "category" : "nano, raku, syntax",
   "url": "https://github.com/melezhik/sparrow-plugins/tree/master/nanorc-raku"
 }
