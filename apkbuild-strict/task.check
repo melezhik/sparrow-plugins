@@ -1,0 +1,96 @@
+note: <<<
+note: check if required fields are set
+note: >>>
+
+note:
+note: maintainer
+note: ==========
+note: Should be a well-formatted, 
+note: example is: maintainer="John Snow <john_snow@thewall.net>"
+
+within: ^^ "maintainer=" (.*) $$
+regexp: ^^ \" (.*) \" $$
+
+generator: <<RAKU
+!raku
+  if matched() {
+    say "note: maintainer line found: ", capture()[0] 
+  } else {
+    say "assert: 0 maintainer line found";
+  }
+RAKU
+
+note: check maintainer identity
+
+regexp: (<[ \w \s ] >+?) "<" (<[ \w \. ] > + \@ <[ \w \. ] > + ) ">" \s* $$ 
+
+end:
+
+generator: <<RAKU
+!raku
+  if matched() {
+    say "note: Name: ", capture()[0]; 
+    say "note: Email: ", capture()[1];
+    if capture()[0] ~~ /\S/ {
+      say "assert: 1 maintainer line is not broken";
+    } else {
+      say "note: empty Name";
+      say "assert: 0 maintainer line is not broken";
+    }
+  } else {
+    say "assert: 0 maintainer line is not broken";
+  }
+RAKU
+
+regexp: ^^ "pkgname=" (\S+)
+
+generator: <<RAKU
+!raku
+if matched() {
+  my $pkgname = capture()<>.head;
+  say "note: run apk info $pkgname command and save output to file (/tmp/pkg.info)";
+  say q:to /BASH/.subst("%name%",$pkgname);
+    code: <<CMD
+    !bash
+    apk info -d %name% > /tmp/pkg.info
+    CMD 
+  BASH
+}
+RAKU
+
+note: get pkgrel from file
+
+regexp: ^^ \s* "pkgrel=" (\d+) \s* $$
+
+generator: <<RAKU
+!raku
+  if matched() {
+    my $pkgrel = capture()[0];
+    say "note: pkgrel found: ", $pkgrel;
+    update_state(%( :$pkgrel ));	
+  } else {
+    say "assert: 0 pkgrel found";
+  }
+RAKU
+
+source: /tmp/pkg.info
+
+note: get pkgrel from apk info command output
+
+regexp: .*  "-" r(\S+) \s+ "description:" $$
+
+generator: <<RAKU
+!raku
+  if matched() {
+    my $pkgrel = capture()[0];
+    say "note: pkgrel found: ", $pkgrel;
+    my $apk-pkgrel = get_state()<pkgrel> || "NA";
+    if $apk-pkgrel eq "NA" {
+       say "note: could not find pkgrel in apk info command output, first time package released?";
+    } else {
+       say "assert: ", $apk-pkgrel ne $pkgrel, " pkgrel from file differs from pkgrel from apk info command output";
+    }
+  } else {
+    say "assert: 0 pkgrel found";
+  }
+RAKU
