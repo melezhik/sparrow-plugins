@@ -121,3 +121,8 @@ stdout match <.*  "-" r(\S+) \s+ "description:" $$> True
 # pkgrel found: 0
 <pkgrel from file differs from pkgrel from apk info command output> True
 ```
+
+# Author
+
+Alexey Melezhik
+
