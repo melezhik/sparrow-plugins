@@ -1,7 +1,7 @@
 {
   "name" : "apkbuild-strict",
   "description" : "Validate APKBUILD files using Sparrow6 Task Check DSL",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/apkbuild-strict",
   "category": "alpine, test, apk, build"
 }
