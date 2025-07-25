@@ -1,0 +1,5 @@
+note: check az version
+
+begin:
+===
+regexp: ^^ "azure-cli" \s+ \S+ $$
