@@ -21,8 +21,6 @@ echo "" >> /tmp/answers.txt
 echo "" >> /tmp/answers.txt
 echo "" >> /tmp/answers.txt
 
-sed -e 's/_TTY=\/dev\/tty/_TTY=\/tmp\/answers.txt]' /tmp/az-cli-install.sh
-
 echo "patch /tmp/az-cli-install.sh ..."
 
 raku -e '
