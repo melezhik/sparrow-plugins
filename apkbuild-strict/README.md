@@ -8,13 +8,12 @@ Validate APKBUILD files using Sparrow6 Task Check DSL:
 # Install
 
 ```bash
-% zef install Sparrow6 --/test
-
+s6 --install apkbuild-strict
 ```
 # How to run
 
 ```bash
-% s6 --task-run .@path=examples/APKBUILD
+s6 --plg-run apkbuild-strict@path=examples/APKBUILD
 ```
 
 # Parameters
@@ -22,7 +21,6 @@ Validate APKBUILD files using Sparrow6 Task Check DSL:
 ## path
 
 Path to apk file, optional, default value is `APKBUILD`
-
 
 # Report example
 
