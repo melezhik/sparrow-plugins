@@ -24,11 +24,10 @@ echo "" >> /tmp/answers.txt
 echo "patch /tmp/az-cli-install.sh ..."
 
 raku -e '
-  my \$c = "/tmp/az-cli-install.sh".IO.slurp().subst(
+  my $c = "/tmp/az-cli-install.sh".IO.slurp().subst(
     "_TTY=/dev/tty",
     "_TTY=/tmp/answers.txt"
   );
-  "/tmp/az-cli-install.sh".IO.spurt(\$c);
-)'
+  "/tmp/az-cli-install.sh".IO.spurt($c);'
 
 bash /tmp/az-cli-install.sh
