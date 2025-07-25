@@ -8,7 +8,7 @@ Installs az cli on Alpine
 
 # Usage
 
-   s6 --plg-run alpine-az-cli-install
+    s6 --plg-run alpine-az-cli-install
 
 # Author
 
