@@ -1,6 +1,6 @@
 # raku-utils-system-stats-mem-usage
 
-Disk usage info using System::Stats::MEMUsage
+Memory Usage statistics using System::Stats::MEMUsage
 
 # Install
 

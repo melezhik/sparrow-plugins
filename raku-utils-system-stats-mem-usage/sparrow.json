@@ -1,5 +1,5 @@
 {
   "name" : "raku-utils-system-stats-mem-usage",
   "description" : "Memory Usage statistics using System::Stats::MEMUsage",
-  "version" : "0.0.1"
+  "version" : "0.0.2"
 }
