@@ -1,33 +1,31 @@
 set -e
 
-apk add python3
-apk add openssl
-apk add libffi
-apk add libffi
-apk add gcc
-apk add python3-dev
-apk add musl-dev
-apk add libffi-dev
-apk add make
-apk add openssl-dev
+apk add --no-cache --update \
+  python3 \
+  py3-pip \
+  gcc \
+  musl-dev \
+  python3-dev \
+  libffi-dev \
+  openssl-dev \
+  cargo \
+  make
 
-curl -sL https://aka.ms/InstallAzureCli > /tmp/az-cli-install.sh
+# Create and activate a virtual environment for Azure CLI
+python3 -m venv /opt/venv \
+  && . /opt/venv/bin/activate \
+  && pip install --upgrade pip \
+  && pip install --no-cache-dir azure-cli \
+  && deactivate
 
-echo "" > /tmp/answers.txt
-echo "" >> /tmp/answers.txt
-echo "" >> /tmp/answers.txt
-echo "" >> /tmp/answers.txt
-echo "" >> /tmp/answers.txt
-echo "" >> /tmp/answers.txt
-echo "" >> /tmp/answers.txt
 
-echo "patch /tmp/az-cli-install.sh ..."
+PATH="/opt/venv/bin:$PATH"
 
-raku -e '
-  my $c = "/tmp/az-cli-install.sh".IO.slurp().subst(
-    "_TTY=/dev/tty",
-    "_TTY=/tmp/answers.txt"
-  );
-  "/tmp/az-cli-install.sh".IO.spurt($c);'
+echo "===="
 
-bash /tmp/az-cli-install.sh
+az --version
+
+echo "===="
+
+echo 'to start using az cli: export PATH="/opt/venv/bin:$PATH"'
+
