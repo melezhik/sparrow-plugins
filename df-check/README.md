@@ -61,11 +61,11 @@ Allowable disk usage threshold as percentage ratio:
 
     $ s6 --plg-run df-check@threshold=70 # check if disk is full on no more then 70 percents
 
-## disk
+## mnt
 
-Check certain disk:
+Check certain mount:
 
-    s6 --task-run df-check@disk=/dev/disk1s2,threshold=57
+    s6 --task-run df-check@mnt=/,threshold=50
 
 # Author
 

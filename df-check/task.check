@@ -8,25 +8,26 @@
 #none            119G  107G   12G  90% /vagrant
 #none            119G  107G   12G  90% /home/vagrant/projects
 
-note: validate disks capacity 
-~regexp: (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\d+) \%
+note: validate disks capacity
+ 
+~regexp: (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\d+) \% \s+ (\S+)
 
 generator: <<CODE
 !raku
 
 my $th = config()<threshold>; 
-my $disk = config()<disk>; 
+my $mnt_need = config()<mnt> || ""; 
 
-say "note: threshold: $th"; 
+say "note: check disks, mount: $mnt_need, threshold: $th"; 
 
 for captures()<> -> $c {
-    my $fs = $c<>.head;
-    my $usg = $c<>.tail;
-    if $disk {
-      $fs eq $disk or next;
+    my $mnt = $c<>[5];
+    my $usg = $c<>[4];
+    if $mnt_need {
+      $mnt eq $mnt_need or next;
     }
     #say "note: ", $c.raku;
-    say "assert: ", $usg < $th, " enough disk space ({$usg}%) on {$fs}";
+    say "assert: ", $usg < $th, " enough disk space ({$usg}%) on {$mnt}";
 }   
 
 CODE
