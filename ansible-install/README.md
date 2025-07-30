@@ -14,6 +14,8 @@ Multiplatform ansible installer
 
 * debian
 
+* alpine linux
+
 # Author
 
 Alexey Melezhik

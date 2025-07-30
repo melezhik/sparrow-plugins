@@ -2,7 +2,7 @@
 
   "name" : "ansible-install",
   "description" : "Multiplatform ansible installer",
-  "version" : "0.0.2",
-  "category" : "utilities",
+  "version" : "0.0.3",
+  "category" : "utilities, ansible, alpine, debian",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/ansible-install"
 }
