@@ -1,5 +1,5 @@
 {
-    "version": "0.2.9",
+    "version": "0.2.10",
     "name": "df-check",
     "description" : "elementary file system checks using df utility report",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/df-check"
