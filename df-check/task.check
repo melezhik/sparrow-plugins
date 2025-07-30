@@ -8,24 +8,25 @@
 #none            119G  107G   12G  90% /vagrant
 #none            119G  107G   12G  90% /home/vagrant/projects
 
-
-between: {STARTCHECK} {ENDCHECK}
-
-regexp: (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+)
+note: validate disks capacity 
+~regexp: (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\d+) \%
 
 generator: <<CODE
+!raku
 
-my @list;       
+my $th = config()<threshold>; 
+my $disk = config()<disk>; 
 
-my $th = config()->{threshold}; 
+say "note: threshold: $th"; 
 
-print "note: threshhold: $th\n"; 
-
-for my $c (@{captures()}){  
-    my $fs = $c->[0];       
-    my $used_v = $c->[4];   
-    s{%}[] for $used_v;     
-    print "assert: ".($used_v < $th ? 1 : 0)." enough disk space ($used_v%) on $fs\n";
+for captures()<> -> $c {
+    my $fs = $c<>.head;
+    my $usg = $c<>.tail;
+    if $disk {
+      $fs eq $disk or next;
+    }
+    #say "note: ", $c.raku;
+    say "assert: ", $usg < $th, " enough disk space ({$usg}%) on {$fs}";
 }   
 
 CODE

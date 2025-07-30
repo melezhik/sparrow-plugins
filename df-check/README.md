@@ -19,7 +19,6 @@ elementary file system checks using df utility report
 ```
 [task] :: run plg df-check
 [task] :: run thing df-check
-[df-check] :: STARTCHECK
 [df-check] :: Filesystem      Size  Used Avail Use% Mounted on
 [df-check] :: udev            992M     0  992M   0% /dev
 [df-check] :: tmpfs           200M   21M  180M  11% /run
@@ -34,7 +33,6 @@ elementary file system checks using df utility report
 [df-check] :: /dev/loop1       98M   98M     0 100% /snap/core/10444
 [df-check] :: /dev/loop2       56M   56M     0 100% /snap/core18/1944
 [df-check] :: /dev/loop6       98M   98M     0 100% /snap/core/10577
-[df-check] :: ENDCHECK
 [task check] stdout match (r) <(\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+)> True
 [task check] threshhold: 80
 [task check] <enough disk space (Use%) on Filesystem> True
@@ -54,18 +52,21 @@ elementary file system checks using df utility report
 =================
 TASK CHECK FAIL
 ```
-        
+
 # Plugin parameters
 
 ## threshold
 
-Disk allowable used threshold as percentage ratio:
+Allowable disk usage threshold as percentage ratio:
 
-    $ s6 --plg-run df-check@threshold=70
+    $ s6 --plg-run df-check@threshold=70 # check if disk is full on no more then 70 percents
+
+## disk
+
+Check certain disk:
+
+    s6 --task-run df-check@disk=/dev/disk1s2,threshold=57
 
 # Author
 
 [Alexey Melezhik](mailto:melezhik@gmail.com)
-
-
-
