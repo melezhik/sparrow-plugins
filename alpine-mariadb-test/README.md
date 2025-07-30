@@ -1,6 +1,6 @@
 # alpine-mariadb-test
 
-Installs and tests mariadb on alpine linux
+Installs and tests mariadb on Alpine linux
 
 # Install
 
@@ -8,7 +8,7 @@ Installs and tests mariadb on alpine linux
 
 # Usage
 
-    task-run "mariadb", "alpine-mariadb-test";
+    s6 --pg-run alpine-mariadb-test
 
 # Author
 
