@@ -32,9 +32,15 @@ tar -xzf distr.tar.gz
 
 echo "copy kelp from /tmp/.kelp to /usr/local/bin/"
 
-cp kelp /usr/local/bin/
+sudo=$(config with-sudo)
 
-chmod a+x /usr/local/bin/
+echo "sudo mode: $sudo"
+
+if [[ "$sudo" = "True" ]]; then
+  sudo cp kelp /usr/local/bin/
+else
+  cp kelp /usr/local/bin/
+fi
 
 kelp init
 
