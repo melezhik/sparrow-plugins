@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Installs [kelp](ttps://github.com/crhuber/kelp) package manager
+Installs [kelp](https://github.com/crhuber/kelp) package manager
 
 # INSTALL
 

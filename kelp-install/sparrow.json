@@ -1,5 +1,5 @@
 {
-    "version": "0.0.3",
+    "version": "0.0.4",
     "name": "kelp-install",
     "description" : "Installs kelp package manager",
     "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/kelp-install",
