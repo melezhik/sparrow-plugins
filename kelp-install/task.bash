@@ -23,7 +23,7 @@ mkdir -p /tmp/.kelp
 cd /tmp/.kelp
 
 if [[ $os = "alpine" ]]; then
-  wget -S -O distr.tar.gz $url
+  wget -q -O distr.tar.gz $url
 else
   curl -s -f -L $url -o distr.tar.gz
 fi
@@ -37,6 +37,4 @@ cp kelp /usr/local/bin/
 chmod a+x /usr/local/bin/
 
 kelp init
-
-echo 'to start using kelp: export PATH=~/.kelp/bin/:$PATH';
 
