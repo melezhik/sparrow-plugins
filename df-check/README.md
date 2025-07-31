@@ -37,6 +37,16 @@ stdout match <(\S+) \s+ (\S+) \s+ (\S+) \s+ (\S+) \s+ (\d+) \% \s+ (\S+)> True
 <enough disk space (74%) on /> True
 ```
 
+# Raku API
+
+```
+my $s = task-run "check disks", "df-check",  %(
+  :!fail-on-check,
+);
+
+die "some disks are full" if $s<err-cnt>;
+```
+
 # Plugin parameters
 
 ## threshold

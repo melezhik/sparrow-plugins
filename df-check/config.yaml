@@ -1,2 +1,3 @@
 # disk used threshold in %    
 threshold: 80
+fail-on-check: true

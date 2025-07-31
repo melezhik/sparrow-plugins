@@ -19,6 +19,7 @@ my $th = config()<threshold>;
 my $mnt_need = config()<mnt> || ""; 
 
 say "note: check disks, mount: $mnt_need, threshold: $th"; 
+my $err-cnt = 0;
 
 for captures()<> -> $c {
     my $mnt = $c<>[5];
@@ -26,9 +27,20 @@ for captures()<> -> $c {
     if $mnt_need {
       $mnt eq $mnt_need or next;
     }
+    my $ok = $usg <= $th;
     #say "note: ", $c.raku;
-    say "assert: ", $usg < $th, " enough disk space ({$usg}%) on {$mnt}";
+    if config()<fail-on-check> {
+      say "assert: ", $ok, " enough disk space for {$mnt} (limit={$usg}%)";
+    } else {
+      if $ok {
+        say "note: enough disk space for {$mnt} (limit={$usg}%)";
+    } else {
+        $err-cnt++;
+        say "note: !!! disk space for {$mnt} exeeds limit={$usg}%";
+      }
+    }
 }   
 
+update_state({ :$err-cnt });
 CODE
 
