@@ -13,11 +13,13 @@ Start/Stop/Restart application using nohub command
         :action<start>,
         :bin</app/service>,
         :pid</app/run/service.pid>,
+        :log</app/logs/app.log>,
     );
 
     # stop application
     task-run "stop app", "app-man", %(
         :action<stop>,
+        :bin</app/service>,
         :pid</app/run/service.pid>
     );
 
