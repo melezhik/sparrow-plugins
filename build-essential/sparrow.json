@@ -1,7 +1,7 @@
 {
   "name" : "build-essential",
   "description" : "Installs build-essential meta package",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/build-essential",
   "category": "build, alpine"
 }
