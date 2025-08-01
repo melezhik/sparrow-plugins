@@ -10,6 +10,16 @@ Installs build-essential meta package
 
     s6 --plg-run build-essential
 
+## Parameters
+
+## sudo
+
+Use sudo when install
+
+```bash
+s6 --plg-run build-essential@sudo
+```
+
 # Platforms supported
 
 * Ubuntu
