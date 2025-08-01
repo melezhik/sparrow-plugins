@@ -1,0 +1,4 @@
+action: start
+pid: /app/run/app.pid
+bin: /app/bin/main
+log: /app/log/app.log
