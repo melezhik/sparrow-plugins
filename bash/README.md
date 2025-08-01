@@ -40,16 +40,15 @@ This is optional parameter. Verify if command print something into stdout. This 
 
 Example:
 
-    $ s6 --plg-run,command="echo I AM OK",expect_stdout='I AM \S+'
+    $ s6 --plg-run bash@command="echo I AM OK",expect_stdout='I AM \S+'
 
 Or via API:
 
     task-run "server uptime", "bash", %(
       command   => 'uptime',
       debug     => 0,
-      expect_stdout => '\d\d:\d\d:\d\d'
+      expect_stdout => '^^ \d\d ":" \d\d \s'
     );
-    
 
 ## debug
 

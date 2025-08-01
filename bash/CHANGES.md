@@ -1,3 +1,7 @@
+# 0.3.0
+
+Replace Perl by Raku
+
 # 0.2.1
 
 Alpine linux - use `sh` as a shell when `su`
