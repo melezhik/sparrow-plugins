@@ -8,7 +8,8 @@ OS supported:
 * CentOS, Fedora - yum
 * Alpine Linux   - apk
 * Archlinux      - pacman
-  
+* OpenSUSE       - zypper
+
 # INSTALL
 
     $ s6 --install package-generic
@@ -28,7 +29,7 @@ OS supported:
 DSL shortcut:
 
     package-install 'nano hunspell mc';
-    
+
 # Plugin parameters
 
 ## list

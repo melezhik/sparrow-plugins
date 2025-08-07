@@ -37,6 +37,10 @@ if $action eq 'install' {
     run_task 'opkg', %( action => 'install', package => $p );
   } elsif  $os eq 'archlinux' {
     run_task 'pacman', %( action => 'install', package => $p );
+  } elsif  $os eq 'opensuse' {
+    run_task 'zypper', %( action => 'install', package => $p );
+  } elsif  $os eq 'opensuse-leap' {
+    run_task 'zypper', %( action => 'install', package => $p );
   } elsif  $os ~~ /:i centos/ {
     run_task 'yum', %( action => 'install', package => $p );
   } elsif  $os ~~ /:i amazon/ {
