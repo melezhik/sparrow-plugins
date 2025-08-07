@@ -1,0 +1,13 @@
+~regexp: "group exists"
+
+code: <<RAKU
+!raku
+update_state(%( exists => True)) if matched()
+RAKU
+
+~regexp: "group not exists"
+
+code: <<RAKU
+!raku
+update_state(%( exists => False)) if matched()
+RAKU
