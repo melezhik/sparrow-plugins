@@ -16,7 +16,7 @@ if [[ $user = "" ]]; then
   echo $pid_ > $pid
 else
   echo "run as user $user";
-  su - $user -c "nohup $bin  1>$log 2>$log & echo $! > $pid"
+  su - $user -c "nohup $bin  1>$log 2>$log & echo \$! > $pid"
   pid_=$(cat $pid)
   echo "save PID=$pid_ to $pid ..."
 fi
