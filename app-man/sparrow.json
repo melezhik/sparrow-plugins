@@ -1,7 +1,7 @@
 {
   "name" : "app-man",
   "description" : "Start/Stop/Restart application using nohub command",
-  "version" : "0.0.4",
+  "version" : "0.0.5",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/app-man",
   "category": "linux, core, proccess"
 }

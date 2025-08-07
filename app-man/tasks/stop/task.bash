@@ -10,7 +10,9 @@ fail_on_stop=$(task_var fail_on_stop)
 
 echo "stop app[$bin] log[$log] pid[$pid] ..."
 
+set +e
 pid_=$(cat $pid)
+set -e
 
 echo "get PID=$pid_ from $pid ..."
 
