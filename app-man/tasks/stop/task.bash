@@ -4,6 +4,8 @@ bin=$(config bin)
 
 pid=$(config pid)
 
+log=$(config log)
+
 fail_on_stop=$(task_var fail_on_stop)
 
 echo "stop app[$bin] log[$log] pid[$pid] ..."
