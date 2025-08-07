@@ -49,6 +49,10 @@ Path to pid file. Optional. Default value is `/app/run/app.pid`
 
 Path to log file. Optional. Default value is `/app/log/app.log`
 
+## user
+
+Runs app as user. Optional. Default is not set.
+
 # Author
 
 Alexey Melezhik
