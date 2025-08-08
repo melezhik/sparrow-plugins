@@ -58,8 +58,8 @@ if [[ -n $groups ]] ; then
 fi
 
 if [[ $os == alpine ]]; then
-  echo "execute: adduser $home_key $homedir $name $uid $gid $groups -D"
-  adduser $home_key $homedir $name $uid $gid $groups -D
+  echo "execute: adduser $home_key $homedir $uid $gid $groups -D $name"
+  adduser $home_key $homedir $uid $gid $groups -D $name
 else
   echo "execute: useradd $home_key $homedir $uid $gid $groups $name"
   useradd $home_key $homedir $uid $gid $groups $name

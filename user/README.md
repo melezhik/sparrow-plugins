@@ -64,8 +64,8 @@ User home directory
 ## groups
 
 List of user's groups. Should be comma separated list of items. For example:
-   
-   `,groups="developers,admins"`
+
+  `groups="developers,admins"`
 
 ## action
 
