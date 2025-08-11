@@ -19,6 +19,7 @@ elif [[ "$os" =~ "minoca" ]]; then
 elif [[ "$os" =~ "funtoo" ]]; then
   run_task $(config action) os $os service $service
 else
+  >&2
   echo "unknown os: $os"
   exit 1
 fi
