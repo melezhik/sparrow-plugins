@@ -12,9 +12,9 @@ The list of supported actions:
 
 # Prerequisites
 
-* For Debian, Ubuntu a `chkconfig` utility should be installed.
-* For Alpine linux an `openrc` should be installed.
-* For Funtoo an `openrc` should be installed.
+* For Centos(5,6) `chkconfig` utility should be installed.
+* For Alpine linux `openrc` should be installed.
+* For Funtoo `openrc` should be installed.
 
 # INSTALL
 
@@ -23,33 +23,19 @@ The list of supported actions:
 
 # USAGE
 
-
-## Manually
-
+## Cli
 
     $ s6 --plg-run service@service=nginx,action=enable
     $ s6 --plg-run service@service=nginx,action=start
     $ s6 --plg-run service@service=nginx,action=stop
-    $ # so on ...
 
-
-## Via Sparrowdo
+## Raku
 
     $ cat sparrowfile
 
-    task_run %(
-      task => 'enable nginx service',
-      plugin => 'service',
-      parameters => %( action => 'enable', service => 'nginx' )
-    );
-    
-    task_run %(
-      task => 'start nginx service',
-      plugin => 'service',
-      parameters => %( action => 'start', service => 'nginx' )
-    );
-        
-
+    task_run "enable nginx service", "service", %(:action<enable>, :service<nginx>);
+    task_run "start nginx service", "service", %(:action<start>, :service<nginx>);
+  
 # Parameters
 
 ## service
@@ -69,6 +55,7 @@ One of five: `(enable|disable|start|stop|restart)`. Default value is `enable`. S
 * Archlinux
 * Minoca
 * Funtoo
+* OpenSUSE
 
 # Author
 
