@@ -24,7 +24,7 @@ s6 --task-run .@name=nginx,rootless,port=9000:90
 
 ```raku
 #!raku
-task_run "nginx quadlet", "quadlet", %(
+my $s = task_run "nginx quadlet", "quadlet", %(
   :type<container>, 
   :description<nginx server>,
   :name<nginx>,
