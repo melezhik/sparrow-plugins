@@ -10,21 +10,21 @@ The list of supported resources:
 
 # INSTALL
 
-    $ s6 --install quadlet
+    $ s6 --install quadlet-resource
 
 # USAGE
 
 ## Cli
 
 ```
-s6 --task-run .@name=nginx,rootless,port=9000:90
+s6 --plg-run quadlet-resource@name=nginx,rootless,port=9000:90
 ```
 
 ## Raku
 
 ```raku
 #!raku
-my $s = task_run "nginx quadlet", "quadlet", %(
+my $s = task_run "nginx quadlet", "quadlet-resource", %(
   :type<container>, 
   :description<nginx server>,
   :name<nginx>,
