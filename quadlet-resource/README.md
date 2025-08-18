@@ -17,7 +17,7 @@ The list of supported resources:
 ## Cli
 
 ```
-s6 --task-run .@name=nginx,rootless,,port=9000:90
+s6 --task-run .@name=nginx,rootless,port=9000:90
 ```
 
 ## Raku
