@@ -1,0 +1,5 @@
+type: container
+rootless: false
+image: docker.io/nginxinc/nginx-unprivileged
+description: quadlet resource
+port: "8080:80"

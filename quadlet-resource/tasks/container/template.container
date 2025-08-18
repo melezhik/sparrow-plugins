@@ -1,0 +1,9 @@
+[Container]
+ContainerName=%name%
+Descritpion=%description%
+Image=%image%
+PublishPort=%port%
+
+[Install]
+WantedBy=%targets%
+
