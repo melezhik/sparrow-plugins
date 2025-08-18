@@ -1,7 +1,7 @@
 {
   "name" : "quadlet",
-  "version" : "0.0.3",
+  "version" : "0.0.4",
   "description" : "Manages Linux quadlets",
-  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/quadlet",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/quadlet-resource",
   "category": "podman, quadlet, containers"
 }
