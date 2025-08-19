@@ -1,7 +1,10 @@
 [Container]
-ContainerName=%name%
-Descritpion=%description%
+HostName=%hostname%
+ContainerName=%containername%
+Description="%description%"
 Image=%image%
+Network=%network%
+Label="%label%"
 PublishPort=%port%
 
 [Install]

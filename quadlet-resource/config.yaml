@@ -3,3 +3,7 @@ rootless: false
 image: docker.io/nginxinc/nginx-unprivileged
 description: quadlet resource
 port: "8080:80"
+network: host
+label: "app=app"
+containername: app_%i
+hostname: app_%i

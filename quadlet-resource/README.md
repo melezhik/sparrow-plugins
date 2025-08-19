@@ -24,17 +24,28 @@ s6 --plg-run quadlet-resource@name=nginx,rootless,port=9000:90
 
 ```raku
 #!raku
-my $s = task_run "nginx quadlet", "quadlet-resource", %(
+
+# install container quadlet
+my $s = task_run "app quadlet", "quadlet", %(
   :type<container>, 
-  :description<nginx server>,
-  :name<nginx>,
+  :description<app server>,
+  :name<my-app>,
+  :containername<my-app-%i>,
+  :hostname<my-app-%i>,
   :port<8080:80>,
-  :image<docker.io/nginxinc/nginx-unprivileged>,
+  :image<my-app:%i>,
   :network<myapp.network>,
-  :rootless,
+  :label<app=my-app>,
 );
 
 bash "systemctl --user daemon-reload" if $s<changed>;
+
+# deploy new version of application
+bash "ln -s my-app@.container my-app@feature-foo.container", %(
+  :cwd</etc/containers/systemd>,
+);
+
+bash "systemctl --user daemon-reload";
 
 ```
 
@@ -46,7 +57,15 @@ A quadlet resource type
 
 ## name
 
-A quadlet resource name
+A quadlet resource name. For type=container it corresponds to ContainerName
+
+## containername
+
+A quadlet container name. Applicable for type=container
+
+## hostname
+
+A quadlet resource hostname. Applicable for type=container
 
 ## description
 
@@ -58,14 +77,16 @@ Boolean. Use rootless mode. Optional. Default is `False`
 
 ## image
 
-Container image, for type=container
+Container image, applicable for type=container
 
 ## port
 
-Ports exposed, for type=container
+Ports exposed, applicable for type=container
+
+## network
+
+Pod network, applicable for type=container. Optional. Default value is `host`
 
 # Author
 
 [Alexey Melezhik](mailto:melezhik@gmail.com)
-
-

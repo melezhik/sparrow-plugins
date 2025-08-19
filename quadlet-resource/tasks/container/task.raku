@@ -12,10 +12,13 @@ my $tmpl = "{task_dir()}/template.container".IO.slurp();
 say "template loaded: \n==\n$tmpl";
 
 
-$tmpl.=subst("%name%",config()<name>);
+$tmpl.=subst("%containername%",config()<containername>);
+$tmpl.=subst("%hostname%",config()<hostname>);
 $tmpl.=subst("%description%",config()<description>);
 $tmpl.=subst("%image%",config()<image>);
+$tmpl.=subst("%network%",config()<network>);
 $tmpl.=subst("%port%",config()<port>);
+$tmpl.=subst("%label%",config()<label>);
 $tmpl.=subst("%targets%",config()<rootless> ?? "default.target" !! "multi-user.target default.target");
 
 say "template rendered: \n==\n$tmpl";
