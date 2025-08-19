@@ -25,7 +25,7 @@ s6 --plg-run quadlet-resource@name=nginx,rootless,port=9000:90
 ```raku
 #!raku
 
-# install container quadlet
+# install quadlet container template
 my $s = task_run "app quadlet", "quadlet", %(
   :type<container>, 
   :description<app server>,
@@ -57,7 +57,7 @@ A quadlet resource type
 
 ## name
 
-A quadlet resource name. For type=container it corresponds to ContainerName
+A quadlet resource name. For type=container it corresponds to template name
 
 ## containername
 
