@@ -41,7 +41,7 @@ my $s = task_run "quadlet template", "quadlet-resource", %(
 bash "systemctl daemon-reload" if $s<changed>;
 
 # deploy new version of application
-bash "ln -s my-app@.container my-app@feature-foo.container", %(
+bash "ln -s my-app@.container my-app\@feature-foo.container", %(
   :cwd</etc/containers/systemd>,
 );
 
