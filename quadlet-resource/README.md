@@ -26,7 +26,7 @@ s6 --plg-run quadlet-resource@name=nginx,rootless,port=9000:90
 #!raku
 
 # install quadlet container template
-my $s = task_run "app quadlet", "quadlet", %(
+my $s = task_run "quadlet template", "quadlet-resource", %(
   :type<container>, 
   :description<app server>,
   :name<my-app>,
@@ -38,14 +38,16 @@ my $s = task_run "app quadlet", "quadlet", %(
   :label<app=my-app>,
 );
 
-bash "systemctl --user daemon-reload" if $s<changed>;
+bash "systemctl daemon-reload" if $s<changed>;
 
 # deploy new version of application
 bash "ln -s my-app@.container my-app@feature-foo.container", %(
   :cwd</etc/containers/systemd>,
 );
 
-bash "systemctl --user daemon-reload";
+bash "systemctl daemon-reload";
+
+service-start "my-app\@feature-foo";
 
 ```
 
