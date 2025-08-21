@@ -17,7 +17,7 @@ The list of supported resources:
 ## Cli
 
 ```
-s6 --plg-run quadlet-resource@name=nginx,rootless,port=9000:90
+s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90
 ```
 
 ## Raku
@@ -25,8 +25,8 @@ s6 --plg-run quadlet-resource@name=nginx,rootless,port=9000:90
 ```raku
 #!raku
 
-# install quadlet container template
-my $s = task_run "quadlet template", "quadlet-resource", %(
+# install container quadlet
+my $s = task-run "app quadlet", "quadlet-resource", %(
   :type<container>, 
   :description<app server>,
   :name<my-app>,

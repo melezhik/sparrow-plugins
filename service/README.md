@@ -34,6 +34,7 @@ The list of supported actions:
     $ cat sparrowfile
 
     task_run "enable nginx service", "service", %(:action<enable>, :service<nginx>);
+
     task_run "start nginx service", "service", %(:action<start>, :service<nginx>);
   
 # Parameters
