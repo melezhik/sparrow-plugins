@@ -27,7 +27,7 @@ s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90,n
 #!raku
 
 # create quadlet network
-my $s = task-run "app quadlet", "quadlet-resource", %(
+my $s = task-run "podman network", "quadlet-resource", %(
   :type<network>, 
   :description<podman network>,
   :name<my-app>,
