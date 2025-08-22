@@ -17,7 +17,8 @@ The list of supported resources:
 ## Cli
 
 ```
-s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90
+s6 --task-run .@type=network,name=my-app,rootless
+s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90,network=my-app.network
 ```
 
 ## Raku
@@ -25,8 +26,20 @@ s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90
 ```raku
 #!raku
 
-# install container quadlet
+# create quadlet network
 my $s = task-run "app quadlet", "quadlet-resource", %(
+  :type<network>, 
+  :description<podman network>,
+  :name<my-app>,
+  :subnet<10.10.0.0/24>,
+  :gateway<10.10.0.1>,
+  :dns<9.9.9.9>,
+);
+
+bash "systemctl daemon-reload" if $s<changed>;
+
+# install container quadlet
+$s = task-run "app quadlet", "quadlet-resource", %(
   :type<container>, 
   :description<app server>,
   :name<my-app>,
@@ -34,7 +47,7 @@ my $s = task-run "app quadlet", "quadlet-resource", %(
   :hostname<my-app-%i>,
   :port<8080:80>,
   :image<my-app:%i>,
-  :network<myapp.network>,
+  :network<my-app.network>,
   :label<app=my-app>,
 );
 
