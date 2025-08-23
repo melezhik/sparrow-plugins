@@ -1,11 +1,12 @@
 my $location = config()<rootless> ?? "{%*ENV<HOME>}/.config/containers/systemd/" !!
 "/etc/containers/systemd";
 
+say "location: $location";
+
 mkdir($location) if config()<rootless>;
 
 my $curr = "{$location}/{config()<name>}\@.container".IO ~~ :e ??
 "{$location}/{config()<name>}\@.container".IO.slurp() !! "";
-
 
 my $tmpl = "{task_dir()}/template.container".IO.slurp();  
 
@@ -30,7 +31,7 @@ if $curr eq $tmpl {
   update_state(%(:!changed))
 } else {
   say "resource changed";
-  "{$location}/{config()<name>}.container".IO.spurt($tmpl);
+  "{$location}/{config()<name>}\@.container".IO.spurt($tmpl);
   update_state(%(:changed));
 
 }
