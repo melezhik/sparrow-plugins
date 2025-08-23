@@ -30,7 +30,9 @@ echo "current version: $cur"
 
 ln -sf $app@.container $app@$version.container
 
-if [[  $cur = "$base_dir/$app@.container" ]]; then
+echo "cur: $cur";
+
+if [[  $cur = "$app@.container" ]]; then
   echo "changed: false"
 else
   echo "changed: true"

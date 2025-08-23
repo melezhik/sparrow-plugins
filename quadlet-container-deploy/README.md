@@ -19,10 +19,12 @@ s6 --plg-run quadlet-container-deploy@name=my-app,version=0.1.2,rootless
 ```raku
 #!raku
 
-task-run "app deploy", "quadlet-container-deploy", %(
+$s = task-run "app deploy", "quadlet-container-deploy", %(
   :name<my-app>,
   :version<0.1.3>,
 );
+
+say $s<changed>; # True|False
 
 ```
 
