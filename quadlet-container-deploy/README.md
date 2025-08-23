@@ -11,7 +11,7 @@ Deploy quadlet container.
 ## Cli
 
 ```
-s6 --plg-run quadlet-container-deploy@name=my-app,version=0.1.2
+s6 --plg-run quadlet-container-deploy@name=my-app,version=0.1.2,rootless
 ```
 
 ## Raku
@@ -35,6 +35,10 @@ quadlet container template name
 ## version
 
 application version
+
+## rootless
+
+Boolean. Use rootless mode. Optional. Default is `False` 
 
 # Author
 

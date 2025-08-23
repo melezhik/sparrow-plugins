@@ -1,0 +1,13 @@
+regexp: "changed:" \s ("true"|"false")
+
+code: <<RAKU
+!raku
+if matched() {
+  my $u = capture().head;
+  if "$u" eq "true" {
+    update_state(%( :changed));
+  } else {
+    update_state(%( :!changed));
+  }
+}
+RAKU

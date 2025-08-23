@@ -3,8 +3,8 @@ my $location = config()<rootless> ?? "{%*ENV<HOME>}/.config/containers/systemd/"
 
 mkdir($location) if config()<rootless>;
 
-my $curr = "{$location}/{config()<name>}.container".IO ~~ :e ??
-"{$location}/{config()<name>}.container".IO.slurp() !! "";
+my $curr = "{$location}/{config()<name>}\@.container".IO ~~ :e ??
+"{$location}/{config()<name>}\@.container".IO.slurp() !! "";
 
 
 my $tmpl = "{task_dir()}/template.container".IO.slurp();  
