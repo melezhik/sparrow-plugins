@@ -1,6 +1,6 @@
 {
   "name" : "quadlet-container-deploy",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "description" : "Deploy quadlet container",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/quadlet-container-deploy",
   "category": "podman, quadlet, containers"

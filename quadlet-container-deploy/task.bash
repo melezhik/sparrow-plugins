@@ -24,13 +24,13 @@ echo "deploy $app version $version"
 
 echo "deploy directory: $base_dir"
 
-cur=$(readlink $app@.container) || :
+cur=$(readlink $app@$version.container) || :
 
 echo "current version: $cur"
 
-ln -sf $app@.container $app@$version
+ln -sf $app@.container $app@$version.container
 
-if [[  $cur = "$base_dir/$app@$version" ]]; then
+if [[  $cur = "$base_dir/$app@.container" ]]; then
   echo "changed: false"
 else
   echo "changed: true"
