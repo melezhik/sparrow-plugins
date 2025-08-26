@@ -6,7 +6,7 @@ The list of supported resources:
 
 * container
 * network
-* volume (tbd)
+* service
 
 # INSTALL
 
@@ -16,10 +16,10 @@ The list of supported resources:
 
 ## Cli
 
-```
+""`
 s6 --plg-run quadlet-resource@type=network,name=my-app,rootless
 s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,expose=4000,network=my-app.network,add_capability=NET_ADMIN
-```
+""`
 
 ## Raku
 
@@ -39,7 +39,7 @@ my $s = task-run "podman network", "quadlet-resource", %(
 bash "systemctl daemon-reload" if $s<changed>;
 
 # install container quadlet
-$s = task-run "app quadlet", "quadlet-resource", %(
+$s = task-run "container template quadlet", "quadlet-resource", %(
   :type<container>, 
   :description<app server>,
   :name<my-app>,
@@ -66,7 +66,7 @@ service-start "my-app\@feature-foo";
 # Create regular container, without container template
 
 # install container quadlet
-$s = task-run "app quadlet", "quadlet-resource", %(
+$s = task-run "proxy quadlet", "quadlet-resource", %(
   :type<container>, 
   :!templated,
   :description<proxy>,
@@ -93,6 +93,19 @@ if $s<changed> {
   service-start "proxy.service";
 }
 
+
+# install service resource
+
+$s = task-run "service quadlet", "quadlet-resource", %(
+  :type<service>, 
+  :description<container-deploy>,
+  :name<container-deploy>,
+  :label<app=my-app>,
+  environment => [ "HOME=/root", "GOCACHE=/tmp/go-cache", "GOPATH=/tmp/go"],
+  :environment_file</etc/default/container-deploy>,
+  :exec_start => "/usr/bin/go run /usr/local/bin/container-deploy.go",
+);
+
 ```
 
 # Parameters
@@ -101,7 +114,7 @@ if $s<changed> {
 
 ### type
 
-A quadlet resource type
+A quadlet resource type. One of `container|service|network`
 
 ### name
 
@@ -135,7 +148,7 @@ Container image, applicable for type=container
 
 ### publish_port
 
-publish_ports exposed, applicable for type=container, default value is ``, could be List or String 
+publish_ports exposed, applicable for type=container, default value is "", could be List or String 
 
 ### network
 
@@ -143,41 +156,51 @@ Pod network, applicable for type=container. Optional. Default value is `host`
 
 ### restart
 
-default value is ``
+default value is ""
 
 ### expose
 
-default value is ``
+default value is ""
 
 ### volume
 
-default value is ``, could be List or String
+default value is "", could be List or String
 
 ### add_capability
 
-default value is ``, could be List or String
+default value is "", could be List or String
 
 ### environment_file
 
-default value is ``
+default value is ""
 
 ### exec_reload
 
-default value is ``
+default value is ""
+
+## Service resource parameters
+
+### templated
+
+Create resource as quadlet template. Optional, default value is `True`
+
+### environment
+
+### exec_start
 
 ## Network resource parameters
 
 ### dns
 
-Optional. Default value is ``
+Optional. Default value is ""
 
 ### gateway
 
-Optional. Default value is ``
+Optional. Default value is ""
 
 ### subnet
 
-Optional. Default value is ``
+Optional. Default value is ""
 
 # Author
 
