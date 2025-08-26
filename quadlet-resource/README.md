@@ -18,7 +18,7 @@ The list of supported resources:
 
 ```
 s6 --plg-run quadlet-resource@type=network,name=my-app,rootless
-s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,publish_port=9000:90,network=my-app.network,add_capability=NET_ADMIN
+s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,expose=4000,network=my-app.network,add_capability=NET_ADMIN
 ```
 
 ## Raku
@@ -45,7 +45,7 @@ $s = task-run "app quadlet", "quadlet-resource", %(
   :name<my-app>,
   :containername<my-app-%i>,
   :hostname<my-app-%i>,
-  :publish_port<8080:80>,
+  :expose<4000>,
   :image<my-app:%i>,
   :network<my-app.network>,
   :label<app=my-app>,
@@ -77,6 +77,7 @@ $s = task-run "app quadlet", "quadlet-resource", %(
   :image<ghcr.io/caddybuilds/caddy-cloudflare:alpine>,
   :network<my-app.network>,
   :label<app=my-app,type=proxy>,
+  :environment_file</etc/default/proxy>,
   volume => [
       "/etc/caddy.d:/etc/caddy.d:ro,Z",
       "caddy-data:/data:Z",

@@ -11,6 +11,7 @@ my $s = task-run ".", %(
   :image<ghcr.io/caddybuilds/caddy-cloudflare:alpine>,
   :network<my-app.network>,
   :label<app=my-app,type=proxy>,
+  :environment_file</etc/default/proxy>,
   volume => [
       "/etc/caddy.d:/etc/caddy.d:ro,Z",
       "caddy-data:/data:Z",
