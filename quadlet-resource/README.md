@@ -17,7 +17,7 @@ The list of supported resources:
 ## Cli
 
 ```
-s6 --task-run .@type=network,name=my-app,rootless
+s6 --plg-run quadlet-resource@type=network,name=my-app,rootless
 s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90,network=my-app.network
 ```
 
@@ -101,6 +101,20 @@ Ports exposed, applicable for type=container
 ## network
 
 Pod network, applicable for type=container. Optional. Default value is `host`
+
+## Network resource parameters
+
+### dsn
+
+Optional. Default value is ``
+
+### gateway
+
+Optional. Default value is ``
+
+### subnet
+
+Optional. Default value is ``
 
 # Author
 

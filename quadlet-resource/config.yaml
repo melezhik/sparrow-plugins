@@ -12,6 +12,6 @@ containername: app_%i
 hostname: app_%i
 
 # network related settings
-subnet: 10.10.0.0/24
-gateway: 10.10.0.1
-dns: 9.9.9.9
+#subnet: 10.10.0.0/24
+#gateway: 10.10.0.1
+#dns: 9.9.9.9
