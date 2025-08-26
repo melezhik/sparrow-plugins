@@ -15,6 +15,7 @@ my $tmpl = "{task_dir()}/template.service".IO.slurp();
 
 say "template loaded: \n==\n$tmpl";
 
+$tmpl.=subst("%name%",config()<name>);
 $tmpl.=subst("%description%",config()<description>);
 
 if config()<environment_file> {
@@ -34,9 +35,9 @@ if config()<environment> {
 }
 
 if config()<exec_start> {
-  $tmpl.=subst("%exec_reload%","ExecReload={config()<exec_reload>}");
+  $tmpl.=subst("%exec_start%","ExecStart={config()<exec_start>}");
 } else {
-  $tmpl.=subst("%exec_reload%\n","");
+  $tmpl.=subst("%exec_start%\n","");
 }
 
 $tmpl.=subst("%label%",config()<label>);

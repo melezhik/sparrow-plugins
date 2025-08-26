@@ -16,10 +16,10 @@ The list of supported resources:
 
 ## Cli
 
-""`
+```
 s6 --plg-run quadlet-resource@type=network,name=my-app,rootless
 s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,expose=4000,network=my-app.network,add_capability=NET_ADMIN
-""`
+```
 
 ## Raku
 
