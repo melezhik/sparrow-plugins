@@ -1,17 +1,13 @@
 # common settings
 description: quadlet resource
 type: container
+rootless: false
 
 # container related settings
-rootless: false
-image: docker.io/nginxinc/nginx-unprivileged
-port: "8080:80"
-network: host
-label: "app=app"
 containername: app_%i
 hostname: app_%i
-
-# network related settings
-#subnet: 10.10.0.0/24
-#gateway: 10.10.0.1
-#dns: 9.9.9.9
+image: docker.io/nginxinc/nginx-unprivileged
+network: host
+label: "app=app"
+templated: true
+  

@@ -5,7 +5,7 @@ Create quadlet resources.
 The list of supported resources:
 
 * container
-* network (tbd)
+* network
 * volume (tbd)
 
 # INSTALL
@@ -18,7 +18,7 @@ The list of supported resources:
 
 ```
 s6 --plg-run quadlet-resource@type=network,name=my-app,rootless
-s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,port=9000:90,network=my-app.network
+s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,publish_port=9000:90,network=my-app.network,add_capability=NET_ADMIN
 ```
 
 ## Raku
@@ -45,7 +45,7 @@ $s = task-run "app quadlet", "quadlet-resource", %(
   :name<my-app>,
   :containername<my-app-%i>,
   :hostname<my-app-%i>,
-  :port<8080:80>,
+  :publish_port<8080:80>,
   :image<my-app:%i>,
   :network<my-app.network>,
   :label<app=my-app>,
@@ -62,49 +62,111 @@ bash "systemctl daemon-reload";
 
 service-start "my-app\@feature-foo";
 
+
+# Create regular container, without container template
+
+# install container quadlet
+$s = task-run "app quadlet", "quadlet-resource", %(
+  :type<container>, 
+  :!templated,
+  :description<proxy>,
+  :name<proxy>,
+  :containername<proxy>,
+  :hostname(""),
+  publish_port => [ "80:80", "443:443", "443:443/udp"],
+  :image<ghcr.io/caddybuilds/caddy-cloudflare:alpine>,
+  :network<my-app.network>,
+  :label<app=my-app,type=proxy>,
+  volume => [
+      "/etc/caddy.d:/etc/caddy.d:ro,Z",
+      "caddy-data:/data:Z",
+      "caddy-config:/config:Z",
+  ],
+  :add_capability<NET_ADMIN>,
+  exec_reload => "/usr/bin/podman exec proxy caddy reload --config /etc/caddy/Caddyfile --force",
+  :restart<always>,
+);
+
+if $s<changed> {
+  bash "systemctl daemon-reload";
+  service-start "proxy.service";
+}
+
 ```
 
 # Parameters
 
-## type
+## Common parameters
+
+### type
 
 A quadlet resource type
 
-## name
+### name
 
 A quadlet resource name. For type=container it corresponds to template name
 
-## containername
-
-A quadlet container name. Applicable for type=container
-
-## hostname
-
-A quadlet resource hostname. Applicable for type=container
-
-## description
+### description
 
 A quadlet resource description
 
-## rootless
+### rootless
 
 Boolean. Use rootless mode. Optional. Default is `False` 
 
-## image
+## Container resource parameters
+
+### templated
+
+Create resource as quadlet template. Optional, default value is `True`
+
+### containername
+
+A quadlet container name. Applicable for type=container
+
+### hostname
+
+A quadlet resource hostname. Applicable for type=container. Default value is `app_%i`.
+
+### image
 
 Container image, applicable for type=container
 
-## port
+### publish_port
 
-Ports exposed, applicable for type=container
+publish_ports exposed, applicable for type=container, default value is ``, could be List or String 
 
-## network
+### network
 
 Pod network, applicable for type=container. Optional. Default value is `host`
 
+### restart
+
+default value is ``
+
+### expose
+
+default value is ``
+
+### volume
+
+default value is ``, could be List or String
+
+### add_capability
+
+default value is ``, could be List or String
+
+### environment_file
+
+default value is ``
+
+### exec_reload
+
+default value is ``
+
 ## Network resource parameters
 
-### dsn
+### dns
 
 Optional. Default value is ``
 

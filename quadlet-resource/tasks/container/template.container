@@ -1,11 +1,19 @@
 [Container]
-HostName=%hostname%
+%hostname%
 ContainerName=%containername%
 Description="%description%"
 Image=%image%
 Network=%network%
 Label="%label%"
-PublishPort=%port%
+%expose%
+%publish_port%
+%environment_file%
+%add_capability%
+%volume%
+
+[Service]
+%exec_reload%
+%restart%
 
 [Install]
 WantedBy=%targets%
