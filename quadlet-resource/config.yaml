@@ -11,3 +11,8 @@ network: host
 label: "app=app"
 templated: true
   
+# time related settings
+on_boot_sec: 10min
+on_unit_active_sec: 10min
+randomized_delay_sec: 2min
+accuracy_sec: 1min

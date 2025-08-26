@@ -1,0 +1,13 @@
+[Unit]
+Description=%description%
+%requires%
+
+[Timer]
+%on_boot_sec%
+%on_unit_active_sec%
+%randomized_delay_sec%
+%accuracy_sec%
+
+[Install]
+WantedBy=%targets%
+

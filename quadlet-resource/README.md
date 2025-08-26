@@ -7,6 +7,7 @@ The list of supported resources:
 * container
 * network
 * service
+* timer
 
 # INSTALL
 
@@ -93,7 +94,6 @@ if $s<changed> {
   service-start "proxy.service";
 }
 
-
 # install service resource
 
 $s = task-run "service quadlet", "quadlet-resource", %(
@@ -106,6 +106,29 @@ $s = task-run "service quadlet", "quadlet-resource", %(
   :exec_start => "/usr/bin/go run /usr/local/bin/container-deploy.go",
 );
 
+if $s<changed> {
+  bash "systemctl daemon-reload";
+}
+
+# install timer rersource
+
+my $s = task-run "timer quadlet", "quadlet-resource",  %(
+  :type<timer>, 
+  :!templated,
+  :description<Container Deploy Timer>,
+  :name<container-deploy>,
+  :requires<container-deploy.service>,
+  :on_boot_sec<5min>,
+  :on_unit_active_sec<3min>,
+  :randomized_delay_sec<1min>,
+  :accuracy_sec<2min>,
+);
+
+if $s<changed> {
+  bash "systemctl daemon-reload";
+  service-enable "container-deploy.timer";
+}
+
 ```
 
 # Parameters
@@ -114,7 +137,7 @@ $s = task-run "service quadlet", "quadlet-resource", %(
 
 ### type
 
-A quadlet resource type. One of `container|service|network`
+A quadlet resource type. One of `container|service|network|timer`
 
 ### name
 
@@ -201,6 +224,28 @@ Optional. Default value is ""
 ### subnet
 
 Optional. Default value is ""
+
+## Timer resource paramaters
+
+### on_boot_sec
+
+Optional. Default value is `10min`
+
+### on_unit_active_sec
+
+Optional. Default value is `10min`
+
+### randomized_delay_sec
+
+Optional. Default value is  `2min`
+
+### accuracy_sec
+
+Optional. Default value is `1min`
+
+### requires
+
+Requires systemd entry. 
 
 # Author
 
