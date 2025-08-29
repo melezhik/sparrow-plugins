@@ -14,6 +14,19 @@ say "template loaded: \n==\n$tmpl";
 
 $tmpl.=subst("%name%",config()<name>);
 $tmpl.=subst("%description%",config()<description>);
+$tmpl.=subst("%type%",config()<type>);
+
+if config()<user> {
+  $tmpl.=subst("%user%","User={config()<user>}");
+} else {
+  $tmpl.=subst("%user%\n","");
+}
+
+if config()<workdir> {
+  $tmpl.=subst("%workdir%","WorkingDirectory={config()<workdir>}");
+} else {
+  $tmpl.=subst("%workdir%\n","");
+}
 
 if config()<environment_file> {
   $tmpl.=subst("%environment_file%","EnvironmentFile={config()<environment_file>}");
@@ -37,9 +50,14 @@ if config()<exec_start> {
   $tmpl.=subst("%exec_start%\n","");
 }
 
-$tmpl.=subst("%label%",config()<label>);
 
-$tmpl.=subst("%targets%",config()<rootless> ?? "default.target" !! "multi-user.target default.target");
+if config()<restart> {
+  $tmpl.=subst("%restart%","Restart={config()<restart>}");
+} else {
+  $tmpl.=subst("%restart%\n","");
+}
+
+$tmpl.=subst("%targets%","multi-user.target default.target");
 
 say "template rendered: \n==\n$tmpl";
 

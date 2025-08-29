@@ -4,10 +4,13 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-Type=oneshot
+Type=%type%
+%user%
+%workdir%
 %environment%
 %environment_file%
 %exec_start%
+%restart%
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=%name%

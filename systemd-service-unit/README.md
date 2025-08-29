@@ -45,11 +45,19 @@ Unit/service name
 
 Unit description
 
-## environment
+## type
 
-default value is ""
+Service type. Optional. Default value is `simple`.
 
 ## exec_start
+
+## user
+
+## workdir
+
+## restart
+
+## environment
 
 ## dry_run
 

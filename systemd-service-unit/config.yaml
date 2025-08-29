@@ -1,5 +1,5 @@
 dry_run: False
 name: "foo"
 description: "foo service"
-
+type: simple
   
