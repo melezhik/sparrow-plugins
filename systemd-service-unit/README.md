@@ -27,7 +27,7 @@ my $s = task-run "container deploy service", "systemd-service-unit", %(
   :type<oneshot>,
   environment => [ "HOME=/root", "GOCACHE=/tmp/go-cache", "GOPATH=/tmp/go"],
   :environment_file</etc/default/container-deploy>,
-  :exec_start => "/usr/bin/go run /usr/local/bin/container-deploy.go",
+  exec_start => "/usr/bin/go run /usr/local/bin/container-deploy.go",
 );
 
 if $s<changed> {
