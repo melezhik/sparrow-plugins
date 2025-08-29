@@ -1,0 +1,7 @@
+{
+  "name" : "systemd-timer-unit",
+  "version" : "0.0.1",
+  "description" : "Create systemd units for timers",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/systemd-timer-unit",
+  "category": "core, systemd, cron, time"
+}

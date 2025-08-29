@@ -1,0 +1,3 @@
+name: foo
+dry_run: false
+description: foo timer
