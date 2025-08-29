@@ -1,6 +1,6 @@
 {
   "name" : "systemd-service-unit",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "description" : "Create systemd units for services",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/systemd-service-unit",
   "category": "core, systemd"
