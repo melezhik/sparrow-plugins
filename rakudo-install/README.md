@@ -19,10 +19,11 @@ $ s6 --install rakudo-install
 
 ```raku
 #!raku
-task-run 'install Rakudo 2025.08', 'rakudo-install', %(
-  :version<2025.08>,
+task-run 'install Rakudo 2025.06', 'rakudo-install', %(
+  :version<2025.06>,
   :user<alex>,
 );
+```
 
 # Parameters
 
@@ -37,5 +38,3 @@ Install for user. Optional. Default value is not set.
 # Author
 
 Alexey Melezhik
-
-
