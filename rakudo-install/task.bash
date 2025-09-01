@@ -1,9 +1,9 @@
 set -e
 
-version=(config version)
+version=$(config version)
 version="moar-"$version
 
-user=(config user)
+user=$(config user)
 
 if [[ $user = "" ]]; then
   echo "install rakudo version: $version"
