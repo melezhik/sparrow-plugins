@@ -1,6 +1,6 @@
 {
   "name" : "rakudo-install",
-  "version" : "0.3.5",
+  "version" : "0.3.6",
   "description" : "Install Rakudo via Rakubrew installer",
   "category" : "utilities, raku, rakudo, rakubrew",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/rakudo-install"
