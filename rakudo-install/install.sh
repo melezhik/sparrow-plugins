@@ -13,7 +13,7 @@ fi
 
 eval "$(~/.rakubrew/bin/rakubrew init Bash)"
 
-rakubrew download $version
+rakubrew download $version || :
 rakubrew switch $version
 raku --version
 
