@@ -4,7 +4,7 @@ version=$1
 
 eval "$(~/.rakubrew/bin/rakubrew init Bash)" >/dev/null 2>&1  || :
 
-if [[ rakubrew version 2>/dev/null ]]; then
+if rakubrew version 2>/dev/null; then
   echo "rakubrew already installed"
 else
   echo "installing rakubrew"
