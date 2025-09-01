@@ -17,7 +17,7 @@ rakubrew download $version || :
 rakubrew switch $version
 raku --version
 
-if [[ -f ~/.bashrc.patched ]];
+if [[ -f ~/.bashrc.patched ]]; then
   echo "~/.bashrc already patched"
 else
   echo "patching ~/.bashrc"
@@ -25,7 +25,7 @@ else
   touch ~/.bashrc.patched
 fi
 
-if [[ -f ~/.bash_profile.patched ]];
+if [[ -f ~/.bash_profile.patched ]]; then
   echo "~/.bash_profile already patched"
 else
   echo "patching ~/.bash_profile"
