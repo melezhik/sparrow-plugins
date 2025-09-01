@@ -1,16 +1,14 @@
 set -e
 
-curl https://rakubrew.org/install-on-perl.sh | sh
-
-eval "$(~/.rakubrew/bin/rakubrew init Bash)"
-
 version=(config version)
 version="moar-"$version
 
-rakubrew download $version
+user=(config user)
 
-rakubrew switch $version
-
-raku --version
-
-
+if [[ $user = "" ]]; then
+  echo "install rakudo version: $version"
+  bash $task_dir/install.sh
+else
+  echo "install rakudo version: $version, user: $user"
+  su - $user -c "bash $task_dir/install.sh"
+fi
