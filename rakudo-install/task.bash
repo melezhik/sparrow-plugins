@@ -10,5 +10,7 @@ if [[ $user = "" ]]; then
   bash $task_dir/install.sh
 else
   echo "install rakudo version: $version, user: $user"
-  su - $user -c "bash $task_dir/install.sh"
+  cp -v $task_dir/install.sh /tmp/rakudo-install.sh
+  chmod a+x /tmp/rakudo-install.sh
+  su - $user -c "bash /tmp/rakudo-install.sh"
 fi
