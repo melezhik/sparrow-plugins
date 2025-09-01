@@ -1,3 +1,7 @@
+# 0.3.0
+
+- Use Rakubrew as internal installer
+
 # 0.2.4
 
 - Fix available versions list 

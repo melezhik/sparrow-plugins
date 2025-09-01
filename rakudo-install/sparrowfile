@@ -1,1 +1,0 @@
-task-run 'install Rakudo', 'rakudo-install';

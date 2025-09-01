@@ -1,56 +1,36 @@
 # SYNOPSIS
 
-Install Rakudo as a system package.
+Install Rakudo via Rakubrew installer
 
 # Description
 
-This is simple installer of Rakudo Perl6.
-
-Platforms supported:
-
-* CentOS
-* Ubuntu
-* Debian
-* Fedora
-* Alpine
-* Archlinux ( limited support )
-
-*note*: for archlinux [zef](https://github.com/ugexe/zef) will not be installed because the installer uses a [user](https://spider-mario.quantic-telecom.net/archlinux/rakudo) binary repo without zef package.
+This is simple installer of Rakudo based on [Rakubrew](https://rakubrew.org) installer
 
 # Install
 
-    $ s6 --install rakudo-install
+```bash
+#!bash
+$ s6 --install rakudo-install
+```
 
 # Usage
 
-## List available distributions
-
-    $ s6 --plg-run rakudo-install@search=ubuntu
-
-## Install Rakudo with default distribution
-
-Be aware that defaults might point to pretty old versions:
-
-    $ s6 --plg-run rakudo-install
-
-## Set distro's url explicitly
-
-This is preferable method:
-
-    $ s6 --plg-run rakudo-install@url=https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb
-
-
 ## Raku
 
-    task-run 'install Rakudo', 'rakudo-install', %(
-      url =>  'https://github.com/nxadm/rakudo-pkg/releases/download/v2017.11/rakudo-pkg-Debian8.9_2017.11-01_amd64.deb'
-    );
+```raku
+#!raku
+task-run 'install Rakudo 2025.08', 'rakudo-install', %(
+  :version<2025.08>
+);
+
+# Parameters
+
+## version
+
+Version to install. Optional, default value is `2025.08`
 
 # Author
 
 Alexey Melezhik
 
-# See also
-
-[rakudo-pkg project](https://github.com/nxadm/rakudo-pkg)
 

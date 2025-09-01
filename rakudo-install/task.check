@@ -1,1 +1,4 @@
-regexp: done|not supported
+begin:
+regexp: "Implementing the Raku"  .* "Programming Language" \s+ \S+
+regexp: "Built on" \s+ \S+ "version" \s+ \S+
+end:
