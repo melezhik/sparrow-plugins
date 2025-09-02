@@ -1,6 +1,7 @@
 [Unit]
 Description=%description%
-# This is systemd syntax to wait for the network to be online before starting this service:
+# This is systemd syntax to wait for the network 
+# to be online before starting this service:
 After=network-online.target
  
 [Network]

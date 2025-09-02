@@ -24,6 +24,7 @@ s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,expose=4000,ne
 ```raku
 #!raku
 
+# create simple sleep service
 my $s = task-run "sleep service", "quadlet-resource", %(
   :type<container>,
   :!templated,
@@ -40,7 +41,7 @@ if $s<changed> {
   service-start "mysleep";
 }
 
-# More examples
+### More examples ###
 
 # create quadlet network
 $s = task-run "podman network", "quadlet-resource", %(
@@ -54,7 +55,9 @@ $s = task-run "podman network", "quadlet-resource", %(
 
 bash "systemctl daemon-reload" if $s<changed>;
 
-# install container quadlet template
+# create quadlet container template
+# so other containers
+# will base on it
 $s = task-run "container template quadlet", "quadlet-resource", %(
   :type<container>, 
   :description<app server>,
@@ -69,7 +72,8 @@ $s = task-run "container template quadlet", "quadlet-resource", %(
 
 bash "systemctl daemon-reload" if $s<changed>;
 
-# deploy new version of application
+# deploy new version of container
+# based on container template
 $s = task-run "app deploy", "quadlet-container-deploy", %(
   :name<my-app>,
   :version<feature-foo>,
@@ -79,9 +83,9 @@ bash "systemctl daemon-reload";
 
 service-start "my-app\@feature-foo";
 
-# Create regular container, without container template
-
-# install container quadlet
+# create regular container
+# not based on container template
+# using :!template option
 $s = task-run "proxy quadlet", "quadlet-resource", %(
   :type<container>, 
   :!templated,
@@ -89,18 +93,18 @@ $s = task-run "proxy quadlet", "quadlet-resource", %(
   :name<proxy>,
   :containername<proxy>,
   :hostname(""),
-  publish_port => [ "80:80", "443:443", "443:443/udp"],
+  :publish_port([ "80:80", "443:443", "443:443/udp"]),
   :image<ghcr.io/caddybuilds/caddy-cloudflare:alpine>,
   :network<my-app.network>,
   :label<app=my-app,type=proxy>,
   :environment_file</etc/default/proxy>,
-  volume => [
+  :volume([
       "/etc/caddy.d:/etc/caddy.d:ro,Z",
       "caddy-data:/data:Z",
       "caddy-config:/config:Z",
-  ],
+  ]),
   :add_capability<NET_ADMIN>,
-  exec_reload => "/usr/bin/podman exec proxy caddy reload --config /etc/caddy/Caddyfile --force",
+  :exec_reload</usr/bin/podman exec proxy caddy reload --config /etc/caddy/Caddyfile --force>,
   :restart<always>,
 );
 
@@ -108,7 +112,6 @@ if $s<changed> {
   bash "systemctl daemon-reload";
   service-start "proxy.service";
 }
-
 ```
 
 # Parameters
@@ -117,7 +120,7 @@ if $s<changed> {
 
 ### type
 
-A quadlet resource type. One of `container|network`
+A quadlet resource type. One of: `container|network`
 
 ### name
 
