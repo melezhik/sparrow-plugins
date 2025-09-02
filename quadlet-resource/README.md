@@ -36,7 +36,7 @@ my $s = task-run "podman network", "quadlet-resource", %(
 
 bash "systemctl daemon-reload" if $s<changed>;
 
-# install container quadlet
+# install container quadlet template
 $s = task-run "container template quadlet", "quadlet-resource", %(
   :type<container>, 
   :description<app server>,
@@ -99,7 +99,7 @@ if $s<changed> {
 
 ### type
 
-A quadlet resource type. One of `container|service|network|timer`
+A quadlet resource type. One of `container|network`
 
 ### name
 
