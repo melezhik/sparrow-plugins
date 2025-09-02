@@ -24,7 +24,7 @@ s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,expose=4000,ne
 ```raku
 #!raku
 
-my $s = task-run "proxy quadlet", "quadlet-resource", %(
+my $s = task-run "sleep service", "quadlet-resource", %(
   :type<container>,
   :!templated,
   :description<my sleep>,
