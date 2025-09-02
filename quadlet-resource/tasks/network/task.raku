@@ -1,5 +1,5 @@
-my $location = config()<rootless> ?? "{%*ENV<HOME>}/.config/networks/systemd/" !!
-"/etc/networks/systemd";
+my $location = config()<rootless> ?? "{%*ENV<HOME>}/.config/containers/systemd/" !!
+"/etc/containers/systemd";
 
 mkdir($location) if config()<rootless>;
 

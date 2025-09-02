@@ -1,7 +1,9 @@
+[Unit]
+Description=%description%
+
 [Container]
 %hostname%
 ContainerName=%containername%
-Description="%description%"
 Image=%image%
 Network=%network%
 Label="%label%"

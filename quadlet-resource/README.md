@@ -6,8 +6,6 @@ The list of supported resources:
 
 * container
 * network
-* service
-* timer
 
 # INSTALL
 
@@ -18,7 +16,6 @@ The list of supported resources:
 ## Cli
 
 ```
-s6 --plg-run quadlet-resource@type=network,name=my-app,rootless
 s6 --plg-run quadlet-resource@type=container,name=my-app,rootless,expose=4000,network=my-app.network,add_capability=NET_ADMIN
 ```
 
@@ -55,14 +52,14 @@ $s = task-run "container template quadlet", "quadlet-resource", %(
 bash "systemctl daemon-reload" if $s<changed>;
 
 # deploy new version of application
-bash "ln -s my-app\@.container my-app\@feature-foo.container", %(
-  :cwd</etc/containers/systemd>,
+$s = task-run "app deploy", "quadlet-container-deploy", %(
+  :name<my-app>,
+  :version<feature-foo>,
 );
 
 bash "systemctl daemon-reload";
 
 service-start "my-app\@feature-foo";
-
 
 # Create regular container, without container template
 
@@ -92,41 +89,6 @@ $s = task-run "proxy quadlet", "quadlet-resource", %(
 if $s<changed> {
   bash "systemctl daemon-reload";
   service-start "proxy.service";
-}
-
-# install service resource
-
-$s = task-run "service quadlet", "quadlet-resource", %(
-  :type<service>, 
-  :description<container-deploy>,
-  :name<container-deploy>,
-  :label<app=my-app>,
-  environment => [ "HOME=/root", "GOCACHE=/tmp/go-cache", "GOPATH=/tmp/go"],
-  :environment_file</etc/default/container-deploy>,
-  :exec_start => "/usr/bin/go run /usr/local/bin/container-deploy.go",
-);
-
-if $s<changed> {
-  bash "systemctl daemon-reload";
-}
-
-# install timer rersource
-
-my $s = task-run "timer quadlet", "quadlet-resource",  %(
-  :type<timer>, 
-  :!templated,
-  :description<Container Deploy Timer>,
-  :name<container-deploy>,
-  :requires<container-deploy.service>,
-  :on_boot_sec<5min>,
-  :on_unit_active_sec<3min>,
-  :randomized_delay_sec<1min>,
-  :accuracy_sec<2min>,
-);
-
-if $s<changed> {
-  bash "systemctl daemon-reload";
-  service-enable "container-deploy.timer";
 }
 
 ```
@@ -201,16 +163,6 @@ default value is ""
 
 default value is ""
 
-## Service resource parameters
-
-### templated
-
-Create resource as quadlet template. Optional, default value is `True`
-
-### environment
-
-### exec_start
-
 ## Network resource parameters
 
 ### dns
@@ -224,28 +176,6 @@ Optional. Default value is ""
 ### subnet
 
 Optional. Default value is ""
-
-## Timer resource paramaters
-
-### on_boot_sec
-
-Optional. Default value is `10min`
-
-### on_unit_active_sec
-
-Optional. Default value is `10min`
-
-### randomized_delay_sec
-
-Optional. Default value is  `2min`
-
-### accuracy_sec
-
-Optional. Default value is `1min`
-
-### requires
-
-Requires systemd entry. 
 
 # Author
 
