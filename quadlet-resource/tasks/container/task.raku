@@ -18,7 +18,7 @@ say "template loaded: \n==\n$tmpl";
 $tmpl.=subst("%containername%",config()<containername>);
 
 if config()<hostname> {
-  $tmpl.=subst("%hostname%","Hostname={config()<hostname>}");
+  $tmpl.=subst("%hostname%","HostName={config()<hostname>}");
 } else {
   $tmpl.=subst("%hostname%\n","");
 }
