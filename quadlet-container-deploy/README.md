@@ -4,13 +4,15 @@ Deploy quadlet container.
 
 # INSTALL
 
-  $ s6 --install quadlet-container-deploy
+```bash
+$ s6 --install quadlet-container-deploy
+```
 
 # USAGE
 
 ## Cli
 
-```
+```bash
 s6 --plg-run quadlet-container-deploy@name=my-app,version=0.1.2,rootless
 ```
 
@@ -25,7 +27,6 @@ $s = task-run "app deploy", "quadlet-container-deploy", %(
 );
 
 say $s<changed>; # True|False
-
 ```
 
 # Parameters
