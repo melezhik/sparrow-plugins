@@ -8,13 +8,11 @@ Installs docker engine on Linux box
 
 # API
 
-```yaml
-tasks:
-  -
-    name: install-docker
-    plugin: docker-engine
-    config:
-      cli_only: true
+```raku
+#!raku
+  task-run "install", "docker-engine", %(
+    :cli_only,
+  );
 ```
 
 Parameters:
