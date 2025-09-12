@@ -51,6 +51,7 @@ task-run "docker run", "docker-cli", %(
   name => "worker",
   image => "melezhik/sparrow:alpine"
 );
+```
 
 ## Stop docker
 
