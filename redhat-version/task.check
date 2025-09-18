@@ -1,0 +1,15 @@
+# release 10.0
+
+~regexp: \s+ "release" \s+ (\S+) \s
+
+code: <<RAKU
+!raku
+if matched() {
+  update_state(%( version => "{capture().head}" ));
+} else {
+  update_state(%( version => "" ));
+}
+RAKU
+
+
+

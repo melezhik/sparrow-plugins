@@ -1,0 +1,7 @@
+{
+  "name" : "redhat-version",
+  "version" : "0.0.1",
+  "description" : "Parses red release file",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/redhat-version",
+  "category": "redhat, rocky"
+}
