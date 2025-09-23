@@ -4,8 +4,8 @@ my @out;
 my @head;
 
 for config()<files><> -> $f {
+  say "proccess $f ...";
   my @data = csv(in => $f);
-  #say @data.raku;
   @head = shift @data;
   for @data[*] -> $i {
     @out.push: $i;
