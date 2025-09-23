@@ -1,7 +1,7 @@
 {
   "name" : "csv_concat",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "description" : "Concatenate one or many csv files into one",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/csv_concat",
-  "category": "data, text, tools, cvs"
+  "category": "data, text, tools, csv"
 }

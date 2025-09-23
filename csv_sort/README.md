@@ -15,6 +15,7 @@ sort csv file by column name
 
 task-run "sort files", "csv_sort", %(
   file => "data.csv",
+  by => "name",
   out => "/tmp/data.sorted.csv",
 );
 ```
@@ -24,6 +25,10 @@ task-run "sort files", "csv_sort", %(
 ## file
 
 Path to file
+
+## by
+
+Name of a column to sort by
 
 ## out
 
