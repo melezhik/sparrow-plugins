@@ -1,0 +1,4 @@
+file: data.csv
+out: /tmp/out.csv
+by: name
+int: false

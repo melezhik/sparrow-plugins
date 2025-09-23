@@ -1,0 +1,7 @@
+{
+  "name" : "csv_sort",
+  "version" : "0.0.1",
+  "description" : "sort csv file by column name",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/csv_sort",
+  "category": "data, text, tools, cvs, sort"
+}
