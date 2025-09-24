@@ -1,8 +1,8 @@
 {
 
   "name" : "csv-add-column",
-  "description" : "Add Column to end every line in CSV file using awk",
-  "version" : "0.0.4",
-  "category" : "awk",
+  "description" : "Add column to the every record of CSV file",
+  "version" : "0.0.5",
+  "category" : "awk, csv, tools, text",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/csv-add-column"
 }
