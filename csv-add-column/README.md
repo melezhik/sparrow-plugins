@@ -23,7 +23,7 @@ To add `date`:
 task-run "add date", "csv-add-column", %(
   :in<example.csv>,
   :out</tmp/out.csv>,
-  :date<123>,
+  :data<123>,
 );
 ```
 
