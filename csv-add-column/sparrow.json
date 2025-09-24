@@ -2,7 +2,7 @@
 
   "name" : "csv-add-column",
   "description" : "Add column to the every record of CSV file",
-  "version" : "0.0.6",
+  "version" : "0.0.7",
   "category" : "awk, csv, tools, text",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/csv-add-column"
 }
