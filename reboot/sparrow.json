@@ -1,7 +1,7 @@
 {
   "name" : "reboot",
   "description" : "Reboot linux machine in N seconds",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/reboot",
-  "category": "linux, core"
+  "category": "linux, core, reboot"
 }
