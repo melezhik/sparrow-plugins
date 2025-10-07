@@ -1,6 +1,7 @@
 # SYNOPSIS
 
-Parses red release file
+Parses redhat release file
+
 # INSTALL
 
     $ s6 --install redhat-version
@@ -16,7 +17,9 @@ my $s = task-run "parse", "redhat-version", %(
   :sudo,
 );
 
-say $s<version>;
+say $s<version>;  # full version
+say $s<major>;    # major version
+say $s<minor>;    # minor version
 
 ```
 

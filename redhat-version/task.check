@@ -5,9 +5,12 @@
 code: <<RAKU
 !raku
 if matched() {
-  update_state(%( version => "{capture().head}" ));
+  my $r = "{capture().head}";
+  my @foo = $r.split(".");
+  say "redhat version found: $r, major: {@foo.head}, minor: { @foo.tail || ''}";
+  update_state(%( version => $r, major => @foo.head, minor => @foo.tail || ""  ));
 } else {
-  update_state(%( version => "" ));
+  update_state(%( version => "", major => "", minor => "" ));
 }
 RAKU
 
