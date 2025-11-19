@@ -1,0 +1,8 @@
+{
+  "name" : "brownie-report",
+  "description" : "Utility to generate brownie report",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/brownie-report",
+  "category" : "brownie"
+}
+
