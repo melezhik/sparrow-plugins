@@ -9,10 +9,16 @@ Utility to generate brownie report
 
 # USAGE
 
-Cli
+```raku
 
-    # with default settings    
-    $ s6 --plg-run brownie-report@new=sha1,old=sha2
+# print comparison report
+# for two Rakudo versions
+
+task-run "report", "brownie-report", %(
+  :new<sha1>,
+  :old<sha2>,
+);
+```
 
 # Parameters
 
