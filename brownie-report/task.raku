@@ -1,11 +1,27 @@
 use JSON::Fast;
 use Text::Table::Simple;
 
-my $new = config()<new>;
-my $old = config()<old>;
 
-say "compare old: $old and new: $new";
-say "================================";
+my $action = config()<action>;
+
+if $action eq "list" {
+
+  say "available versions:";
+
+  say "========";
+
+  for dir("{%*ENV<HOME>}/.brownie/versions/") -> $i {
+    next unless $i ~~ :d;
+    say $i.basename;
+  }
+
+} else {
+
+    my $new = config()<new>;
+    my $old = config()<old>;
+
+    say "compare old: $old and new: $new";
+    say "================================";
 
     my @old; my %old;
     my $base-dir = "{%*ENV<HOME>}/.brownie/versions/$old/";	
@@ -48,3 +64,5 @@ say "================================";
    my @columns = ["module name","v $old", "v $new"];
    my @table = lol2table(@columns,@rows);
    .say for @table;
+
+}

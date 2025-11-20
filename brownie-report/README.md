@@ -11,6 +11,11 @@ Utility to generate brownie report
 
 ```raku
 
+# list available versions
+task-run "list", "brownie-report", %(
+  :action<list>,
+);
+
 # print comparison report
 # for two Rakudo versions
 
