@@ -1,8 +1,6 @@
-use JSON::Fast;
-use Text::Table::Simple;
 
 
-my $action = config()<action>;
+run_task config()<action>;
 
 if $action eq "list" {
 
@@ -11,11 +9,7 @@ if $action eq "list" {
   say "========";
 
   for dir("{%*ENV<HOME>}/.brownie/versions/") -> $i {
-    next unless $i ~~ :d;
-    say $i.basename;
-  }
-
-} else {
+    next unless $i ~~ :lse {
 
     my $new = config()<new>;
     my $old = config()<old>;
@@ -56,13 +50,12 @@ if $action eq "list" {
         push @rows, [
          $i<name>, 
          ($i<status> ?? 'OK' !! 'FAIL'),
-         ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
+         ( %old{$i<name>}<statu
+         s> ?? 'OK' !! 'FAIL'),
         ];
       }	
    }
 
    my @columns = ["module name","v $old", "v $new"];
    my @table = lol2table(@columns,@rows);
-   .say for @table;
-
-}
+   .say for @ta
