@@ -1,2 +1,2 @@
 cd ~/.brownie/versions.known
-find . -type d -empty -printf '%f\n'
+find . -type d -empty 
