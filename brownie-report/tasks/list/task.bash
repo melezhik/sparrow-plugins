@@ -1,1 +1,1 @@
-find ~/brownie/versions.known -type d -empty
+find ~/.brownie/versions.known -type d -empty
