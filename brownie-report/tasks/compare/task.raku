@@ -39,8 +39,8 @@ use Text::Table::Simple;
       if %old{$i<name>}:exists && $i<status> ne %old{$i<name>}<status> {
         push @rows, [
          $i<name>, 
-         ($i<status> ?? 'OK' !! 'FAIL'),
          ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
+         ($i<status> ?? 'OK' !! 'FAIL'),
         ];
       }	
    }
