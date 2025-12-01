@@ -2,7 +2,9 @@ m=$(config module)
 
 path=$(config path)
 
-for i in $(grep -lRH "add module $m ..." $path); do cat $i; done
+mkdir -p  ~/.brownie/logs/
+
+for i in $(grep -lRH "add module $m ..." $path); do cp -v $i ~/.brownie/logs/$i.log; done
 
 echo
 
