@@ -19,10 +19,13 @@ task-run "list", "brownie-report", %(
 # print comparison report
 # for two Rakudo versions
 
-task-run "report", "brownie-report", %(
+my $s = task-run "report", "brownie-report", %(
   :new<sha1>,
   :old<sha2>,
 );
+
+say $s<list><>.raku; # print modules list
+
 ```
 
 # Parameters
