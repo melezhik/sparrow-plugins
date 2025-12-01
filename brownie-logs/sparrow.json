@@ -1,0 +1,8 @@
+{
+  "name" : "brownie-logs",
+  "description" : "Utility to generate brownie logs",
+  "version" : "0.0.1",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/brownie-logs",
+  "category" : "brownie"
+}
+
