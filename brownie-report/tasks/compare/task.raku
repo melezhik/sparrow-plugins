@@ -25,7 +25,7 @@ use Text::Table::Simple;
     for dir($base-dir) -> $i {
       next unless $i ~~ :d;
       #say "{$i.basename}/meta.json";
-      #next unless "{$base-dir}/{$i.basename}/meta.json".IO ~~ :f;
+      next unless "{$base-dir}/{$i.basename}/meta.json".IO ~~ :f;
       #say "{$i.basename}";		
       my $m = from-json("{$base-dir}/{$i.basename}/meta.json".IO.slurp);
       $m<name> = $i.basename;
