@@ -44,6 +44,7 @@ for @new -> $i {
       ($i<status> ?? 'OK' !! 'FAIL'),
     ];
     if "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.FAIL".IO ~~ :f {
+       say "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.FAIL".IO.slurp();
        push @list,
         %( 
            module => $i<name>, 
