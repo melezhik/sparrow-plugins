@@ -43,8 +43,13 @@ for @new -> $i {
       ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
       ($i<status> ?? 'OK' !! 'FAIL'),
     ];
-
-    push @list, $i<name>;
+    "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.FAIL".IO ~~ :f {
+       push @list,
+        %( 
+           module => $i<name>, 
+           report => {%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.FAIL".IO.slurp,
+         );
+     }
   }	
 }
 
