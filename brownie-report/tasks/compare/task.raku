@@ -4,7 +4,7 @@ use Text::Table::Simple;
 my $new = config()<new>;
 my $old = config()<old>;
 
-say "compare old: $old and new: $new";
+say "compare new: $new | old: $old";
 say "================================";
 
 my @old; my %old;
@@ -57,4 +57,4 @@ my @columns = ["module name","v $old", "v $new"];
 my @table = lol2table(@columns,@rows);
 .say for @table;
 
-update_state(%( list => @list ));
+update_state(%( list => @list.sort ));
