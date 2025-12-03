@@ -43,11 +43,12 @@ for @new -> $i {
       ($i<status> ?? 'OK' !! 'FAIL'),
       ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
     ];
-    if $i<status> == False && "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO ~~ :f {
+    if $i<status> == False {
        push @list,
         %( 
            module => $i<name>, 
-           report => "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO.slurp,
+           report-new => "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO.slurp,
+           report-old => "{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}.log".IO.slurp,
          );
      }
   }	
