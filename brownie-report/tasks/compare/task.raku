@@ -49,7 +49,7 @@ for @new -> $i {
            module => $i<name>, 
            report => "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO.slurp ~
            "\n\n" ~ 
-            "{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}.log".IO.slurp
+            from-json("{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}/meta.json".IO.slurp)<log>,
          );
      }
   }	
