@@ -47,8 +47,9 @@ for @new -> $i {
        push @list,
         %( 
            module => $i<name>, 
-           report-new => "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO.slurp,
-           report-old => "{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}.log".IO.slurp,
+           report => "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO.slurp ~
+           "\n\n" ~ 
+            "{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}.log".IO.slurp
          );
      }
   }	
