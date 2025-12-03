@@ -40,8 +40,8 @@ for @new -> $i {
   if %old{$i<name>}:exists && $i<status> ne %old{$i<name>}<status> {
     push @rows, [
       $i<name>, 
-      ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
       ($i<status> ?? 'OK' !! 'FAIL'),
+      ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
     ];
     if $i<status> == False && "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO ~~ :f {
        push @list,
@@ -53,7 +53,7 @@ for @new -> $i {
   }	
 }
 
-my @columns = ["module name","v $old", "v $new"];
+my @columns = ["module name","new: $new", "old: $old",];
 my @table = lol2table(@columns,@rows);
 .say for @table;
 
