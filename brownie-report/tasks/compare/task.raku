@@ -46,7 +46,7 @@ for @new -> $i {
     if $i<status> == False {
         my $old-report = from-json("{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}/meta.json".IO.slurp)<log>;
         if $old-report ~~ /"as deps of module" \s+ (\S+)/ {
-            $old-report = from-json("{%*ENV<HOME>}/.brownie/versions/{$old}/{$1}/meta.json".IO.slurp)<log>
+            $old-report = from-json("{%*ENV<HOME>}/.brownie/versions/{$old}/{$0}/meta.json".IO.slurp)<log>
         }
        push @list, %( 
            module => $i<name>, 
