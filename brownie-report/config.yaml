@@ -1,1 +1,2 @@
 action: compare
+fail-only: false
