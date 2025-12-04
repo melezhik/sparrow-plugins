@@ -61,8 +61,14 @@ for @new.sort({$<name>}) -> $i {
   }	
 }
 
-my @columns = ["module name","new: $new", "old: $old",];
-my @table = lol2table(@columns,@rows);
-.say for @table;
+say "module name | new: $new | old: $old |";
 
-update_state(%( list => @list.sort ));
+for @rows<> -> $r {
+  say $r[0], $r[1], $r[2];
+}
+
+#my @columns = ["module name","new: $new", "old: $old",];
+#my @table = lol2table(@columns,@rows);
+#.say for @table;
+
+update_state(%( list => @list.sort({$<name>}) ));
