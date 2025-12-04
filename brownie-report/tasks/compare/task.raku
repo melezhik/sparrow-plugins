@@ -28,6 +28,10 @@ for dir($base-dir) -> $i {
   next unless "{$base-dir}/{$i.basename}/meta.json".IO ~~ :f;
   #say "{$i.basename}";		
   my $m = from-json("{$base-dir}/{$i.basename}/meta.json".IO.slurp);
+  if config()<fail-only> {
+   next unless $m<status> == False; # only fillter out failed modules
+   next unless $m<testfail> or $m<log> ~~ /"Testing [FAIL]"/;
+  }
   $m<name> = $i.basename;
   push @new, $m;
   %new{$i.basename} = $m;  
