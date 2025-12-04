@@ -64,7 +64,7 @@ for @new.sort({$<name>}) -> $i {
 say "module name | new: $new | old: $old |";
 
 for @rows<> -> $r {
-  say $r[0], $r[1], $r[2];
+  say $r[0], "\t", $r[1], "\t", $r[2];
 }
 
 #my @columns = ["module name","new: $new", "old: $old",];
