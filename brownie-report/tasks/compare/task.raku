@@ -30,7 +30,7 @@ for dir($base-dir) -> $i {
   my $m = from-json("{$base-dir}/{$i.basename}/meta.json".IO.slurp);
   if config()<fail-only> {
    next unless $m<status> == False; # only fillter out failed modules
-   next unless $m<testfail> or $m<log> ~~ /"Testing [FAIL]"/;
+   next unless $m<testfail> or $m<log> ~~ /"Testing [FAIL]" \s+  "{$i.basename}" ":ver" /;
   }
   $m<name> = $i.basename;
   push @new, $m;
