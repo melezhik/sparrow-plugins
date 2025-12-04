@@ -1,5 +1,5 @@
 use JSON::Fast;
-use Text::Table::Simple;
+#use Text::Table::Simple;
 
 my $new = config()<new>;
 my $old = config()<old>;
