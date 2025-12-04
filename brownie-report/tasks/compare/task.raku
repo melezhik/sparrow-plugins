@@ -1,5 +1,5 @@
 use JSON::Fast;
-#use Text::Table::Simple;
+use Text::Table::Simple;
 
 my $new = config()<new>;
 my $old = config()<old>;
@@ -40,7 +40,7 @@ for dir($base-dir) -> $i {
 my @rows;
 
 my @list;
-for @new.sort({$<name>}) -> $i {
+for @new.sort({.<name>}) -> $i {
   if %old{$i<name>}:exists && $i<status> ne %old{$i<name>}<status> {
     push @rows, [
       $i<name>, 
@@ -61,14 +61,10 @@ for @new.sort({$<name>}) -> $i {
   }	
 }
 
-say "module name | new: $new | old: $old |";
+my @columns = ["module name","new: $new", "old: $old",];
 
-for @rows<> -> $r {
-  say $r[0], "\t", $r[1], "\t", $r[2];
-}
+my @table = lol2table(@columns,@rows);
 
-#my @columns = ["module name","new: $new", "old: $old",];
-#my @table = lol2table(@columns,@rows);
-#.say for @table;
+.say for @table;
 
-update_state(%( list => @list.sort({$<name>}) ));
+update_state(%( list => @list.sort({.<name>}) ));

@@ -22,6 +22,7 @@ task-run "list", "brownie-report", %(
 my $s = task-run "report", "brownie-report", %(
   :new<sha1>,
   :old<sha2>,
+  :fail-only,
 );
 
 say $s<list><>.raku; # print modules list
@@ -38,6 +39,10 @@ Rakudo version commit
 
 Rakudo version commit
 
+
+* `fail-only`
+
+Show only modules with failed tests 
 
 # Author
 
