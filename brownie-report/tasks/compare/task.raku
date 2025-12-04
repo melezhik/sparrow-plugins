@@ -40,7 +40,7 @@ for dir($base-dir) -> $i {
 my @rows;
 
 my @list;
-for @new -> $i {
+for @new.sort({$<name>}) -> $i {
   if %old{$i<name>}:exists && $i<status> ne %old{$i<name>}<status> {
     push @rows, [
       $i<name>, 
