@@ -30,7 +30,7 @@ for dir($base-dir) -> $i {
   my $m = from-json("{$base-dir}/{$i.basename}/meta.json".IO.slurp);
   if config()<fail-only> {
    next unless $m<status> == False; # only fillter out failed modules
-   next unless $m<testfail> or $m<log> ~~ /"Testing [FAIL]" \s+  "{$i.basename}" ":ver" /;
+   next unless $m<testfail>; # in new 
   }
   $m<name> = $i.basename;
   push @new, $m;
@@ -38,7 +38,6 @@ for dir($base-dir) -> $i {
 }
 
 my @rows;
-
 my @list;
 for @new.sort({.<name>}) -> $i {
   if %old{$i<name>}:exists && $i<status> ne %old{$i<name>}<status> {
@@ -48,14 +47,9 @@ for @new.sort({.<name>}) -> $i {
       ( %old{$i<name>}<status> ?? 'OK' !! 'FAIL'),
     ];
     if $i<status> == False {
-        my $old-report = from-json("{%*ENV<HOME>}/.brownie/versions/{$old}/{$i<name>}/meta.json".IO.slurp)<log>;
-        if $old-report ~~ /"as deps of module" \s+ (\S+)/ {
-            $old-report = from-json("{%*ENV<HOME>}/.brownie/versions/{$old}/{$0}/meta.json".IO.slurp)<log>
-        }
        push @list, %( 
            module => $i<name>, 
-           report => "{%*ENV<HOME>}/.brownie/versions/{$new}/{$i<name>}.log".IO.slurp ~
-           "\n>>> old\n" ~ $old-report,
+           report => $i<log> ~ "\n>>> old\n" ~ %old{$i<name>}<log>,
         );
      }
   }	
