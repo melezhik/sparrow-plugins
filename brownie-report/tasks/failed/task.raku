@@ -17,12 +17,11 @@ for dir($base-dir).sort({.basename}) -> $i {
   if config()<fail-only> { # only fillter out modules with failed tests
     next unless $m<testfail>:exists;
     next unless $m<testfail>; 
-    push @list, %( 
-        module => $i.basename, 
-        report => $m<log>,
-    );
-
   }
+  push @list, %( 
+      module => $i.basename, 
+      report => $m<log>,
+  );
 }
 
 update_state(%( list => @list ));
