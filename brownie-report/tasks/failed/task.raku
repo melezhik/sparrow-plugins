@@ -22,6 +22,10 @@ for dir($base-dir).sort({.basename}) -> $i {
       module => $i.basename, 
       report => $m<log>,
   );
+
+  say $i.basename;
 }
+
+say "===";
 
 update_state(%( list => @list ));
