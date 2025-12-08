@@ -7,7 +7,7 @@ say "=====================================";
 
 my @list;
 
-$base-dir = "{%*ENV<HOME>}/.brownie/versions/$version/";
+my $base-dir = "{%*ENV<HOME>}/.brownie/versions/$version/";
 
 for dir($base-dir).sort({.basename}) -> $i {
   next unless $i ~~ :d;
