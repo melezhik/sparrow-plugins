@@ -24,13 +24,12 @@ my @new; my %new;
 $base-dir = "{%*ENV<HOME>}/.brownie/versions/$new/";	
 for dir($base-dir) -> $i {
   next unless $i ~~ :d;
-  #say "{$i.basename}/meta.json";
   next unless "{$base-dir}/{$i.basename}/meta.json".IO ~~ :f;
-  #say "{$i.basename}";		
   my $m = from-json("{$base-dir}/{$i.basename}/meta.json".IO.slurp);
   if config()<fail-only> {
-   next unless $m<status> == False; # only fillter out failed modules
-   next unless $m<testfail>; # in new 
+   next unless $m<status> == False; # only fillter out modules with failed tests
+   next unless $m<testfail>:exists;
+   next unless $m<testfail>; 
   }
   $m<name> = $i.basename;
   push @new, $m;
@@ -61,4 +60,4 @@ my @table = lol2table(@columns,@rows);
 
 .say for @table;
 
-update_state(%( list => @list.sort({.<name>}) ));
+update_state(%( list => @list ));
