@@ -1,6 +1,8 @@
 user=$(config user)
 identity=$(config identity)
 
+env|grep BRW || :
+
 if test -z $user; then
 
   echo | zef look $identity || exit 1
