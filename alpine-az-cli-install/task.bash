@@ -1,6 +1,6 @@
 set -e
 
-apk add --no-cache --update \
+sudo apk add --no-cache --update \
   python3 \
   py3-pip \
   gcc \
@@ -12,7 +12,7 @@ apk add --no-cache --update \
   make
 
 # Create and activate a virtual environment for Azure CLI
-python3 -m venv /opt/venv \
+sudo python3 -m venv /opt/venv \
   && . /opt/venv/bin/activate \
   && pip install --upgrade pip \
   && pip install --no-cache-dir azure-cli \
