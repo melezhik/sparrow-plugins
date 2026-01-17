@@ -2,7 +2,7 @@ db_user=$(config db_user)
 db_pass=$(config db_pass)
 db_name=$(config db_name)
 
-apk add mariadb-common mariadb-client mariadb
+sudo apk add mariadb-common mariadb-client mariadb
 mariadb-install-db --user=mysql --datadir=/var/lib/mysql && echo "mariadb initialized"
 bash -c "nohup /usr/bin/mariadbd-safe &"
 sleep 5
