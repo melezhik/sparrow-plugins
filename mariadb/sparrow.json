@@ -1,7 +1,7 @@
 {
   "name" : "mariadb",
   "description" : "Installs mariadb on alpine linux",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/mariadb",
   "category": "alpine, mariadb"
 }
