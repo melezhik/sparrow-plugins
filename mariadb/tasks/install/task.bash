@@ -4,7 +4,7 @@ db_name=$(config db_name)
 
 sudo apk add mariadb-common mariadb-client mariadb
 sudo mariadb-install-db --user=mysql --datadir=/var/lib/mysql && echo "mariadb initialized"
-bash -c "nohup  /usr/bin/mariadbd-safe & < /dev/null"
+sudo bash -c "nohup  /usr/bin/mariadbd-safe & < /dev/null"
 sleep 5
 
 echo "select_start"
