@@ -10,11 +10,6 @@ if test -f ~/sparrow-plugins.commit; then
   old_commit=$(cat ~/sparrow-plugins.commit)
 fi
 
-#cd ../git-updated-dirs
-
-#s6 --upload
-#s6 --index-update
-
 cd ../
 
 eval $(s6 --plg-run --inline git-updated-dirs@dir=.,commit_new=$new_commit,commit_old=$old_commit,level=0)
@@ -23,7 +18,7 @@ for d in "${dirs[@]}"; do
   echo "Processing: $d"
   cdir=$PWD
   cd $d
-  ls -l
+  
   if test -f sparrow.json; then
     s6 --upload
     s6 --index-update
