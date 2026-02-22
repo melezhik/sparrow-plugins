@@ -8,6 +8,8 @@ Get directories updated between git commits
 
 # USAGE
 
+Raku:
+
     my %state = task-run "files/tasks/git-updated-dirs", %(
       dir => "scm",
       commit_old => $old-commit-sha,
@@ -16,6 +18,19 @@ Get directories updated between git commits
     );
 
     say %state<list><>;
+    
+Bash:
+
+```bash
+#!/bin/bash
+
+eval $(s6 --plg-run --inline git-updated-dirs@dir=.,commit_new=$new_commit,commit_old=$old_commit,level=0)
+
+for d in "${dirs[@]}"; do
+  echo "Processing: $d"
+done
+```
+
 
 # Parameters
 
