@@ -8,6 +8,14 @@ Parses redhat release file
 
 # USAGE
 
+## Bash
+
+```bash
+  eval $(s6 --plg-run --inline redhat-version)
+  echo $rh_version
+  echo $rh_version_major
+  echo $rh_version_minor
+```
 ## Raku
 
 ```raku

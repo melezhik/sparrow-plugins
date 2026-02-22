@@ -8,6 +8,7 @@ if matched() {
   my $r = "{capture().head}";
   my @foo = $r.split(".");
   say "redhat version found: $r, major: {@foo.head}, minor: { @foo.tail || ''}";
+  say "inline: rh_version=$r; rh_version_major={@foo.head}; rh_version_minor={ @foo.tail || ''};";
   update_state(%( version => $r, major => @foo.head, minor => @foo.tail || ""  ));
 } else {
   update_state(%( version => "", major => "", minor => "" ));
