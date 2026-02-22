@@ -23,8 +23,10 @@ for d in "${dirs[@]}"; do
   echo "Processing: $d"
   cdir=$PWD
   cd $d
-  s6 --upload
-  s6 --index-update
+  if test -f sparrow.json; then
+    s6 --upload
+    s6 --index-update
+  fi
   ch $cdir
 done
 
