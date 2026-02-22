@@ -20,6 +20,7 @@ for "{cache_root_dir()}/git.data".IO.lines -> $i {
   }
 }
 
-update_state %( list => @list )
+say @list;
+update_state %( list => @list );
 
 say "inline: dirs=(",@list.map({"\"$_\""}),join(" "),")";
