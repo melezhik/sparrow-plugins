@@ -23,4 +23,4 @@ for "{cache_root_dir()}/git.data".IO.lines -> $i {
 say @list;
 update_state %( list => @list );
 
-say "inline: dirs=(",@list<>.map({"\"$_\""}),join(" "),")";
+say "inline: dirs=(", @list<>.map({"\"$_\""}).join(" "), ")";
