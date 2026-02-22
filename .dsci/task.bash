@@ -28,7 +28,7 @@ for d in "${dirs[@]}"; do
     s6 --upload
     s6 --index-update
   fi
-  ch $cdir
+  cd $cdir
 done
 
 echo -n $new_commit > ~/sparrow-plugins.commit
