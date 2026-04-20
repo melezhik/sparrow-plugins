@@ -1,0 +1,7 @@
+{
+  "name" : "lc4",
+  "description" : "Generate likec4 diagrams",
+  "version" : "0.0.7",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/lc4",
+  "category": "likec4, c4, architecture"
+}

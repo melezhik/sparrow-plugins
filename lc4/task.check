@@ -1,0 +1,117 @@
+generator: <<RAKU
+!raku
+
+my $parent = config()<parent>;
+my $id = config()<id>;
+
+my $tabs = 0;
+
+if ".lc4/{$parent}.tabs".IO ~~ :e {
+  $tabs = ".lc4/{$parent}.tabs".IO.slurp.chomp;
+}
+
+my $tabs-s = " " x $tabs;
+ 
+#say "note: insert $id {config()<type>} into {$parent} tabs=$tabs";
+
+mkdir ".lc4";
+
+".lc4/{$id}.tabs".IO.spurt($tabs+2);
+
+if $parent eq "model" or $parent eq "views" or $parent eq "deployment" {
+  my $ex = q|between: { "%p%" \s+ \{  } {  ^^ "%t%" \} $$ }|.subst(
+    "%p%",config()<parent>,
+  ).subst(
+    "%t%",
+    $tabs-s,
+  );
+  #say "note: $ex";
+  say $ex;
+} elsif config()<type> eq "include" {
+  my $ex = q/between: { view \s+ [ "%p%" \s+ of \s+ \S+  || "%p%" ] \s+ \{ \s* $$ } {  ^^ "%t%" \} $$ }/.subst(
+    "%p%",config()<parent>,:g,
+  ).subst(
+    "%t%",
+    $tabs-s,
+    :g,
+  );
+  #say "note: $ex";
+  say $ex;
+} else {
+  my $ex = q/between: { "%p%" \s+  "=" \s+ \S+ \s+ \" .* \" \s+ /;
+  $ex ~= q/\{ \s* $$ } {  ^^ "%t%" \} $$ }/;
+  $ex.=subst(
+    "%p%",
+    config()<parent>,
+    :g,
+  );
+  $ex.=subst(
+    "%t%",
+    $tabs-s,
+    :g,
+  );
+  say "note: $ex";
+  say $ex;
+}
+say ":any:";
+say "end:";
+RAKU
+
+
+generator: <<RAKU
+!raku
+my $id = config()<id>;
+my $last-line = matched()<>.tail;
+my $type = config()<type>;
+my $ln = captures-full().tail.<index>;
+my $tabs = ".lc4/{$id}.tabs".IO.slurp.chomp;
+say "note: // insert {config()<type>} {$id} tabs=$tabs line=$ln";
+my $tabs-s = " " x $tabs;
+
+my $element;
+if $type eq "view" {
+  if config()<deployment> {
+    $element = "{$tabs-s}deployment view {$id} \{\n";
+  } else {
+    $element = "{$tabs-s}view {$id} of {config()<system>} \{\n";
+  }
+
+  $element ~= "{$tabs-s}  title \"{config<desc>}\"\n{$tabs-s}\}";
+} elsif $type eq "include" {
+  $element = "{$tabs-s}include {$id}";
+} elsif $type eq "link" {
+  my ($a, $b) =  config()<id>.split(":");
+  my $proto = config()<proto> ?? ".{config()<proto>}" !! "->";
+  $element = "{$tabs-s}{$a} $proto {$b} \"{config()<desc>}\"";
+} elsif $type eq "instance_of" {
+  my ($a, $b) =  config()<id>.split(":");
+  $element = "{$tabs-s}{$a} = instanceOf {$b}";
+}  else {
+  $element = "{$tabs-s}{$id} = {$type} \"{config()<desc>}\" \{";
+  if config()<long_desc> {
+    $element ~= "\n{$tabs-s}  description \"{config()<long_desc>}\""
+  }
+  if config()<multiple> {
+    $element ~= "\n{$tabs-s}  style \{";
+    $element ~= "\n{$tabs-s}    multiple true";
+    $element ~= "\n{$tabs-s}  \}";
+  }
+  $element ~= "\n{$tabs-s}\}";
+}
+my $file = config()<deployment> ?? "deployment.c4" !! "model.c4";
+
+replace(
+  $file,
+  $ln,
+  "$element\n$last-line"
+);
+RAKU
+
+code: <<BASH
+!bash
+if test $(config deployment) = "True"; then
+  cat deployment.c4
+else
+  cat model.c4
+fi
+BASH
