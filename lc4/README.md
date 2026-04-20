@@ -125,7 +125,6 @@ task-run "deployment", "lc4", %(
   :type<link>,
   :id<clients:api>,
   :proto<https>,
-  :desc("Каталог дерева продуктов"),
   :parent<deployment>,
   :deployment,
 );
