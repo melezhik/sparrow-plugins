@@ -30,6 +30,17 @@ Start/Stop/Restart application using nohub command
         :pid</app/run/service.pid>
     );
 
+    # Use shell instead of binary
+
+    # restart application
+    task-run "restart app", "app-man", %(
+      :action<restart>,
+      :bin("likec4 serve"),
+      :bash,
+      :cwd</home/melezhik/arch>,
+      :pid</tmp/lc4.pid>,
+      :log</tmp/lc4.log>,
+    );
 
 # Parameters
 
@@ -52,6 +63,15 @@ Path to log file. Optional. Default value is `/app/log/app.log`
 ## user
 
 Runs app as user. Optional. Default is not set.
+
+## bash
+
+Run app as Bash command. Pptional. Default is false.
+
+## cwd
+
+Change to `cwd`, used when bash is set to true. Optional. Default is "".
+
 
 # Author
 
