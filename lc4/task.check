@@ -25,17 +25,26 @@ if $parent eq "model" or $parent eq "views" or $parent eq "deployment" {
     "%t%",
     $tabs-s,
   );
-  #say "note: $ex";
+  say "note: $ex";
   say $ex;
-} elsif config()<type> eq "include" {
-  my $ex = q/between: { view \s+ [ "%p%" \s+ of \s+ \S+  || "%p%" ] \s+ \{ \s* $$ } {  ^^ "%t%" \} $$ }/.subst(
-    "%p%",config()<parent>,:g,
-  ).subst(
+} elsif config()<type> eq "include"  or config()<type> eq "group" {
+  my $ex  = q/between: {/;
+  $ex     ~= q/[ view \s+ "%p%" \s+ of \s+ \S+/; # model view - view foo of bar
+  $ex     ~= q/ || view \s+ "%p%" /; # deployment view 
+  $ex     ~= q/ || \""%p%"\" /; # other cases, for example group
+  $ex     ~= q/] \s+ \{ \s* $$ }/; # end of alternations, closing first between block
+  $ex     ~= q/ {  ^^ "%t%" \} $$ }/;
+  $ex.=subst(
+    "%p%",
+    config()<parent>,
+    :g,
+  );
+  $ex.=subst(
     "%t%",
     $tabs-s,
     :g,
   );
-  #say "note: $ex";
+  say "note: $ex";
   say $ex;
 } else {
   my $ex = q/between: { "%p%" \s+  "=" \s+ \S+ \s+ \" .* \" \s+ /;
@@ -75,7 +84,6 @@ if $type eq "view" {
   } else {
     $element = "{$tabs-s}view {$id} of {config()<system>} \{\n";
   }
-
   $element ~= "{$tabs-s}  title \"{config<desc>}\"\n{$tabs-s}\}";
 } elsif $type eq "include" {
   $element = "{$tabs-s}include {$id}";
@@ -86,6 +94,10 @@ if $type eq "view" {
 } elsif $type eq "instance_of" {
   my ($a, $b) =  config()<id>.split(":");
   $element = "{$tabs-s}{$a} = instanceOf {$b}";
+} elsif $type eq "group" {
+  $element = "{$tabs-s}group \"{$id}\" \{";
+  $element ~= "\n{$tabs-s}  title \"{config()<desc>}\"";
+  $element ~= "\n{$tabs-s}\}";
 }  else {
   $element = "{$tabs-s}{$id} = {$type} \"{config()<desc>}\" \{";
   if config()<long_desc> {
