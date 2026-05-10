@@ -1,5 +1,5 @@
 {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "logdog",
     "description" : "smart beagle to find suspicious entries in your logs for the period of time",
     "url": "https://github.com/melezhik/sparrow-plugins/tree/master/logdog.git"

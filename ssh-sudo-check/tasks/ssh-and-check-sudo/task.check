@@ -1,14 +1,17 @@
 code: <<CODE
-   note "checking if ".
+!perl
+print "note: ", "checking if ".
         (task_var('user')).
         " is listed at group ".
         (config()->{sudo_group}).
-        " on ".(task_var('server'))."... "
+        " on ".(task_var('server'))."... \n"
 CODE
 
-generator: \
-if ( task_var('user') eq 'root' ){ \
-  [ 'validator: [ 1, qq{root has sudo access}  ]' ]  \
-}else{  \
-  [ "regexp: \\b".(config()->{sudo_group}).'\\b' ] \
+generator: <<CODE
+!perl
+if ( task_var('user') eq 'root' ) {
+  print "assert: 1 qq{root has sudo access}\n";
+}else {
+  print "regexp: \\b".(config()->{sudo_group}).'\\b', "\n";
 }
+CODE
