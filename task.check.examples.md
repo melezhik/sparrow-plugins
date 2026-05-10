@@ -1,31 +1,31 @@
 # task check
-
+```
 |frogs:[1] | max_frog_index:1 | holes_sum: 0 | N:3 | F:1 | cnt:0|
 |frogs:[2, 4, 5] | max_frog_index:5 | holes_sum: 1 | N:6 | F:3 | cnt:0|
 
-
+```
 
 # task check
-
+```
 init done
-
-
-# task check
-
-
-
+```
 
 # task check
+```
 
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 install ok
-
+```
 
 # task check
-
+```
 begin:
 sleep for awhile
 sleep for awhile
@@ -44,42 +44,42 @@ sleep for awhile
 tick ...
 boom! ...
 end:
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 ok Installed
 
-
+```
 
 # task check
-
+```
 autoremove-done
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 Status: install ok installed
 
-
+```
 
 # task check
-
+```
 a-sort1:[5 6 7 11 12 13]
 a-sort2:[1 2 5 6 7 7 56]
 a-sort3:[1 2 2 3 3 3 6 6 7 7 10]
-
+```
 
 # task check
-
+```
 regexp: 'file processed:' \s+ (\d+)
 
 generator: <<CODE
@@ -115,14 +115,14 @@ generator: <<CODE
 
 
 CODE
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 # release 10.0
 
 ~regexp: \s+ "release" \s+ (\S+) \s
@@ -142,10 +142,10 @@ RAKU
 
 
 
-
+```
 
 # task check
-
+```
 generator: <<RAKU
 !perl6
 
@@ -224,10 +224,10 @@ if config()<command-args> {
 
 RAKU
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
 
@@ -239,10 +239,10 @@ generator: <<CODE
   }
 
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
 
@@ -254,10 +254,10 @@ generator: <<CODE
   }
 
 CODE
-
+```
 
 # task check
-
+```
 code: <<CODE
 !perl6
 if "{cache_root_dir()}/mysql-need-restart.ok".IO ~~ :f {
@@ -267,17 +267,17 @@ if "{cache_root_dir()}/mysql-need-restart.ok".IO ~~ :f {
   update_state %( restart => False )
 }
 CODE
-
+```
 
 # task check
-
+```
 here we go
 s1=15, s2=40, sum=55
 
-
+```
 
 # task check
-
+```
 code: <<CODE
 !perl
 print "note: ", "checking if ".
@@ -295,16 +295,16 @@ if ( task_var('user') eq 'root' ) {
   print "regexp: \\b".(config()->{sudo_group}).'\\b', "\n";
 }
 CODE
-
+```
 
 # task check
-
+```
 done
 
-
+```
 
 # task check
-
+```
 #notAfter=Jun 14 12:00:00 2018 GMT
 regexp: notAfter=(.*)
 
@@ -337,20 +337,20 @@ if ($ds=~/(\w+)\s+(\d+)\s+(\d\d):(\d\d):(\d\d)\s+(\d\d\d\d)/){
 }
   
 CODE
-
+```
 
 # task check
-
+```
 regexp: "HTTP/" \d+ '.' \d+ \s+ "200 OK"
-
+```
 
 # task check
-
+```
 bitbucket-repo-done
-
+```
 
 # task check
-
+```
 begin:
   === InOrder
   D
@@ -361,10 +361,10 @@ begin:
   C
   ===
 end:
-
+```
 
 # task check
-
+```
 begin:
   === InOrder
   B
@@ -374,10 +374,10 @@ begin:
   E
   ===
 end:
-
+```
 
 # task check
-
+```
 begin:
   === InOrder
   D
@@ -386,27 +386,27 @@ begin:
   A
   ===
 end:
-
+```
 
 # task check
-
+```
 use Kind from subtask OK
 use MyModule from subtask OK
-
+```
 
 # task check
-
+```
 use Kind from bash OK
 use MyModule from bash OK
-
+```
 
 # task check
-
+```
 regexp: STAT pid \d+
-
+```
 
 # task check
-
+```
 note: mariadb should be initialized
 mariadb initialized
 
@@ -433,10 +433,10 @@ insert_start
 count(*)
 1
 insert_end
-end:
+end:```
 
 # task check
-
+```
 #Filesystem      Size  Used Avail Use% Mounted on
 #/dev/sda1       9.2G  6.6G  2.2G  76% /
 #udev             10M     0   10M   0% /dev
@@ -483,37 +483,37 @@ for captures()<> -> $c {
 update_state({ :$err-cnt });
 CODE
 
-
+```
 
 # task check
-
+```
 regexp: "current branch:" \s+ "refs/heads/" (\S+)
 
 code: <<CODE
 !perl6
 update_state %( branch => capture()[0])
 CODE
-
+```
 
 # task check
-
+```
 Status: install ok installed
 
-
+```
 
 # task check
-
+```
 nginx is running
 
-
+```
 
 # task check
-
+```
 Kelp Initialized!
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
   footprint=$(config footprint)
@@ -523,15 +523,15 @@ generator: <<CODE
   fi
 CODE
 
-
+```
 
 # task check
-
+```
 regexp: '"LastUpdateStatus":' \s+ '"Successful"'
-
+```
 
 # task check
-
+```
 begin:
 What is the base currency: USD
 What currency to exchange to: RUB
@@ -547,10 +547,10 @@ regexp: \s+ 'RUB:' \s+ \d+ '.' \d+ \s* $$
 =========================
 end:
 
-
+```
 
 # task check
-
+```
 begin:
 What is the base currency: USD
 What currency to exchange to: RUB
@@ -566,10 +566,10 @@ regexp: \s+ 'Rate:' \s+ \d+ '.' \d+ \s* $$
 =========================
 end:
 
-
+```
 
 # task check
-
+```
 note: mariadb should be initialized
 mariadb initialized
 
@@ -596,19 +596,19 @@ insert_start
 count(*)
 1
 insert_end
-end:
+end:```
 
 # task check
-
+```
 note: check az version
 
 begin:
 ===
 regexp: ^^ "azure-cli" \s+ \S+ $$
-
+```
 
 # task check
-
+```
 regexp: "changed:" \s ("true"|"false")
 
 code: <<RAKU
@@ -622,15 +622,15 @@ if matched() {
   }
 }
 RAKU
-
+```
 
 # task check
-
+```
 regexp: \.\.\.\s+(2|3)\d\d$
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
 
@@ -646,20 +646,20 @@ generator: <<CODE
 
 CODE
 
-
+```
 
 # task check
-
+```
 regexp: ServicePrincipalNames\s+:\s+
-
+```
 
 # task check
-
+```
 [8 7 6 5 4 3 2 1 0]
-
+```
 
 # task check
-
+```
 regexp: target \s+ ( created || deleted )
 
 generator: <<CODE
@@ -680,10 +680,10 @@ fi
 CODE
 
 
-
+```
 
 # task check
-
+```
 begin:
 0
 1
@@ -696,15 +696,15 @@ begin:
 21
 34
 end:
-
+```
 
 # task check
-
+```
 2 0 1 3
-
+```
 
 # task check
-
+```
 Done.
 
 generator: <<CODE
@@ -724,14 +724,14 @@ fi
 
 CODE
 
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 ~regexp: "group exists"
 
 code: <<RAKU
@@ -745,10 +745,10 @@ code: <<RAKU
 !raku
 update_state(%( exists => False)) if matched()
 RAKU
-
+```
 
 # task check
-
+```
 generator: <<CODE
 
   my $allow = config()->{allow};
@@ -760,69 +760,69 @@ generator: <<CODE
   }
 
 CODE
-
+```
 
 # task check
-
+```
 branch found
 
-
+```
 
 # task check
-
+```
 regexp: "HTTP/" \d "." \d \s+ "200 OK" \s* $$
-
+```
 
 # task check
-
+```
 [1, 2, 3, 4, 5, 6, 7]
-
+```
 
 # task check
-
+```
 [1, 2, 3, 4, 5, 6, 7]
-
+```
 
 # task check
-
+```
 [1, 2, 3, 4, 5, 6, 7]
-
+```
 
 # task check
-
+```
 begin:
 X _ X
 O _ X
 _ _ O
 end:
-
+```
 
 # task check
-
+```
 regexp: (Install of ruby.*complete|Already installed ruby)
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 regexp: goss\s+version\s+v
 
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 IMAGE:iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAACaUlEQVR42uzVMRGAAAzAwLSHf8tgAAf95QVkyVNvNRN50FWBl10V6ABa0AFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIB6ADqEAHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdAA6gBZ0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIBSAcgHYB0ANIB6AAq0AFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgHQA0gFIByAdgA6gAh2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADSAUgHIB2AdADyxy8AAP//YSoDD5pLB7MAAAAASUVORK5CYII=
-
+```
 
 # task check
-
+```
 note: validate config
 
 between: {'>>>'}  {'<<<'}
@@ -834,30 +834,30 @@ between: {'>>>'}  {'<<<'}
   !regexp: ^^ \s* "GRUB_DISABLE_OS_PROBER=" (<[y 1 true]> | '"true"' | '"yes"' )
 
 end:
-
+```
 
 # task check
-
+```
 bye sparrow
-
+```
 
 # task check
-
+```
 sparrow
-
+```
 
 # task check
-
+```
 generator: [ "hello ".(task_var('name')) ]
-
+```
 
 # task check
-
+```
 welcome page
-
+```
 
 # task check
-
+```
 generator:<<CODE
   my $required_settings = config()->{required_settings} || ();
   #use Data::Dumper;
@@ -869,27 +869,27 @@ generator:<<CODE
     print  join "\n", map {"[$_]"} split "/", $required_settings
   }
 CODE
-
+```
 
 # task check
-
+```
 regexp: ProvisioningState\s+:\s+Succeeded
-
-
-# task check
-
-
+```
 
 # task check
-
-
-
-# task check
-
-
+```
+```
 
 # task check
+```
+```
 
+# task check
+```
+```
+
+# task check
+```
 regexp: (\d+) \s+ (.*) \s+ (\S+)
 
 generator: <<CODE
@@ -909,29 +909,29 @@ if ( config()->{validate_etime} ) {
 
 CODE
 
-
+```
 
 # task check
-
+```
 
 nginx: master
 nginx: worker
 
 
-
+```
 
 # task check
-
+```
 [1, 2, 4]
-
+```
 
 # task check
-
+```
 regexp: '"State":' \s+ '"Active"'  || 'Function already exist'
-
+```
 
 # task check
-
+```
 resource exists
 
 generator: <<RAKU
@@ -955,10 +955,10 @@ if config()<data> {
 
 RAKU
 
-
+```
 
 # task check
-
+```
 regexp: lines count: (\d+)
 code: our $LINES_CNT = capture()->[0];
 code: note "hitask: ".(config()->{logdog}->{hitask})
@@ -1037,15 +1037,15 @@ HERE
 
 
 
-
+```
 
 # task check
-
+```
 regexp: State\s+:\s+\S+
-
+```
 
 # task check
-
+```
 between: {'===>'} {'<==='}
 
   regexp: (\S+)
@@ -1075,10 +1075,10 @@ generator: <<CODE
   update_state(%( packages => @list ));
 
 CODE
-
+```
 
 # task check
-
+```
 #a-sort1:[5 6 7 11 12 13]
 #a-sort2:[1 2 5 6 7 7 56]
 a-sort3:(6 [1 2 4 8])
@@ -1089,30 +1089,30 @@ a-sort7:(4 [1 1 2 2 3])
 a-sort8:(4 [1 2 5 6])
 a-sort9:(9 [1 2 2 5 8 34 34 56 73])
 a-sort11:(494 [1 36 39 105 146 154 168 170 204 206 217 219 225 227 272 282 293 300 312 323 328 328 335 359 370 383 392 395 396 403 413 422 437 443 448 462 463 465 468 479 492 496])
-
+```
 
 # task check
-
+```
 regexp: "deleted ok" | "Function not found"
-
+```
 
 # task check
-
+```
 [5, 6, 7, 11, 12, 13]
-
+```
 
 # task check
-
+```
 a-sort1:[5 6 7 11 12 13]
 a-sort2:[1 2 5 6 7 7 56]
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 begin:
 in order1
 pick G
@@ -1170,10 +1170,10 @@ F
 C
 A
 ===
-end:
+end:```
 
 # task check
-
+```
 begin:
   regexp: ^^ '=== InOrder' $$
   4
@@ -1230,38 +1230,38 @@ begin:
   j
   regexp: ^^ '===' $$
 end:
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 removed
-
+```
 
 # task check
-
+```
 created
-
+```
 
 # task check
-
+```
 generator: <<CODE
 my $host = config()->{host};
 [ "<$host> is alive" ]
 CODE
-
+```
 
 # task check
-
+```
 directory-delete-ok
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 
 !bash
@@ -1283,54 +1283,54 @@ fi
 
 CODE
 
-
+```
 
 # task check
-
+```
 git-async-push-done
-
+```
 
 # task check
-
+```
 generator:<<CODE
   my $context = config()->{context};  
   [ 
     "regexp: Name\\s+:\\s+$context"
   ]
 CODE
-
+```
 
 # task check
-
+```
 begin:
 len=0 cap=0 []
 len=1 cap=1 [0]
 len=2 cap=2 [0 1]
 len=5 cap=6 [0 1 2 3 4]
 end:
-
+```
 
 # task check
-
+```
 regexp: "postgres:" \s+ "writer" \s+ "process"
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 generator: <<CODE
 !raku
 if config()<expect_stdout> {
   say "regexp: ", config()<expect_stdout>
 }
 CODE
-
+```
 
 # task check
-
+```
 begin:
 >>>
 a len=5 cap=5 [0 0 0 0 0]
@@ -1339,10 +1339,10 @@ c len=2 cap=5 [0 0]
 d len=3 cap=3 [0 0 0]
 <<<
 end:
-
+```
 
 # task check
-
+```
 begin:
 {"dir_to_dump":"/tmp/foo/","stream_type":"Directory Dump","type":"header"}
 --/f
@@ -1362,52 +1362,52 @@ CC
 --/f
 end:
 
-
+```
 
 # task check
-
+```
 begin:
 A : blAck
 B : Blue
 end:
-
+```
 
 # task check
-
+```
 p is nil!
 
-
+```
 
 # task check
-
+```
 Complete! Modules were installed into
 Starting perl-app... started
 install-ok
-
+```
 
 # task check
-
+```
 regexp: ^^ \s* \S+ \s+  Ready \s+  master \s+  \S+   \s+ \S+ \s* $$
-
+```
 
 # task check
-
+```
 regexp: \/sshd\s+-D\s+
-
+```
 
 # task check
-
+```
 {40.68433 -74.39967}
-
+```
 
 # task check
-
+```
 OK
 
-
+```
 
 # task check
-
+```
 begin:
 /usr/sbin/gpm
 64593
@@ -1415,20 +1415,20 @@ begin:
 0
 end:
 
-
+```
 
 # task check
-
+```
 regexp: 8048000-8056000\s+r-xp\s+00000000\s+03:0c\s+64593\s+\/usr\/sbin\/gpm
-
+```
 
 # task check
-
+```
 /bin/sleep
-
+```
 
 # task check
-
+```
 begin:
 fib, i=1, a=0, b=1, c=1
 fib, i=2, a=1, b=1, c=1
@@ -1440,15 +1440,15 @@ fib, i=7, a=8, b=13, c=13
 fib, i=8, a=13, b=21, c=21
 fib, i=9, a=21, b=34, c=34
 end:
-
+```
 
 # task check
-
+```
 regexp: ProvisioningState\s+:\s+Succeeded
-
+```
 
 # task check
-
+```
 begin:
 1
 10
@@ -1457,10 +1457,10 @@ begin:
 4
 4
 end:
-
+```
 
 # task check
-
+```
 begin:
 @ dist.ini:1 @
 regexp: csvgrep\x1b\[7m\x1b\[27m
@@ -1468,10 +1468,10 @@ regexp: csvgrep\x1b\[7mper\x1b\[27m
 author  = Neil Bowers <neilb@cpan.org>
 end:
 
-
+```
 
 # task check
-
+```
 generator: <<RAKU
 !raku
 
@@ -1481,10 +1481,10 @@ parse-message(config()<type>);
 RAKU
 
 
-
+```
 
 # task check
-
+```
 regexp:  ([ "message" || "enum" ]) \s+  (\S+)  \s+ \{
 
 #note: "types list"
@@ -1503,26 +1503,26 @@ for captures().flat -> $i {
 update_state(%( list => @list ));
 
 RAKU
-
+```
 
 # task check
-
+```
 regexp: 200 \s* $$
-
+```
 
 # task check
-
+```
 branch found
 
-
+```
 
 # task check
-
+```
 regexp: "HTTP/" \d "." \d \s+ "200 OK" \s* $$
-
+```
 
 # task check
-
+```
 begin:
 {10 10}
 {10 10}
@@ -1530,15 +1530,15 @@ begin:
 {3 3}
 {3 3}
 end:
-
+```
 
 # task check
-
+```
 install-ok
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 echo git user.email $(config email)
@@ -1555,31 +1555,31 @@ fi
 
 
 
-
+```
 
 # task check
-
+```
 install-ok
-
+```
 
 # task check
-
+```
 output: [1 2 1 3 0 2 1] cnt=3
 output: [2 0 2] cnt=2
 output: [3 0 2 0 4] cnt=7
 output: [7 4 0 9] cnt=10
 output: [6 9 9] cnt=0
-
+```
 
 # task check
-
+```
 |[4, 1, 2, 1] max=4|
 |[4, 3, 5, 1, 2] max=3|
 |[2, 4, 2, 2, 3] max=4|
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
 say "regexp: ^^ '{config()<name>}' \\S+ \\s+ POD_OK \$\$";
@@ -1594,15 +1594,15 @@ if captures() {
 }
 
 CODE
-
+```
 
 # task check
-
+```
 regexp: '"LastUpdateStatus":' \s+ '"Successful"'
-
+```
 
 # task check
-
+```
 generator: <<RAKU
 !raku
 
@@ -1732,10 +1732,10 @@ else
   cat model.c4
 fi
 BASH
-
+```
 
 # task check
-
+```
 regexp: access time\s+before\s+(\d+)
 code: our $at = capture()->[0]
 
@@ -1765,34 +1765,34 @@ generator: <<P
 
 P
 
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 content generated
-
+```
 
 # task check
-
+```
 regexp: target \s+ \S+ \s+ updated
 
-
-
-# task check
-
-[3, 4, 5, 20, 30]
+```
 
 # task check
+```
+[3, 4, 5, 20, 30]```
 
+# task check
+```
 sorted1: 3 4 5 20 30
-
+```
 
 # task check
-
+```
 #2018-10-23 03:00:00.099897  schedule
 
 generator: <<CODE
@@ -1824,63 +1824,63 @@ generator: <<CODE
     }
   [@out]
 CODE
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 case1: 2 0 3 1
 case2: 0 1 3 2 4 5
 
-
+```
 
 # task check
-
+```
 case1: [2 0 3 1]
 case2: [0 1 3 2 4 5]
 
-
-
-# task check
-
-[5, 6, 7, 11, 12, 13]
+```
 
 # task check
+```
+[5, 6, 7, 11, 12, 13]```
 
+# task check
+```
 a-sort1:[5 6 7 11 12 13]
 a-sort2:[1 2 5 6 7 7 56]
-
+```
 
 # task check
-
+```
 regexp: :i 'login successful'
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
   say "note: ", "verify host [{task_var('host')}] start";
   say config()<state>.IO.slurp;
   say "note: ", "verify host [{task_var('host')}] end";
 CODE
-
+```
 
 # task check
-
+```
 regexp: :i 'meta info has been updated'
-
+```
 
 # task check
-
+```
 leftsubtreeFIFO: [1, 2, 4]
-
+```
 
 # task check
-
+```
 regexp: 'directory:' \s+ (\S+) \s* $$
 
 code: <<CODE
@@ -1891,10 +1891,10 @@ if capture().elems {
 }  
 
 CODE
-
+```
 
 # task check
-
+```
 regexp: "count:" \s+ (\d+)
 
 generator: <<code
@@ -1904,24 +1904,24 @@ generator: <<code
 code
 
 
-
+```
 
 # task check
-
+```
 Hello from Docker!
-
+```
 
 # task check
-
+```
 generator: <<CODE
 for my $r (@{task_var("check")}){
   print 'regexp: ^^ "', $r, '" $$', "\n";
 }
 CODE
-
+```
 
 # task check
-
+```
 begin:
 create database foo
 Affected row: 1
@@ -1943,10 +1943,10 @@ SELECT name from foo.bar
 Name : alexey
 end:
 
-
+```
 
 # task check
-
+```
 begin:
 SELECT Host,User FROM user WHERE User='root' AND Host='127.0.0.1'
 Host : 127.0.0.1 User: root
@@ -1959,54 +1959,54 @@ end:
 
 
 
-
+```
 
 # task check
-
+```
 regexp: "HTTP/" \d "." \d \s+ ( "201 Created" || "409 Conflict" ) \s* $$
-
+```
 
 # task check
-
+```
 case1 path: (0 3 4 5)
 case2 path: (0 3 7)
 case3 path: (2 1 0 3 4 6)
-
+```
 
 # task check
-
+```
 regexp: \s+ 201 \s* $$ || \s+ 409 \s* $$
-
+```
 
 # task check
-
+```
 regexp: \s+ 200 \s* $$
-
+```
 
 # task check
-
+```
 project found
-
+```
 
 # task check
-
+```
 ok
-
-
-# task check
-
-
+```
 
 # task check
-
-
-
-# task check
-
-
+```
+```
 
 # task check
+```
+```
 
+# task check
+```
+```
+
+# task check
+```
 regexp: (\S+) \s+ '=' \s+ (\S+)
 
 generator: <<CODE
@@ -2024,10 +2024,10 @@ for captures()<> -> $i {
 }
 
 CODE
-
+```
 
 # task check
-
+```
 note: <<<
 note: check if required fields are set
 note: >>>
@@ -2124,36 +2124,36 @@ generator: <<RAKU
     say "assert: 0 pkgrel found";
   }
 RAKU
-
+```
 
 # task check
-
+```
 begin:
 value: 3.141592653589793 type: main.myFloat
 3.141592653589793
 value: &{Hello} type: *main.TT
 Hello
 end:
-
+```
 
 # task check
-
+```
 # the script should print "hello"
 hello
-
-
-# task check
-
-result: [5, 6, 7, 11, 12, 13]
+```
 
 # task check
+```
+result: [5, 6, 7, 11, 12, 13]```
 
+# task check
+```
 a-sort1:[5 6 7 11 12 13]
 a-sort2:[1 2 5 6 7 7 56]
-
+```
 
 # task check
-
+```
 begin:
 1
 2
@@ -2166,10 +2166,10 @@ begin:
 256
 512
 end:
-
+```
 
 # task check
-
+```
 code: our $NEXT = undef;
 
 regexp: continue: (true|false)
@@ -2192,19 +2192,19 @@ code: <<CODE
   push @REPOS, map {$_->[0]} @{captures()}; 
 CODE
 
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
-
+```
 
 # task check
-
+```
 note: postgresql should be seen in a repo index
 begin:
 regexp: [Available || Installed] \s+ Packages
@@ -2216,10 +2216,10 @@ regexp: ["Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log" || "ERR
 
 note: postgresql server should be started
 Started PostgreSQL database server
-
+```
 
 # task check
-
+```
 within: ^^ \s* "HOOKS=(" .* ")" \s* $$
   note: should have base  udev filesystems in HOOKS
   regexp: <?wb> base <?wb> 
@@ -2228,52 +2228,52 @@ within: ^^ \s* "HOOKS=(" .* ")" \s* $$
   note: should not have keyboard
   !regexp: <?wb> keyboard <?wb>
 end:
-
+```
 
 # task check
-
+```
 Hello
-
+```
 
 # task check
-
+```
 merge_sort1: [5, 6, 7, 11, 12, 13]
 merge_sort2: [1, 2, 5, 6, 7, 7, 56]
-
+```
 
 # task check
-
+```
 a-sort1:[5 6 7 11 12 13]
 a-sort2:[1 2 5 6 7 7 56]
-
+```
 
 # task check
-
+```
 done
-
+```
 
 # task check
-
+```
 done
-
+```
 
 # task check
-
+```
 generator: print '{'.(config()->{service})."} running\n"
-
+```
 
 # task check
-
+```
 generator: print  '{'.(config()->{service})."} stopped\n"
-
+```
 
 # task check
-
+```
 install ok
-
+```
 
 # task check
-
+```
 regexp: ^^ \s* 'Fetch URL:' \s* (\S+)
 
 generator: <<RAKU
@@ -2308,79 +2308,79 @@ if $url ~~ / ^^ https? ':' '//' (\S+) '/' (\S+) '/' (\S+) '.git' $$/ {
 }
 RAKU
 
-
+```
 
 # task check
-
+```
 geeksforgeeks is not a palindrome
 geeksogeeks is a palindrome
-
+```
 
 # task check
-
+```
 begin:
 false
 true
 Apple
 false
 end:
-
+```
 
 # task check
-
+```
 regexp: ansible\s+\S
-
+```
 
 # task check
-
+```
 regexp: (bar|rab)
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 begin:
 regexp: "Implementing the Raku"  .* "Programming Language" \s+ \S+
 regexp: "Built on" \s+ \S+ \s+ "version" \s+ \S+
 end:
-
+```
 
 # task check
-
+```
 LOOK MA', NO WRAP!
 
-
+```
 
 # task check
-
+```
 1
 ciao sparrow
 
 
-
+```
 
 # task check
-
+```
 regexp: Binary files.*differ
-
+```
 
 # task check
-
+```
 Hello World
 
-
+```
 
 # task check
-
+```
 regexp: PASS
 !regexp: FAIL
-
+```
 
 # task check
-
+```
 OK
 
 generator: <<CODE
@@ -2396,10 +2396,10 @@ generator: <<CODE
 
 CODE
 
-
+```
 
 # task check
-
+```
 
 generator: <<CODE
 !bash
@@ -2426,10 +2426,10 @@ done
 CODE
 
 
-
+```
 
 # task check
-
+```
 begin:
 0
 1
@@ -2443,60 +2443,60 @@ begin:
 34
 55
 end:
-
+```
 
 # task check
-
+```
 |dinners: [2, 6], gap(K)=1, cnt: 3|
 |dinners: [6, 11, 14], gap(K)=2, cnt: 1|
-
+```
 
 # task check
-
+```
 81  5  13
-
+```
 
 # task check
-
+```
 {10000 0}
-
+```
 
 # task check
-
+```
 begin:
 rc file generated from template
 rc file updated
 end:
 
 
-
-
-# task check
-
-
+```
 
 # task check
+```
+```
 
+# task check
+```
 [a=[1 5 7 -1] sum=6 cnt=2]
 [a=[1 5 7 -1 5] sum=6 cnt=3]
 [a=[1 1 1 1] sum=2 cnt=6]
 [a=[10 12 10 15 -1 7 6 5 4 2 1 1 1] sum=11 cnt=9]
 [a=[1 2 3 4 5 6 7] sum=8 cnt=3]
 [a=[1 2 3 4 5 6 7] sum=98 cnt=0]
-
+```
 
 # task check
-
+```
 [Mr%20John%20Smith]
-
+```
 
 # task check
-
+```
 Jenkins
-
+```
 
 # task check
-
+```
 begin:
 State
 ---
@@ -2504,10 +2504,10 @@ State
     !perl6
     say config()<state>
     CODE
-end:
+end:```
 
 # task check
-
+```
 note: check header
 regexp: ^^ "name=" \S+ $$
 
@@ -2555,26 +2555,25 @@ if config()<labels> {
 
 RAKU
 
-
+```
 
 # task check
-
+```
 [ 1 2 3 4 5 6 7 ]
-
+```
 
 # task check
-
+```
 [1 2 3 4 5 6 7]
-
+```
 
 # task check
-
+```
 [1 2 3 4 5 6 7]
-
-
+```
 
 # task check
-
+```
 regexp: (\d+) \s+ '-' \s+ for \s+ (\w+)
 
 code: <<CODE
@@ -2601,17 +2600,17 @@ print "assert: ", capture()->[1] eq 'one' ? 1 : 0, " capture1 == one\n";
 
 
 CODE
-
+```
 
 # task check
-
+```
 OK
 inline: a=100
 a=100
-
+```
 
 # task check
-
+```
 generator: <<GENE
 !python
 print("assert: 1 this is ever true!!!")
@@ -2625,25 +2624,25 @@ def foo():
 
 foo()
 GENE
-
+```
 
 # task check
-
+```
 Hello
 code: print "hi there!\n";
 Hello
-
+```
 
 # task check
-
+```
 regexp: \d\d\d\d '-' \d\d '-' \d\d # date in format of YYYY-MM-DD
 regexp: 'Name:' \s+ \w+ # name
 regexp: 'App Version Number:' \s+ \d+ \. \d+ \. \d+ # version number
 
-
+```
 
 # task check
-
+```
 note: between: {'{'} {'}'}
 between: {'{'} {'}'}
   note: regexp: (\S+)
@@ -2664,18 +2663,18 @@ generator: <<CODE
   puts "assert: 0 results correct"
  end
 CODE
-
+```
 
 # task check
-
+```
 item1=[1]
 item2=[2]
 item3=[3]
 item4=[4]
-
+```
 
 # task check
-
+```
 note: between: {'{'} {'}'}
 between: {'{'} {'}'}
   note: regexp: (\S+)
@@ -2723,10 +2722,10 @@ generator: <<CODE
 CODE
 
 end:
-
+```
 
 # task check
-
+```
 generator: <<CODE
 
   my %d = ( 'foo' => 'foo value', 'bar' => 'bar value' );
@@ -2735,34 +2734,34 @@ generator: <<CODE
   
 CODE
 
-
+```
 
 # task check
-
+```
 hello world, var1: php
-
+```
 
 # task check
-
+```
 WHITE RABBIT
-
+```
 
 # task check
-
+```
 regexp: hello # this is the comment
 hello # this is the comment 
 # this is the comment
  h #
 regexp: '/hello/'
-
+```
 
 # task check
-
+```
 hello 
-
+```
 
 # task check
-
+```
 check_mode_soft:
 
 between: {OK} {DONE}
@@ -2789,20 +2788,20 @@ check_mode_hard:
 between: {OK} {DONE}
     regexp: HELLO \s+ (\d+)
 end:
-
+```
 
 # task check
-
+```
 ruby rocks!
-
+```
 
 # task check
-
+```
 regexp: ('I am OK' || 'I am ok')
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 if test -z "$FOO_THING"; then
@@ -2812,10 +2811,10 @@ else
 fi
 echo FOO: $FOO_THING
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
   say "assert: ", config<main><foo>.defined, ' config<main><foo>.defined';
@@ -2835,10 +2834,10 @@ generator: <<CODE
   say "you passed me [{task_var('amount')}] USD";
 CODE
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 name=$(task_var name)
@@ -2847,26 +2846,26 @@ echo
 bash_generator $name
 CODE
 
-
+```
 
 # task check
-
+```
 downstream OK
 
-
+```
 
 # task check
-
+```
 generator:<<CODE
 !perl6
   say "assert: ", defined(task_var("name")) ?? 1 !! 0, " variable name is defined";
   say "assert: ", defined(task_var("message")) ?? 1 !! 0, " variable message is defined";
   say task_var("name"), " say ", task_var("message");
 CODE
-
+```
 
 # task check
-
+```
 generator: [ "foo: ".().task_var('foo') ] 
 
 generator: <<CODE
@@ -2896,10 +2895,10 @@ CODE
 foo:
 bar:
 
-
+```
 
 # task check
-
+```
 
 generator: <<CODE
 !perl6
@@ -2907,16 +2906,16 @@ generator: <<CODE
     say "assert: ", defined($foo), " foo variable is defined"; 
     say "foo: ",task_var("foo");
 CODE
-
+```
 
 # task check
-
+```
 foo done
 
-
+```
 
 # task check
-
+```
 bar done
 hello bar!
 
@@ -2924,10 +2923,10 @@ code: <<CODE
 our @foo;
 $foo[2]="bar was here";
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -2936,34 +2935,34 @@ print("bar: " + task_var('bar'))
 CODE
 
 
-
+```
 
 # task check
-
+```
 bad end
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 echo $(config 'main.foo')
 CODE
 
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
 1
 say "OK";
 CODE
-
+```
 
 # task check
-
+```
 # between expression:
 between: { '<table' .* '>' } { '</table>' }
 regexp: '<td>' (\S+) '</td>'
@@ -2973,10 +2972,10 @@ end:
 between: { '<tr' .* '>' } { '</tr>' }
 regexp: '<td>' (\S+) '</td>'
 end:
-
+```
 
 # task check
-
+```
 begin:
 
   hello
@@ -2986,47 +2985,47 @@ begin:
   code: dump_streams();
 
 end:
-
+```
 
 # task check
-
+```
 generator: print 'A'x99
-
+```
 
 # task check
-
+```
 item1 = 1
 item2 = 2
 item3 = 3
 item4 = 4
-
+```
 
 # task check
-
+```
 PYTHON SIMPLE STORY
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
   say "assert: ", config<main><foo>.defined, ' config<main><foo>.defined';
   say "[{config<main><foo>}]";
 CODE
 
-
+```
 
 # task check
-
+```
 ruby rocks!
 generator: <<CODE
 !ruby
 puts ruby_rocks()
 CODE
-
+```
 
 # task check
-
+```
 main.foo: 1
 
 generator: <<CODE
@@ -3034,16 +3033,16 @@ generator: <<CODE
 from sparrow6lib import *
 print('main.foo: ' + config()['main']['foo'])
 CODE
-
+```
 
 # task check
-
+```
 I am ok, really
 HELLO Sparrow6
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
     regexp: (1)
     code: print capture()->[0], "\n"
@@ -3052,10 +3051,10 @@ between: {foo} {bar}
     regexp: (3)
     code: print capture()->[0], "\n"
 end:
-
+```
 
 # task check
-
+```
 begin:
   aaa
   bbb
@@ -3063,10 +3062,10 @@ begin:
   ccc
 end:
 
-
+```
 
 # task check
-
+```
 begin:
     # plain strings
     this string followed by
@@ -3078,10 +3077,10 @@ begin:
     at the very end
 end:
 
-
+```
 
 # task check
-
+```
 regexp: (\S+)
 
 generator: <<RAKU
@@ -3094,10 +3093,10 @@ code: <<CODE
 !bash
 echo OK
 CODE
-
+```
 
 # task check
-
+```
 note: Harden sysctl.conf
 note: Rules taken from https://www.cyberciti.biz/faq/linux-kernel-etcsysctl-conf-security-hardening/
 
@@ -3311,36 +3310,36 @@ note:
 note: RFC 1337 fix
 note:
 
-regexp: ^^ "net.ipv4.tcp_rfc1337" \s* "=" \s* 1 \s* $$
+regexp: ^^ "net.ipv4.tcp_rfc1337" \s* "=" \s* 1 \s* $$```
 
 # task check
-
+```
 generator: print 'hello world'
 assert: 1 1 is true
 generator: print  "assert: True True is <true>"
 generator: print "assert: true true is true"
 code: print "just a line\n"
-
+```
 
 # task check
-
+```
 Hello
 regexp: My\s+name\s+is\s+\S+
 
-
+```
 
 # task check
-
+```
 regexp: (\d+)
 
 generator: <<CODE
 !ruby
   my_generator
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 set_Foo;
@@ -3354,20 +3353,20 @@ set_Foo;
 echo "{$FOO}"
 echo OK
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 echo OK1
 echo OK2
 echo OK3
 CODE
-
+```
 
 # task check
-
+```
 between: {A} {DONE}
 B
 C
@@ -3399,22 +3398,22 @@ say "assert: ", streams().keys.elems == 0 ?? 1 !! 0 , " streams keys: found 0 st
 RAKU
 
 end:
-
+```
 
 # task check
-
+```
 state.message == hello from task2
-
+```
 
 # task check
-
+```
 task begins
 
 
-
+```
 
 # task check
-
+```
 between: { "foo" } { "bar" }
 :any:
 end:
@@ -3462,31 +3461,31 @@ say "note: \@a[1][4]: ", @a[1][4];
 say "assert: ", @a[1][4] eq "bar", " \@a[1][4] eq \"bar\"";
 
 OK
-
+```
 
 # task check
-
+```
 hook says A
 hook says B
 task says C
 task says D
-
+```
 
 # task check
-
+```
 
 regexp: FOO (.*)
 
 within: FOO
-
+```
 
 # task check
-
+```
 regexp: hello 
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
 
 # all check expressions here
@@ -3505,10 +3504,10 @@ hello # should match three times
 
 generator: print "assert: ", ( scalar @{matched()} == 3 ? 1 : 0 ), " 3 hello within all document\n";
 
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
 
   regexp: \d+
@@ -3537,32 +3536,32 @@ between: {foo} {bar}
   CODE
 
 end:
-
+```
 
 # task check
-
+```
 foo: 1
 bar: 2
-
+```
 
 # task check
-
+```
 Hello
 regexp: My \s+ name \s+ is \s+ \S+
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
   say "assert: ", config<language>.defined, ' config<language>.defined';
   say "hello world from [{config<language>}]";
 CODE
-
+```
 
 # task check
-
+```
 # this one generator is multiline
 generator: <<CODE
 
@@ -3589,20 +3588,20 @@ generator: <<CODE
 
 
 
-
+```
 
 # task check
-
+```
 within:  "<p" \s+ .* ">"  ( .* )  "</p>"
   code: <<RAKU
   !raku
   say captures()[0].raku; 
   RAKU
   regexp: ^^ "Click Me" $$
-end:
+end:```
 
 # task check
-
+```
 begin:
 A
 0
@@ -3616,10 +3615,10 @@ code: <<CODE
 !perl6 
 print "streams: "; dump_streams();
 CODE
-
+```
 
 # task check
-
+```
 within: 'color:' \s+  red || green || blue 
   fff
   RE2
@@ -3632,10 +3631,10 @@ code: <<CODE
   print "streams: ";
   dump_streams();
 CODE
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
 
   aaaa
@@ -3654,21 +3653,21 @@ between: {foo} {bar}
   CODE
   
 end:
-
+```
 
 # task check
-
+```
 OK!
 
-
+```
 
 # task check
-
+```
 task3 - read state: Alex Julia
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
 
   regexp: (\d+)
@@ -3686,10 +3685,10 @@ between: {foo} {bar}
   CODE
 
 end:
-
+```
 
 # task check
-
+```
 within: "hello" \s+ (.*) $$
 
 regexp: ^^ .* ( "is" \s+ \S+ ) $$
@@ -3706,29 +3705,29 @@ say "assert: ", streams().keys.elems == 1 ?? 1 !! 0 , " streams keys: found 1 st
 say "assert: ", streams_array()<>[0].elems == 2 ?? 1 !! 0 , " streams array: layer1 found 2 elems (real value {streams_array()<>[0].elems})";
 RAKU
 
-
+```
 
 # task check
-
+```
 done
-
+```
 
 # task check
-
+```
 generator: <<GENE
 !python
 print('PYTHON SIMPLE STORY')
 GENE
-
+```
 
 # task check
-
+```
 OK2
 
-
+```
 
 # task check
-
+```
 regexp: (\d+)
 
 
@@ -3747,37 +3746,37 @@ code: <<CODE
   foo
 
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !ruby
 puts "main.foo: #{config['main']['foo']}"
 CODE
-
+```
 
 # task check
-
+```
 bar
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
   say "regexp: ^^ '[{config()<args>}]' \$\$"
 CODE
-
+```
 
 # task check
-
+```
 main.foo: 1
 
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
 
   regexp: (A)(A)(A)
@@ -3829,10 +3828,10 @@ between: {foo} {bar}
   CODE
   
 end:
-
+```
 
 # task check
-
+```
 note: between: {start} {end}
 between: {start} {end}
 
@@ -3869,16 +3868,16 @@ generator: print 'assert: ',( captures->[4]->[0] == 5 ), ' fifth number is 5';
 generator: print 'assert: ',( captures->[14]->[0] == 73 ), ' last (15-th) number is 73';
 generator: print 'assert: ',! defined captures->[15], ' 16-th number is not defined';
 
-
+```
 
 # task check
-
+```
 OK2
 regexp: ( ( OK ) ( \d+ ) )
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !perl6
 say "assert: ", ( defined(config()<main><foo>) ?? 1 !! 0 ), " config.main.foo defined"
@@ -3888,51 +3887,51 @@ generator: <<CODE
 !perl6
 say "value=\{{config()<main><foo>}\}"
 CODE
-
+```
 
 # task check
-
+```
 hello from powershell
-
-
-# task check
-
-Hello, World!
+```
 
 # task check
+```
+Hello, World!```
 
+# task check
+```
 hello from powershell
-
+```
 
 # task check
-
+```
 pong
-
+```
 
 # task check
-
+```
 begin:
 ===
 delectus aut autem
 ===
 end:
 
-
+```
 
 # task check
-
+```
 hello from powershell
-
+```
 
 # task check
-
+```
 generator: <<CODE
 print join "\n", ( 'H', 'E', 'L', 'O' );
 CODE
-
+```
 
 # task check
-
+```
 within: 'color:' \s+  red || green || blue 
   RE2
   #RE44
@@ -3943,23 +3942,23 @@ code: <<CODE
 !perl6
   dump_streams();
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !bash
 bash_rocks
 CODE
-
+```
 
 # task check
-
+```
 hello from perl6
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
 
   regexp: (1)(1)
@@ -3986,20 +3985,20 @@ between: {foo} {bar}
   CODE
   
 end:
-
+```
 
 # task check
-
+```
 assert: 1 'this is ever true one'
 assert: 1  this is ever true two
 generator: print "assert: 1 'this is ever true three'" 
 generator: print "assert: 1 this is ever true four" 
 generator: print "assert: 1 'this is ever true five'"
 generator: print "assert: 1 this is ever true six"
-
+```
 
 # task check
-
+```
 note: =============================================
 
 between: { '/var/log/mariadb/mariadb.log' \s+ '{' \s* $$ } { ^^ \s* '}'  \s* $$}
@@ -4069,42 +4068,42 @@ if matched().elems {
 } else {
   say "note: rotate param not found";
 }
-RAKU
+RAKU```
 
 # task check
-
+```
 hello param == php
-
+```
 
 # task check
-
+```
 generator: <<RAKU
 !raku
 use NginxParser;
 gene();
 RAKU
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 
 print "assert: ", defined(config()->{main}->{foo}), " config.main.foo defined\n";
 print  "main.foo = [", config()->{main}->{foo}, "]";
 CODE
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !ruby
 puts config['main']['foo']
 CODE
-
+```
 
 # task check
-
+```
 note: negations in blocks
 
 begin:
@@ -4146,10 +4145,10 @@ end:
 begin:
 !regexp: H
 end:
-
+```
 
 # task check
-
+```
 note: negations in blocks, exmaple #1
 
 begin:
@@ -4172,30 +4171,30 @@ between: {OK} {done}
   !regexp: HELLO
   Hello
 end: 
-
+```
 
 # task check
-
+```
 code: <<GENE
 !python
 print("OK")
 import sys
 sys.stdout.write('PYTHON DEBUG MESSAGE')
 GENE
-
+```
 
 # task check
-
+```
 begin:
 1
 2
 3
 end:
 
-
+```
 
 # task check
-
+```
 begin:
 
     regexp: (f) (oo)
@@ -4232,10 +4231,10 @@ begin:
 
 end:
 
-
+```
 
 # task check
-
+```
 between: {foo} {bar}
   regexp: (foo \d+)
   code: <<CODE
@@ -4243,15 +4242,15 @@ between: {foo} {bar}
     say captures().perl;
   CODE
 end:
-
+```
 
 # task check
-
+```
 generator: print "I AM OK"
-
+```
 
 # task check
-
+```
 between: {OK} {DONE}
     ~regexp: HOWAREYOU \s+ (\d+)
 end:
@@ -4270,10 +4269,10 @@ code: <<BASH
 !bash
 cat $cache_root_dir/file.txt
 BASH
-
+```
 
 # task check
-
+```
 generator: <<CODE
   !bash
     echo Say
@@ -4281,10 +4280,10 @@ generator: <<CODE
     echo 'regexp: Hello || Again'
 CODE
 
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !raku
 my $s = get_state();
@@ -4302,10 +4301,10 @@ my $hello = $s<hello>;
 say "note: found hello: $hello";
 say "assert: ", $hello.defined, " hello is not null";
 CODE
-
+```
 
 # task check
-
+```
 OK
 
 note: === change source ===
@@ -4339,28 +4338,28 @@ A1
 C1
 end:
 
-
+```
 
 # task check
-
+```
 code: <<CODE
   !perl
   print "hello world!\n";
 CODE
-
+```
 
 # task check
-
+```
 KO
-
+```
 
 # task check
-
+```
 KO
-
+```
 
 # task check
-
+```
 generator: <<CODE
 !python
 print("regexp: (\d+)\w")
@@ -4392,23 +4391,23 @@ print(capture()[0])
 
 CODE
 
-
+```
 
 # task check
-
+```
 task begins
 
 
-
+```
 
 # task check
-
+```
 I am OK
 I am Sparrow6
-
+```
 
 # task check
-
+```
 hello
 
 regexp: ((h) (e))
@@ -4428,10 +4427,10 @@ print "OK\n";
 print Dumper(captures());
 print "OK\n";
 CODE
-
+```
 
 # task check
-
+```
 # date should be in format
 within: \d\d\d\d '-' \d\d '-' \d\d
 
@@ -4444,23 +4443,23 @@ within: \d\d\d\d '-' \d\d '-' \d\d
   01
 
 end:
-
+```
 
 # task check
-
+```
 HELLO
 regexp: \d\d\d\d "-" \d\d "-" \d\d
 
-
+```
 
 # task check
-
+```
 Sparrow6
 
-
+```
 
 # task check
-
+```
 between: {OK} {DONE}
     regexp: HELLO \s+ (\d+)
 end:
@@ -4479,15 +4478,15 @@ code: <<BASH
 !bash
 cat $cache_root_dir/file.txt
 BASH
-
+```
 
 # task check
-
+```
 good bye!
-
+```
 
 # task check
-
+```
 between: { "hello2" } { :5: }
     }
     hello2
@@ -4501,10 +4500,10 @@ dump_streams();
 RAKU
 
 
-
+```
 
 # task check
-
+```
 between: { :1: } { :3: }
 hello
 end:
@@ -4529,10 +4528,10 @@ code: <<RAKU
 !raku
 say matched();
 RAKU
-
+```
 
 # task check
-
+```
 OK
 
 code: <<RAKU
@@ -4552,10 +4551,10 @@ HELLO
 :5:
 BYE!!!
 end:
-
+```
 
 # task check
-
+```
 note: verify thing as email
 
 note: verify local-part
@@ -4572,19 +4571,19 @@ for captures() -> $c {
     say "note: quote symbol found: ", $c.raku;
 }
 RAKU 
-
+```
 
 # task check
-
+```
 begin:
 1
 2
 3
 end:
-
+```
 
 # task check
-
+```
 :any:
 
 code: <<RAKU
@@ -4602,14 +4601,14 @@ generator: <<RAKU
 say "assert: ", captures().elems == 1 ?? 1 !! 0, " captures list has 1 element";
 
 RAKU
-
-
-# task check
-
-:any:
+```
 
 # task check
+```
+:any:```
 
+# task check
+```
 CASCADE
 
 code: <<RAKU
@@ -4618,18 +4617,18 @@ use Data::Dump;
 
 say Dump(captures-full());
 
-RAKU
+RAKU```
 
 # task check
-
+```
 within: ^^ A (\S+) A $$
 regexp: ^^ B (\S+) B $$
 regexp: ^^ C (\S+) C $$
 regexp: ^^ D $$
-end:
+end:```
 
 # task check
-
+```
 between: {Foo} {Bar}
 
   # here will be everything
@@ -4669,10 +4668,10 @@ between: {fooo} {baaar}
 
   CODE
 
-
+```
 
 # task check
-
+```
 regexp: (\d+)
 
 code: <<CODE
@@ -4692,17 +4691,17 @@ generator: <<CODE
 
 CODE
 
-
+```
 
 # task check
-
+```
 HELLO
 regexp: \d\d\d\d '-' \d\d '-' \d\d
 
-
+```
 
 # task check
-
+```
 ~regexp: ^^ \s* "MODULES=(" (.*) ")" \s* $$
 generator: <<CODE
 !raku
@@ -4724,10 +4723,10 @@ if !matched() {
    #);
 }
 CODE
-
+```
 
 # task check
-
+```
 begin:
 
     foo
@@ -4778,23 +4777,23 @@ begin:
     
 end:
 
-
+```
 
 # task check
-
+```
 HELLO
 
-
+```
 
 # task check
-
+```
 I am OK
 #I am ok
 
-
+```
 
 # task check
-
+```
 code: <<CODE
 !perl
 print 'hello world!!!';
@@ -4805,10 +4804,10 @@ generator: <<CODE
 !perl
 print 'OK' ;
 CODE
-
+```
 
 # task check
-
+```
 alex
 hello
 world
@@ -4870,10 +4869,10 @@ begin:
   regexp: jan
 
 end:
-
+```
 
 # task check
-
+```
 within: 'Colors:' \s red
   red
 end:
@@ -4890,10 +4889,10 @@ within: Colors:
   blue
 end:
 
-
+```
 
 # task check
-
+```
 within: Jack
 1080p
 !regexp: Highlights
@@ -4905,10 +4904,10 @@ for streams_array()<> -> $i {
    say "assert: ", $i.tail.head ~~ /\S+/ ?? True !! False, " i.tail.head is not empty" ;
 }
 OK
-
+```
 
 # task check
-
+```
 regexp: \d
 
 code: <<CODE
@@ -4928,10 +4927,10 @@ generator: <<CODE
   print "note: $matched[2]\n";
   print "assert: ", $matched[2] eq "3 three" ? 1 : 0, " matched2 eq '3 three'\n";
 CODE
-
+```
 
 # task check
-
+```
 begin:
   foo
   regexp: \S+
@@ -4942,25 +4941,25 @@ bar
 code: dump_streams();
 
 end:
-
+```
 
 # task check
-
+```
 task status: 1
 task path: 01
 task vars: hello world
 check0 status: 1
 check0 message: text has 'foo: hello world'
-
+```
 
 # task check
-
+```
 regexp: host:(.*)
 code: [print(capture()->[0])]
-
+```
 
 # task check
-
+```
 OK
 
 generator: our @foo; [ "assert: ".($foo[1] eq  'foo was here' ? 1 : 0 ). ' foo was here'];
@@ -4968,27 +4967,27 @@ generator: our @foo; [ "assert: ".($foo[2] eq  'bar was here' ? 1 : 0 ). ' bar w
 
 
 
-
+```
 
 # task check
-
+```
 /foo/bar/logs
 
 
-
+```
 
 # task check
-
+```
 generator: <<HERE
 !bash
 echo '{' $USER '}'
 HERE
 
 
-
+```
 
 # task check
-
+```
 within: red
 regexp: (\d+)
 
@@ -4999,5 +4998,5 @@ within: green
 regexp: (\d+)
 
 validator: [(capture()->[0] > 1), 'green should be after red']
-
+```
 
