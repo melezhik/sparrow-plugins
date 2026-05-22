@@ -11,6 +11,7 @@ s6 --install scc
 
 ```bash
 cat /etc/ssh/sshd_config | s6 --plg-run scc@check=sshd
+sudo sshd -T | s6 --plg-run scc@check=sshd
 ```
 
 # Parameters

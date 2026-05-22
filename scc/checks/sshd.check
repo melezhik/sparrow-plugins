@@ -1,4 +1,4 @@
-regexp: ^^ \s* Port \s+ (\d+) \s* $$
+regexp: ^^ \s* :i  Port \s+ (\d+) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -15,7 +15,7 @@ else:
     print("assert: 0 port not found")
 CODE
 
-regexp: ^^ \s* Protocol \s+ (\d) \s* $$
+regexp: ^^ \s* :i  Protocol \s+ (\d) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -32,7 +32,7 @@ else:
     print("assert: 0 Protocol not found")
 CODE
 
-regexp: ^^ \s* ListenAddress \s+ ( <[0..9\.]>+ | <[a..zA..Z0..9:]>+ ) \s* $$
+regexp: ^^ \s* :i  ListenAddress \s+ ( <[a..zA..Z0..9\:\.\[\]]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -46,7 +46,7 @@ else:
     print("assert: 0 ListenAddress not found")
 CODE
 
-regexp: ^^ \s* PermitRootLogin \s+ ( yes | no | prohibit\-password | forced\-commands\-only ) \s* $$
+regexp: ^^ \s* :i  PermitRootLogin \s+ ( yes | no | prohibit\-password | forced\-commands\-only | without\-password) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -63,7 +63,7 @@ else:
     print("assert: 0 PermitRootLogin not set")
 CODE
 
-regexp: ^^ \s* PasswordAuthentication \s+ ( yes | no ) \s* $$
+regexp: ^^ \s* :i  PasswordAuthentication \s+ ( yes | no ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -80,7 +80,7 @@ else:
     print("assert: 0 PasswordAuthentication not set")
 CODE
 
-regexp: ^^ \s* PubkeyAuthentication \s+ ( yes | no ) \s* $$
+regexp: ^^ \s* :i  PubkeyAuthentication \s+ ( yes | no ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -97,7 +97,7 @@ else:
     print("assert: 0 PubkeyAuthentication not set")
 CODE
 
-regexp: ^^ \s* MaxAuthTries \s+ (\d+) \s* $$
+regexp: ^^ \s* :i  MaxAuthTries \s+ (\d+) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -114,7 +114,7 @@ else:
     print("assert: 0 MaxAuthTries not found")
 CODE
 
-regexp: ^^ \s* MaxSessions \s+ (\d+) \s* $$
+regexp: ^^ \s* :i  MaxSessions \s+ (\d+) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -131,7 +131,7 @@ else:
     print("assert: 0 MaxSessions not found")
 CODE
 
-regexp: ^^ \s* LoginGraceTime \s+ (\d+ [smhd]) \s* $$
+regexp: ^^ \s* :i  LoginGraceTime \s+ (\d+ [smhd]) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -145,7 +145,7 @@ else:
     print("assert: 0 LoginGraceTime not found")
 CODE
 
-regexp: ^^ \s* PermitEmptyPasswords \s+ ( yes | no ) \s* $$
+regexp: ^^ \s* :i  PermitEmptyPasswords \s+ ( yes | no ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -162,7 +162,7 @@ else:
     print("assert: 0 PermitEmptyPasswords not set")
 CODE
 
-regexp: ^^ \s* X11Forwarding \s+ ( yes | no ) \s* $$
+regexp: ^^ \s* :i  X11Forwarding \s+ ( yes | no ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -179,7 +179,7 @@ else:
     print("assert: 0 X11Forwarding not set")
 CODE
 
-regexp: ^^ \s* ClientAliveInterval \s+ (\d+) \s* $$
+regexp: ^^ \s* :i  ClientAliveInterval \s+ (\d+) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -196,7 +196,7 @@ else:
     print("assert: 0 ClientAliveInterval not set")
 CODE
 
-regexp: ^^ \s* ClientAliveCountMax \s+ (\d+) \s* $$
+regexp: ^^ \s* :i  ClientAliveCountMax \s+ (\d+) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -213,7 +213,7 @@ else:
     print("assert: 0 ClientAliveCountMax not set")
 CODE
 
-regexp: ^^ \s* UseDNS \s+ ( yes | no ) \s* $$
+regexp: ^^ \s* :i  UseDNS \s+ ( yes | no ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -230,7 +230,7 @@ else:
     print("assert: 0 UseDNS not set")
 CODE
 
-regexp: ^^ \s* Ciphers \s+ ( <[a..zA..Z0..9\-\,]>+ ) \s* $$
+regexp: ^^ \s* :i  Ciphers \s+ ( <[a..zA..Z0..9\-\,]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -247,7 +247,7 @@ else:
     print("assert: 0 Ciphers not configured")
 CODE
 
-regexp: ^^ \s* MACs \s+ ( <[a..zA..Z0..9\-\,]>+ ) \s* $$
+regexp: ^^ \s* :i  MACs \s+ ( <[a..zA..Z0..9\-\,]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -264,7 +264,7 @@ else:
     print("assert: 0 MACs not configured")
 CODE
 
-regexp: ^^ \s* KexAlgorithms \s+ ( <[a..zA..Z0..9\-\,]>+ ) \s* $$
+regexp: ^^ \s* :i  KexAlgorithms \s+ ( <[a..zA..Z0..9\-\,]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -281,7 +281,7 @@ else:
     print("assert: 0 KexAlgorithms not configured")
 CODE
 
-regexp: ^^ \s* HostKey \s+ ( \/ <[a..zA..Z0..9\/\.\_\-]>+ ) \s* $$
+regexp: ^^ \s* :i  HostKey \s+ ( \/ <[a..zA..Z0..9\/\.\_\-]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -295,7 +295,7 @@ else:
     print("assert: 0 HostKey not found")
 CODE
 
-regexp: ^^ \s* SyslogFacility \s+ ( <[A..Za..z]>+ ) \s* $$
+regexp: ^^ \s* :i  SyslogFacility \s+ ( <[A..Za..z]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -312,7 +312,7 @@ else:
     print("assert: 0 SyslogFacility not set")
 CODE
 
-regexp: ^^ \s* LogLevel \s+ ( <[A..Za..z]>+ ) \s* $$
+regexp: ^^ \s* :i  LogLevel \s+ ( <[A..Za..z]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -329,7 +329,7 @@ else:
     print("assert: 0 LogLevel not set")
 CODE
 
-regexp: ^^ \s* AllowUsers \s+ ( <[a..zA..Z0..9\_\@\.]>+ ) \s* $$
+regexp: ^^ \s* :i  AllowUsers \s+ ( <[a..zA..Z0..9\_\@\.]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -343,7 +343,7 @@ else:
     print("assert: 0 AllowUsers not set (open to all)")
 CODE
 
-regexp: ^^ \s* DenyUsers \s+ ( <[a..zA..Z0..9\_\@\.]>+ ) \s* $$
+regexp: ^^ \s* :i  DenyUsers \s+ ( <[a..zA..Z0..9\_\@\.]>+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -357,7 +357,7 @@ else:
     print("assert: 0 DenyUsers not set")
 CODE
 
-regexp: ^^ \s* Subsystem \s+ sftp \s+ ( \S+ ) \s* $$
+regexp: ^^ \s* :i  Subsystem \s+ sftp \s+ ( \S+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -371,7 +371,7 @@ else:
     print("assert: 0 sftp subsystem not defined")
 CODE
 
-regexp: ^^ \s* Banner \s+ ( \S+ ) \s* $$
+regexp: ^^ \s* :i  Banner \s+ ( \S+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
@@ -385,7 +385,7 @@ else:
     print("assert: 0 Banner not set")
 CODE
 
-regexp: ^^ \s* Match \s+ ( Group \s+ \S+ | User \s+ \S+ | Host \s+ \S+ ) \s* $$
+regexp: ^^ \s* :i  Match \s+ ( Group \s+ \S+ | User \s+ \S+ | Host \s+ \S+ ) \s* $$
 generator: <<CODE
 !python
 from sparrow6lib import *
