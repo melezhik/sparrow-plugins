@@ -1,0 +1,4 @@
+generator: <<BASH
+!bash
+cat $root_dir/checks/$(config check).check
+BASH
