@@ -1,0 +1,490 @@
+
+# -------------------------------------------------------------------
+# task.check – Redis configuration validator
+# Regexps capture values generically; generators validate them.
+# Final cross-checks are now a generator block.
+# -------------------------------------------------------------------
+
+# ===================================================================
+# MANDATORY (HARD) CHECKS
+# ===================================================================
+
+# -------------------------------------------------------------------
+# 1. bind – must be present and loopback-only
+# -------------------------------------------------------------------
+note: bind – the server should listen on loopback only
+regexp: ^^ \s* bind \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    addrs = c[0].split()
+    state = get_state()
+    state['bind_found'] = True
+    update_state(state)
+    loopback_ok = all(a in ('127.0.0.1', '::1', '-::1') for a in addrs)
+    print(f"assert: {1 if loopback_ok else 0} bind should be loopback (127.0.0.1 ::1)")
+CODE
+
+# -------------------------------------------------------------------
+# 2. port – must be valid
+# -------------------------------------------------------------------
+note: port – must be a valid TCP port (1-65535)
+regexp: ^^ \s* port \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    port = int(c[0])
+    ok = 1 <= port <= 65535
+    print(f"assert: {1 if ok else 0} port {port} in range 1-65535")
+CODE
+
+# -------------------------------------------------------------------
+# 3. protected-mode – should be yes (value checked in generator)
+# -------------------------------------------------------------------
+note: protected-mode – should be enabled (yes)
+regexp: ^^ \s* protected\-mode \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = (val == 'yes')
+    print(f"assert: {1 if ok else 0} protected-mode should be yes, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 4. daemonize – valid yes/no (checked in generator)
+# -------------------------------------------------------------------
+note: daemonize – valid values are yes/no
+regexp: ^^ \s* daemonize \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val in ('yes', 'no')
+    print(f"assert: {1 if ok else 0} daemonize valid (yes/no), got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 5. dir – must be set
+# -------------------------------------------------------------------
+note: dir – working directory must be specified
+regexp: ^^ \s* dir \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    path = c[0].strip()
+    ok = len(path) > 0
+    print(f"assert: {1 if ok else 0} dir must be non-empty, got '{path}'")
+CODE
+
+# -------------------------------------------------------------------
+# 6. dbfilename – must be set
+# -------------------------------------------------------------------
+note: dbfilename – RDB filename should be set
+regexp: ^^ \s* dbfilename \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    name = c[0].strip()
+    ok = len(name) > 0
+    print(f"assert: {1 if ok else 0} dbfilename must be non-empty, got '{name}'")
+CODE
+
+# -------------------------------------------------------------------
+# 7. stop-writes-on-bgsave-error – normally yes (checked in generator)
+# -------------------------------------------------------------------
+note: stop-writes-on-bgsave-error – should normally be yes
+regexp: ^^ \s* stop\-writes\-on\-bgsave\-error \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val == 'yes'
+    print(f"assert: {1 if ok else 0} stop-writes-on-bgsave-error is yes, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 8. rdbcompression – normally yes (checked in generator)
+# -------------------------------------------------------------------
+note: rdbcompression – should normally be yes
+regexp: ^^ \s* rdbcompression \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val == 'yes'
+    print(f"assert: {1 if ok else 0} rdbcompression is yes, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 9. rdbchecksum – normally yes (checked in generator)
+# -------------------------------------------------------------------
+note: rdbchecksum – should normally be yes
+regexp: ^^ \s* rdbchecksum \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val == 'yes'
+    print(f"assert: {1 if ok else 0} rdbchecksum is yes, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 10. appendonly – valid yes/no (checked in generator)
+# -------------------------------------------------------------------
+note: appendonly – AOF persistence flag
+regexp: ^^ \s* appendonly \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val in ('yes', 'no')
+    print(f"assert: {1 if ok else 0} appendonly valid (yes/no), got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 11. appendfsync – recognised policy (checked in generator)
+# -------------------------------------------------------------------
+note: appendfsync – must be one of always, everysec, no
+regexp: ^^ \s* appendfsync \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    policy = c[0].strip().lower()
+    ok = policy in ('always', 'everysec', 'no')
+    print(f"assert: {1 if ok else 0} appendfsync valid, got {policy}")
+CODE
+
+# -------------------------------------------------------------------
+# 12. databases – positive integer
+# -------------------------------------------------------------------
+note: databases – number of databases must be a positive integer
+regexp: ^^ \s* databases \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    num = int(c[0])
+    ok = num > 0
+    print(f"assert: {1 if ok else 0} databases > 0, got {num}")
+CODE
+
+# -------------------------------------------------------------------
+# 13. loglevel – recognised level (checked in generator)
+# -------------------------------------------------------------------
+note: loglevel – must be one of debug, verbose, notice, warning
+regexp: ^^ \s* loglevel \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    level = c[0].strip().lower()
+    ok = level in ('debug', 'verbose', 'notice', 'warning')
+    print(f"assert: {1 if ok else 0} loglevel valid, got {level}")
+CODE
+
+# ===================================================================
+# OPTIONAL (SOFT) CHECKS
+# ===================================================================
+
+# -------------------------------------------------------------------
+# 14. requirepass – soft: if present, check strength
+# -------------------------------------------------------------------
+note: requirepass – (optional) password should be strong
+~regexp: ^^ \s* requirepass \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    pwd = c[0].strip().strip('"').strip("'")
+    ok = len(pwd) >= 8
+    state = get_state()
+    state['requirepass_set'] = True
+    update_state(state)
+    print(f"assert: {1 if ok else 0} requirepass length >= 8, got {len(pwd)} chars")
+CODE
+
+# -------------------------------------------------------------------
+# 15. maxmemory – soft: if set, value must be non-empty
+# -------------------------------------------------------------------
+note: maxmemory – (optional) memory limit should be set
+~regexp: ^^ \s* maxmemory \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip()
+    ok = len(val) > 0
+    print(f"assert: {1 if ok else 0} maxmemory set, got '{val}'")
+CODE
+
+# -------------------------------------------------------------------
+# 16. maxmemory-policy – soft: if set, must be known (checked in generator)
+# -------------------------------------------------------------------
+note: maxmemory-policy – (optional) valid policy name
+~regexp: ^^ \s* maxmemory\-policy \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+known = {'noeviction','allkeys-lru','volatile-lru','allkeys-random',
+         'volatile-random','volatile-ttl','allkeys-lfu','volatile-lfu'}
+c = capture()
+if c:
+    policy = c[0].strip().lower()
+    ok = policy in known
+    state = get_state()
+    state['maxmemory_policy'] = policy
+    update_state(state)
+    print(f"assert: {1 if ok else 0} maxmemory-policy valid, got {policy}")
+CODE
+
+# -------------------------------------------------------------------
+# 17. save – soft: if defined, RDB policy must be non-empty
+# -------------------------------------------------------------------
+note: save – (optional) RDB save policy should be defined
+~regexp: ^^ \s* save \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    args = c[0].strip()
+    ok = len(args) > 0
+    print(f"assert: {1 if ok else 0} save policy defined, got '{args}'")
+CODE
+
+# -------------------------------------------------------------------
+# 18. logfile – soft: if set, path must be non-empty
+# -------------------------------------------------------------------
+note: logfile – (optional) log file path must be provided
+~regexp: ^^ \s* logfile \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    path = c[0].strip().strip('"').strip("'")
+    ok = len(path) > 0
+    print(f"assert: {1 if ok else 0} logfile must be non-empty, got '{path}'")
+CODE
+
+# -------------------------------------------------------------------
+# 19. tcp-keepalive – soft: if set, value > 0
+# -------------------------------------------------------------------
+note: tcp-keepalive – (optional) should be a positive number
+~regexp: ^^ \s* tcp\-keepalive \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = int(c[0])
+    ok = val > 0
+    print(f"assert: {1 if ok else 0} tcp-keepalive > 0, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 20. include – soft: if used, path must be non-empty
+# -------------------------------------------------------------------
+note: include – (optional) include path must be non-empty
+~regexp: ^^ \s* include \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    path = c[0].strip().strip('"').strip("'")
+    ok = len(path) > 0
+    print(f"assert: {1 if ok else 0} include path valid, got '{path}'")
+CODE
+
+# -------------------------------------------------------------------
+# 21. loadmodule – soft: if used, path must be non-empty
+# -------------------------------------------------------------------
+note: loadmodule – (optional) module path must be non-empty
+~regexp: ^^ \s* loadmodule \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    path = c[0].strip().strip('"').strip("'")
+    ok = len(path) > 0
+    print(f"assert: {1 if ok else 0} loadmodule path valid, got '{path}'")
+CODE
+
+# -------------------------------------------------------------------
+# 22. replicaof – soft: if used, host and port must be valid
+# -------------------------------------------------------------------
+note: replicaof – (optional) master host and port
+~regexp: ^^ \s* replicaof \s+ (.+) \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    host = c[0].strip()
+    port = int(c[1])
+    ok = len(host) > 0 and 1 <= port <= 65535
+    print(f"assert: {1 if ok else 0} replicaof {host}:{port} valid")
+CODE
+
+# -------------------------------------------------------------------
+# 23. masterauth – soft: if used, non-empty password
+# -------------------------------------------------------------------
+note: masterauth – (optional) master authentication
+~regexp: ^^ \s* masterauth \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    auth = c[0].strip().strip('"').strip("'")
+    ok = len(auth) > 0
+    print(f"assert: {1 if ok else 0} masterauth set, got {len(auth)} chars")
+CODE
+
+# -------------------------------------------------------------------
+# 24. aclfile – soft: if used, path must be valid
+# -------------------------------------------------------------------
+note: aclfile – (optional) ACL file path
+~regexp: ^^ \s* aclfile \s+ (.+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    path = c[0].strip().strip('"').strip("'")
+    ok = len(path) > 0
+    print(f"assert: {1 if ok else 0} aclfile path valid, got '{path}'")
+CODE
+
+# -------------------------------------------------------------------
+# 25. user – soft: if present, status must be on/off (checked in generator)
+# -------------------------------------------------------------------
+note: user – (optional) ACL user status
+~regexp: ^^ \s* user \s+ \S+ \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    status = c[0].strip().lower()
+    ok = status in ('on', 'off')
+    print(f"assert: {1 if ok else 0} user status is on/off, got {status}")
+CODE
+
+# -------------------------------------------------------------------
+# 26. timeout – soft: if set, value >= 0
+# -------------------------------------------------------------------
+note: timeout – (optional) client idle timeout
+~regexp: ^^ \s* timeout \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = int(c[0])
+    ok = val >= 0
+    print(f"assert: {1 if ok else 0} timeout >= 0, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 27. supervised – soft: valid mode (checked in generator)
+# -------------------------------------------------------------------
+note: supervised – (optional) must be no, upstart, systemd, auto
+~regexp: ^^ \s* supervised \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    mode = c[0].strip().lower()
+    ok = mode in ('no', 'upstart', 'systemd', 'auto')
+    print(f"assert: {1 if ok else 0} supervised valid, got {mode}")
+CODE
+
+# -------------------------------------------------------------------
+# 28. syslog-enabled – soft: yes/no (checked in generator)
+# -------------------------------------------------------------------
+note: syslog-enabled – (optional) must be yes or no
+~regexp: ^^ \s* syslog\-enabled \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val in ('yes', 'no')
+    print(f"assert: {1 if ok else 0} syslog-enabled valid (yes/no), got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 29. always-show-logo – soft: should normally be no (checked in generator)
+# -------------------------------------------------------------------
+note: always-show-logo – (optional) should normally be no
+~regexp: ^^ \s* always\-show\-logo \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val == 'no'
+    print(f"assert: {1 if ok else 0} always-show-logo is no, got {val}")
+CODE
+
+# -------------------------------------------------------------------
+# 30. set-proc-title – soft: should normally be yes (checked in generator)
+# -------------------------------------------------------------------
+note: set-proc-title – (optional) should normally be yes
+~regexp: ^^ \s* set\-proc\-title \s+ (\S+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+c = capture()
+if c:
+    val = c[0].strip().lower()
+    ok = val == 'yes'
+    print(f"assert: {1 if ok else 0} set-proc-title is yes, got {val}")
+CODE
+
+# ===================================================================
+# Cross‑checks using accumulated state (generator block)
+# ===================================================================
+generator: <<CODE
+!python
+from sparrow6lib import *
+state = get_state()
+if not state.get('requirepass_set'):
+    print("assert: 0 requirepass is not set – authentication is disabled")
+if state.get('maxmemory_policy') == 'noeviction':
+    print("assert: 0 maxmemory-policy is noeviction – consider a different policy")
+print("assert: 1 configuration file validation completed")
+CODE
