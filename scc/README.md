@@ -20,6 +20,11 @@ sudo sshd -T | s6 --plg-run scc@check=sshd
 
 Check ID.
 
+Available IDs
+
+- sshd
+- redis
+
 # Author
 
 Alexey Melezhik
