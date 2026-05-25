@@ -28,6 +28,11 @@ Available IDs
 - redis
 - sudoers
 
+# Examples
+
+You can see example configs to play with at
+examples/ directory
+
 # Author
 
 Alexey Melezhik

@@ -1,6 +1,7 @@
+
 # Check 1: Verify passwordless sudo is disabled
 ~regexp: ^^ \h* <-[\#]> .* [NOPASSWD | '!authenticate']
-generator: << RAKU 
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 0 passwordless sudo is enabled - NOPASSWD or !authenticate found";
@@ -10,8 +11,8 @@ if matched() {
 RAKU
 
 # Check 2: Verify Defaults requiretty is set
-!regexp: ^^ \h* Defaults \h+ [!]? requiretty
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ \!? requiretty
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 1 Defaults requiretty is set";
@@ -21,8 +22,8 @@ if matched() {
 RAKU
 
 # Check 3: Verify Defaults env_reset is set
-!regexp: ^^ \h* Defaults \h+ [!]? env_reset
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ \!? env_reset
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 1 Defaults env_reset is set";
@@ -32,11 +33,11 @@ if matched() {
 RAKU
 
 # Check 4: Verify Defaults secure_path is set with safe paths
-regexp: ^^ \h* Defaults \h+ secure_path \h* \= \h* (\S+)
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ secure_path \h* \= \h* (\S+)
+generator: <<RAKU
 !raku
 if matched() {
-    my $path = capture(0);
+    my $path = capture()[0];
     if $path eq '' {
         say "assert: 0 Defaults secure_path is empty";
     } elsif $path.contains('..') {
@@ -52,8 +53,8 @@ if matched() {
 RAKU
 
 # Check 5: Verify Defaults mail_badpass is set
-!regexp: ^^ \h* Defaults \h+ [!]? mail_badpass
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ \!? mail_badpass
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 1 Defaults mail_badpass is set";
@@ -63,8 +64,8 @@ if matched() {
 RAKU
 
 # Check 6: Verify Defaults logfile is set
-!regexp: ^^ \h* Defaults \h+ logfile \h* \=
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ logfile \h* \=
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 1 Defaults logfile is configured";
@@ -75,7 +76,7 @@ RAKU
 
 # Check 7: Verify Defaults rootpw is not set (use targetpw instead for accountability)
 ~regexp: ^^ \h* Defaults \h+ rootpw
-generator: << RAKU 
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 0 Defaults rootpw is set - insecure root password prompt";
@@ -86,7 +87,7 @@ RAKU
 
 # Check 8: Verify Defaults insults is not enabled (unprofessional)
 ~regexp: ^^ \h* Defaults \h+ insults
-generator: << RAKU 
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 0 Defaults insults is enabled - unprofessional setting";
@@ -96,8 +97,8 @@ if matched() {
 RAKU
 
 # Check 9: Verify Defaults timestamp_timeout is not too long
-!regexp: ^^ \h* Defaults \h+ timestamp_timeout \h* \= \h* \d+
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ timestamp_timeout \h* \= \h* \d+
+generator: <<RAKU
 !raku
 if matched() {
     my $line = $/;
@@ -110,13 +111,13 @@ if matched() {
         }
     }
 } else {
-    say "assert: 0 Defaults timestamp_timeout is not set";
+    say "assert: 1 Defaults timestamp_timeout is not set - using default";
 }
 RAKU
 
 # Check 10: Check for ALL=(ALL) ALL without restrictions
 ~regexp: ^^ \h* <-[\#]> .* ALL \h* \= \h* [\(] \h* ALL \h* [\)] \h* [NOPASSWD \h* \:]? \h* ALL
-generator: << RAKU 
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 0 unrestricted sudo access found - ALL=(ALL) ALL";
@@ -126,8 +127,8 @@ if matched() {
 RAKU
 
 # Check 11: Verify no commented-out dangerous directives are present
-~regexp: ^^ \h* \# \h* .* [NOPASSWD | '!authenticate' | '!requiretty' | '!env_reset']
-generator: << RAKU 
+~regexp: ^^ \h* "#" \h* .* [NOPASSWD | '!authenticate' | '!requiretty' | '!env_reset']
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 0 commented-out dangerous directives found";
@@ -137,8 +138,8 @@ if matched() {
 RAKU
 
 # Check 12: Verify Defaults lecture is set for security awareness
-!regexp: ^^ \h* Defaults \h+ [!]? lecture \h* \=
-generator: << RAKU 
+~regexp: ^^ \h* Defaults \h+ \!? lecture \h* \=
+generator: <<RAKU
 !raku
 if matched() {
     say "assert: 1 Defaults lecture is set";
@@ -146,3 +147,4 @@ if matched() {
     say "assert: 0 Defaults lecture is not configured";
 }
 RAKU
+
