@@ -1,0 +1,148 @@
+# Check 1: Verify passwordless sudo is disabled
+~regexp: ^^ \h* <-[\#]> .* [NOPASSWD | '!authenticate']
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 0 passwordless sudo is enabled - NOPASSWD or !authenticate found";
+} else {
+    say "assert: 1 passwordless sudo is disabled";
+}
+RAKU
+
+# Check 2: Verify Defaults requiretty is set
+!regexp: ^^ \h* Defaults \h+ [!]? requiretty
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 1 Defaults requiretty is set";
+} else {
+    say "assert: 0 Defaults requiretty is not set - unsecure tty handling";
+}
+RAKU
+
+# Check 3: Verify Defaults env_reset is set
+!regexp: ^^ \h* Defaults \h+ [!]? env_reset
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 1 Defaults env_reset is set";
+} else {
+    say "assert: 0 Defaults env_reset is not set - environment variables not reset";
+}
+RAKU
+
+# Check 4: Verify Defaults secure_path is set with safe paths
+regexp: ^^ \h* Defaults \h+ secure_path \h* \= \h* (\S+)
+generator: << RAKU 
+!raku
+if matched() {
+    my $path = capture(0);
+    if $path eq '' {
+        say "assert: 0 Defaults secure_path is empty";
+    } elsif $path.contains('..') {
+        say "assert: 0 Defaults secure_path contains relative paths - $path";
+    } elsif $path.starts-with('/') && $path.contains('/usr') {
+        say "assert: 1 Defaults secure_path is set with safe paths - $path";
+    } else {
+        say "assert: 0 Defaults secure_path may be insecure - $path";
+    }
+} else {
+    say "assert: 0 Defaults secure_path is not set";
+}
+RAKU
+
+# Check 5: Verify Defaults mail_badpass is set
+!regexp: ^^ \h* Defaults \h+ [!]? mail_badpass
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 1 Defaults mail_badpass is set";
+} else {
+    say "assert: 0 Defaults mail_badpass is not set - bad password attempts not logged";
+}
+RAKU
+
+# Check 6: Verify Defaults logfile is set
+!regexp: ^^ \h* Defaults \h+ logfile \h* \=
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 1 Defaults logfile is configured";
+} else {
+    say "assert: 0 Defaults logfile is not configured - sudo actions not logged";
+}
+RAKU
+
+# Check 7: Verify Defaults rootpw is not set (use targetpw instead for accountability)
+~regexp: ^^ \h* Defaults \h+ rootpw
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 0 Defaults rootpw is set - insecure root password prompt";
+} else {
+    say "assert: 1 Defaults rootpw is not set - using user's own password";
+}
+RAKU
+
+# Check 8: Verify Defaults insults is not enabled (unprofessional)
+~regexp: ^^ \h* Defaults \h+ insults
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 0 Defaults insults is enabled - unprofessional setting";
+} else {
+    say "assert: 1 Defaults insults is not enabled";
+}
+RAKU
+
+# Check 9: Verify Defaults timestamp_timeout is not too long
+!regexp: ^^ \h* Defaults \h+ timestamp_timeout \h* \= \h* \d+
+generator: << RAKU 
+!raku
+if matched() {
+    my $line = $/;
+    if $line ~~ / timestamp_timeout \h* \= \h* (\d+) / {
+        my $timeout = $0.Int;
+        if $timeout <= 15 {
+            say "assert: 1 Defaults timestamp_timeout is set to secure value ($timeout minutes)";
+        } else {
+            say "assert: 0 Defaults timestamp_timeout is too high ($timeout minutes)";
+        }
+    }
+} else {
+    say "assert: 0 Defaults timestamp_timeout is not set";
+}
+RAKU
+
+# Check 10: Check for ALL=(ALL) ALL without restrictions
+~regexp: ^^ \h* <-[\#]> .* ALL \h* \= \h* [\(] \h* ALL \h* [\)] \h* [NOPASSWD \h* \:]? \h* ALL
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 0 unrestricted sudo access found - ALL=(ALL) ALL";
+} else {
+    say "assert: 1 no unrestricted sudo access found";
+}
+RAKU
+
+# Check 11: Verify no commented-out dangerous directives are present
+~regexp: ^^ \h* \# \h* .* [NOPASSWD | '!authenticate' | '!requiretty' | '!env_reset']
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 0 commented-out dangerous directives found";
+} else {
+    say "assert: 1 no commented-out dangerous directives found";
+}
+RAKU
+
+# Check 12: Verify Defaults lecture is set for security awareness
+!regexp: ^^ \h* Defaults \h+ [!]? lecture \h* \=
+generator: << RAKU 
+!raku
+if matched() {
+    say "assert: 1 Defaults lecture is set";
+} else {
+    say "assert: 0 Defaults lecture is not configured";
+}
+RAKU

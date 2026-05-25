@@ -6,7 +6,7 @@ my @captures = captures-full();
 if @captures {
     my $start_line = @captures[0]<index>;
     if $start_line > 0 {
-        say "between: \{:0:\} \{:{$start_line - 1}:\}";
+        say "between: \{ :0: \} \{:{$start_line - 1}:\}";
     }
 }
 CODE
@@ -334,10 +334,13 @@ if c:
     user_list = users_raw.split()
     if user_list:
         print(f"assert: 1 AllowUsers restricts to {len(user_list)} user(s): {', '.join(user_list)}")
+        update_state({"allow_users": True})
     else:
         print("assert: 0 AllowUsers has no users listed")
+        update_state({"allow_users": False})
 else:
     print("assert: 0 AllowUsers not set (open to all)")
+    update_state({"allow_users": False})
 CODE
 
 ~regexp: :i ^^ \s* DenyUsers \s+ ( .+ ) \s* $$
@@ -368,10 +371,13 @@ if c:
     group_list = groups_raw.split()
     if group_list:
         print(f"assert: 1 AllowGroups restricts to {len(group_list)} group(s): {', '.join(group_list)}")
+        update_state({"allow_groups": True})
     else:
         print("assert: 0 AllowGroups has no groups listed")
+        update_state({"allow_groups": False})
 else:
     print("assert: 0 AllowGroups not set")
+    update_state({"allow_groups": False})
 CODE
 
 ~regexp: :i ^^ \s* DenyGroups \s+ ( .+ ) \s* $$
@@ -417,3 +423,15 @@ else:
     print("assert: 0 Banner not set")
 CODE
 
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+state = get_state()
+allow_users = state.get("allow_users", False)
+allow_groups = state.get("allow_groups", False)
+if allow_users or allow_groups:
+    print("assert: 1 at least one of AllowUsers or AllowGroups is set")
+else:
+    print("assert: 0 neither AllowUsers nor AllowGroups is set")
+CODE
