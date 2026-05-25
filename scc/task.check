@@ -1,4 +1,437 @@
-generator: <<BASH
-!bash
-cat $root_dir/checks/$(config check).check
-BASH
+
+~regexp: :i ^^ \s* Match \s+ ( Group \s+ \S+ | User \s+ \S+ | Host \s+ \S+ | Address \s+ \S+ | LocalAddress \s+ \S+ | LocalPort \s+ \S+ | All ) \s* $$
+generator: <<CODE
+!raku
+my @captures = captures-full();
+if @captures {
+    my $start_line = @captures[0]<index>;
+    if $start_line > 0 {
+        say "between: \{ :0: \} \{:{$start_line - 1}:\}";
+    }
+}
+CODE
+
+~regexp: :i ^^ \s* Port \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    port = c[0]
+    if 1 <= int(port) <= 65535:
+        print(f"assert: 1 port is valid ({port})")
+    else:
+        print(f"assert: 0 port out of range ({port})")
+else:
+    print("assert: 0 port not found")
+CODE
+
+~regexp: :i ^^ \s* Protocol \s+ (\d) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    proto = c[0]
+    if proto == "2":
+        print("assert: 1 Protocol version is 2")
+    else:
+        print(f"assert: 0 Protocol version is {proto} (expected 2)")
+else:
+    print("assert: 0 Protocol not found")
+CODE
+
+~regexp: :i ^^ \s* ListenAddress \s+ ( \S+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    addr = c[0]
+    print(f"assert: 1 ListenAddress found ({addr})")
+else:
+    print("assert: 0 ListenAddress not found")
+CODE
+
+~regexp: :i ^^ \s* PermitRootLogin \s+ ( yes | no | prohibit\-password | forced\-commands\-only ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if val.lower() in ("no", "prohibit-password"):
+        print(f"assert: 1 PermitRootLogin securely set to {val}")
+    else:
+        print(f"assert: 0 PermitRootLogin is {val} (should be no or prohibit-password)")
+else:
+    print("assert: 0 PermitRootLogin not set")
+CODE
+
+~regexp: :i ^^ \s* PasswordAuthentication \s+ ( yes | no ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if val.lower() == "no":
+        print("assert: 1 PasswordAuthentication disabled")
+    else:
+        print(f"assert: 0 PasswordAuthentication is {val}")
+else:
+    print("assert: 0 PasswordAuthentication not set")
+CODE
+
+~regexp: :i ^^ \s* PubkeyAuthentication \s+ ( yes | no ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if val.lower() == "yes":
+        print("assert: 1 PubkeyAuthentication enabled")
+    else:
+        print(f"assert: 0 PubkeyAuthentication is {val}")
+else:
+    print("assert: 0 PubkeyAuthentication not set")
+CODE
+
+~regexp: :i ^^ \s* MaxAuthTries \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if int(val) <= 6:
+        print(f"assert: 1 MaxAuthTries <= 6 ({val})")
+    else:
+        print(f"assert: 0 MaxAuthTries is {val} (should be <= 6)")
+else:
+    print("assert: 0 MaxAuthTries not found")
+CODE
+
+~regexp: :i ^^ \s* MaxSessions \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if int(val) <= 10:
+        print(f"assert: 1 MaxSessions <= 10 ({val})")
+    else:
+        print(f"assert: 0 MaxSessions is {val} (should be <= 10)")
+else:
+    print("assert: 0 MaxSessions not found")
+CODE
+
+~regexp: :i ^^ \s* LoginGraceTime \s+ (\d+) \s* <[smhd]> \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    unit = c[1] if len(c) > 1 else ''
+    print(f"assert: 1 LoginGraceTime set to {val}{unit}")
+else:
+    print("assert: 0 LoginGraceTime not found")
+CODE
+
+~regexp: :i ^^ \s* PermitEmptyPasswords \s+ ( yes | no ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if val.lower() == "no":
+        print("assert: 1 empty passwords forbidden")
+    else:
+        print(f"assert: 0 PermitEmptyPasswords is {val}")
+else:
+    print("assert: 0 PermitEmptyPasswords not set")
+CODE
+
+~regexp: :i ^^ \s* X11Forwarding \s+ ( yes | no ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if val.lower() == "no":
+        print("assert: 1 X11Forwarding disabled")
+    else:
+        print(f"assert: 0 X11Forwarding is {val}")
+else:
+    print("assert: 0 X11Forwarding not set")
+CODE
+
+~regexp: :i ^^ \s* ClientAliveInterval \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if int(val) > 0:
+        print(f"assert: 1 ClientAliveInterval {val}")
+    else:
+        print(f"assert: 0 ClientAliveInterval is 0 (should be >0)")
+else:
+    print("assert: 0 ClientAliveInterval not set")
+CODE
+
+~regexp: :i ^^ \s* ClientAliveCountMax \s+ (\d+) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if int(val) <= 3:
+        print(f"assert: 1 ClientAliveCountMax {val} (<=3)")
+    else:
+        print(f"assert: 0 ClientAliveCountMax {val} (>3)")
+else:
+    print("assert: 0 ClientAliveCountMax not set")
+CODE
+
+~regexp: :i ^^ \s* UseDNS \s+ ( yes | no ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    val = c[0]
+    if val.lower() == "no":
+        print("assert: 1 UseDNS disabled")
+    else:
+        print(f"assert: 0 UseDNS is {val}")
+else:
+    print("assert: 0 UseDNS not set")
+CODE
+
+~regexp: :i ^^ \s* Ciphers \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    ciphers = c[0]
+    if "aes256" in ciphers.lower():
+        print(f"assert: 1 strong cipher present")
+    else:
+        print(f"assert: 0 no strong cipher found")
+else:
+    print("assert: 0 Ciphers not configured")
+CODE
+
+~regexp: :i ^^ \s* MACs \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    macs = c[0]
+    if "hmac-sha2-512" in macs.lower():
+        print(f"assert: 1 strong MAC present")
+    else:
+        print(f"assert: 0 no strong MAC found")
+else:
+    print("assert: 0 MACs not configured")
+CODE
+
+~regexp: :i ^^ \s* KexAlgorithms \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    kex = c[0]
+    if "diffie-hellman" in kex.lower():
+        print(f"assert: 1 DH KEX found")
+    else:
+        print(f"assert: 0 no DH KEX found")
+else:
+    print("assert: 0 KexAlgorithms not configured")
+CODE
+
+~regexp: :i ^^ \s* HostKey \s+ ( \S+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    key = c[0]
+    print(f"assert: 1 HostKey defined ({key})")
+else:
+    print("assert: 0 HostKey not found")
+CODE
+
+~regexp: :i ^^ \s* SyslogFacility \s+ ( \S+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    fac = c[0]
+    if fac.upper() in ("AUTH", "AUTHPRIV"):
+        print(f"assert: 1 SyslogFacility {fac}")
+    else:
+        print(f"assert: 0 SyslogFacility {fac} (should be AUTH)")
+else:
+    print("assert: 0 SyslogFacility not set")
+CODE
+
+~regexp: :i ^^ \s* LogLevel \s+ ( \S+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    level = c[0]
+    if level.upper() in ("INFO", "VERBOSE", "DEBUG"):
+        print(f"assert: 1 LogLevel {level}")
+    else:
+        print(f"assert: 0 LogLevel {level} (should be INFO or VERBOSE)")
+else:
+    print("assert: 0 LogLevel not set")
+CODE
+
+~regexp: :i ^^ \s* AllowUsers \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    users_raw = c[0]
+    user_list = users_raw.split()
+    if user_list:
+        print(f"assert: 1 AllowUsers restricts to {len(user_list)} user(s): {', '.join(user_list)}")
+        update_state({"allow_users": True})
+    else:
+        print("assert: 0 AllowUsers has no users listed")
+        update_state({"allow_users": False})
+else:
+    print("assert: 0 AllowUsers not set (open to all)")
+    update_state({"allow_users": False})
+CODE
+
+~regexp: :i ^^ \s* DenyUsers \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    users_raw = c[0]
+    user_list = users_raw.split()
+    if user_list:
+        print(f"assert: 1 DenyUsers blocks {len(user_list)} user(s): {', '.join(user_list)}")
+    else:
+        print("assert: 0 DenyUsers has no users listed")
+else:
+    print("assert: 0 DenyUsers not set")
+CODE
+
+~regexp: :i ^^ \s* AllowGroups \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    groups_raw = c[0]
+    group_list = groups_raw.split()
+    if group_list:
+        print(f"assert: 1 AllowGroups restricts to {len(group_list)} group(s): {', '.join(group_list)}")
+        update_state({"allow_groups": True})
+    else:
+        print("assert: 0 AllowGroups has no groups listed")
+        update_state({"allow_groups": False})
+else:
+    print("assert: 0 AllowGroups not set")
+    update_state({"allow_groups": False})
+CODE
+
+~regexp: :i ^^ \s* DenyGroups \s+ ( .+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    groups_raw = c[0]
+    group_list = groups_raw.split()
+    if group_list:
+        print(f"assert: 1 DenyGroups blocks {len(group_list)} group(s): {', '.join(group_list)}")
+    else:
+        print("assert: 0 DenyGroups has no groups listed")
+else:
+    print("assert: 0 DenyGroups not set")
+CODE
+
+~regexp: :i ^^ \s* Subsystem \s+ sftp \s+ ( \S+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    path = c[0]
+    print(f"assert: 1 sftp subsystem defined ({path})")
+else:
+    print("assert: 0 sftp subsystem not defined")
+CODE
+
+~regexp: :i ^^ \s* Banner \s+ ( \S+ ) \s* $$
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+c = capture()
+if c:
+    banner = c[0]
+    print(f"assert: 1 Banner file {banner}")
+else:
+    print("assert: 0 Banner not set")
+CODE
+
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+state = get_state()
+allow_users = state.get("allow_users", False)
+allow_groups = state.get("allow_groups", False)
+if allow_users or allow_groups:
+    print("assert: 1 at least one of AllowUsers or AllowGroups is set")
+else:
+    print("assert: 0 neither AllowUsers nor AllowGroups is set")
+CODE

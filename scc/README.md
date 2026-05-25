@@ -12,6 +12,7 @@ s6 --install scc
 ```bash
 cat /etc/ssh/sshd_config | s6 --plg-run scc@check=sshd
 sudo sshd -T | s6 --plg-run scc@check=sshd
+sudo cat /etc/redis/redis.conf | s6 --plg-run scc@check=redis
 ```
 
 # Parameters
