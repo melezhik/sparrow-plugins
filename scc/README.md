@@ -27,6 +27,7 @@ Available IDs
 - sshd
 - redis
 - sudoers
+- bind
 
 # Examples
 

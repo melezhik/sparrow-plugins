@@ -1,0 +1,175 @@
+# 1. Capture all lines and convert to dot‑flat using Python
+regexp: .*
+code: <<CODE
+!python
+import sparrow6lib
+
+lines = sparrow6lib.matched()
+original = '\n'.join(lines)
+
+section = ''
+flat_lines = []
+for line in original.splitlines():
+    stripped = line.strip()
+    if not stripped or stripped.startswith('#') or stripped.startswith(';'):
+        continue
+    if line.startswith('[') and line.rstrip().endswith(']'):
+        section_raw = line.strip()[1:-1].strip()
+        section = section_raw.replace('"', '').replace(' ', '.')
+        continue
+    if '=' in line and section:
+        parts = line.split('=', 1)
+        key = parts[0].strip()
+        value = parts[1].strip().rstrip(';').strip()
+        flat_lines.append(f"{section}.{key} = {value}")
+
+with open('/tmp/bind-flat.conf', 'w') as f:
+    f.write('\n'.join(flat_lines))
+CODE
+
+source: /tmp/bind-flat.conf
+
+# 2. options.directory – soft check
+~regexp: options \. directory \s* \= \s* ( <-[ \= \; ]>+ ) \s* \;?
+code: <<CODE
+!python
+import sparrow6lib
+c = sparrow6lib.capture()
+if c:
+    sparrow6lib.update_state({'directory': c[0]})
+CODE
+generator: <<CODE
+!python
+import sparrow6lib
+caps = sparrow6lib.captures()
+if caps:
+    for c in caps:
+        val = c[0]
+        ok = val != ''
+        print(f"assert: {ok} options.directory is '{val}'")
+else:
+    print("assert: 0 options.directory not found")
+CODE
+
+# 3. options.listen-on – soft check, must be 127.0.0.1
+~regexp: options \. listen\-on \s* \= \s* \{ \s* ( <-[ } ; ]>+ ) \s* [ \; \s* ]? \} \s* \;?
+code: <<CODE
+!python
+# no state needed
+CODE
+generator: <<CODE
+!python
+import sparrow6lib
+caps = sparrow6lib.captures()
+if caps:
+    for c in caps:
+        ip = c[0].strip()
+        ok = ip == '127.0.0.1'
+        print(f"assert: {ok} options.listen-on is '{ip}' (must be 127.0.0.1)")
+else:
+    print("assert: 0 options.listen-on not defined")
+CODE
+
+# 4. zone.<name>.type – soft, collect zone names and types
+~regexp: zone \. ( <-[ \= \; ]>+ ) \. type \s* \= \s* ( <-[ \; ]>+ ) \s* \;?
+code: <<CODE
+!python
+import sparrow6lib
+state = sparrow6lib.get_state()
+state.setdefault('all-zones', [])
+state.setdefault('zone-types', {})
+for c in sparrow6lib.captures():
+    zone = c[0]
+    if zone not in state['all-zones']:
+        state['all-zones'].append(zone)
+    state['zone-types'][zone] = c[1]
+sparrow6lib.update_state(state)
+CODE
+generator: <<CODE
+!python
+import sparrow6lib
+caps = sparrow6lib.captures()
+if caps:
+    for c in caps:
+        zone, ztype = c[0], c[1]
+        valid = ztype in ('master', 'slave', 'secondary')
+        print(f"assert: {valid} zone {zone} type is '{ztype}'")
+else:
+    print("assert: 0 no zone type definitions found")
+CODE
+
+# 5. zone.<name>.file – soft
+~regexp: zone \. ( <-[ \= \; ]>+ ) \. file \s* \= \s* ( <-[ \; ]>+ ) \s* \;?
+code: <<CODE
+!python
+# soft, no state needed
+CODE
+generator: <<CODE
+!python
+import sparrow6lib
+caps = sparrow6lib.captures()
+if caps:
+    for c in caps:
+        zone, file = c[0], c[1]
+        nonempty = file != ''
+        print(f"assert: {nonempty} zone {zone} file is '{file}'")
+else:
+    print("assert: 0 no zone file definitions found")
+CODE
+
+# 6. zone.<name>.masters – soft, collect masters per zone
+~regexp: zone \. ( <-[ \= \; ]>+ ) \. masters \s* \= \s* ( <-[ \; ]>+ ) \s* \;?
+code: <<CODE
+!python
+import sparrow6lib
+state = sparrow6lib.get_state()
+state.setdefault('zone-masters', {})
+for c in sparrow6lib.captures():
+    zone = c[0]
+    state['zone-masters'][zone] = c[1]
+sparrow6lib.update_state(state)
+CODE
+generator: <<CODE
+!python
+import sparrow6lib
+caps = sparrow6lib.captures()
+if caps:
+    for c in caps:
+        print(f"assert: 1 zone {c[0]} masters defined")
+else:
+    print("assert: 0 no zone masters definitions found")
+CODE
+
+# 7. Final hard check #1: all zones must have valid type (master, slave, secondary)
+generator: <<CODE
+!python
+import sparrow6lib
+state = sparrow6lib.get_state()
+zone_types = state.get('zone-types', {})
+if zone_types:
+    invalid = [z for z, t in zone_types.items() if t not in ('master', 'slave', 'secondary')]
+    if invalid:
+        print(f"assert: 0 zones with invalid type: {', '.join(invalid)}")
+    else:
+        print("assert: 1 all zones have valid type")
+else:
+    print("assert: 1 no zones defined")
+CODE
+
+# 8. Final hard check #2: slave/secondary zones must have non-empty masters
+generator: <<CODE
+!python
+import sparrow6lib
+state = sparrow6lib.get_state()
+zone_types = state.get('zone-types', {})
+zone_masters = state.get('zone-masters', {})
+all_ok = True
+for zone, ztype in zone_types.items():
+    if ztype in ('slave', 'secondary'):
+        masters = zone_masters.get(zone, '').strip().strip('{}').strip()
+        if masters:
+            print(f"assert: 1 zone {zone} ({ztype}) has masters: {masters}")
+        else:
+            print(f"assert: 0 zone {zone} ({ztype}) missing non-empty masters")
+            all_ok = False
+CODE
