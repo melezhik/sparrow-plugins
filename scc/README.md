@@ -34,6 +34,12 @@ Available IDs
 You can see example configs to play with at
 examples/ directory
 
+# Report example
+
+Sshd
+
+![report.png](report.png)
+
 # Author
 
 Alexey Melezhik
