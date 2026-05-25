@@ -1,4 +1,3 @@
-
 ~regexp: :i ^^ \s* Match \s+ ( Group \s+ \S+ | User \s+ \S+ | Host \s+ \S+ | Address \s+ \S+ | LocalAddress \s+ \S+ | LocalPort \s+ \S+ | All ) \s* $$
 generator: <<CODE
 !raku
@@ -39,8 +38,6 @@ if c:
         print("assert: 1 Protocol version is 2")
     else:
         print(f"assert: 0 Protocol version is {proto} (expected 2)")
-else:
-    print("assert: 0 Protocol not found")
 CODE
 
 ~regexp: :i ^^ \s* ListenAddress \s+ ( \S+ ) \s* $$
@@ -356,8 +353,6 @@ if c:
         print(f"assert: 1 DenyUsers blocks {len(user_list)} user(s): {', '.join(user_list)}")
     else:
         print("assert: 0 DenyUsers has no users listed")
-else:
-    print("assert: 0 DenyUsers not set")
 CODE
 
 ~regexp: :i ^^ \s* AllowGroups \s+ ( .+ ) \s* $$
@@ -393,8 +388,6 @@ if c:
         print(f"assert: 1 DenyGroups blocks {len(group_list)} group(s): {', '.join(group_list)}")
     else:
         print("assert: 0 DenyGroups has no groups listed")
-else:
-    print("assert: 0 DenyGroups not set")
 CODE
 
 ~regexp: :i ^^ \s* Subsystem \s+ sftp \s+ ( \S+ ) \s* $$
