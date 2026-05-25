@@ -1,0 +1,21 @@
+note: Enable TCP SYN cookies (net.ipv4.tcp_syncookies = 1)
+regexp: ^^ \s* net\.ipv4\.tcp_syncookies \s* \= \s* 1 \s* $$
+
+note: Disable IP forwarding (net.ipv4.ip_forward = 0)
+regexp: ^^ \s* net\.ipv4\.ip_forward \s* \= \s* 0 \s* $$
+
+note: Enable reverse path filtering on all interfaces (net.ipv4.conf.all.rp_filter = 1)
+regexp: ^^ \s* net\.ipv4\.conf\.all\.rp_filter \s* \= \s* 1 \s* $$
+
+note: Enable reverse path filtering on default interface (net.ipv4.conf.default.rp_filter = 1)
+regexp: ^^ \s* net\.ipv4\.conf\.default\.rp_filter \s* \= \s* 1 \s* $$
+
+note: Ignore ICMP redirects on all interfaces (net.ipv4.conf.all.accept_redirects = 0)
+regexp: ^^ \s* net\.ipv4\.conf\.all\.accept_redirects \s* \= \s* 0 \s* $$
+
+note: Ignore ICMP redirects on default interface (net.ipv4.conf.default.accept_redirects = 0)
+regexp: ^^ \s* net\.ipv4\.conf\.default\.accept_redirects \s* \= \s* 0 \s* $$
+
+note: Log martian packets (net.ipv4.conf.all.log_martians = 1)
+regexp: ^^ \s* net\.ipv4\.conf\.all\.log_martians \s* \= \s* 1 \s* $$
+

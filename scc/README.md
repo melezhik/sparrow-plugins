@@ -28,6 +28,7 @@ Available IDs
 - redis
 - sudoers
 - bind
+- sysctl
 
 # Examples
 
