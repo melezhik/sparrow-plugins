@@ -1,4 +1,4 @@
 generator: <<BASH
 !bash
-cat checks/$(config check).check
+cat $root_dir/checks/$(config check).check
 BASH

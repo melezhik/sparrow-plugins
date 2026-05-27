@@ -1,7 +1,7 @@
 {
   "name" : "scc",
   "description" : "Compliance checks for Linux services and packages",
-  "version" : "0.0.16",
+  "version" : "0.0.17",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/scc",
   "category": "alpine, test, apk, debian, ubuntu, linux, ditana, compliance"
 }
