@@ -16,7 +16,7 @@ s6 --plg-run rl-releasever@version=9.8-BETA
 
 ## version
 
-Release candidate version
+Release candidate version. Optional. Default value is `10.2`
 
 # Author
 

@@ -1,6 +1,6 @@
 {
   "name" : "rl-releasever",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "description" : "version switcher for Rocky Linux",
   "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/rl_release_version",
   "category": "redhat, rocky"
