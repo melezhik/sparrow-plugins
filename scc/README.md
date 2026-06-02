@@ -29,6 +29,7 @@ Available IDs
 - sudoers
 - bind
 - sysctl
+- fstab
 
 # Examples
 

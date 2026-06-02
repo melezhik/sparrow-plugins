@@ -1,0 +1,55 @@
+~regexp: ^^ \h* <![#]> (\S+) \h+ (\S+) \h+ (\S+) \h+ (\S+) \h+ (\d+) \h+ (\d+) \h* $$
+
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+for c in captures():
+    if len(c) != 6:
+        continue
+    dev, mp, fstype, opts, dump, passno = c
+
+    # --- Device checks ---
+    dev_ok = False
+    if dev == "none":
+        # virtual filesystems (proc, sysfs, etc.)
+        dev_ok = True
+    elif dev.startswith("UUID=") and len(dev) > 5:
+        dev_ok = True
+    elif dev.startswith("LABEL=") and len(dev) > 6:
+        dev_ok = True
+    elif dev.startswith("PARTUUID=") and len(dev) > 9:
+        dev_ok = True
+    elif dev.startswith("PARTLABEL=") and len(dev) > 10:
+        dev_ok = True
+    elif dev.startswith("/"):
+        dev_ok = True
+    elif dev.startswith("//") or dev.startswith("\\\\"):
+        # Network share (SMB/CIFS)
+        dev_ok = True
+    elif dev.find(":/") != -1:
+        # NFS style – simply checks for ':/' anywhere (e.g. server:/path)
+        dev_ok = True
+    print(f"assert: {1 if dev_ok else 0} valid device: {dev}")
+
+    # --- Mount point checks ---
+    mp_ok = mp.startswith("/") or mp in ("none", "swap")
+    print(f"assert: {1 if mp_ok else 0} valid mount point: {mp}")
+
+    # --- Filesystem type checks ---
+    known_types = [
+        "ext2", "ext3", "ext4", "xfs", "btrfs", "vfat", "ntfs",
+        "swap", "proc", "sysfs", "tmpfs", "devpts", "nfs", "nfs4",
+        "cifs", "smbfs", "iso9660", "udf"
+    ]
+    fstype_ok = fstype.lower() in known_types
+    print(f"assert: {1 if fstype_ok else 0} known filesystem type: {fstype}")
+
+    # --- Dump flag ---
+    dump_ok = dump in ("0", "1")
+    print(f"assert: {1 if dump_ok else 0} dump flag 0 or 1: {dump}")
+
+    # --- Pass number ---
+    pass_ok = passno in ("0", "1", "2")
+    print(f"assert: {1 if pass_ok else 0} pass number 0,1,2: {passno}")
+CODE
