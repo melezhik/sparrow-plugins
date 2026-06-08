@@ -1,0 +1,76 @@
+
+between: { ^^ \S+ \: \s flags \= } { ^^ \s* $$ }
+
+# 1. Capture interface name, flags and MTU
+regexp: ^^ (\S+) \: \s flags \= (\d+) \< ( <-[\>]>+ ) \> \s+ mtu \s (\d+)
+
+# 2. Capture IPv4 address, netmask, broadcast (if present)
+regexp: \s+ inet \s (\S+) \s+ netmask \s (\S+) \s+ broadcast \s (\S+)
+
+# 3. Capture IPv6 address, prefixlen, scopeid (if present)
+regexp: \s+ inet6 \s (\S+) \s+ prefixlen \s (\d+) \s+ scopeid \s (\S+)
+
+# 4. Capture MAC address and txqueuelen (if present)
+regexp: \s+ ether \s (<[0..9a..fA..F:]>+) \s+ txqueuelen \s (\d+)
+
+generator: <<CODE
+!python
+from sparrow6lib import *
+
+streams = streams_array()
+for stream in streams:
+    iface = None
+    flags_num = None
+    flags_str = None
+    mtu = None
+    ipv4 = None
+    ipv6 = None
+    mac = None
+
+    for layer in stream:
+        n = len(layer)
+        if n == 4:
+            iface = layer[0]
+            flags_num = layer[1]
+            flags_str = layer[2]
+            mtu = layer[3]
+        elif n == 3:
+            if '.' in layer[0] or layer[0].count(':') < 2:
+                ipv4 = {'addr': layer[0], 'netmask': layer[1], 'broadcast': layer[2]}
+            else:
+                ipv6 = {'addr': layer[0], 'prefixlen': layer[1], 'scopeid': layer[2]}
+        elif n == 2:
+            mac = {'address': layer[0], 'txqueuelen': layer[1]}
+
+    if iface:
+        print(f"assert: 1 interface {iface} found")
+        print(f"assert: {flags_num.isdigit() if flags_num else 0} flags numeric for {iface}")
+        print(f"assert: {'UP' in flags_str if flags_str else 0} UP flag present on {iface}")
+        print(f"assert: {mtu.isdigit() and int(mtu) > 0 if mtu else 0} valid MTU on {iface}")
+
+        if ipv4:
+            print(f"assert: 1 IPv4 address {ipv4['addr']} configured on {iface}")
+            print(f"assert: 1 netmask {ipv4['netmask']} on {iface}")
+            print(f"assert: 1 broadcast {ipv4['broadcast']} on {iface}")
+        else:
+            print(f"assert: 0 no IPv4 address on {iface}")
+
+        if ipv6:
+            print(f"assert: 1 IPv6 address {ipv6['addr']} configured on {iface}")
+            valid_plen = ipv6['prefixlen'].isdigit() and 0 <= int(ipv6['prefixlen']) <= 128
+            print(f"assert: {valid_plen} valid prefix length on {iface}")
+            print(f"assert: 1 scopeid {ipv6['scopeid']} on {iface}")
+        else:
+            print(f"assert: 0 no IPv6 address on {iface}")
+
+        if mac:
+            parts = mac['address'].split(':')
+            is_valid_mac = len(parts) == 6 and all(len(p) == 2 for p in parts)
+            print(f"assert: {is_valid_mac} valid MAC format on {iface}")
+            txq_ok = mac['txqueuelen'].isdigit() and int(mac['txqueuelen']) > 0
+            print(f"assert: {txq_ok} valid txqueuelen on {iface}")
+        else:
+            print(f"assert: 0 no MAC address on {iface}")
+    else:
+        print("assert: 0 no interface line found in this stream")
+CODE

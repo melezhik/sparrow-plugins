@@ -30,6 +30,7 @@ Available IDs
 - bind
 - sysctl
 - fstab
+- ifconfig
 
 # Examples
 
