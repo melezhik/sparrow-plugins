@@ -4,11 +4,11 @@ regexp: ^^ \s* net\.ipv4\.tcp_syncookies \s* \= \s* 1 \s* $$
 note: Disable IP forwarding (net.ipv4.ip_forward = 0)
 regexp: ^^ \s* net\.ipv4\.ip_forward \s* \= \s* 0 \s* $$
 
-note: Enable reverse path filtering on all interfaces (net.ipv4.conf.all.rp_filter = 1)
-regexp: ^^ \s* net\.ipv4\.conf\.all\.rp_filter \s* \= \s* 1 \s* $$
+note: Enable reverse path filtering on all interfaces - 0 is acceptable when default is 2 (net.ipv4.conf.all.rp_filter = 0)
+regexp: ^^ \s* net\.ipv4\.conf\.all\.rp_filter \s* \= \s* [0|1|2] \s* $$
 
-note: Enable reverse path filtering on default interface (net.ipv4.conf.default.rp_filter = 1)
-regexp: ^^ \s* net\.ipv4\.conf\.default\.rp_filter \s* \= \s* 1 \s* $$
+note: Enable strict reverse path filtering on default interface - must be 2 for secure defaults (net.ipv4.conf.default.rp_filter = 2)
+regexp: ^^ \s* net\.ipv4\.conf\.default\.rp_filter \s* \= \s* 2 \s* $$
 
 note: Ignore ICMP redirects on all interfaces (net.ipv4.conf.all.accept_redirects = 0)
 regexp: ^^ \s* net\.ipv4\.conf\.all\.accept_redirects \s* \= \s* 0 \s* $$
@@ -19,3 +19,26 @@ regexp: ^^ \s* net\.ipv4\.conf\.default\.accept_redirects \s* \= \s* 0 \s* $$
 note: Log martian packets (net.ipv4.conf.all.log_martians = 1)
 regexp: ^^ \s* net\.ipv4\.conf\.all\.log_martians \s* \= \s* 1 \s* $$
 
+note: Restrict access to kernel logs (kernel.dmesg_restrict = 1)
+regexp: ^^ \s* kernel\.dmesg_restrict \s* \= \s* 1 \s* $$
+
+note: Disable unprivileged BPF (kernel.unprivileged_bpf_disabled = 2)
+regexp: ^^ \s* kernel\.unprivileged_bpf_disabled \s* \= \s* 2 \s* $$
+
+note: Disable unprivileged user namespaces (kernel.unprivileged_userns_clone = 0)
+regexp: ^^ \s* kernel\.unprivileged_userns_clone \s* \= \s* 0 \s* $$
+
+note: Restrict ptrace scope - 1 or 2 acceptable (kernel.yama.ptrace_scope = 1|2)
+regexp: ^^ \s* kernel\.yama\.ptrace_scope \s* \= \s* [1|2] \s* $$
+
+note: Protect hardlinks against race conditions (fs.protected_hardlinks = 1)
+regexp: ^^ \s* fs\.protected_hardlinks \s* \= \s* 1 \s* $$
+
+note: Protect symlinks against race conditions (fs.protected_symlinks = 1)
+regexp: ^^ \s* fs\.protected_symlinks \s* \= \s* 1 \s* $$
+
+note: Protect FIFOs against opening in sticky directories (fs.protected_fifos = 1)
+regexp: ^^ \s* fs\.protected_fifos \s* \= \s* 1 \s* $$
+
+note: Protect regular files against opening in sticky directories (fs.protected_regular = 2)
+regexp: ^^ \s* fs\.protected_regular \s* \= \s* 2 \s* $$
