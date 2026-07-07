@@ -14,7 +14,7 @@ cat /etc/ssh/sshd_config | s6 --plg-run scc@check=sshd
 sudo sshd -T | s6 --plg-run scc@check=sshd
 sudo cat /etc/redis/redis.conf | s6 --plg-run scc@check=redis
 sudo cat /etc/sudoers | s6 --plg-run scc@check=sudoers
-sysctl -a  | s6 --plg-run scc@check=sysctl
+sudo sysctl -a  | s6 --plg-run scc@check=sysctl
 ifconfig | s6 --plg-run scc@check=ifconfig
 ```
 
