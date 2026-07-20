@@ -12,7 +12,7 @@ if ".lc4/{$parent}.tabs".IO ~~ :e {
 
 my $tabs-s = " " x $tabs;
  
-#say "note: insert $id {config()<type>} into {$parent} tabs=$tabs";
+say "note: insert $id {config()<type>} into {$parent} tabs=$tabs";
 
 mkdir ".lc4";
 
@@ -27,10 +27,10 @@ if $parent eq "model" or $parent eq "views" or $parent eq "deployment" {
   );
   say "note: $ex";
   say $ex;
-} elsif config()<type> eq "include"  or config()<type> eq "group" {
+} elsif config()<type> eq "include" or config()<type> eq "group" or config()<type> eq "step" {
   my $ex  = q/between: {/;
   $ex     ~= q/[ view \s+ "%p%" \s+ of \s+ \S+/; # model view - view foo of bar
-  $ex     ~= q/ || view \s+ "%p%" /; # deployment view 
+  $ex     ~= q/ || view \s+ "%p%" /; # deployment view or step in dynamic view
   $ex     ~= q/ || \""%p%"\" /; # other cases, for example group
   $ex     ~= q/] \s+ \{ \s* $$ }/; # end of alternations, closing first between block
   $ex     ~= q/ {  ^^ "%t%" \} $$ }/;
@@ -82,12 +82,16 @@ if $type eq "view" {
   if config()<deployment> {
     $element = "{$tabs-s}deployment view {$id} \{\n";
   } else {
-    $element = "{$tabs-s}view {$id} of {config()<system>} \{\n";
+    if config()<dynamic> {
+      $element = "{$tabs-s}dynamic view {$id} \{\n";
+    } else {
+      $element = "{$tabs-s}view {$id} of {config()<system>} \{\n";
+    }
   }
   $element ~= "{$tabs-s}  title \"{config<desc>}\"\n{$tabs-s}\}";
 } elsif $type eq "include" {
   $element = "{$tabs-s}include {$id}";
-} elsif $type eq "link" {
+} elsif $type eq "link" or $type eq "step" {
   my ($a, $b) =  config()<id>.split(":");
   my $proto = config()<proto> ?? ".{config()<proto>}" !! "->";
   $element = "{$tabs-s}{$a} $proto {$b} \"{config()<desc>}\"";
