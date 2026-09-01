@@ -97,10 +97,14 @@ if $type eq "view" {
   $element = "{$tabs-s}{$a} $proto {$b} \"{config()<desc>}\"";
 } elsif $type eq "instance_of" {
   my ($a, $b) =  config()<id>.split(":");
-  $element = "{$tabs-s}{$a} = instanceOf {$b}";
+  if $a eq "*" {
+    $element = "{$tabs-s}instanceOf {$b}";
+  } else {
+    $element = "{$tabs-s}{$a} = instanceOf {$b}";
+  }
 } elsif $type eq "group" {
   $element = "{$tabs-s}group \"{$id}\" \{";
-  $element ~= "\n{$tabs-s}  title \"{config()<desc>}\"";
+  #$element ~= "\n{$tabs-s}  title \"{config()<desc>}\"";
   $element ~= "\n{$tabs-s}\}";
 }  else {
   $element = "{$tabs-s}{$id} = {$type} \"{config()<desc>}\" \{";
