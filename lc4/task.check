@@ -104,12 +104,17 @@ if $type eq "view" {
   }
 } elsif $type eq "group" {
   $element = "{$tabs-s}group \"{$id}\" \{";
-  #$element ~= "\n{$tabs-s}  title \"{config()<desc>}\"";
   $element ~= "\n{$tabs-s}\}";
 }  else {
   $element = "{$tabs-s}{$id} = {$type} \"{config()<desc>}\" \{";
   if config()<long_desc> {
     $element ~= "\n{$tabs-s}  description \"{config()<long_desc>}\""
+  }
+  if config()<pgsql> {
+    $element ~= "\n{$tabs-s}  technology \"[PostgreSQL]\"\n" ~
+    "{$tabs-s}  style \{\n" ~
+    "{$tabs-s}    icon tech:postgresql\n" ~
+    "{$tabs-s}  \}"
   }
   if config()<multiple> {
     $element ~= "\n{$tabs-s}  style \{";
