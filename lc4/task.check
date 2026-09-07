@@ -1,24 +1,46 @@
 generator: <<RAKU
 !raku
 
+use JSON::Fast;
+
 my $parent = config()<parent>;
+
 my $id = config()<id>;
 
 my $tabs = 0;
 
-if ".lc4/{$parent}.tabs".IO ~~ :e {
-  $tabs = ".lc4/{$parent}.tabs".IO.slurp.chomp;
+my $p_type; # parent type
+
+if ".lc4/{$parent}.json".IO ~~ :e {
+  my %data = from-json(".lc4/{$parent}.json".IO.slurp);
+  $tabs = %data<tabs>;
+  $p_type = %data<type>;
 }
 
+
 my $tabs-s = " " x $tabs;
+
+update_state({
+  :$tabs,
+  :$p_type,
+});
  
 say "note: insert $id {config()<type>} into {$parent} tabs=$tabs";
 
 mkdir ".lc4";
 
-".lc4/{$id}.tabs".IO.spurt($tabs+2);
+my %out = %(
+  :tabs($tabs+2),
+  :type(config()<type>),
+  :parent(config()<parent>),
+  :id(config()<id>),
+);
 
-if $parent eq "model" or $parent eq "views" or $parent eq "deployment" {
+".lc4/{$id}.json".IO.spurt(to-json(%out));
+
+if $parent eq "model" 
+  or $parent eq "views"
+  or $parent eq "deployment" {
   my $ex = q|between: { "%p%" \s+ \{  } {  ^^ "%t%" \} $$ }|.subst(
     "%p%",config()<parent>,
   ).subst(
@@ -27,7 +49,18 @@ if $parent eq "model" or $parent eq "views" or $parent eq "deployment" {
   );
   say "note: $ex";
   say $ex;
-} elsif config()<type> eq "include" or config()<type> eq "group" or config()<type> eq "step" {
+} elsif $p_type eq "extend" {
+  my $ex = q|between: { "%p%" \s+ \{  } {  ^^ "%t%" \} $$ }|.subst(
+    "%p%",config()<parent>,
+  ).subst(
+    "%t%",
+    $tabs-s,
+  );
+  say "note: !!! $ex";
+  say $ex;
+} elsif config()<type> eq "include" 
+     or config()<type> eq "group" 
+     or config()<type> eq "step" {
   my $ex  = q/between: {/;
   $ex     ~= q/[ view \s+ "%p%" \s+ of \s+ \S+/; # model view - view foo of bar
   $ex     ~= q/ || view \s+ "%p%" /; # deployment view or step in dynamic view
@@ -72,8 +105,11 @@ generator: <<RAKU
 my $id = config()<id>;
 my $last-line = matched()<>.tail;
 my $type = config()<type>;
+
 my $ln = captures-full().tail.<index>;
-my $tabs = ".lc4/{$id}.tabs".IO.slurp.chomp;
+
+my $tabs = get_state()<tabs> + 2;
+
 say "note: // insert {config()<type>} {$id} tabs=$tabs line=$ln";
 my $tabs-s = " " x $tabs;
 
@@ -89,6 +125,8 @@ if $type eq "view" {
     }
   }
   $element ~= "{$tabs-s}  title \"{config<desc>}\"\n{$tabs-s}\}";
+} elsif $type eq "extend" {
+  $element = "{$tabs-s}extend {config()<id>} \{\n{$tabs-s}\}";
 } elsif $type eq "include" {
   $element = "{$tabs-s}include {$id}";
 } elsif $type eq "link" or $type eq "step" {
