@@ -1,0 +1,7 @@
+{
+  "name" : "clog-date",
+  "version" : "0.0.1",
+  "description" : "Prints date in change log format",
+  "url" : "https://github.com/melezhik/sparrow-plugins/tree/master/clog-date",
+  "category": "linux"
+}
